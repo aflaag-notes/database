@@ -48,30 +48,6 @@
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $D_1, \ldots , D_k$, l'insieme delle tuple di $R$, è detta **istanza della relazione $R$**
 
-## Def
-
-- **Chiave di una relazione**
-
-> - $n \in \mathbb{N}$
-> - $D_1, \ldots, D_n$ domini
-> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $X = \{A_i \mid A_i \in R(A_1, \ldots, A_n)\}$ è detta **chiave di $R$** $\iff \forall r$ istanza di $R \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1 = t_2$
-> - $X$ è detta **chiave primaria di $R$** $\iff X$ è la chiave di $R$ con minor numero di attributi
-
-## Def
-
-- **Dipendenza funzionale**
-
-> - $n \in \mathbb{N}$
-> - $D_1, \ldots, D_n$ domini
-> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $X = \{A_i \mid A_i \in R(A_1, \ldots, A_n)\} \mid X \neq \varnothing$
-> - $Y = \{A_i \mid A_i \in R(A_1, \ldots, A_n)\} \mid Y \neq \varnothing$
-> - $X \rightarrow Y$ è detta **dipendenza funzionale**
-> - $r$ istanza di $R$ **soddisfa** $X \rightarrow Y \iff \forall t_1, t_2 \in R \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y]$
-
 ****
 
 # Operazioni
@@ -104,7 +80,7 @@
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $R' = \rho_{A_1' \leftarrow A_1}(R)$, dove $\rho$ è detto **operatore di rinominazione**
->   - $R'$ è uno schema relazionale con la stessa istanza di $R$, ma con $A_1$ rinominato con $A_1'$
+>   - $R'$ sarà uno schema relazionale con la stessa istanza di $R$, ma con $A_1$ rinominato con $A_1'$
 
 - **Unione**
 
@@ -187,7 +163,6 @@
 > - $R_2(A_1', \ldots, A_n')$ schema relazionale
 > - $r_1$ istanza di $R_1$
 > - $r_2$ istanza di $R_2$
-> - $r_1 \bowtie r_2$ è detto **join naturale di $r_1$ e $r_2$** 
 > - $r_1 \bowtie r_2$ è detto **join naturale di $r_1$ e $r_2$** ⚠️ **SCRIVERE BENE LA DEFINIZIONE**
 >   - dunque, il join naturale costituisce il prodotto cartesiano "con significato" discusso precedentemente
  **SCRIVERE BENE LA DEFINIZIONE**
@@ -214,3 +189,89 @@
 - **Dim**
     - poiché non ci sono attributi in comune tra $R_1$ ed $R_2$, di fatto non ci sono né righe né colonne da correggere in $r_1 \times r_2$, dunque necessariamente $r_1 \times r_2 = r_1 \bowtie r_2$
 
+****
+
+# Dipendenze funzionali
+
+## Def
+
+- **Dipendenza funzionale**
+
+> - $n \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $X = \{A_i \mid A_i \in R(A_1, \ldots, A_n)\} \mid X \neq \varnothing$
+> - $Y = \{A_i \mid A_i \in R(A_1, \ldots, A_n)\} \mid Y \neq \varnothing$
+> - $X \rightarrow Y$ è detta **dipendenza funzionale su $R$**
+> - $r$ istanza di $R$ **soddisfa** $X \rightarrow Y \iff \forall t_1, t_2 \in R \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y]$
+
+- **Istanza legale**
+
+> - $n, k \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $r$ **istanza legale di $R$** $\iff \forall F_i \in F \quad r$ soddisfa $F_i$
+
+## Def
+
+- **Chiusura di un insieme di dipendenze funzionali**
+
+> - $n, k \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $F^+ := \{F_i \in F \mid \forall r$ istanza legale di $R \quad r$ soddisfa $F\}$ è detta **chiusura di $F$**
+
+## Oss
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $F \subseteq F^+$
+
+## Oss
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A, B, C, A_4, \ldots, A_n)$ schema relazionale
+    - $X = ABC$
+    - $Y = AB$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+
+## Def
+
+- **Chiave di una relazione**
+
+> - $n \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $X = \{A_i \mid A_i \in R(A_1, \ldots, A_n)\}$ è detta **superchiave di $R$** $\iff \forall r$ istanza di $R \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1 = t_2$
+> - $X$ è detta **chiave di $R$** $\iff X$ è la chiave di $R$ con minor numero di attributi
+
+## Oss
+
+- **Hp**
+    - $n \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $K = \{A_i \mid A_i \in R(A_1, \ldots, A_n)\}$
+- **Th**
+    - $K$ superchiave di $R \iff K \rightarrow R \in F^+$
+    - $K$ chiave di $R \iff K$ superchiave di $R \land \nexists K' \subseteq K \mid K' \rightarrow R$
