@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> </title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #fdfdfd;
+      background-color: #1f1f1f;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #fdfdfd;
+    }
+    a:visited {
+      color: #fdfdfd;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #adbac7;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #fdfdfd;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #fdfdfd;
+      border-bottom: 1px solid #fdfdfd;
+    }
+    th {
+      border-top: 1px solid #fdfdfd;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<h1 id="algebra-relazionale">Algebra relazionale</h1>
+<h2 id="def">Def</h2>
+<ul>
+<li><strong>Dominio</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">A</span> insieme finito o infinito</li>
+<li><span class="math inline">A</span>, in algebra relazionale, è detto
+<strong>dominio</strong></li>
+</ul>
+</blockquote>
+<h2 id="def-1">Def</h2>
+<ul>
+<li><strong>Prodotto cartesiano</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">D_1 \times \ldots \times D_n := \{v_1,
+\ldots, v_n) \mid v_1 \in D_1, \ldots , v_n \in D_n\}</span> è detto
+<strong>prodotto cartesiano dei domini <span class="math inline">D_1,
+\ldots D_n</span></strong></li>
+</ul>
+</blockquote>
+<h2 id="def-2">Def</h2>
+<ul>
+<li><strong>Relazione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots , D_n</span> domini</li>
+<li><span class="math inline">k \in [1, n]</span></li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_k</span> è detta <strong>relazione di grado <span
+class="math inline">k</span></strong>
+<ul>
+<li><span class="math inline">(t_1, \ldots, t_k) \in R</span> è detta
+<strong>tupla di cardinalità <span
+class="math inline">k</span></strong></li>
+<li><span class="math inline">\forall i \in [1, k] \quad (t_1, \ldots,
+t_k)[i] = t_i</span></li>
+<li><span class="math inline">\forall a, b \in [1, k] \mid a \lt b \quad
+(t_1, \ldots, t_k)[a, b] = (t_a, \ldots, t_b)</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="def-3">Def</h2>
+<ul>
+<li><strong>Schema relazionale</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> è detto
+<strong>schema relazionale</strong>
+<ul>
+<li><span class="math inline">R</span>, in algebra relazionale, è
+categorizzata tramite <strong>attributi</strong>, denotati con <span
+class="math inline">A_i</span>, nomi con i quali si etichettano le
+colonne della tabella, dunque uno schema relazionale è l’insieme delle
+etichette</li>
+<li><span class="math inline">\forall i \in [1, n] \quad
+\textrm{dom}(A_i) := D_i</span> è detto <strong>dominio di <span
+class="math inline">A_i</span></strong></li>
+<li><span class="math inline">\forall i \in [1, n] \quad A_i \in
+\textrm{dom}(A_i)</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Istanza di una relazione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">k \in [1, n]</span></li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_k</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">D_1, \ldots , D_k</span>, l’insieme delle
+tuple di <span class="math inline">R</span>, è detta <strong>istanza
+della relazione <span class="math inline">R</span></strong></li>
+</ul>
+</blockquote>
+<hr />
+<h1 id="operazioni">Operazioni</h1>
+<h2 id="def-4">Def</h2>
+<ul>
+<li><strong>Proiezione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">a, b \in [1, n] \mid a \lt b</span></li>
+<li><span class="math inline">\pi_{A_a, \ldots, A_b}(R) := D_a \times
+\ldots \times D_b</span> è detta <strong>proiezione di <span
+class="math inline">R</span></strong>, associata ad uno schema
+relazionale <span class="math inline">R(A_a, \ldots, A_b)</span></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Selezione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">C</span> espressione booleana</li>
+<li><span class="math inline">\sigma_C(R) \subseteq D_1 \times \ldots
+\times D_n</span> è detta <strong>selezione di <span
+class="math inline">R</span></strong>
+<ul>
+<li>corrisponde all’insieme delle righe della tabella che rendono la
+condizione <span class="math inline">C</span> vera</li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Rinominazione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">R&#39; = \rho_{A_1&#39; \leftarrow
+A_1}(R)</span>, dove <span class="math inline">\rho</span> è detto
+<strong>operatore di rinominazione</strong>
+<ul>
+<li><span class="math inline">R&#39;</span> sarà uno schema relazionale
+con la stessa istanza di <span class="math inline">R</span>, ma con
+<span class="math inline">A_1</span> rinominato con <span
+class="math inline">A_1&#39;</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Unione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n, D_1&#39; ,\ldots,
+D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
+n] \quad D_i = D_i&#39;</span></li>
+<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
+\times D_n&#39;</span> relazione</li>
+<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
+schema relazionale</li>
+<li><span class="math inline">r_1</span> istanza di <span
+class="math inline">R_1</span></li>
+<li><span class="math inline">r_2</span> istanza di <span
+class="math inline">R_2</span></li>
+<li><span class="math inline">r_1 \cup r_2 := \{t \mid t \in r_1 \lor t
+\in r_2\}</span> è detta <strong>unione delle istanze <span
+class="math inline">r_1</span> e <span
+class="math inline">r_2</span></strong>
+<ul>
+<li>dunque, l’unione di istanze è definita solamente per istanze con
+stesso numero di attributi, e attributi con stesso dominio</li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Differenza</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n, D_1&#39; , \ldots ,
+D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
+n] \quad D_i = D_i&#39;</span></li>
+<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
+\times D_n&#39;</span> relazione</li>
+<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
+schema relazionale</li>
+<li><span class="math inline">r_1</span> istanza di <span
+class="math inline">R_1</span></li>
+<li><span class="math inline">r_2</span> istanza di <span
+class="math inline">R_2</span></li>
+<li><span class="math inline">r_2 - r_1 := \{t \mid t \in r_2 \land t
+\notin r_1\}</span> è detta <strong>differenza delle istanze <span
+class="math inline">r_1</span> e <span
+class="math inline">r_2</span></strong>
+<ul>
+<li>dunque, la differenza di istanze è definita solamente per istanze
+con stesso numero di attributi, e attributi con stesso dominio</li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Intersezione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1 , \ldots , D_n , D_1&#39; , \ldots ,
+D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
+n] \quad D_i = D_i&#39;</span></li>
+<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
+\times D_n&#39;</span> relazione</li>
+<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
+schema relazionale</li>
+<li><span class="math inline">r_1</span> istanza di <span
+class="math inline">R_1</span></li>
+<li><span class="math inline">r_2</span> istanza di <span
+class="math inline">R_2</span></li>
+<li><span class="math inline">r_1 \cap r_2 := r_2 - (r_2 - r_1)</span> è
+detta **intersezione delle istanze <span class="math inline">r_1</span>
+e <span class="math inline">r_2</span>
+<ul>
+<li>dunque, la differenza di istanze è definita solamente per istanze
+con stesso numero di attributi, e attributi con stesso dominio</li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Prodotto cartesiano</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1 , \ldots , D_n, D_1&#39; , \ldots ,
+D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
+n] \quad D_i = D_i&#39;</span></li>
+<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
+\times D_n&#39;</span> relazione</li>
+<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
+schema relazionale</li>
+<li><span class="math inline">r_1</span> istanza di <span
+class="math inline">R_1</span></li>
+<li><span class="math inline">r_2</span> istanza di <span
+class="math inline">R_2</span></li>
+<li><span class="math inline">r_1 \times r_2 := \{(t_1, t_2) \mid t_1
+\in r_1 \land t_2 \in r_2\}</span> è detto <strong>prodotto cartesiano
+delle istanze <span class="math inline">r_2</span> e <span
+class="math inline">r_2</span></strong></li>
+</ul>
+</blockquote>
+<h2 id="oss">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1 , \ldots, D_B , \ldots , D_n, D_1&#39;
+, \ldots , D_B&#39; , \ldots , D_n&#39;</span> domini <span
+class="math inline">\mid \forall i \in [1, n] \quad D_i =
+D_i&#39;</span></li>
+<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times D_B
+\times \ldots \times D_n</span> relazione</li>
+<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
+\times D_B&#39; \times \ldots \times D_n&#39;</span> relazione</li>
+<li><span class="math inline">R_1(A_1, \ldots, B, \ldots, A_n)</span>
+schema relazionale</li>
+<li><span class="math inline">R_2(A_1&#39;, \ldots, B, \ldots,
+A_n&#39;)</span> schema relazionale</li>
+<li><span class="math inline">r_1</span> istanza di <span
+class="math inline">R_1</span></li>
+<li><span class="math inline">r_2</span> istanza di <span
+class="math inline">R_2</span></li>
+</ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>in questa situazione, si verifica che <span class="math inline">r_1
+\times r_2</span> conterrà delle tuple senza significato, poiché esiste
+un attributo con stesso nome in <span class="math inline">R_1</span> e
+in <span class="math inline">R_2</span>, ovvero <span
+class="math inline">B</span></li>
+<li>per risolvere questo problema, spesso l’operatore <span
+class="math inline">\times</span> viene utilizzato congiuntamente a
+<span class="math inline">\rho, \sigma</span> e <span
+class="math inline">\pi</span>
+<ul>
+<li>infatti, per ottenere un prodotto cartesiano con significato è
+necessario prima rinominare l’attributo in comune in uno dei due schemi
+relazionali, per differenziarli, e dunque <span
+class="math inline">R_2&#39; = \rho_{B&#39; \leftarrow B}(R_2)</span>, e
+sia <span class="math inline">r_2&#39;</span> l’istanza di <span
+class="math inline">R_2&#39;</span></li>
+<li>successivamente, facendo <span class="math inline">r_1 \times
+r_2&#39;</span>, si otterra un’istanza contenente delle tuple ancora
+senza significato, che sarà possibile rimuovere selezionando attraverso
+<span class="math inline">\sigma_{B&#39;=B}(r_1 \times
+r_2&#39;)</span></li>
+<li>infine, a questo punto si avranno due colonne perfettamente
+identiche, e dunque è sufficiente proiettare prendendo solo una delle
+colonne tra <span class="math inline">B</span> e <span
+class="math inline">B&#39;</span>, e quindi <span
+class="math inline">\pi_{A_1, \ldots, B, \ldots, A_n, A_1&#39;, \ldots,
+\hat B&#39;, \ldots, A_n&#39;}(\sigma_{B=B&#39;}(r_1 \times
+r_2&#39;))</span> è il prodotto cartesiano cercato</li>
+</ul></li>
+</ul></li>
+</ul>
+<h1 id="def-5">Def</h1>
+<ul>
+<li><strong>Join naturale</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n, D_1&#39;, \ldots ,
+D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
+n] \quad D_i = D_i&#39;</span></li>
+<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
+\times D_n&#39;</span> relazione</li>
+<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
+schema relazionale</li>
+<li><span class="math inline">r_1</span> istanza di <span
+class="math inline">R_1</span></li>
+<li><span class="math inline">r_2</span> istanza di <span
+class="math inline">R_2</span></li>
+<li><span class="math inline">r_1 \bowtie r_2</span> è detto
+<strong>join naturale di <span class="math inline">r_1</span> e <span
+class="math inline">r_2</span></strong> ⚠️ <strong>SCRIVERE BENE LA
+DEFINIZIONE</strong>
+<ul>
+<li>dunque, il join naturale costituisce il prodotto cartesiano “con
+significato” discusso precedentemente <strong>SCRIVERE BENE LA
+DEFINIZIONE</strong></li>
+<li>dunque, il join naturale costituisce il prodotto cartesiano “con
+significato” discusso precedentemente</li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="oss-1">Oss</h2>
+<ul>
+<li>⚠️ <strong>4.30</strong></li>
+</ul>
+<h2 id="oss-2">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n, D_1&#39; , \ldots ,
+D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
+n] \quad D_i = D_i&#39;</span></li>
+<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
+\times D_n&#39;</span> relazione</li>
+<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
+schema relazionale</li>
+<li><span class="math inline">\nexists A \in \{A_1, \ldots, A_n,
+A_1&#39;, \ldots, A_n&#39;\} \mid \exists A&#39; \in \{A_1, \ldots, A_n,
+A_1&#39;, \ldots, A_n&#39;\} : A = A&#39;</span>, dunque gli attributi
+di <span class="math inline">R_1</span> ed <span
+class="math inline">R_2</span> sono tutti distinti</li>
+<li><span class="math inline">r_1</span> istanza di <span
+class="math inline">R_1</span></li>
+<li><span class="math inline">r_2</span> istanza di <span
+class="math inline">R_2</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">r_1 \times r_2 = r_1 \bowtie
+r_2</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>poiché non ci sono attributi in comune tra <span
+class="math inline">R_1</span> ed <span class="math inline">R_2</span>,
+di fatto non ci sono né righe né colonne da correggere in <span
+class="math inline">r_1 \times r_2</span>, dunque necessariamente <span
+class="math inline">r_1 \times r_2 = r_1 \bowtie r_2</span></li>
+</ul></li>
+</ul>
+<hr />
+<h1 id="dipendenze-funzionali">Dipendenze funzionali</h1>
+<h2 id="def-6">Def</h2>
+<ul>
+<li><strong>Dipendenza funzionale</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X = \{A_i \mid A_i \in R(A_1, \ldots,
+A_n)\} \mid X \neq \varnothing</span></li>
+<li><span class="math inline">Y = \{A_i \mid A_i \in R(A_1, \ldots,
+A_n)\} \mid Y \neq \varnothing</span></li>
+<li><span class="math inline">X \rightarrow Y</span> è detta
+<strong>dipendenza funzionale su <span
+class="math inline">R</span></strong></li>
+<li><span class="math inline">r</span> istanza di <span
+class="math inline">R</span> <strong>soddisfa</strong> <span
+class="math inline">X \rightarrow Y \iff \forall t_1, t_2 \in R \quad
+t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y]</span></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Istanza legale</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">r</span> <strong>istanza legale di <span
+class="math inline">R</span></strong> <span class="math inline">\iff
+\forall F_i \in F \quad r</span> soddisfa <span
+class="math inline">F_i</span></li>
+</ul>
+</blockquote>
+<h2 id="def-7">Def</h2>
+<ul>
+<li><strong>Chiusura di un insieme di dipendenze
+funzionali</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">F^+ := \{F_i \in F \mid \forall r</span>
+istanza legale di <span class="math inline">R \quad r</span> soddisfa
+<span class="math inline">F\}</span> è detta <strong>chiusura di <span
+class="math inline">F</span></strong></li>
+</ul>
+</blockquote>
+<h2 id="oss-3">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">F \subseteq F^+</span></li>
+</ul></li>
+</ul>
+<h2 id="oss-4">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A, B, C, A_4, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X = ABC</span></li>
+<li><span class="math inline">Y = AB</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong></li>
+</ul>
+<h2 id="def-8">Def</h2>
+<ul>
+<li><strong>Chiave di una relazione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X = \{A_i \mid A_i \in R(A_1, \ldots,
+A_n)\}</span> è detta <strong>superchiave di <span
+class="math inline">R</span></strong> <span class="math inline">\iff
+\forall r</span> istanza di <span class="math inline">R \quad \forall
+t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1 = t_2</span></li>
+<li><span class="math inline">X</span> è detta <strong>chiave di <span
+class="math inline">R</span></strong> <span class="math inline">\iff
+X</span> è la chiave di <span class="math inline">R</span> con minor
+numero di attributi</li>
+</ul>
+</blockquote>
+<h2 id="oss-5">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K = \{A_i \mid A_i \in R(A_1, \ldots,
+A_n)\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">K</span> superchiave di <span
+class="math inline">R \iff K \rightarrow R \in F^+</span></li>
+<li><span class="math inline">K</span> chiave di <span
+class="math inline">R \iff K</span> superchiave di <span
+class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
+\rightarrow R</span></li>
+</ul></li>
+</ul>
+</body>
+</html>

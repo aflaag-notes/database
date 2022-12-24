@@ -43,29 +43,29 @@ for file in sorted(os.listdir("mds/")):
 
             out += "\n\n****\n"
 
-with open("mds/teoremi-fondamentali.md") as TF:
-    parts = TF.read().split("****")
-
-    for part in parts:
-        s2 = []
-
-        indim = False
-
-        for line in part.split("\n"):
-            if line == "- **Dim**":
-                indim = True
-
-            if line.startswith("## Oss") or line.startswith("## Cor") or line.startswith("## Lem") or line.startswith("## Teorema cinese dei resti"):
-                s2.append("\n## Teorema " + str(i) + "\n")
-                i += 1
-
-                indim = False
-                continue
-
-            if not indim:
-                s2.append(line)
-
-        out += "\n".join(s2) + "\n\n****\n"
+# with open("mds/teoremi-fondamentali.md") as TF:
+#     parts = TF.read().split("****")
+#
+#     for part in parts:
+#         s2 = []
+#
+#         indim = False
+#
+#         for line in part.split("\n"):
+#             if line == "- **Dim**":
+#                 indim = True
+#
+#             if line.startswith("## Oss") or line.startswith("## Cor") or line.startswith("## Lem") or line.startswith("## Teorema cinese dei resti"):
+#                 s2.append("\n## Teorema " + str(i) + "\n")
+#                 i += 1
+#
+#                 indim = False
+#                 continue
+#
+#             if not indim:
+#                 s2.append(line)
+#
+#         out += "\n".join(s2) + "\n\n****\n"
 
 with open("mds/everything.md", "w+") as f:
     f.write("\n".join(out.split("\n")[:-2]))
