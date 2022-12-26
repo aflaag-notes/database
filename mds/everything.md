@@ -243,7 +243,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $r$ **istanza legale di $R$** $\iff \forall F_i \in F \quad r$ soddisfa $F_i$
+> - $r$ **istanza legale di $R$ su $F$** $\iff \forall i \in [1, k] \quad r$ soddisfa $F_i$
 
 
 
@@ -258,7 +258,9 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $F^+ := \{F_i \in F \mid \forall r$ istanza legale di $R \quad r$ soddisfa $F\}$ è detta **chiusura di $F$**
+> - $L = \{r$ istanza di $R \mid r$ legale su $F\}$
+> - $F^+ := \displaystyle \bigcup_{r \in L}\{$dipendenze funzionali in $r\}$
+>   - ovvero, è l'insieme delle dipendenze funzionali derivabili da ogni istanza legale su $F$
 
 
 
@@ -281,15 +283,16 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 - **Hp**
-    - $n, k \in \mathbb{N}$
+    - $n, k \in \mathbb{n}$
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-    - $R(A, B, C, A_4, \ldots, A_n)$ schema relazionale
-    - $X = ABC$
-    - $Y = AB$
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X, Y \subseteq R(A_1, \ldots, A_n) \mid Y \subseteq X$
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
+    - $X \rightarrow Y \in F^+$
+    
 
 
 
@@ -302,7 +305,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $X = \{A_i \mid A_i \in R(A_1, \ldots, A_n)\}$ è detta **superchiave di $R$** $\iff \forall r$ istanza di $R \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1 = t_2$
+> - $X \subseteq R(A_1, \ldots, A_n)$ è detta **superchiave di $R$** $\iff \forall r$ istanza di $R \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1 = t_2$
 > - $X$ è detta **chiave di $R$** $\iff X$ è la chiave di $R$ con minor numero di attributi
 
 
@@ -315,9 +318,56 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $K = \{A_i \mid A_i \in R(A_1, \ldots, A_n)\}$
+    - $K \subseteq R(A_1, \ldots, A_n)$
 - **Th**
     - $K$ superchiave di $R \iff K \rightarrow R \in F^+$
     - $K$ chiave di $R \iff K$ superchiave di $R \land \nexists K' \subseteq K \mid K' \rightarrow R$
+
+
+
+## Definizione 10
+
+
+- **Assiomi di Armstrong**
+
+> - $n, k \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $F^A$ è l'**insieme delle dipendenze funzionali ottenute partendo da $F$ applicando gli assiomi di Armstrong**
+> - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F \implies X \rightarrow Y \in F^A$
+> - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad Y \subseteq X \implies X \rightarrow Y \in F^A$ è detto **assioma della riflessività**
+> - $\forall X, Y, Z \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F^A \implies XZ \rightarrow YZ \in F^A$ è detto **assioma dell'aumento**
+> - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z \in F^A$ è detto **assioma della transitività**
+
+- **Regole derivate dagli assiomi di Armstrong**
+
+> - $n, k \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $\forall X, Y, Z \in R(A_1, \ldots, A_n) \quad X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$ è detta **regola dell'unione**
+> - $\forall X, Y, Z \in R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$ è detta **regola della decomposizione**
+> - $\forall X, Y, Z, W \in R(A_1, \ldots, A_n) \quad X \rightarrow Y, WY \rightarrow Z \in F^A \implies WX \rightarrow Z \in F^A$ è detta **regola della pseudotransitività**
+
+
+
+## Teorema 6
+
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $F^+ = F^A$
+
 
 
