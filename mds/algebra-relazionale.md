@@ -279,6 +279,10 @@
     - $K$ superchiave di $R \iff K \rightarrow R \in F^+$
     - $K$ chiave di $R \iff K$ superchiave di $R \land \nexists K' \subseteq K \mid K' \rightarrow R$
 
+****
+
+# Assiomi di Armstrong
+
 ## Def
 
 - **Assiomi di Armstrong**
@@ -295,17 +299,22 @@
 > - $\forall X, Y, Z \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F^A \implies XZ \rightarrow YZ \in F^A$ è detto **assioma dell'aumento**
 > - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z \in F^A$ è detto **assioma della transitività**
 
-- **Regole derivate dagli assiomi di Armstrong**
+## Oss
 
-> - $n, k \in \mathbb{N}$
-> - $D_1, \ldots, D_n$ domini
-> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
-> - $F = \{F_1, \ldots, F_k\}$
-> - $\forall X, Y, Z \in R(A_1, \ldots, A_n) \quad X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$ è detta **regola dell'unione**
-> - $\forall X, Y, Z \in R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$ è detta **regola della decomposizione**
-> - $\forall X, Y, Z, W \in R(A_1, \ldots, A_n) \quad X \rightarrow Y, WY \rightarrow Z \in F^A \implies WX \rightarrow Z \in F^A$ è detta **regola della pseudotransitività**
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X, Y, Z \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$ è detta **regola dell'unione**
+- **Dim**
+    - per aumento $X \rightarrow Z \in F^A \implies XX \rightarrow XZ \in F^A \implies X \rightarrow XZ \in F^A$
+    - per aumento $X \rightarrow Y \in F^A \implies XZ \rightarrow YZ \in F^A$
+    - allora, per transitività $X \rightarrow XZ, XZ \rightarrow YZ  \in F^A \implies X \rightarrow YZ \in F^A$
 
 ## Oss
 
@@ -314,8 +323,106 @@
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X, Y, Z \subseteq R(A_1, \ldots, A_n)$
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
-    - $F^+ = F^A$
+    - $X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$ è detta **regola della decomposizione**
+- **Dim**
+    - per riflessività $Z \subseteq Y \implies Y \rightarrow Z \in F^A$
+    - per transitività $X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z \in F^A$
 
+## Oss
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X, Y, Z \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $X \rightarrow Y, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$ è detta **regola della pseudotransitività**
+- **Dim**
+    - per aumento $X \rightarrow Y \in F^A \implies XW \rightarrow YW \in F^A$
+    - per transitività $XW \rightarrow YW, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$
+
+## Oss
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $i, j \in [1, n] \mid i \lt j$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $A_i, \ldots, A_j \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $X \rightarrow A_i \ldots A_j \in F^A \iff \forall h \in [i, j]\quad X \rightarrow A_h \in F^A$
+- **Dim**
+    - per regola di decomposizione $X \rightarrow A_i \ldots A_j \in F^A \implies\forall h \in [i, j] \quad X \rightarrow A_h \in F^A$
+    - per regola dell'unione $\forall h \in [i, j] \quad X \rightarrow A_h \in F^A \implies X \rightarrow A_i \ldots A_j$
+
+## Def
+
+- **Chiusura di un insieme di attributi**
+
+> - $n, k \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $X \subseteq R(A_1, \ldots, A_n)$
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $X^+_F := \{A \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^A\}$ è detta **chiusura di $X$ rispetto ad $F$**
+>   - ovvero, è l'insieme degli attributi funzionalmente dipendenti da $X$ attraverso l'applicazione degli assiomi di Armstrong
+
+## Oss
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $X \subseteq X^+_F$
+- **Dim**
+    - per riflessività $X \subseteq X \implies X \rightarrow X \in F^A \implies X \subseteq X^+_F$ per definizione
+
+## Lem
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X, Y \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $X \rightarrow Y \in F^A \iff Y \subseteq X^+_F$
+- **Dim**
+    - $i, j \in [1, n], i \lt j \mid Y := A_i \ldots A_j$
+
+    - _seconda implicazione_
+        - $Y \subseteq X^+_F$
+    - ⚠️ **CONTINUA DA QUA**
+
+<!-- ## Oss -->
+<!---->
+<!-- - **Hp** -->
+<!--     - $n, k \in \mathbb{N}$ -->
+<!--     - $D_1, \ldots, D_n$ domini -->
+<!--     - $R \subseteq D_1 \times \ldots \times D_n$ relazione -->
+<!--     - $R(A_1, \ldots, A_n)$ schema relazionale -->
+<!--     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$ -->
+<!--     - $F = \{F_1, \ldots, F_k\}$ -->
+<!-- - **Th** -->
+<!--     - $F^+ = F^A$ -->
+<!-- - **Dim** -->
+<!--      -->

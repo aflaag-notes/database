@@ -754,6 +754,8 @@ class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
 \rightarrow R</span></li>
 </ul></li>
 </ul>
+<hr />
+<h1 id="assiomi-di-armstrong">Assiomi di Armstrong</h1>
 <h2 id="definizione-10">Definizione 10</h2>
 <ul>
 <li><strong>Assiomi di Armstrong</strong></li>
@@ -786,33 +788,6 @@ F^A</span> è detto <strong>assioma dell’aumento</strong></li>
 \in F^A</span> è detto <strong>assioma della transitività</strong></li>
 </ul>
 </blockquote>
-<ul>
-<li><strong>Regole derivate dagli assiomi di Armstrong</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n, k \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
-funzionali su <span class="math inline">R</span></li>
-<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">\forall X, Y, Z \in R(A_1, \ldots, A_n)
-\quad X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ
-\in F^A</span> è detta <strong>regola dell’unione</strong></li>
-<li><span class="math inline">\forall X, Y, Z \in R(A_1, \ldots, A_n)
-\quad X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow
-Z \in F^A</span> è detta <strong>regola della
-decomposizione</strong></li>
-<li><span class="math inline">\forall X, Y, Z, W \in R(A_1, \ldots, A_n)
-\quad X \rightarrow Y, WY \rightarrow Z \in F^A \implies WX \rightarrow
-Z \in F^A</span> è detta <strong>regola della
-pseudotransitività</strong></li>
-</ul>
-</blockquote>
 <h2 id="teorema-6">Teorema 6</h2>
 <ul>
 <li><strong>Hp</strong>
@@ -823,14 +798,166 @@ pseudotransitività</strong></li>
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
+<li><span class="math inline">X, Y, Z \subseteq R(A_1, \ldots,
+A_n)</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
 </ul></li>
 <li><strong>Th</strong>
 <ul>
-<li><span class="math inline">F^+ = F^A</span></li>
+<li><span class="math inline">X \rightarrow Y, X \rightarrow Z \in F^A
+\implies X \rightarrow YZ \in F^A</span> è detta <strong>regola
+dell’unione</strong></li>
 </ul></li>
 </ul>
+<h2 id="teorema-7">Teorema 7</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X, Y, Z \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">X \rightarrow Y \in F^A \land Z \subseteq
+Y \implies X \rightarrow Z \in F^A</span> è detta <strong>regola della
+decomposizione</strong></li>
+</ul></li>
+</ul>
+<h2 id="teorema-8">Teorema 8</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X, Y, Z \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">X \rightarrow Y, WY \rightarrow Z \in F^A
+\implies XW \rightarrow Z \in F^A</span> è detta <strong>regola della
+pseudotransitività</strong></li>
+</ul></li>
+</ul>
+<h2 id="teorema-9">Teorema 9</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">i, j \in [1, n] \mid i &lt; j</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">A_i, \ldots, A_j \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">X \rightarrow A_i \ldots A_j \in F^A \iff
+\forall h \in [i, j]\quad X \rightarrow A_h \in F^A</span></li>
+</ul></li>
+</ul>
+<h2 id="definizione-11">Definizione 11</h2>
+<ul>
+<li><strong>Chiusura di un insieme di attributi</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">X^+_F := \{A \subseteq R(A_1, \ldots, A_n)
+\mid X \rightarrow A \in F^A\}</span> è detta <strong>chiusura di <span
+class="math inline">X</span> rispetto ad <span
+class="math inline">F</span></strong>
+<ul>
+<li>ovvero, è l’insieme degli attributi funzionalmente dipendenti da
+<span class="math inline">X</span> attraverso l’applicazione degli
+assiomi di Armstrong</li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="teorema-10">Teorema 10</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">X \subseteq X^+_F</span></li>
+</ul></li>
+</ul>
+<h2 id="teorema-11">Teorema 11</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X, Y \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">X \rightarrow Y \in F^A \iff Y \subseteq
+X^+_F</span></li>
+</ul></li>
+</ul>
+<h2 id="teorema-12">Teorema 12</h2>
+<p>–&gt; <!----> <!-- - **Hp** --> <!--     - $n, k \in \mathbb{N}$ -->
+<!--     - $D_1, \ldots, D_n$ domini -->
+<!--     - $R \subseteq D_1 \times \ldots \times D_n$ relazione -->
+<!--     - $R(A_1, \ldots, A_n)$ schema relazionale -->
+<!--     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$ -->
+<!--     - $F = \{F_1, \ldots, F_k\}$ --> <!-- - **Th** -->
+<!--     - $F^+ = F^A$ --> <!-- - **Dim** --> <!--      --></p>
 </body>
 </html>
