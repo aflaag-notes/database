@@ -243,7 +243,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $r$ **istanza legale di $R$ su $F$** $\iff \forall i \in [1, k] \quad r$ soddisfa $F_i$
+> - $r$ **istanza di $R$ legale su $F$** $\iff \forall i \in [1, k] \quad r$ soddisfa $F_i$
 
 
 
@@ -261,6 +261,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $L = \{r$ istanza di $R \mid r$ legale su $F\}$
 > - $F^+ := \displaystyle \bigcup_{r \in L}\{$dipendenze funzionali in $r\}$
 >   - ovvero, è l'insieme delle dipendenze funzionali derivabili da ogni istanza legale su $F$
+>   - di fatto, ogni istanza legale in $L$ soddisferà ogni dipendenza funzionale in $F^+$
 
 
 
@@ -292,9 +293,6 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
     - $X \rightarrow Y \in F^+$
-    
-
-
 
 ## Definizione 9
 
@@ -356,11 +354,12 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $X, Y, Z \subseteq R(A_1, \ldots, A_n)$
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
-    - $X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$ è detta **regola dell'unione**
+    - $F \subseteq F^A$
+
+
 
 ## Teorema 7
 
@@ -374,7 +373,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
-    - $X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$ è detta **regola della decomposizione**
+    - $X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$ è detta **regola dell'unione**
 
 ## Teorema 8
 
@@ -388,9 +387,23 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
-    - $X \rightarrow Y, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$ è detta **regola della pseudotransitività**
+    - $X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$ è detta **regola della decomposizione**
 
 ## Teorema 9
+
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X, Y, Z \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $X \rightarrow Y, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$ è detta **regola della pseudotransitività**
+
+## Teorema 10
 
 
 - **Hp**
@@ -422,7 +435,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 10
+## Teorema 11
 
 
 - **Hp**
@@ -436,7 +449,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \subseteq X^+_F$
 
-## Teorema 11
+## Teorema 12
 
 
 - **Hp**
@@ -450,19 +463,16 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y \in F^A \iff Y \subseteq X^+_F$
 
-## Teorema 12
- -->
-<!---->
-<!-- - **Hp** -->
-<!--     - $n, k \in \mathbb{N}$ -->
-<!--     - $D_1, \ldots, D_n$ domini -->
-<!--     - $R \subseteq D_1 \times \ldots \times D_n$ relazione -->
-<!--     - $R(A_1, \ldots, A_n)$ schema relazionale -->
-<!--     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$ -->
-<!--     - $F = \{F_1, \ldots, F_k\}$ -->
-<!-- - **Th** -->
-<!--     - $F^+ = F^A$ -->
-<!-- - **Dim** -->
-<!--      -->
+## Teorema 13
 
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $F^+ = F^A$
 

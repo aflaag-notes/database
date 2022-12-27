@@ -634,8 +634,8 @@ relazionale</li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">r</span> <strong>istanza legale di <span
-class="math inline">R</span> su <span
+<li><span class="math inline">r</span> <strong>istanza di <span
+class="math inline">R</span> legale su <span
 class="math inline">F</span></strong> <span class="math inline">\iff
 \forall i \in [1, k] \quad r</span> soddisfa <span
 class="math inline">F_i</span></li>
@@ -665,6 +665,9 @@ L}\{</span>dipendenze funzionali in <span class="math inline">r\}</span>
 <ul>
 <li>ovvero, è l’insieme delle dipendenze funzionali derivabili da ogni
 istanza legale su <span class="math inline">F</span></li>
+<li>di fatto, ogni istanza legale in <span class="math inline">L</span>
+soddisferà ogni dipendenza funzionale in <span
+class="math inline">F^+</span></li>
 </ul></li>
 </ul>
 </blockquote>
@@ -798,6 +801,25 @@ F^A</span> è detto <strong>assioma dell’aumento</strong></li>
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">F \subseteq F^A</span></li>
+</ul></li>
+</ul>
+<h2 id="teorema-7">Teorema 7</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
 <li><span class="math inline">X, Y, Z \subseteq R(A_1, \ldots,
 A_n)</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
@@ -811,7 +833,7 @@ funzionali su <span class="math inline">R</span></li>
 dell’unione</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-7">Teorema 7</h2>
+<h2 id="teorema-8">Teorema 8</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -834,7 +856,7 @@ Y \implies X \rightarrow Z \in F^A</span> è detta <strong>regola della
 decomposizione</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-8">Teorema 8</h2>
+<h2 id="teorema-9">Teorema 9</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -857,7 +879,7 @@ funzionali su <span class="math inline">R</span></li>
 pseudotransitività</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-9">Teorema 9</h2>
+<h2 id="teorema-10">Teorema 10</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -908,7 +930,7 @@ assiomi di Armstrong</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-10">Teorema 10</h2>
+<h2 id="teorema-11">Teorema 11</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -929,7 +951,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">X \subseteq X^+_F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-11">Teorema 11</h2>
+<h2 id="teorema-12">Teorema 12</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -951,13 +973,24 @@ funzionali su <span class="math inline">R</span></li>
 X^+_F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-12">Teorema 12</h2>
-<p>–&gt; <!----> <!-- - **Hp** --> <!--     - $n, k \in \mathbb{N}$ -->
-<!--     - $D_1, \ldots, D_n$ domini -->
-<!--     - $R \subseteq D_1 \times \ldots \times D_n$ relazione -->
-<!--     - $R(A_1, \ldots, A_n)$ schema relazionale -->
-<!--     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$ -->
-<!--     - $F = \{F_1, \ldots, F_k\}$ --> <!-- - **Th** -->
-<!--     - $F^+ = F^A$ --> <!-- - **Dim** --> <!--      --></p>
+<h2 id="teorema-13">Teorema 13</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">F^+ = F^A</span></li>
+</ul></li>
+</ul>
 </body>
 </html>
