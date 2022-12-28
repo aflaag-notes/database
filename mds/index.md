@@ -5,3 +5,4 @@
     - [Operazioni](https://ph04.github.io/database/html/algebra-relazionale.html#operazioni)
 - [Teoria relazionale](https://ph04.github.io/database/html/teoria-relazionale.html)
     - [Assiomi di Armstrong](https://ph04.github.io/database/html/teoria-relazionale.html#assiomi-di-armstrong)
+    - [Terza forma normale](https://ph04.github.io/database/html/teoria-relazionale.html#terza-forma-normale)
