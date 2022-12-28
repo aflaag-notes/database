@@ -197,13 +197,16 @@
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
-<li><span class="math inline">X = \{A_i \mid A_i \in R(A_1, \ldots,
-A_n)\} \mid X \neq \varnothing</span></li>
-<li><span class="math inline">Y = \{A_i \mid A_i \in R(A_1, \ldots,
-A_n)\} \mid Y \neq \varnothing</span></li>
+<li><span class="math inline">X, Y \subseteq R(A_1, \ldots, A_n) \mid X,
+Y \neq \varnothing</span></li>
 <li><span class="math inline">X \rightarrow Y</span> è detta
 <strong>dipendenza funzionale su <span
-class="math inline">R</span></strong></li>
+class="math inline">R</span></strong>
+<ul>
+<li><span class="math inline">X</span> è detto
+<strong>determinante</strong>, <span class="math inline">Y</span> è
+detto <strong>determinato</strong></li>
+</ul></li>
 <li><span class="math inline">r</span> istanza di <span
 class="math inline">R</span> <strong>soddisfa</strong> <span
 class="math inline">X \rightarrow Y \iff \forall t_1, t_2 \in R \quad
@@ -752,7 +755,7 @@ X^+_F \implies X \rightarrow Y \in F^A</span></li>
 <h1 id="terza-forma-normale">Terza forma normale</h1>
 <h2 id="def-4">Def</h2>
 <ul>
-<li><strong>Chiave di una relazione</strong></li>
+<li><strong>Chiave e superchiave di una relazione</strong></li>
 </ul>
 <blockquote>
 <ul>
@@ -798,7 +801,111 @@ class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
 </ul>
 <h2 id="def-5">Def</h2>
 <ul>
+<li><strong>Attributo primo</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \in R(A_1, \ldots, A_n)</span> è
+<strong>primo</strong> <span class="math inline">\iff \exists K
+\subseteq R(A_1, \ldots, A_n)</span> chiave di <span
+class="math inline">R \mid X \in K</span></li>
+</ul>
+</blockquote>
+<h2 id="def-6">Def</h2>
+<ul>
 <li><strong>Terza Forma Normale</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">R</span> è in <strong>terza forma
+normale</strong> <span class="math inline">\iff \forall A \in R(A_1,
+\ldots, A_n), X \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in
+F^+, A \notin X \quad A \in K \lor K \subseteq X</span>
+<ul>
+<li>ovvero, per ogni dipendenza funzionale non banale in <span
+class="math inline">F^+</span>, o il determinante è superchiave, o il
+determinato è primo</li>
+<li>la terza forma normale garantisce che non ci siano problemi di
+ridondanza, dunque non vi sono problemi di inserimento, di aggiornamento
+e di eliminazione</li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="oss-10">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">R</span> in terza forma normale <span
+class="math inline">\iff \forall X, Y \subseteq R(A_1, \ldots, A_n) \mid
+Y:= A_i \ldots A_j, X \rightarrow Y \in F^+, Y \nsubseteq X \quad
+\forall h \in [i, j] \quad A_h \in K \lor K \subseteq X</span>, dunque
+basta decomporre <span class="math inline">X \rightarrow Y \in
+F^+</span> e controllare gli <span class="math inline">A_i \ldots
+A_j</span></li>
+</ul></li>
+</ul>
+<h2 id="def-7">Def</h2>
+<ul>
+<li><strong>Dipendenza parziale</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">A \in R(A_1, \ldots, A_n)</span></li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots, A_n) \mid X
+\rightarrow A \in F^+, A \notin X</span></li>
+<li><span class="math inline">X \rightarrow A \in F^+</span> è detta
+<strong>dipendenza parziale su <span
+class="math inline">R</span></strong> <span class="math inline">\iff
+A</span> non primo e <span class="math inline">X \subset K</span>
+<ul>
+<li>in particolare <span class="math inline">X \neq K</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Dipendenza transitiva</strong></li>
 </ul>
 <blockquote>
 <ul>
@@ -811,11 +918,141 @@ relazionale</li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">R</span> è in <strong>terza forma
-normale</strong> <span class="math inline">\iff \forall X, A \subseteq
-R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^+ \quad A \nsubseteq
-X</span></li>
+<li><span class="math inline">A \in R(A_1, \ldots, A_n)</span></li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots, A_n) \mid X
+\rightarrow A \in F^+, A \notin X</span></li>
+<li><span class="math inline">X \rightarrow A \in F^+</span> è detta
+<strong>dipendenza parziale su <span
+class="math inline">R</span></strong> <span class="math inline">\iff
+A</span> non primo e <span class="math inline">\forall K \subseteq
+R(A_1, \ldots, A_n)</span> chiave di <span class="math inline">R \quad K
+\cap X = \varnothing \lor X \subset K</span>
+<ul>
+<li>in particolare <span class="math inline">\forall K \subseteq R(A_1,
+\ldots, A_n)</span> chiave di <span class="math inline">R \quad X \neq
+K</span></li>
+</ul></li>
 </ul>
 </blockquote>
+<h2 id="oss-11">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">R</span> in terza forma normale <span
+class="math inline">\iff \nexists X, Y \subseteq R(A_1, \ldots, A_n)
+\mid X \rightarrow Y \in F^+</span> dipendenza parziale o <span
+class="math inline">X \rightarrow Y \in F^+</span> dipendenza
+transitiva</li>
+</ul></li>
+</ul>
+<h2 id="def-8">Def</h2>
+<ul>
+<li><strong>Forma Normale di Boyce-Codd</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">R</span> è in <strong>forma normale di
+Boyce-Codd</strong> <span class="math inline">\iff \forall X \subseteq
+R(A_1, \ldots, A_n), X</span> determinante <span
+class="math inline">\exists K \subseteq R(A_1, \ldots, A_n)</span>
+superchiave <span class="math inline">\mid X \subseteq K</span>
+<ul>
+<li>questa forma normale preserva le dipendenze funzionali soddisfatte
+da ogni istanza legale di ogni sottoschema di <span
+class="math inline">R</span>, senza perdita di informazioni</li>
+<li>inoltre, permette di ricostruire attraverso il join naturale ogni
+istanza legale di ogni sotto schema di <span
+class="math inline">R</span>, senza aggiunta di informazioni</li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="oss-12">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale <span class="math inline">\mid R</span> in forma normale di
+Boyce-Codd</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">R</span> in terza forma normale</li>
+</ul></li>
+</ul>
+<h2 id="alg">Alg</h2>
+<ul>
+<li><p><strong>Calcolo di <span
+class="math inline">X^+_F</span></strong></p></li>
+<li><p><strong>Input</strong></p>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><p><strong>Output</strong></p>
+<ul>
+<li><span class="math inline">Z = X^+_F</span></li>
+</ul></li>
+<li><p><strong>Algoritmo</strong></p>
+<ul>
+<li><span class="math inline">Z = X</span></li>
+<li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
+\exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
+\in V \land Y \subseteq X\}</span></li>
+<li><strong>while</strong> <span class="math inline">S \notin Z</span>:
+<ul>
+<li><span class="math inline">Z = Z \cup S</span></li>
+<li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
+\exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
+\in V \land Y \subseteq X\}</span></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Dim</strong></p>
+<ul>
+<li>di fatto, il loop <strong>while</strong> applica gli assiomi di
+Armstrong</li>
+<li>⚠️ <strong>incompleto, riparti da qui</strong></li>
+</ul></li>
+</ul>
 </body>
 </html>
