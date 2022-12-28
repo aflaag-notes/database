@@ -1205,9 +1205,7 @@ funzionali su <span class="math inline">R</span></li>
 </ul>
 <h2 id="teorema-17">Teorema 17</h2>
 <ul>
-<li><p><strong>Calcolo di <span
-class="math inline">X^+_F</span></strong></p></li>
-<li><p><strong>Input</strong></p>
+<li><strong>Input</strong>
 <ul>
 <li><span class="math inline">n, k \in \mathbb{N}</span></li>
 <li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
@@ -1221,22 +1219,22 @@ A_n)</span></li>
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
 </ul></li>
-<li><p><strong>Output</strong></p>
+<li><strong>Output</strong>
 <ul>
 <li><span class="math inline">Z = X^+_F</span></li>
 </ul></li>
-<li><p><strong>Algoritmo</strong></p>
+<li><strong>Algoritmo</strong>
 <ul>
 <li><span class="math inline">Z = X</span></li>
 <li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
 \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
-\in V \land Y \subseteq X\}</span></li>
+\in V \land Y \subseteq Z\}</span></li>
 <li><strong>while</strong> <span class="math inline">S \notin Z</span>:
 <ul>
 <li><span class="math inline">Z = Z \cup S</span></li>
 <li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
 \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
-\in V \land Y \subseteq X\}</span></li>
+\in V \land Y \subseteq Z\}</span></li>
 </ul></li>
 </ul></li>
 </ul>

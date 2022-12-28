@@ -615,8 +615,6 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 ## Teorema 17
 
 
-- **Calcolo di $X^+_F$**
-    
 - **Input**
     - $n, k \in \mathbb{N}$
     - $D_1, \ldots, D_n$ domini
@@ -629,8 +627,8 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $Z = X^+_F$
 - **Algoritmo**
     - $Z = X$
-    - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq X\}$
+    - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
     - **while** $S \notin Z$:
         - $Z = Z \cup S$
-        - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq X\}$
+        - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
 

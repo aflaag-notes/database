@@ -391,8 +391,6 @@
 
 ## Alg
 
-- **Calcolo di $X^+_F$**
-    
 - **Input**
     - $n, k \in \mathbb{N}$
     - $D_1, \ldots, D_n$ domini
@@ -405,10 +403,10 @@
     - $Z = X^+_F$
 - **Algoritmo**
     - $Z = X$
-    - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq X\}$
+    - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
     - **while** $S \notin Z$:
         - $Z = Z \cup S$
-        - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq X\}$
+        - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
 - **Dim**
     - di fatto, il loop **while** applica gli assiomi di Armstrong
     - ⚠️ **incompleto, riparti da qui**
