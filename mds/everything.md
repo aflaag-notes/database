@@ -76,6 +76,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 - **Proiezione**
 
+- ⚠️ **RISCRIVI**
 > - $n \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
@@ -216,9 +217,10 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $r_1 \times r_2 = r_1 \bowtie r_2$
 
-****
 
-# Dipendenze funzionali
+****
+# Teoria relazionale
+
 
 
 ## Definizione 7
@@ -294,40 +296,12 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y \in F^+$
 
-## Definizione 9
-
-
-- **Chiave di una relazione**
-
-> - $n \in \mathbb{N}$
-> - $D_1, \ldots, D_n$ domini
-> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $X \subseteq R(A_1, \ldots, A_n)$ è detta **superchiave di $R$** $\iff \forall r$ istanza di $R \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1 = t_2$
-> - $X$ è detta **chiave di $R$** $\iff X$ è la chiave di $R$ con minor numero di attributi
-
-
-
-## Teorema 5
-
-
-- **Hp**
-    - $n \in \mathbb{N}$
-    - $D_1, \ldots, D_n$ domini
-    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-    - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $K \subseteq R(A_1, \ldots, A_n)$
-- **Th**
-    - $K$ superchiave di $R \iff K \rightarrow R \in F^+$
-    - $K$ chiave di $R \iff K$ superchiave di $R \land \nexists K' \subseteq K \mid K' \rightarrow R$
-
 ****
 
 # Assiomi di Armstrong
 
 
-
-## Definizione 10
+## Definizione 9
 
 
 - **Assiomi di Armstrong**
@@ -346,7 +320,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 6
+## Teorema 5
 
 
 - **Hp**
@@ -361,7 +335,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 7
+## Teorema 6
 
 
 - **Hp**
@@ -375,7 +349,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$ è detta **regola dell'unione**
 
-## Teorema 8
+## Teorema 7
 
 
 - **Hp**
@@ -389,7 +363,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$ è detta **regola della decomposizione**
 
-## Teorema 9
+## Teorema 8
 
 
 - **Hp**
@@ -403,7 +377,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$ è detta **regola della pseudotransitività**
 
-## Teorema 10
+## Teorema 9
 
 
 - **Hp**
@@ -418,7 +392,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow A_i \ldots A_j \in F^A \iff \forall h \in [i, j]\quad X \rightarrow A_h \in F^A$
 
-## Definizione 11
+## Definizione 10
 
 
 - **Chiusura di un insieme di attributi**
@@ -435,7 +409,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 11
+## Teorema 10
 
 
 - **Hp**
@@ -449,7 +423,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \subseteq X^+_F$
 
-## Teorema 12
+## Teorema 11
 
 
 - **Hp**
@@ -463,7 +437,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y \in F^A \iff Y \subseteq X^+_F$
 
-## Teorema 13
+## Teorema 12
 
 
 - **Hp**
@@ -475,4 +449,52 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
     - $F^+ = F^A$
+
+****
+
+# Terza forma normale
+
+
+## Definizione 11
+
+
+- **Chiave di una relazione**
+
+> - $n \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $X \subseteq R(A_1, \ldots, A_n)$ è detta **superchiave di $R$** $\iff \forall r$ istanza di $R \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1 = t_2$
+> - $X$ è detta **chiave di $R$** $\iff X$ è la chiave di $R$ con minor numero di attributi
+
+
+
+## Teorema 13
+
+
+- **Hp**
+    - $n \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $K \subseteq R(A_1, \ldots, A_n)$
+- **Th**
+    - $K$ superchiave di $R \iff K \rightarrow R \in F^+$
+    - $K$ chiave di $R \iff K$ superchiave di $R \land \nexists K' \subseteq K \mid K' \rightarrow R$
+
+
+
+## Definizione 12
+
+
+- **Terza Forma Normale**
+
+> - $n, k \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $R$ è in **terza forma normale** $\iff \forall X, A \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^+ \quad A \nsubseteq X$
+
 

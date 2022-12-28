@@ -184,412 +184,8 @@
 <header id="title-block-header">
 <h1 class="title"> </h1>
 </header>
-<h1 id="disclaimer">DISCLAIMER</h1>
-<p>Questo è un file che contiene una lista di tutti i teoremi,
-osservazioni, definizioni, esempi, lemmi, corollari, formule e
-proposizioni <strong>senza alcuna dimostrazione</strong>, di conseguenza
-molte informazioni risulteranno essere senza alcun contesto se già non
-si conosce la materia. Detto questo, buona lettura.</p>
-<hr />
-<h1 id="algebra-relazionale">Algebra relazionale</h1>
-<h2 id="definizione-1">Definizione 1</h2>
-<ul>
-<li><strong>Dominio</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">A</span> insieme finito o infinito</li>
-<li><span class="math inline">A</span>, in algebra relazionale, è detto
-<strong>dominio</strong></li>
-</ul>
-</blockquote>
-<h2 id="definizione-2">Definizione 2</h2>
-<ul>
-<li><strong>Prodotto cartesiano</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">D_1 \times \ldots \times D_n := \{v_1,
-\ldots, v_n) \mid v_1 \in D_1, \ldots , v_n \in D_n\}</span> è detto
-<strong>prodotto cartesiano dei domini <span class="math inline">D_1,
-\ldots D_n</span></strong></li>
-</ul>
-</blockquote>
-<h2 id="definizione-3">Definizione 3</h2>
-<ul>
-<li><strong>Relazione</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots , D_n</span> domini</li>
-<li><span class="math inline">k \in [1, n]</span></li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_k</span> è detta <strong>relazione di grado <span
-class="math inline">k</span></strong>
-<ul>
-<li><span class="math inline">(t_1, \ldots, t_k) \in R</span> è detta
-<strong>tupla di cardinalità <span
-class="math inline">k</span></strong></li>
-<li><span class="math inline">\forall i \in [1, k] \quad (t_1, \ldots,
-t_k)[i] = t_i</span></li>
-<li><span class="math inline">\forall a, b \in [1, k] \mid a &lt; b
-\quad (t_1, \ldots, t_k)[a, b] = (t_a, \ldots, t_b)</span></li>
-</ul></li>
-</ul>
-</blockquote>
-<h2 id="definizione-4">Definizione 4</h2>
-<ul>
-<li><strong>Schema relazionale</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R(A_1, \ldots, A_n)</span> è detto
-<strong>schema relazionale</strong>
-<ul>
-<li><span class="math inline">R</span>, in algebra relazionale, è
-categorizzata tramite <strong>attributi</strong>, denotati con <span
-class="math inline">A_i</span>, nomi con i quali si etichettano le
-colonne della tabella, dunque uno schema relazionale è l’insieme delle
-etichette</li>
-<li><span class="math inline">\forall i \in [1, n] \quad
-\textrm{dom}(A_i) := D_i</span> è detto <strong>dominio di <span
-class="math inline">A_i</span></strong></li>
-<li><span class="math inline">\forall i \in [1, n] \quad A_i \in
-\textrm{dom}(A_i)</span></li>
-</ul></li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>Istanza di una relazione</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">k \in [1, n]</span></li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_k</span> relazione</li>
-<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">D_1, \ldots , D_k</span>, l’insieme delle
-tuple di <span class="math inline">R</span>, è detta <strong>istanza
-della relazione <span class="math inline">R</span></strong></li>
-</ul>
-</blockquote>
-<hr />
-<h1 id="operazioni">Operazioni</h1>
-<h2 id="definizione-5">Definizione 5</h2>
-<ul>
-<li><p><strong>Proiezione</strong></p></li>
-<li><p>!!! <strong>RISCRIVI</strong> &gt; - <span class="math inline">n
-\in \mathbb{N}</span> &gt; - <span class="math inline">D_1, \ldots,
-D_n</span> domini &gt; - <span class="math inline">R \subseteq D_1
-\times \ldots \times D_n</span> relazione &gt; - <span
-class="math inline">R(A_1, \ldots, A_n)</span> schema relazionale &gt; -
-<span class="math inline">a, b \in [1, n] \mid a &lt; b</span> &gt; -
-<span class="math inline">\pi_{A_a, \ldots, A_b}(R) := D_a \times \ldots
-\times D_b</span> è detta <strong>proiezione di <span
-class="math inline">R</span></strong>, associata ad uno schema
-relazionale <span class="math inline">R(A_a, \ldots,
-A_b)</span></p></li>
-<li><p><strong>Selezione</strong></p></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">C</span> espressione booleana</li>
-<li><span class="math inline">\sigma_C(R) \subseteq D_1 \times \ldots
-\times D_n</span> è detta <strong>selezione di <span
-class="math inline">R</span></strong>
-<ul>
-<li>corrisponde all’insieme delle righe della tabella che rendono la
-condizione <span class="math inline">C</span> vera</li>
-</ul></li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>Rinominazione</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">R&#39; = \rho_{A_1&#39; \leftarrow
-A_1}(R)</span>, dove <span class="math inline">\rho</span> è detto
-<strong>operatore di rinominazione</strong>
-<ul>
-<li><span class="math inline">R&#39;</span> sarà uno schema relazionale
-con la stessa istanza di <span class="math inline">R</span>, ma con
-<span class="math inline">A_1</span> rinominato con <span
-class="math inline">A_1&#39;</span></li>
-</ul></li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>Unione</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n, D_1&#39; ,\ldots,
-D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
-n] \quad D_i = D_i&#39;</span></li>
-<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
-\times D_n&#39;</span> relazione</li>
-<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
-schema relazionale</li>
-<li><span class="math inline">r_1</span> istanza di <span
-class="math inline">R_1</span></li>
-<li><span class="math inline">r_2</span> istanza di <span
-class="math inline">R_2</span></li>
-<li><span class="math inline">r_1 \cup r_2 := \{t \mid t \in r_1 \lor t
-\in r_2\}</span> è detta <strong>unione delle istanze <span
-class="math inline">r_1</span> e <span
-class="math inline">r_2</span></strong>
-<ul>
-<li>dunque, l’unione di istanze è definita solamente per istanze con
-stesso numero di attributi, e attributi con stesso dominio</li>
-</ul></li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>Differenza</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n, D_1&#39; , \ldots ,
-D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
-n] \quad D_i = D_i&#39;</span></li>
-<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
-\times D_n&#39;</span> relazione</li>
-<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
-schema relazionale</li>
-<li><span class="math inline">r_1</span> istanza di <span
-class="math inline">R_1</span></li>
-<li><span class="math inline">r_2</span> istanza di <span
-class="math inline">R_2</span></li>
-<li><span class="math inline">r_2 - r_1 := \{t \mid t \in r_2 \land t
-\notin r_1\}</span> è detta <strong>differenza delle istanze <span
-class="math inline">r_1</span> e <span
-class="math inline">r_2</span></strong>
-<ul>
-<li>dunque, la differenza di istanze è definita solamente per istanze
-con stesso numero di attributi, e attributi con stesso dominio</li>
-</ul></li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>Intersezione</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1 , \ldots , D_n , D_1&#39; , \ldots ,
-D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
-n] \quad D_i = D_i&#39;</span></li>
-<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
-\times D_n&#39;</span> relazione</li>
-<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
-schema relazionale</li>
-<li><span class="math inline">r_1</span> istanza di <span
-class="math inline">R_1</span></li>
-<li><span class="math inline">r_2</span> istanza di <span
-class="math inline">R_2</span></li>
-<li><span class="math inline">r_1 \cap r_2 := r_2 - (r_2 - r_1)</span> è
-detta <strong>intersezione delle istanze <span
-class="math inline">r_1</span> e <span
-class="math inline">r_2</span></strong>
-<ul>
-<li>dunque, la differenza di istanze è definita solamente per istanze
-con stesso numero di attributi, e attributi con stesso dominio</li>
-</ul></li>
-</ul>
-</blockquote>
-<ul>
-<li><strong>Prodotto cartesiano</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1 , \ldots , D_n, D_1&#39; , \ldots ,
-D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
-n] \quad D_i = D_i&#39;</span></li>
-<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
-\times D_n&#39;</span> relazione</li>
-<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
-schema relazionale</li>
-<li><span class="math inline">r_1</span> istanza di <span
-class="math inline">R_1</span></li>
-<li><span class="math inline">r_2</span> istanza di <span
-class="math inline">R_2</span></li>
-<li><span class="math inline">r_1 \times r_2 := \{(t_1, t_2) \mid t_1
-\in r_1 \land t_2 \in r_2\}</span> è detto <strong>prodotto cartesiano
-delle istanze <span class="math inline">r_2</span> e <span
-class="math inline">r_2</span></strong></li>
-</ul>
-</blockquote>
-<h2 id="definizione-6">Definizione 6</h2>
-<ul>
-<li><strong>Hp</strong>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1 , \ldots, D_B , \ldots , D_n, D_1&#39;
-, \ldots , D_B&#39; , \ldots , D_n&#39;</span> domini <span
-class="math inline">\mid \forall i \in [1, n] \quad D_i =
-D_i&#39;</span></li>
-<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times D_B
-\times \ldots \times D_n</span> relazione</li>
-<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
-\times D_B&#39; \times \ldots \times D_n&#39;</span> relazione</li>
-<li><span class="math inline">R_1(A_1, \ldots, B, \ldots, A_n)</span>
-schema relazionale</li>
-<li><span class="math inline">R_2(A_1&#39;, \ldots, B, \ldots,
-A_n&#39;)</span> schema relazionale</li>
-<li><span class="math inline">r_1</span> istanza di <span
-class="math inline">R_1</span></li>
-<li><span class="math inline">r_2</span> istanza di <span
-class="math inline">R_2</span></li>
-</ul></li>
-<li><strong>Oss</strong>
-<ul>
-<li>in questa situazione, si verifica che <span class="math inline">r_1
-\times r_2</span> conterrà delle tuple senza significato, poiché esiste
-un attributo con stesso nome in <span class="math inline">R_1</span> e
-in <span class="math inline">R_2</span>, ovvero <span
-class="math inline">B</span></li>
-<li>per risolvere questo problema, spesso l’operatore <span
-class="math inline">\times</span> viene utilizzato congiuntamente a
-<span class="math inline">\rho, \sigma</span> e <span
-class="math inline">\pi</span>
-<ul>
-<li>infatti, per ottenere un prodotto cartesiano con significato è
-necessario prima rinominare l’attributo in comune in uno dei due schemi
-relazionali, per differenziarli, e dunque <span
-class="math inline">R_2&#39; = \rho_{B&#39; \leftarrow B}(R_2)</span>, e
-sia <span class="math inline">r_2&#39;</span> l’istanza di <span
-class="math inline">R_2&#39;</span></li>
-<li>successivamente, facendo <span class="math inline">r_1 \times
-r_2&#39;</span>, si otterra un’istanza contenente delle tuple ancora
-senza significato, che sarà possibile rimuovere selezionando attraverso
-<span class="math inline">\sigma_{B&#39;=B}(r_1 \times
-r_2&#39;)</span></li>
-<li>infine, a questo punto si avranno due colonne perfettamente
-identiche, e dunque è sufficiente proiettare prendendo solo una delle
-colonne tra <span class="math inline">B</span> e <span
-class="math inline">B&#39;</span>, e quindi <span
-class="math inline">\pi_{A_1, \ldots, B, \ldots, A_n, A_1&#39;, \ldots,
-\hat B&#39;, \ldots, A_n&#39;}(\sigma_{B=B&#39;}(r_1 \times
-r_2&#39;))</span> è il prodotto cartesiano cercato</li>
-</ul></li>
-</ul></li>
-</ul>
-<h1 id="def">Def</h1>
-<ul>
-<li><strong>Join naturale</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n, D_1&#39;, \ldots ,
-D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
-n] \quad D_i = D_i&#39;</span></li>
-<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
-\times D_n&#39;</span> relazione</li>
-<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
-schema relazionale</li>
-<li><span class="math inline">r_1</span> istanza di <span
-class="math inline">R_1</span></li>
-<li><span class="math inline">r_2</span> istanza di <span
-class="math inline">R_2</span></li>
-<li><span class="math inline">r_1 \bowtie r_2</span> è detto
-<strong>join naturale di <span class="math inline">r_1</span> e <span
-class="math inline">r_2</span></strong> !!! <strong>SCRIVERE BENE LA
-DEFINIZIONE</strong>
-<ul>
-<li>dunque, il join naturale costituisce il prodotto cartesiano “con
-significato” discusso precedentemente <strong>SCRIVERE BENE LA
-DEFINIZIONE</strong></li>
-<li>dunque, il join naturale costituisce il prodotto cartesiano “con
-significato” discusso precedentemente</li>
-</ul></li>
-</ul>
-</blockquote>
-<h2 id="teorema-1">Teorema 1</h2>
-<ul>
-<li>!!! <strong>4.30</strong></li>
-</ul>
-<h2 id="teorema-2">Teorema 2</h2>
-<ul>
-<li><strong>Hp</strong>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n, D_1&#39; , \ldots ,
-D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
-n] \quad D_i = D_i&#39;</span></li>
-<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
-\times D_n&#39;</span> relazione</li>
-<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
-schema relazionale</li>
-<li><span class="math inline">\nexists A \in \{A_1, \ldots, A_n,
-A_1&#39;, \ldots, A_n&#39;\} \mid \exists A&#39; \in \{A_1, \ldots, A_n,
-A_1&#39;, \ldots, A_n&#39;\} : A = A&#39;</span>, dunque gli attributi
-di <span class="math inline">R_1</span> ed <span
-class="math inline">R_2</span> sono tutti distinti</li>
-<li><span class="math inline">r_1</span> istanza di <span
-class="math inline">R_1</span></li>
-<li><span class="math inline">r_2</span> istanza di <span
-class="math inline">R_2</span></li>
-</ul></li>
-<li><strong>Th</strong>
-<ul>
-<li><span class="math inline">r_1 \times r_2 = r_1 \bowtie
-r_2</span></li>
-</ul></li>
-</ul>
-<hr />
 <h1 id="teoria-relazionale">Teoria relazionale</h1>
-<h2 id="definizione-7">Definizione 7</h2>
+<h2 id="def">Def</h2>
 <ul>
 <li><strong>Dipendenza funzionale</strong></li>
 </ul>
@@ -635,7 +231,7 @@ class="math inline">F</span></strong> <span class="math inline">\iff
 class="math inline">F_i</span></li>
 </ul>
 </blockquote>
-<h2 id="definizione-8">Definizione 8</h2>
+<h2 id="def-1">Def</h2>
 <ul>
 <li><strong>Chiusura di un insieme di dipendenze
 funzionali</strong></li>
@@ -665,7 +261,7 @@ class="math inline">F^+</span></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-3">Teorema 3</h2>
+<h2 id="oss">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -684,7 +280,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F \subseteq F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-4">Teorema 4</h2>
+<h2 id="oss-1">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -704,10 +300,22 @@ funzionali su <span class="math inline">R</span></li>
 <ul>
 <li><span class="math inline">X \rightarrow Y \in F^+</span></li>
 </ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li><span class="math inline">\forall r</span> istanza di <span
+class="math inline">R</span> legale su <span class="math inline">F \mid
+\exists t_1, t_2 \in r : t_1[X] = t_2[X]</span>, poiché <span
+class="math inline">Y \subseteq X</span> si ha necessariamente che <span
+class="math inline">t_1[Y] = t_2[Y]</span>, allora <span
+class="math inline">t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y] \implies X
+\rightarrow Y</span> è soddisfatta da <span class="math inline">r
+\implies X \rightarrow Y \in F^+</span> per definizione di <span
+class="math inline">F^+</span></li>
+</ul></li>
 </ul>
 <hr />
 <h1 id="assiomi-di-armstrong">Assiomi di Armstrong</h1>
-<h2 id="definizione-9">Definizione 9</h2>
+<h2 id="def-2">Def</h2>
 <ul>
 <li><strong>Assiomi di Armstrong</strong></li>
 </ul>
@@ -739,7 +347,7 @@ F^A</span> è detto <strong>assioma dell’aumento</strong></li>
 \in F^A</span> è detto <strong>assioma della transitività</strong></li>
 </ul>
 </blockquote>
-<h2 id="teorema-5">Teorema 5</h2>
+<h2 id="oss-2">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -758,7 +366,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F \subseteq F^A</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-6">Teorema 6</h2>
+<h2 id="oss-3">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -780,8 +388,18 @@ funzionali su <span class="math inline">R</span></li>
 \implies X \rightarrow YZ \in F^A</span> è detta <strong>regola
 dell’unione</strong></li>
 </ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>per aumento <span class="math inline">X \rightarrow Z \in F^A
+\implies XX \rightarrow XZ \in F^A \implies X \rightarrow XZ \in
+F^A</span></li>
+<li>per aumento <span class="math inline">X \rightarrow Y \in F^A
+\implies XZ \rightarrow YZ \in F^A</span></li>
+<li>allora, per transitività <span class="math inline">X \rightarrow XZ,
+XZ \rightarrow YZ \in F^A \implies X \rightarrow YZ \in F^A</span></li>
+</ul></li>
 </ul>
-<h2 id="teorema-7">Teorema 7</h2>
+<h2 id="oss-4">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -803,8 +421,15 @@ funzionali su <span class="math inline">R</span></li>
 Y \implies X \rightarrow Z \in F^A</span> è detta <strong>regola della
 decomposizione</strong></li>
 </ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>per riflessività <span class="math inline">Z \subseteq Y \implies Y
+\rightarrow Z \in F^A</span></li>
+<li>per transitività <span class="math inline">X \rightarrow Y, Y
+\rightarrow Z \in F^A \implies X \rightarrow Z \in F^A</span></li>
+</ul></li>
 </ul>
-<h2 id="teorema-8">Teorema 8</h2>
+<h2 id="oss-5">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -826,13 +451,20 @@ funzionali su <span class="math inline">R</span></li>
 \implies XW \rightarrow Z \in F^A</span> è detta <strong>regola della
 pseudotransitività</strong></li>
 </ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>per aumento <span class="math inline">X \rightarrow Y \in F^A
+\implies XW \rightarrow YW \in F^A</span></li>
+<li>per transitività <span class="math inline">XW \rightarrow YW, WY
+\rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A</span></li>
+</ul></li>
 </ul>
-<h2 id="teorema-9">Teorema 9</h2>
+<h2 id="oss-6">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
 <li><span class="math inline">n, k \in \mathbb{N}</span></li>
-<li><span class="math inline">i, j \in [1, n] \mid i &lt; j</span></li>
+<li><span class="math inline">i, j \in [1, n] \mid i \lt j</span></li>
 <li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
 <li><span class="math inline">R \subseteq D_1 \times \ldots \times
 D_n</span> relazione</li>
@@ -849,8 +481,17 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">X \rightarrow A_i \ldots A_j \in F^A \iff
 \forall h \in [i, j]\quad X \rightarrow A_h \in F^A</span></li>
 </ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>per regola di decomposizione <span class="math inline">X \rightarrow
+A_i \ldots A_j \in F^A \implies\forall h \in [i, j] \quad X \rightarrow
+A_h \in F^A</span></li>
+<li>per regola dell’unione <span class="math inline">\forall h \in [i,
+j] \quad X \rightarrow A_h \in F^A \implies X \rightarrow A_i \ldots
+A_j</span></li>
+</ul></li>
 </ul>
-<h2 id="definizione-10">Definizione 10</h2>
+<h2 id="def-3">Def</h2>
 <ul>
 <li><strong>Chiusura di un insieme di attributi</strong></li>
 </ul>
@@ -878,7 +519,7 @@ assiomi di Armstrong</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-10">Teorema 10</h2>
+<h2 id="oss-7">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -898,8 +539,14 @@ funzionali su <span class="math inline">R</span></li>
 <ul>
 <li><span class="math inline">X \subseteq X^+_F</span></li>
 </ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>per riflessività <span class="math inline">X \subseteq X \implies X
+\rightarrow X \in F^A \implies X \subseteq X^+_F</span> per
+definizione</li>
+</ul></li>
 </ul>
-<h2 id="teorema-11">Teorema 11</h2>
+<h2 id="lem">Lem</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -920,8 +567,21 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">X \rightarrow Y \in F^A \iff Y \subseteq
 X^+_F</span></li>
 </ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>siano <span class="math inline">i, j \in [1, n], i \lt j \mid Y :=
+A_i \ldots A_j</span></li>
+<li><span class="math inline">X \rightarrow Y \in F^A \iff X \rightarrow
+A_i \ldots A_j \in F^A</span>, allora per dimostrazione precedente <span
+class="math inline">X \rightarrow A_i \ldots A_j \in F^A \iff \forall h
+\in [i, j] \quad X \rightarrow A_h \in F^A</span>, allora per
+definizione di <span class="math inline">X^+_F</span> si ha che <span
+class="math inline">\forall h \in [i, j] \quad X \rightarrow A_h \in F^A
+\iff \forall h \in [i, j] \quad A_h \in X^+_F \iff A_i \ldots A_j
+\subseteq X^+_F \iff Y \subseteq X^+_F</span></li>
+</ul></li>
 </ul>
-<h2 id="teorema-12">Teorema 12</h2>
+<h2 id="oss-8">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -939,10 +599,158 @@ funzionali su <span class="math inline">R</span></li>
 <ul>
 <li><span class="math inline">F^+ = F^A</span></li>
 </ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li><span class="math inline">F^+ \supseteq F^A</span>
+<ul>
+<li>siano <span class="math inline">X, Y \subseteq R(A_1, \ldots, A_n)
+\mid X \rightarrow Y \in F^A</span></li>
+<li><em>caso base</em>
+<ul>
+<li>per definizione <span class="math inline">F \subseteq F^A</span>,
+allora avendo applicato <span class="math inline">0</span> assiomi di
+Armstrong <span class="math inline">X \rightarrow Y \in F^A \implies X
+\rightarrow Y \in F</span>, e per definizione <span
+class="math inline">F \subseteq F^+</span>, allora necessariamente <span
+class="math inline">X \rightarrow Y \in F^+</span></li>
+</ul></li>
+<li><em>ipotesi induttiva forte</em>
+<ul>
+<li><span class="math inline">\forall X \rightarrow Y \in F^A</span>,
+applicando al più <span class="math inline">n - 1</span> assiomi di
+Armstrong si ha che <span class="math inline">X \rightarrow Y \in
+F^+</span></li>
+</ul></li>
+<li><em>passo induttivo</em>
+<ul>
+<li>è necessario dimostrare che <span class="math inline">\forall X
+\rightarrow Y \in F^A</span>, applicando <span
+class="math inline">n</span> assiomi di Armstrong si ha che <span
+class="math inline">X \rightarrow Y \in F^+</span></li>
+<li>è possibile trovarsi in questa situazione in <span
+class="math inline">3</span> possibili casi</li>
+<li>l’<span class="math inline">n</span>-esimo assioma di Armstrong
+applicato è stato l’assioma della riflessività
+<ul>
+<li><span class="math inline">X \rightarrow Y \in F^A</span> per assioma
+della riflessività, allora necessariamente <span class="math inline">Y
+\subseteq X</span>, ma allora <span class="math inline">\forall r</span>
+istanza di <span class="math inline">R</span> legale su <span
+class="math inline">F \quad t_1[X] = t_2[x] \implies t_2[Y] = t_2[Y]
+\implies X \rightarrow Y \in F^+</span></li>
+</ul></li>
+<li>l’<span class="math inline">n</span>-esimo assioma di Armstrong
+applicato è stato l’assioma dell’aumento
+<ul>
+<li><span class="math inline">X \rightarrow Y \in F^A</span> per assioma
+dell’aumento, allora <span class="math inline">\exists V, W \subseteq
+R(A_1, \ldots, A_n) \mid V \rightarrow W \in F^A</span>, ottenuta
+applicando al più <span class="math inline">n - 1</span> assiomi di
+Armstrong, e <span class="math inline">\exists Z \subseteq R(A_1, \ldots
+, A_n) \mid X := VZ \land Y := WZ</span></li>
+<li>per ipotesi induttiva si ha che <span class="math inline">V
+\rightarrow W \in F^+</span>, allora <span class="math inline">\forall
+r</span> istanza di <span class="math inline">R</span> legale su <span
+class="math inline">F \quad \exists Z \subseteq R(A_1, \ldots, A_n) \mid
+VZ \rightarrow WZ \in F^+</span>, in quanto l’aggiunta di <span
+class="math inline">Z</span> rende ancora soddisfatta la dipendenza
+funzionale</li>
+<li><span class="math inline">VZ \rightarrow WZ \in F^+ \implies \forall
+r</span> istanza di <span class="math inline">R</span> legale su <span
+class="math inline">F \quad \forall t_1, t_2 \in r \quad t_1[VZ] =
+t_2[VZ] \implies t_1[WZ] = t_2[WZ]</span></li>
+<li>allora, poiché si erano posti <span class="math inline">X := VZ
+\land Y := WZ</span>, si ha che <span class="math inline">\forall
+r</span> istanza di <span class="math inline">R</span> legale su <span
+class="math inline">F \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X]
+\implies t_1[Y] = t_2[Y] \implies X \rightarrow Y \in F^+</span> per
+definizione di <span class="math inline">F^+</span></li>
+</ul></li>
+<li>l’<span class="math inline">n</span>-esimo assioma di Armstrong
+applicato è stato l’assioma della transitività
+<ul>
+<li><span class="math inline">X \rightarrow Y \in F^A</span> per assioma
+della transitività, allora <span class="math inline">\exists Z \subseteq
+R(A_1, \ldots, A_n) \mid X \rightarrow Z, Z \rightarrow Y \in
+F^A</span>, ottenute applicando al più <span class="math inline">n -
+1</span> assiomi di Armstrong</li>
+<li>allora, per ipotesi induttiva si ha che <span class="math inline">X
+\rightarrow Z, Z \rightarrow Y \in F^+</span></li>
+<li><span class="math inline">X \rightarrow Z \in F^+ \implies \forall
+r</span> istanza di <span class="math inline">R</span> legale su <span
+class="math inline">F \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X]
+\implies t_1[Z] = t_2[Z]</span></li>
+<li><span class="math inline">Z \rightarrow Y \in F^+ \implies \forall
+r</span> istanza di <span class="math inline">R</span> legale su <span
+class="math inline">F \quad \forall t_1, t_2 \in r \quad t_1[Z] = t_2[Z]
+\implies t_1[Y] = t_2[Y]</span></li>
+<li>allora, necessariamente <span class="math inline">\forall r</span>
+istanza legale di <span class="math inline">R</span> su <span
+class="math inline">F \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X]
+\implies t_1[Y] = t_2[Y] \implies X \rightarrow Y \in F^+</span> per
+definizione di <span class="math inline">F^+</span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">F^+ \subseteq F^A</span>
+<ul>
+<li>sia <span class="math inline">r</span> istanza di <span
+class="math inline">R&#39;(X^+_F, R - X^+_F) \mid t_1[X^+_F] =
+t_2[X^+_F] = (1, \ldots, 1)</span>, mentre <span
+class="math inline">t_1[R - X^+_F] = (1, \ldots, 1) \land t_2[R - X^+_F]
+= (0, \ldots, 0)</span>
+<ul>
+<li>in particolare <span class="math inline">t_1[R - X^+_F]</span> è
+complementare a <span class="math inline">t_2[R - X^+_F]</span>, dunque
+diverso in ogni colonna</li>
+</ul></li>
+<li><span class="math inline">r</span> legale su <span
+class="math inline">F \iff \forall V, W \subseteq R&#39;(X^+_F, R -
+X^+_F) \mid V \rightarrow W \in F \quad r</span> soddisfa <span
+class="math inline">V \rightarrow W</span></li>
+<li><span class="math inline">\forall V, W \subseteq R&#39;(X^+_F, R -
+X^+_F) \mid V \rightarrow W \in F</span> possono verificarsi <span
+class="math inline">3</span> possibili casi
+<ul>
+<li><span class="math inline">V \subseteq R - X^+_F \implies (1, \ldots,
+1) = t_1[V] \neq t_2[V] = (0, \ldots, 0)</span></li>
+<li><span class="math inline">V \cap (R - X^+_F) \neq \varnothing
+\implies \exists A \subseteq V \mid A \subseteq R - X^+_F \implies
+t_1[V] \neq t_1[V]</span> in quanto <span
+class="math inline">t_1[V]</span> e <span
+class="math inline">t_2[V]</span> sono stati scelti complementari, e
+dunque diversi in ogni colonna</li>
+<li><span class="math inline">V \subseteq X^+_F \implies t_1[V] =
+t_2[V]</span>, dunque è necessario controllare che <span
+class="math inline">r</span> soddisfi <span class="math inline">V
+\rightarrow W \in F</span>, e dunque <span class="math inline">V
+\subseteq X^+_F \implies X \rightarrow V \in F^A</span> per lemma
+precedentemente dimostrato, inoltre <span class="math inline">F
+\subseteq F^A \implies V \rightarrow W \in F \implies V \rightarrow W
+\in F^A</span>, allora per l’assioma della transitività <span
+class="math inline">X \rightarrow V, V \rightarrow W \in F^A \implies X
+\rightarrow W \in F^A</span>, allora per il lemma precedente <span
+class="math inline">W \subseteq X^+_F \implies t_1[W] = t_2[W]</span>
+per costruzione di <span class="math inline">r</span></li>
+</ul></li>
+<li>allora <span class="math inline">r</span> legale su <span
+class="math inline">R&#39; \implies \forall Y \subseteq R&#39;(X^+_F, R
+- X^+_F) \mid X \rightarrow Y \in F^+ \quad r</span> soddisfa <span
+class="math inline">X \rightarrow Y \in F^+</span></li>
+<li>per osservazione precedente <span class="math inline">X \subseteq
+X^+_F</span>, allora <span class="math inline">t_1[X] = t_2[X]</span>
+per costruzione di <span class="math inline">r</span></li>
+<li><span class="math inline">r</span> soddisfa <span
+class="math inline">X \rightarrow Y \in F^+ \implies Y \subseteq
+X^+_F</span> per costruzione di <span class="math inline">r</span></li>
+<li>allora per il lemma precedente <span class="math inline">Y \subseteq
+X^+_F \implies X \rightarrow Y \in F^A</span></li>
+</ul></li>
+</ul></li>
 </ul>
 <hr />
 <h1 id="terza-forma-normale">Terza forma normale</h1>
-<h2 id="definizione-11">Definizione 11</h2>
+<h2 id="def-4">Def</h2>
 <ul>
 <li><strong>Chiave di una relazione</strong></li>
 </ul>
@@ -965,7 +773,7 @@ X</span> è la chiave di <span class="math inline">R</span> con minor
 numero di attributi</li>
 </ul>
 </blockquote>
-<h2 id="teorema-13">Teorema 13</h2>
+<h2 id="oss-9">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -988,7 +796,7 @@ class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
 \rightarrow R</span></li>
 </ul></li>
 </ul>
-<h2 id="definizione-12">Definizione 12</h2>
+<h2 id="def-5">Def</h2>
 <ul>
 <li><strong>Terza Forma Normale</strong></li>
 </ul>
