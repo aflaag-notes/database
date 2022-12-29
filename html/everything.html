@@ -943,6 +943,42 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F^+ = F^A</span></li>
 </ul></li>
 </ul>
+<h2 id="teorema-13">Teorema 13</h2>
+<ul>
+<li><strong>Input</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Output</strong>
+<ul>
+<li><span class="math inline">Z = X^+_F</span></li>
+</ul></li>
+<li><strong>Algoritmo</strong>
+<ul>
+<li><span class="math inline">Z = X</span></li>
+<li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
+\exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
+\in V \land Y \subseteq Z\}</span></li>
+<li><strong>while</strong> <span class="math inline">S \nsubseteq
+Z</span>:
+<ul>
+<li><span class="math inline">Z = Z \cup S</span></li>
+<li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
+\exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
+\in V \land Y \subseteq Z\}</span></li>
+</ul></li>
+</ul></li>
+</ul>
 <hr />
 <h1 id="terza-forma-normale">Terza forma normale</h1>
 <h2 id="definizione-11">Definizione 11</h2>
@@ -968,7 +1004,7 @@ X</span> è la chiave di <span class="math inline">R</span> con minor
 numero di attributi</li>
 </ul>
 </blockquote>
-<h2 id="teorema-13">Teorema 13</h2>
+<h2 id="teorema-14">Teorema 14</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -988,7 +1024,29 @@ class="math inline">R \iff K \rightarrow R \in F^+</span></li>
 <li><span class="math inline">K</span> chiave di <span
 class="math inline">R \iff K</span> superchiave di <span
 class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
-\rightarrow R</span></li>
+\rightarrow R \in F^+</span></li>
+</ul></li>
+</ul>
+<h2 id="teorema-15">Teorema 15</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">X^+_F = R \iff X</span> superchiave di
+<span class="math inline">R</span></li>
 </ul></li>
 </ul>
 <h2 id="definizione-12">Definizione 12</h2>
@@ -1040,7 +1098,7 @@ e di eliminazione</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-14">Teorema 14</h2>
+<h2 id="teorema-16">Teorema 16</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1126,7 +1184,7 @@ K</span></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-15">Teorema 15</h2>
+<h2 id="teorema-17">Teorema 17</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1183,7 +1241,7 @@ class="math inline">R</span>, senza aggiunta di informazioni</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-16">Teorema 16</h2>
+<h2 id="teorema-18">Teorema 18</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1201,42 +1259,6 @@ funzionali su <span class="math inline">R</span></li>
 <li><strong>Th</strong>
 <ul>
 <li><span class="math inline">R</span> in terza forma normale</li>
-</ul></li>
-</ul>
-<h2 id="teorema-17">Teorema 17</h2>
-<ul>
-<li><strong>Input</strong>
-<ul>
-<li><span class="math inline">n, k \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">X \subseteq R(A_1, \ldots,
-A_n)</span></li>
-<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
-funzionali su <span class="math inline">R</span></li>
-<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-</ul></li>
-<li><strong>Output</strong>
-<ul>
-<li><span class="math inline">Z = X^+_F</span></li>
-</ul></li>
-<li><strong>Algoritmo</strong>
-<ul>
-<li><span class="math inline">Z = X</span></li>
-<li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
-\exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
-\in V \land Y \subseteq Z\}</span></li>
-<li><strong>while</strong> <span class="math inline">S \nsubseteq
-Z</span>:
-<ul>
-<li><span class="math inline">Z = Z \cup S</span></li>
-<li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
-\exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
-\in V \land Y \subseteq Z\}</span></li>
-</ul></li>
 </ul></li>
 </ul>
 </body>

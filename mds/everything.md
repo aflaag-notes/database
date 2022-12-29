@@ -450,6 +450,26 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $F^+ = F^A$
 
+## Teorema 13
+
+
+- **Input**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Output**
+    - $Z = X^+_F$
+- **Algoritmo**
+    - $Z = X$
+    - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
+    - **while** $S \nsubseteq Z$:
+        - $Z = Z \cup S$
+        - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
+
 ****
 
 # Terza forma normale
@@ -469,7 +489,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 13
+## Teorema 14
 
 
 - **Hp**
@@ -480,9 +500,23 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $K \subseteq R(A_1, \ldots, A_n)$
 - **Th**
     - $K$ superchiave di $R \iff K \rightarrow R \in F^+$
-    - $K$ chiave di $R \iff K$ superchiave di $R \land \nexists K' \subseteq K \mid K' \rightarrow R$
+    - $K$ chiave di $R \iff K$ superchiave di $R \land \nexists K' \subseteq K \mid K' \rightarrow R \in F^+$
 
 
+
+## Teorema 15
+
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $X^+_F = R \iff X$ superchiave di $R$
 
 ## Definizione 12
 
@@ -515,7 +549,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 14
+## Teorema 16
 
 
 - **Hp**
@@ -563,7 +597,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 15
+## Teorema 17
 
 
 - **Hp**
@@ -597,7 +631,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 16
+## Teorema 18
 
 
 - **Hp**
@@ -611,24 +645,4 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $R$ in terza forma normale
 
 
-
-## Teorema 17
-
-
-- **Input**
-    - $n, k \in \mathbb{N}$
-    - $D_1, \ldots, D_n$ domini
-    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-    - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $X \subseteq R(A_1, \ldots, A_n)$
-    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
-    - $F = \{F_1, \ldots, F_k\}$
-- **Output**
-    - $Z = X^+_F$
-- **Algoritmo**
-    - $Z = X$
-    - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
-    - **while** $S \nsubseteq Z$:
-        - $Z = Z \cup S$
-        - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
 
