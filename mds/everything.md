@@ -518,6 +518,22 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X^+_F = R \iff X$ superchiave di $R$
 
+## Teorema 16
+
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali
+    - $F = \{F_1, \ldots, F_k\}$
+    - $X = \displaystyle \bigcap_{F_i:= A \rightarrow B \in F}{R - (B - A)}$
+- **Th**
+    - $X^+_F=R \iff X$ chiave unica in $R$
+
+
+
 ## Definizione 12
 
 
@@ -549,7 +565,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 16
+## Teorema 17
 
 
 - **Hp**
@@ -597,7 +613,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 17
+## Teorema 18
 
 
 - **Hp**
@@ -631,7 +647,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 18
+## Teorema 19
 
 
 - **Hp**

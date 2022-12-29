@@ -345,7 +345,18 @@
 - **Dim**
     - $X^+_F := \{A \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^A = F^+\}$, allora $X^+_F = R \iff \forall Y \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F^A = F^+$, ovvero $X \rightarrow R \in F^+$, e per osservazione precedente $X \rightarrow R \in F^+ \iff X$ superchiave di $R$
 
-**DA QUA**
+## Oss
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali
+    - $F = \{F_1, \ldots, F_k\}$
+    - $X = \displaystyle \bigcap_{F_i:= A \rightarrow B \in F}{R - (B - A)}$
+- **Th**
+    - $X^+_F=R \iff X$ chiave unica in $R$
 
 ## Def
 
