@@ -34,7 +34,7 @@
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
 > - $L = \{r$ istanza di $R \mid r$ legale su $F\}$
-> - $F^+ := \displaystyle \bigcup_{r \in L}\{$dipendenze funzionali in $r\}$
+> - $F^+ := \displaystyle \bigcap_{r \in L}\{$dipendenze funzionali in $r\}$
 >   - ovvero, è l'insieme delle dipendenze funzionali derivabili da ogni istanza legale su $F$
 >   - di fatto, ogni istanza legale in $L$ soddisferà ogni dipendenza funzionale in $F^+$
 
@@ -225,9 +225,9 @@
         - _caso base_
             - per definizione $F \subseteq F^A$, allora avendo applicato $0$ assiomi di Armstrong $X \rightarrow Y \in F^A \implies X \rightarrow Y \in F$, e per definizione $F \subseteq F^+$, allora necessariamente $X \rightarrow Y \in F^+$
         - _ipotesi induttiva forte_
-            - $\forall X \rightarrow Y \in F^A$, applicando al più $n - 1$ assiomi di Armstrong si ha che $X \rightarrow Y \in F^+$
+            - avendo $X \rightarrow Y \in F^A$ all'$n$-esimo caso, applicando al più $n - 1$ assiomi di Armstrong, si ha che $X \rightarrow Y \in F^+$
         - _passo induttivo_
-            - è necessario dimostrare che $\forall X \rightarrow Y \in F^A$, applicando $n$ assiomi di Armstrong si ha che $X \rightarrow Y \in F^+$
+            - è necessario dimostrare che avendo $X \rightarrow Y \in F^A$ all'$n$-esimo caso, applicando $n$ assiomi di Armstrong, si ha che $X \rightarrow Y \in F^+$
             - è possibile trovarsi in questa situazione in $3$ possibili casi
             - l'$n$-esimo assioma di Armstrong applicato è stato l'assioma della riflessività
                 - $X \rightarrow Y \in F^A$ per assioma della riflessività, allora necessariamente $Y \subseteq X$, ma allora $\forall r$ istanza di $R$ legale su $F \quad t_1[X] = t_2[x] \implies t_2[Y] = t_2[Y] \implies X \rightarrow Y \in F^+$
@@ -302,6 +302,34 @@
             - per lemma precedente $\forall A \in X^+_F \quad X \rightarrow A \in F^A$, e per dimostrazione precedente $F^A = F^+ \implies X \rightarrow A \in F^+ \implies \forall r'$ istanza legale di $R \quad r'$ soddisfa $X \rightarrow A \in F^+$ per definizione di $F^+$
             - $r$ legale $\implies r$ soddisfa $X \rightarrow A \in F^+$
             - per costruzione dell'algoritmo $X = Z^0 \subseteq Z^j \implies t_1[X] = t_2[X]$ per costruzione di $r$, e poiché $r$ legale si ha che $t_1[A] = t_2[A]$, allora $A \in Z^j$ per costruzione di $r$
+
+## Def
+
+- **Insiemi di dipendenze funzionali equivalenti**
+
+> - $n, k, h \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k, G_1, \ldots, G_h$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $G = \{G_1, \ldots, G_h\}$
+> - $F \equiv G \iff F^+ = F^+$, e $F$ e $G$ sono detti **equivalenti**
+
+# Lem
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k, G_1, \ldots, G_h$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $G = \{G_1, \ldots, G_h\}$
+- **Th**
+    - $F \subseteq G^+ \implies F^+ \subseteq G^+$
+- **Dim**
+    - ⚠️ **TODO**
 
 ****
 
@@ -465,3 +493,26 @@
 - **Th**
     - $R$ in terza forma normale
 
+## Def
+
+- **Decomposizione**
+
+> - $n \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale $\mid R$ in forma normale di Boyce-Codd
+> - $N \in \mathbb{N} \mid C := \displaystyle \bigcup_{i = 1}^N{R_i} = R$ ricoprimento di $R$
+> - $\rho \subseteq C$ è detto **decomposizione di $R$**
+
+- **Preservazione di un insieme di dipendenze funzionali**
+
+> - $n, k, h \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale $\mid R$ in forma normale di Boyce-Codd
+> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $\forall i \in [1, h] \quad \pi_{R_i}(F) = \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$
+> - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
+> - $\rho$ **preserva $F$** $\iff F \equiv G$

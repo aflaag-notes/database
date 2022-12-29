@@ -261,7 +261,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
 > - $L = \{r$ istanza di $R \mid r$ legale su $F\}$
-> - $F^+ := \displaystyle \bigcup_{r \in L}\{$dipendenze funzionali in $r\}$
+> - $F^+ := \displaystyle \bigcap_{r \in L}\{$dipendenze funzionali in $r\}$
 >   - ovvero, è l'insieme delle dipendenze funzionali derivabili da ogni istanza legale su $F$
 >   - di fatto, ogni istanza legale in $L$ soddisferà ogni dipendenza funzionale in $F^+$
 
@@ -470,6 +470,33 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
         - $Z = Z \cup S$
         - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
 
+## Teorema 14
+
+
+- **Insiemi di dipendenze funzionali equivalenti**
+
+> - $n, k, h \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k, G_1, \ldots, G_h$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $G = \{G_1, \ldots, G_h\}$
+> - $F \equiv G \iff F^+ = F^+$, e $F$ e $G$ sono detti **equivalenti**
+
+# Lem
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k, G_1, \ldots, G_h$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $G = \{G_1, \ldots, G_h\}$
+- **Th**
+    - $F \subseteq G^+ \implies F^+ \subseteq G^+$
+
 ****
 
 # Terza forma normale
@@ -489,7 +516,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 14
+## Teorema 15
 
 
 - **Hp**
@@ -504,7 +531,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 15
+## Teorema 16
 
 
 - **Hp**
@@ -518,7 +545,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X^+_F = R \iff X$ superchiave di $R$
 
-## Teorema 16
+## Teorema 17
 
 
 - **Hp**
@@ -565,7 +592,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 17
+## Teorema 18
 
 
 - **Hp**
@@ -613,7 +640,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 18
+## Teorema 19
 
 
 - **Hp**
@@ -647,7 +674,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 19
+## Teorema 20
 
 
 - **Hp**
@@ -660,5 +687,31 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $R$ in terza forma normale
 
+
+
+## Definizione 16
+
+
+- **Decomposizione**
+
+> - $n \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale $\mid R$ in forma normale di Boyce-Codd
+> - $N \in \mathbb{N} \mid C := \displaystyle \bigcup_{i = 1}^N{R_i} = R$ ricoprimento di $R$
+> - $\rho \subseteq C$ è detto **decomposizione di $R$**
+
+- **Preservazione di un insieme di dipendenze funzionali**
+
+> - $n, k, h \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale $\mid R$ in forma normale di Boyce-Codd
+> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $\forall i \in [1, h] \quad \pi_{R_i}(F) = \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$
+> - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
+> - $\rho$ **preserva $F$** $\iff F \equiv G$
 
 

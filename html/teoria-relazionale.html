@@ -253,7 +253,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">L = \{r</span> istanza di <span
 class="math inline">R \mid r</span> legale su <span
 class="math inline">F\}</span></li>
-<li><span class="math inline">F^+ := \displaystyle \bigcup_{r \in
+<li><span class="math inline">F^+ := \displaystyle \bigcap_{r \in
 L}\{</span>dipendenze funzionali in <span class="math inline">r\}</span>
 <ul>
 <li>ovvero, è l’insieme delle dipendenze funzionali derivabili da ogni
@@ -619,16 +619,17 @@ class="math inline">X \rightarrow Y \in F^+</span></li>
 </ul></li>
 <li><em>ipotesi induttiva forte</em>
 <ul>
-<li><span class="math inline">\forall X \rightarrow Y \in F^A</span>,
-applicando al più <span class="math inline">n - 1</span> assiomi di
-Armstrong si ha che <span class="math inline">X \rightarrow Y \in
-F^+</span></li>
+<li>avendo <span class="math inline">X \rightarrow Y \in F^A</span>
+all’<span class="math inline">n</span>-esimo caso, applicando al più
+<span class="math inline">n - 1</span> assiomi di Armstrong, si ha che
+<span class="math inline">X \rightarrow Y \in F^+</span></li>
 </ul></li>
 <li><em>passo induttivo</em>
 <ul>
-<li>è necessario dimostrare che <span class="math inline">\forall X
-\rightarrow Y \in F^A</span>, applicando <span
-class="math inline">n</span> assiomi di Armstrong si ha che <span
+<li>è necessario dimostrare che avendo <span class="math inline">X
+\rightarrow Y \in F^A</span> all’<span
+class="math inline">n</span>-esimo caso, applicando <span
+class="math inline">n</span> assiomi di Armstrong, si ha che <span
 class="math inline">X \rightarrow Y \in F^+</span></li>
 <li>è possibile trovarsi in questa situazione in <span
 class="math inline">3</span> possibili casi</li>
@@ -894,9 +895,55 @@ class="math inline">r</span></li>
 </ul></li>
 </ul></li>
 </ul>
+<h2 id="def-4">Def</h2>
+<ul>
+<li><strong>Insiemi di dipendenze funzionali equivalenti</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k, G_1, \ldots, G_h</span>
+dipendenze funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">G = \{G_1, \ldots, G_h\}</span></li>
+<li><span class="math inline">F \equiv G \iff F^+ = F^+</span>, e <span
+class="math inline">F</span> e <span class="math inline">G</span> sono
+detti <strong>equivalenti</strong></li>
+</ul>
+</blockquote>
+<h1 id="lem-1">Lem</h1>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k, G_1, \ldots, G_h</span>
+dipendenze funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">G = \{G_1, \ldots, G_h\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">F \subseteq G^+ \implies F^+ \subseteq
+G^+</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>⚠️ <strong>TODO</strong></li>
+</ul></li>
+</ul>
 <hr />
 <h1 id="terza-forma-normale">Terza forma normale</h1>
-<h2 id="def-4">Def</h2>
+<h2 id="def-5">Def</h2>
 <ul>
 <li><strong>Chiave e superchiave di una relazione</strong></li>
 </ul>
@@ -996,7 +1043,7 @@ funzionali</li>
 <span class="math inline">R</span></li>
 </ul></li>
 </ul>
-<h2 id="def-5">Def</h2>
+<h2 id="def-6">Def</h2>
 <ul>
 <li><strong>Attributo primo</strong></li>
 </ul>
@@ -1014,7 +1061,7 @@ relazionale</li>
 class="math inline">R \mid X \in K</span></li>
 </ul>
 </blockquote>
-<h2 id="def-6">Def</h2>
+<h2 id="def-7">Def</h2>
 <ul>
 <li><strong>Terza Forma Normale</strong></li>
 </ul>
@@ -1072,7 +1119,7 @@ F^+</span> e controllare gli <span class="math inline">A_i \ldots
 A_j</span></li>
 </ul></li>
 </ul>
-<h2 id="def-7">Def</h2>
+<h2 id="def-8">Def</h2>
 <ul>
 <li><strong>Dipendenza parziale</strong></li>
 </ul>
@@ -1156,7 +1203,7 @@ class="math inline">X \rightarrow Y \in F^+</span> dipendenza
 transitiva</li>
 </ul></li>
 </ul>
-<h2 id="def-8">Def</h2>
+<h2 id="def-9">Def</h2>
 <ul>
 <li><strong>Forma Normale di Boyce-Codd</strong></li>
 </ul>
@@ -1208,5 +1255,53 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">R</span> in terza forma normale</li>
 </ul></li>
 </ul>
+<h2 id="def-10">Def</h2>
+<ul>
+<li><strong>Decomposizione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale <span class="math inline">\mid R</span> in forma normale di
+Boyce-Codd</li>
+<li><span class="math inline">N \in \mathbb{N} \mid C := \displaystyle
+\bigcup_{i = 1}^N{R_i} = R</span> ricoprimento di <span
+class="math inline">R</span></li>
+<li><span class="math inline">\rho \subseteq C</span> è detto
+<strong>decomposizione di <span
+class="math inline">R</span></strong></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Preservazione di un insieme di dipendenze
+funzionali</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale <span class="math inline">\mid R</span> in forma normale di
+Boyce-Codd</li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\forall i \in [1, h] \quad \pi_{R_i}(F) =
+\{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+<li><span class="math inline">\rho</span> <strong>preserva <span
+class="math inline">F</span></strong> <span class="math inline">\iff F
+\equiv G</span></li>
+</ul>
+</blockquote>
 </body>
 </html>
