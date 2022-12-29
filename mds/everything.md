@@ -628,7 +628,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Algoritmo**
     - $Z = X$
     - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
-    - **while** $S \notin Z$:
+    - **while** $S \nsubseteq Z$:
         - $Z = Z \cup S$
         - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
 

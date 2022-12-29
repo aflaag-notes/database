@@ -1037,7 +1037,8 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
 \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
 \in V \land Y \subseteq Z\}</span></li>
-<li><strong>while</strong> <span class="math inline">S \notin Z</span>:
+<li><strong>while</strong> <span class="math inline">S \nsubseteq
+Z</span>:
 <ul>
 <li><span class="math inline">Z = Z \cup S</span></li>
 <li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
@@ -1047,9 +1048,62 @@ funzionali su <span class="math inline">R</span></li>
 </ul></li>
 <li><strong>Dim</strong>
 <ul>
+<li><span class="math inline">N</span> numero di iterazioni
+dell’algoritmo</li>
+<li><span class="math inline">\forall i \in [0, N] \quad Z^i \subseteq
+Z^{i + 1}</span></li>
+<li>sia <span class="math inline">j \mid S^j \subseteq Z^j</span>,
+dunque l’<span class="math inline">N</span>-esima iterazione in cui
+l’algoritmo termina</li>
+<li><span class="math inline">Z^j = X^+_F</span>
+<ul>
+<li><span class="math inline">Z^j \subseteq X^+_F</span>
+<ul>
+<li><em>caso base</em>
+<ul>
+<li><span class="math inline">Z^0 = X</span>: per osservazione
+precedente <span class="math inline">X \subseteq X^+_F \implies Z^0
+\subseteq X^+_F</span></li>
+</ul></li>
+<li><em>ipotesi induttiva</em>
+<ul>
+<li><span class="math inline">\forall i \in [0, N] \quad Z^{i - 1}
+\subseteq X^+_F</span></li>
+</ul></li>
+<li><em>passo induttivo</em>
+<ul>
+<li><span class="math inline">\forall i \in [0, N] \quad</span>sia <span
+class="math inline">A \in Z^i - Z^{i - 1}</span></li>
+<li>⚠️ <strong>incompleto, che cazzo vuol dire</strong></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">Z^j \supseteq X^+_F</span>
+<ul>
+<li>per lemma precedente <span class="math inline">\forall A \in X^+_F
+\quad X \rightarrow A \in F^A</span>, e per dimostrazione precedente
+<span class="math inline">F^A = F^+ \implies X \rightarrow A \in F^+
+\implies \forall r</span> istanza legale di <span class="math inline">R
+\quad r</span> soddisfa <span class="math inline">X \rightarrow A \in
+F^+</span> per definizione di <span class="math inline">F^+</span></li>
+<li></li>
+</ul></li>
+</ul></li>
 <li>di fatto, il loop <strong>while</strong> applica gli assiomi di
-Armstrong</li>
-<li>⚠️ <strong>incompleto, riparti da qui</strong></li>
+Armstrong
+<ul>
+<li>sia <span class="math inline">r</span> istanza di <span
+class="math inline">R&#39;(Z^j, R - Z^j) \mid t_1[Z^j] = t_2[Z^j] = (1,
+\ldots, 1)</span>, mentre <span class="math inline">t_1[R - Z^j] = (1,
+\ldots, 1) \land t_2[R - Z^j] = (0, \ldots, 0)</span>
+<ul>
+<li>in particolare <span class="math inline">t_1[R - Z^j]</span> è
+complementare a <span class="math inline">t_2[R - Z^j]</span>, dunque
+diverso in ogni colonna
+<ul>
+<li>⚠️ <strong>incompleta</strong></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </body>

@@ -404,9 +404,26 @@
 - **Algoritmo**
     - $Z = X$
     - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
-    - **while** $S \notin Z$:
+    - **while** $S \nsubseteq Z$:
         - $Z = Z \cup S$
         - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
 - **Dim**
+    - $N$ numero di iterazioni dell'algoritmo
+    - $\forall i \in [0, N] \quad Z^i \subseteq Z^{i + 1}$
+    - sia $j \mid S^j \subseteq Z^j$, dunque l'$N$-esima iterazione in cui l'algoritmo termina
+    - $Z^j = X^+_F$
+        - $Z^j \subseteq X^+_F$
+            - _caso base_
+                - $Z^0 = X$: per osservazione precedente $X \subseteq X^+_F \implies Z^0 \subseteq X^+_F$
+            - _ipotesi induttiva_
+                - $\forall i \in [0, N] \quad Z^{i - 1} \subseteq X^+_F$
+            - _passo induttivo_
+                - $\forall i \in [0, N] \quad$sia $A \in Z^i - Z^{i - 1}$
+                - ⚠️  **incompleto, che cazzo vuol dire**
+        - $Z^j \supseteq X^+_F$
+            - per lemma precedente $\forall A \in X^+_F \quad X \rightarrow A \in F^A$, e per dimostrazione precedente $F^A = F^+ \implies X \rightarrow A \in F^+ \implies \forall r$ istanza legale di $R \quad r$ soddisfa $X \rightarrow A \in F^+$ per definizione di $F^+$
+            - 
     - di fatto, il loop **while** applica gli assiomi di Armstrong
-    - ⚠️ **incompleto, riparti da qui**
+        - sia $r$ istanza di $R'(Z^j, R - Z^j) \mid t_1[Z^j] = t_2[Z^j] = (1, \ldots, 1)$, mentre $t_1[R - Z^j] = (1, \ldots, 1) \land t_2[R - Z^j] = (0, \ldots, 0)$
+            - in particolare $t_1[R - Z^j]$ è complementare a $t_2[R - Z^j]$, dunque diverso in ogni colonna
+                - ⚠️  **incompleta**
