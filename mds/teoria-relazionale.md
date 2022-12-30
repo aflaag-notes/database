@@ -177,21 +177,6 @@
 > - $X^+_F := \{A \in R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^A\}$ è detta **chiusura di $X$ rispetto ad $F$**
 >   - ovvero, è l'insieme degli attributi funzionalmente dipendenti da $X$ attraverso l'applicazione degli assiomi di Armstrong
 
-## Oss
-
-- **Hp**
-    - $n, k \in \mathbb{N}$
-    - $D_1, \ldots, D_n$ domini
-    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-    - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $X \subseteq R(A_1, \ldots, A_n)$
-    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
-    - $F = \{F_1, \ldots, F_k\}$
-- **Th**
-    - $X \subseteq X^+_F$
-- **Dim**
-    - per riflessività $X \subseteq X \implies X \rightarrow X \in F^A \implies X \subseteq X^+_F$ per definizione
-
 ## Lem
 
 - **Hp**
@@ -207,6 +192,22 @@
 - **Dim**
     - siano $i, j \in [1, n], i \lt j \mid Y := A_i \ldots A_j$
     - $X \rightarrow Y \in F^A \iff X \rightarrow A_i \ldots A_j  \in F^A$, allora per dimostrazione precedente $X \rightarrow A_i \ldots A_j \in F^A \iff \forall h \in [i, j] \quad X \rightarrow A_h \in F^A$, allora per definizione di $X^+_F$ si ha che $\forall h \in [i, j] \quad X \rightarrow A_h \in F^A \iff \forall h \in [i, j] \quad A_h \in X^+_F \iff A_i \ldots A_j \subseteq X^+_F \iff Y \subseteq X^+_F$
+
+## Oss
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $X \subseteq X^+_F$
+- **Dim**
+    - per assioma della riflessività $X \subseteq X \implies X \rightarrow X \in F^A$
+    - allora per lemma precedente $X \rightarrow X \in F^A \implies X \subseteq X^+_F$
 
 ## Oss
 

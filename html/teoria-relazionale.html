@@ -522,33 +522,6 @@ assiomi di Armstrong</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="oss-7">Oss</h2>
-<ul>
-<li><strong>Hp</strong>
-<ul>
-<li><span class="math inline">n, k \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">X \subseteq R(A_1, \ldots,
-A_n)</span></li>
-<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
-funzionali su <span class="math inline">R</span></li>
-<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-</ul></li>
-<li><strong>Th</strong>
-<ul>
-<li><span class="math inline">X \subseteq X^+_F</span></li>
-</ul></li>
-<li><strong>Dim</strong>
-<ul>
-<li>per riflessività <span class="math inline">X \subseteq X \implies X
-\rightarrow X \in F^A \implies X \subseteq X^+_F</span> per
-definizione</li>
-</ul></li>
-</ul>
 <h2 id="lem">Lem</h2>
 <ul>
 <li><strong>Hp</strong>
@@ -582,6 +555,34 @@ definizione di <span class="math inline">X^+_F</span> si ha che <span
 class="math inline">\forall h \in [i, j] \quad X \rightarrow A_h \in F^A
 \iff \forall h \in [i, j] \quad A_h \in X^+_F \iff A_i \ldots A_j
 \subseteq X^+_F \iff Y \subseteq X^+_F</span></li>
+</ul></li>
+</ul>
+<h2 id="oss-7">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">X \subseteq X^+_F</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>per assioma della riflessività <span class="math inline">X \subseteq
+X \implies X \rightarrow X \in F^A</span></li>
+<li>allora per lemma precedente <span class="math inline">X \rightarrow
+X \in F^A \implies X \subseteq X^+_F</span></li>
 </ul></li>
 </ul>
 <h2 id="oss-8">Oss</h2>

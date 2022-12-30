@@ -417,11 +417,11 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $X \subseteq R(A_1, \ldots, A_n)$
+    - $X, Y \subseteq R(A_1, \ldots, A_n)$
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
-    - $X \subseteq X^+_F$
+    - $X \rightarrow Y \in F^A \iff Y \subseteq X^+_F$
 
 ## Teorema 11
 
@@ -431,11 +431,11 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $X, Y \subseteq R(A_1, \ldots, A_n)$
+    - $X \subseteq R(A_1, \ldots, A_n)$
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
-    - $X \rightarrow Y \in F^A \iff Y \subseteq X^+_F$
+    - $X \subseteq X^+_F$
 
 ## Teorema 12
 
