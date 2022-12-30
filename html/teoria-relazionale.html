@@ -700,21 +700,20 @@ definizione di <span class="math inline">F^+</span></li>
 <ul>
 <li>sia <span class="math inline">X \subseteq R(A_1, \ldots, A_n)</span>
 e <span class="math inline">r</span> istanza di <span
-class="math inline">R&#39;(X^+_F, R - X^+_F) \mid t_1[X^+_F] =
-t_2[X^+_F] = (1, \ldots, 1)</span>, mentre <span
-class="math inline">t_1[R - X^+_F] = (1, \ldots, 1) \land t_2[R - X^+_F]
-= (0, \ldots, 0)</span>
+class="math inline">R(X^+_F, R - X^+_F) \mid t_1[X^+_F] = t_2[X^+_F] =
+(1, \ldots, 1)</span>, mentre <span class="math inline">t_1[R - X^+_F] =
+(1, \ldots, 1) \land t_2[R - X^+_F] = (0, \ldots, 0)</span>
 <ul>
 <li>in particolare <span class="math inline">t_1[R - X^+_F]</span> è
 complementare a <span class="math inline">t_2[R - X^+_F]</span>, dunque
 diverso in ogni colonna</li>
 </ul></li>
 <li><span class="math inline">r</span> legale su <span
-class="math inline">F \iff \forall V, W \subseteq R&#39;(X^+_F, R -
-X^+_F) \mid V \rightarrow W \in F \quad r</span> soddisfa <span
+class="math inline">F \iff \forall V, W \subseteq R(X^+_F, R - X^+_F)
+\mid V \rightarrow W \in F \quad r</span> soddisfa <span
 class="math inline">V \rightarrow W</span></li>
-<li><span class="math inline">\forall V, W \subseteq R&#39;(X^+_F, R -
-X^+_F) \mid V \rightarrow W \in F</span> possono verificarsi <span
+<li><span class="math inline">\forall V, W \subseteq R(X^+_F, R - X^+_F)
+\mid V \rightarrow W \in F</span> possono verificarsi <span
 class="math inline">3</span> possibili casi
 <ul>
 <li><span class="math inline">V \subseteq R - X^+_F \implies (1, \ldots,
@@ -726,21 +725,22 @@ class="math inline">t_1[V]</span> e <span
 class="math inline">t_2[V]</span> sono stati scelti complementari, e
 dunque diversi in ogni colonna</li>
 <li><span class="math inline">V \subseteq X^+_F \implies t_1[V] =
-t_2[V]</span>, dunque è necessario controllare che <span
-class="math inline">r</span> soddisfi <span class="math inline">V
-\rightarrow W \in F</span>, e dunque <span class="math inline">V
-\subseteq X^+_F \implies X \rightarrow V \in F^A</span> per lemma
-precedentemente dimostrato, inoltre <span class="math inline">F
-\subseteq F^A \implies V \rightarrow W \in F \implies V \rightarrow W
-\in F^A</span>, allora per l’assioma della transitività <span
-class="math inline">X \rightarrow V, V \rightarrow W \in F^A \implies X
-\rightarrow W \in F^A</span>, allora per il lemma precedente <span
-class="math inline">W \subseteq X^+_F \implies t_1[W] = t_2[W]</span>
-per costruzione di <span class="math inline">r</span></li>
+t_2[V]</span> per costruzione di <span class="math inline">r</span>,
+dunque è necessario controllare che <span class="math inline">r</span>
+soddisfi <span class="math inline">V \rightarrow W \in F</span>, e
+dunque <span class="math inline">V \subseteq X^+_F \implies X
+\rightarrow V \in F^A</span> per lemma precedentemente dimostrato,
+inoltre <span class="math inline">F \subseteq F^A \implies V \rightarrow
+W \in F \implies V \rightarrow W \in F^A</span>, allora per l’assioma
+della transitività <span class="math inline">X \rightarrow V, V
+\rightarrow W \in F^A \implies X \rightarrow W \in F^A</span>, allora
+per il lemma precedente <span class="math inline">W \subseteq X^+_F
+\implies t_1[W] = t_2[W]</span> per costruzione di <span
+class="math inline">r</span></li>
 </ul></li>
 <li>allora <span class="math inline">r</span> legale su <span
-class="math inline">R&#39; \implies \forall Y \subseteq R&#39;(X^+_F, R
-- X^+_F) \mid X \rightarrow Y \in F^+ \quad r</span> soddisfa <span
+class="math inline">R \implies \forall Y \subseteq R(X^+_F, R - X^+_F)
+\mid X \rightarrow Y \in F^+ \quad r</span> soddisfa <span
 class="math inline">X \rightarrow Y \in F^+</span></li>
 <li>per osservazione precedente <span class="math inline">X \subseteq
 X^+_F</span>, allora <span class="math inline">t_1[X] = t_2[X]</span>
@@ -842,15 +842,15 @@ X^+_F</span></li>
 <li><span class="math inline">Z^f \supseteq X^+_F</span>
 <ul>
 <li>sia <span class="math inline">r</span> istanza di <span
-class="math inline">R&#39;(Z^f, R - Z^f) \mid t_1[Z^f] = t_2[Z^f] = (1,
+class="math inline">R(Z^f, R - Z^f) \mid t_1[Z^f] = t_2[Z^f] = (1,
 \ldots, 1)</span>, mentre <span class="math inline">t_1[R - Z^f] = (1,
 \ldots, 1) \land t_2[R - Z^f] = (0, \ldots, 0)</span></li>
 <li><span class="math inline">r</span> legale su <span
-class="math inline">F \iff \forall V, W \subseteq R&#39;(Z^f, R - Z^f)
-\mid V \rightarrow W \in F \quad r</span> soddisfa <span
-class="math inline">V \rightarrow W</span></li>
-<li><span class="math inline">\forall V, W \subseteq R&#39;(Z^f, R -
-Z^f) \mid V \rightarrow W \in F</span> possono verificarsi <span
+class="math inline">F \iff \forall V, W \subseteq R(Z^f, R - Z^f) \mid V
+\rightarrow W \in F \quad r</span> soddisfa <span class="math inline">V
+\rightarrow W</span></li>
+<li><span class="math inline">\forall V, W \subseteq R(Z^f, R - Z^f)
+\mid V \rightarrow W \in F</span> possono verificarsi <span
 class="math inline">3</span> possibili casi
 <ul>
 <li><span class="math inline">V \subseteq R - Z^f \implies (1, \ldots,
@@ -879,7 +879,7 @@ per costruzione di <span class="math inline">r</span></li>
 </ul></li>
 </ul></li>
 <li>allora <span class="math inline">r</span> legale su <span
-class="math inline">R&#39;</span></li>
+class="math inline">R</span></li>
 <li>per lemma precedente <span class="math inline">\forall A \in X^+_F
 \quad X \rightarrow A \in F^A</span>, e per dimostrazione precedente
 <span class="math inline">F^A = F^+ \implies X \rightarrow A \in F^+

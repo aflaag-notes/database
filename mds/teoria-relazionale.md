@@ -244,14 +244,14 @@
                 - $Z \rightarrow Y \in F^+ \implies \forall r$ istanza di $R$ legale su $F \quad \forall t_1, t_2 \in r \quad t_1[Z] = t_2[Z] \implies t_1[Y] = t_2[Y]$
                 - allora, necessariamente $\forall r$ istanza legale di $R$ su $F \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y] \implies X \rightarrow Y \in F^+$ per definizione di $F^+$
     - $F^+ \subseteq F^A$
-        - sia $X \subseteq R(A_1, \ldots, A_n)$ e $r$ istanza di $R'(X^+_F, R - X^+_F) \mid t_1[X^+_F] = t_2[X^+_F] = (1, \ldots, 1)$, mentre $t_1[R - X^+_F] = (1, \ldots, 1) \land t_2[R - X^+_F] = (0, \ldots, 0)$
+        - sia $X \subseteq R(A_1, \ldots, A_n)$ e $r$ istanza di $R(X^+_F, R - X^+_F) \mid t_1[X^+_F] = t_2[X^+_F] = (1, \ldots, 1)$, mentre $t_1[R - X^+_F] = (1, \ldots, 1) \land t_2[R - X^+_F] = (0, \ldots, 0)$
             - in particolare $t_1[R - X^+_F]$ è complementare a $t_2[R - X^+_F]$, dunque diverso in ogni colonna
-        - $r$ legale su $F \iff \forall V, W \subseteq R'(X^+_F, R - X^+_F) \mid V \rightarrow W \in F \quad r$ soddisfa $V \rightarrow W$
-        - $\forall V, W \subseteq R'(X^+_F, R - X^+_F) \mid V \rightarrow W \in F$ possono verificarsi $3$ possibili casi
+        - $r$ legale su $F \iff \forall V, W \subseteq R(X^+_F, R - X^+_F) \mid V \rightarrow W \in F \quad r$ soddisfa $V \rightarrow W$
+        - $\forall V, W \subseteq R(X^+_F, R - X^+_F) \mid V \rightarrow W \in F$ possono verificarsi $3$ possibili casi
             - $V \subseteq R - X^+_F \implies (1, \ldots, 1) = t_1[V] \neq t_2[V] = (0, \ldots, 0)$
             - $V \cap (R - X^+_F) \neq \varnothing \implies \exists A \subseteq V \mid A \subseteq R - X^+_F \implies t_1[V] \neq t_1[V]$ in quanto $t_1[V]$ e $t_2[V]$ sono stati scelti complementari, e dunque diversi in ogni colonna
-            - $V \subseteq X^+_F \implies t_1[V] = t_2[V]$, dunque è necessario controllare che $r$ soddisfi $V \rightarrow W \in F$, e dunque $V \subseteq X^+_F \implies X \rightarrow V \in F^A$ per lemma precedentemente dimostrato, inoltre $F \subseteq F^A \implies V \rightarrow W \in F \implies V \rightarrow W \in F^A$, allora per l'assioma della transitività $X \rightarrow V, V \rightarrow W \in F^A \implies X \rightarrow W \in F^A$, allora per il lemma precedente $W \subseteq X^+_F \implies t_1[W] = t_2[W]$ per costruzione di $r$
-        - allora $r$ legale su $R' \implies \forall Y \subseteq R'(X^+_F, R - X^+_F) \mid X \rightarrow Y \in F^+ \quad r$ soddisfa $X \rightarrow Y \in F^+$
+            - $V \subseteq X^+_F \implies t_1[V] = t_2[V]$ per costruzione di $r$, dunque è necessario controllare che $r$ soddisfi $V \rightarrow W \in F$, e dunque $V \subseteq X^+_F \implies X \rightarrow V \in F^A$ per lemma precedentemente dimostrato, inoltre $F \subseteq F^A \implies V \rightarrow W \in F \implies V \rightarrow W \in F^A$, allora per l'assioma della transitività $X \rightarrow V, V \rightarrow W \in F^A \implies X \rightarrow W \in F^A$, allora per il lemma precedente $W \subseteq X^+_F \implies t_1[W] = t_2[W]$ per costruzione di $r$
+        - allora $r$ legale su $R \implies \forall Y \subseteq R(X^+_F, R - X^+_F) \mid X \rightarrow Y \in F^+ \quad r$ soddisfa $X \rightarrow Y \in F^+$
         - per osservazione precedente $X \subseteq X^+_F$, allora $t_1[X] = t_2[X]$ per costruzione di $r$
         - $r$ soddisfa $X \rightarrow Y \in F^+ \implies Y \subseteq X^+_F$ per costruzione di $r$
         - allora per il lemma precedente $Y \subseteq X^+_F \implies X \rightarrow Y \in F^A$
@@ -294,15 +294,15 @@
                     - $Y \rightarrow V \in F \implies Y \rightarrow F^A$, allora $X \rightarrow Y , Y \rightarrow V \in F^A \implies X \rightarrow V \in F^A$, allora per il lemma $X \rightarrow V \in F^A \implies V \subseteq X^+_F$
                     - $A \in V \subseteq X^+_F \implies A \in X^+_F$
         - $Z^f \supseteq X^+_F$
-            - sia $r$ istanza di $R'(Z^f, R - Z^f) \mid t_1[Z^f] = t_2[Z^f] = (1, \ldots, 1)$, mentre $t_1[R - Z^f] = (1, \ldots, 1) \land t_2[R - Z^f] = (0, \ldots, 0)$
-            - $r$ legale su $F \iff \forall V, W \subseteq R'(Z^f, R - Z^f) \mid V \rightarrow W \in F \quad r$ soddisfa $V \rightarrow W$
-            - $\forall V, W \subseteq R'(Z^f, R - Z^f) \mid V \rightarrow W \in F$ possono verificarsi $3$ possibili casi
+            - sia $r$ istanza di $R(Z^f, R - Z^f) \mid t_1[Z^f] = t_2[Z^f] = (1, \ldots, 1)$, mentre $t_1[R - Z^f] = (1, \ldots, 1) \land t_2[R - Z^f] = (0, \ldots, 0)$
+            - $r$ legale su $F \iff \forall V, W \subseteq R(Z^f, R - Z^f) \mid V \rightarrow W \in F \quad r$ soddisfa $V \rightarrow W$
+            - $\forall V, W \subseteq R(Z^f, R - Z^f) \mid V \rightarrow W \in F$ possono verificarsi $3$ possibili casi
                 - $V \subseteq R - Z^f \implies (1, \ldots, 1) = t_1[V] \neq t_2[V] = (0, \ldots, 0)$
                 - $V \cap (R - Z^f) \neq \varnothing \implies \exists A \subseteq V \mid A \subseteq R - Z^f \implies t_1[V] \neq t_1[V]$ in quanto $t_1[V]$ e $t_2[V]$ sono stati scelti complementari, e dunque diversi in ogni colonna
                 - $V \subseteq Z^f \implies t_1[V] = t_2[V]$, dunque è necessario controllare che $r$ soddisfi $V \rightarrow W \in F$
                     - per definizione di $S^f := \{B \in R(A_1, \ldots, A_n) \mid B \in W \land W \subseteq Z^f\}$ ovvero, in $S^f$ sarà interamente contenuto $W$ alla $f$-esima iterazione, e dunque $W \subseteq S^f$
                     - poiché il loop **while** continua fintanto che $S^i \nsubseteq Z^i$, allora necessariamente $S^f \subseteq Z^f \implies W \subseteq S^f \subseteq Z^f \implies W \subseteq Z^f \implies t_1[W] = t_2[W]$ per costruzione di $r$
-            - allora $r$ legale su $R'$
+            - allora $r$ legale su $R$
             - per lemma precedente $\forall A \in X^+_F \quad X \rightarrow A \in F^A$, e per dimostrazione precedente $F^A = F^+ \implies X \rightarrow A \in F^+ \implies \forall r'$ istanza legale di $R \quad r'$ soddisfa $X \rightarrow A \in F^+$ per definizione di $F^+$
             - $r$ legale $\implies r$ soddisfa $X \rightarrow A \in F^+$
             - per costruzione dell'algoritmo $X = Z^0 \subseteq Z^f \implies t_1[X] = t_2[X]$ per costruzione di $r$, e poiché $r$ legale si ha che $t_1[A] = t_2[A]$, allora $A \in Z^f$ per costruzione di $r$
