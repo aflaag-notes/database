@@ -45,6 +45,10 @@
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 > - $\rho$ **preserva $F$** $\iff F \equiv G$
+>   - $\rho$ è una _buona_ decomposizione se:
+>     - ogni sottoschema di $\rho$ è in terza forma normale
+>     - $\rho$ preserva $F$
+>     - $\rho$ permette di ricostruire ogni istanza legale di $R$, attraverso il join naturale delle istanze legali $r_1, \ldots, r_h$ dei sottoschemi di $\rho$, senza perdita di informazioni
 
 ## Oss
 
@@ -90,6 +94,7 @@
 - **Oss**
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
+    - ⚠️ **13.20-21-22**
 - **Dim**
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
     - $Z^f = X^+_G$
@@ -137,4 +142,9 @@
 - **Dim**
     - per lemma precedente $Y \subseteq X^+_G \implies X \rightarrow Y \in G^A = G^+$
     - allora $\exists X \rightarrow Y \in F \mid Y \nsubseteq X^+_G \implies X \rightarrow Y \notin G^+ \implies F \nsubseteq G^+ \implies \rho$ non preserva $F$ per dimostrazione precedente
+
+## Def
+
+- **Join senza perdita**
+
 

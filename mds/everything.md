@@ -725,6 +725,10 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 > - $\rho$ **preserva $F$** $\iff F \equiv G$
+>   - $\rho$ è una _buona_ decomposizione se:
+>     - ogni sottoschema di $\rho$ è in terza forma normale
+>     - $\rho$ preserva $F$
+>     - $\rho$ permette di ricostruire ogni istanza legale di $R$, attraverso il join naturale delle istanze legali $r_1, \ldots, r_h$ dei sottoschemi di $\rho$, senza perdita di informazioni
 
 
 
@@ -770,6 +774,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Oss**
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
+    - ⚠️ **13.20-21-22**
 
 ## Teorema 24
 
@@ -793,4 +798,12 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Oss**
     - l'algoritmo controlla se $\rho$ preserva $F$
     - per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
+
+## Teorema 25
+
+
+- **Join senza perdita**
+
+
+
 
