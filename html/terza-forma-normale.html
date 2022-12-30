@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title> </title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #fdfdfd;
+      background-color: #1f1f1f;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #fdfdfd;
+    }
+    a:visited {
+      color: #fdfdfd;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #adbac7;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #fdfdfd;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #fdfdfd;
+      border-bottom: 1px solid #fdfdfd;
+    }
+    th {
+      border-top: 1px solid #fdfdfd;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<h1 id="terza-forma-normale">Terza forma normale</h1>
+<h2 id="def">Def</h2>
+<ul>
+<li><strong>Chiave e superchiave di una relazione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots, A_n)</span> è
+detta <strong>superchiave di <span class="math inline">R</span></strong>
+<span class="math inline">\iff \forall r</span> istanza di <span
+class="math inline">R \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X]
+\implies t_1 = t_2</span></li>
+<li><span class="math inline">X</span> è detta <strong>chiave di <span
+class="math inline">R</span></strong> <span class="math inline">\iff
+X</span> è la chiave di <span class="math inline">R</span> con minor
+numero di attributi</li>
+</ul>
+</blockquote>
+<h2 id="oss">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots,
+A_n)</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">K</span> superchiave di <span
+class="math inline">R \iff K \rightarrow R \in F^+</span></li>
+<li><span class="math inline">K</span> chiave di <span
+class="math inline">R \iff K</span> superchiave di <span
+class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
+\rightarrow R \in F^+</span></li>
+</ul></li>
+</ul>
+<h2 id="oss-1">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">X^+_F = R \iff X</span> superchiave di
+<span class="math inline">R</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li><span class="math inline">X^+_F := \{A \subseteq R(A_1, \ldots, A_n)
+\mid X \rightarrow A \in F^A = F^+\}</span>, allora <span
+class="math inline">X^+_F = R \iff \forall Y \subseteq R(A_1, \ldots,
+A_n) \quad X \rightarrow Y \in F^A = F^+</span>, ovvero <span
+class="math inline">X \rightarrow R \in F^+</span>, e per osservazione
+precedente <span class="math inline">X \rightarrow R \in F^+ \iff
+X</span> superchiave di <span class="math inline">R</span></li>
+</ul></li>
+</ul>
+<h2 id="oss-2">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali</li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">X = \displaystyle \bigcap_{F_i:= A
+\rightarrow B \in F}{R - (B - A)}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">X^+_F=R \iff X</span> chiave unica in
+<span class="math inline">R</span></li>
+</ul></li>
+</ul>
+<h2 id="def-1">Def</h2>
+<ul>
+<li><strong>Attributo primo</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \in R(A_1, \ldots, A_n)</span> è
+<strong>primo</strong> <span class="math inline">\iff \exists K
+\subseteq R(A_1, \ldots, A_n)</span> chiave di <span
+class="math inline">R \mid X \in K</span></li>
+</ul>
+</blockquote>
+<h2 id="def-2">Def</h2>
+<ul>
+<li><strong>Terza forma normale</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">R</span> è in <strong>terza forma
+normale</strong> <span class="math inline">\iff \forall A \in R(A_1,
+\ldots, A_n), X \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in
+F^+, A \notin X \quad A \in K \lor K \subseteq X</span>
+<ul>
+<li>ovvero, per ogni dipendenza funzionale non banale in <span
+class="math inline">F^+</span>, o il determinante è superchiave, o il
+determinato è primo</li>
+<li>la terza forma normale garantisce che non ci siano problemi di
+ridondanza, dunque non vi sono problemi di inserimento, di aggiornamento
+e di eliminazione</li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="oss-3">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">R</span> in terza forma normale <span
+class="math inline">\iff \forall X, Y \subseteq R(A_1, \ldots, A_n) \mid
+Y:= A_i \ldots A_j, X \rightarrow Y \in F^+, Y \nsubseteq X \quad
+\forall h \in [i, j] \quad A_h \in K \lor K \subseteq X</span>, dunque
+basta decomporre <span class="math inline">X \rightarrow Y \in
+F^+</span> e controllare gli <span class="math inline">A_i \ldots
+A_j</span></li>
+</ul></li>
+</ul>
+<h2 id="def-3">Def</h2>
+<ul>
+<li><strong>Dipendenza parziale</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">A \in R(A_1, \ldots, A_n)</span></li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots, A_n) \mid X
+\rightarrow A \in F^+, A \notin X</span></li>
+<li><span class="math inline">X \rightarrow A \in F^+</span> è detta
+<strong>dipendenza parziale su <span
+class="math inline">R</span></strong> <span class="math inline">\iff
+A</span> non primo e <span class="math inline">X \subset K</span>
+<ul>
+<li>in particolare <span class="math inline">X \neq K</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Dipendenza transitiva</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">A \in R(A_1, \ldots, A_n)</span></li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots, A_n) \mid X
+\rightarrow A \in F^+, A \notin X</span></li>
+<li><span class="math inline">X \rightarrow A \in F^+</span> è detta
+<strong>dipendenza parziale su <span
+class="math inline">R</span></strong> <span class="math inline">\iff
+A</span> non primo e <span class="math inline">\forall K \subseteq
+R(A_1, \ldots, A_n)</span> chiave di <span class="math inline">R \quad K
+\cap X = \varnothing \lor X \subset K</span>
+<ul>
+<li>in particolare <span class="math inline">\forall K \subseteq R(A_1,
+\ldots, A_n)</span> chiave di <span class="math inline">R \quad X \neq
+K</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="oss-4">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">R</span> in terza forma normale <span
+class="math inline">\iff \nexists X, Y \subseteq R(A_1, \ldots, A_n)
+\mid X \rightarrow Y \in F^+</span> dipendenza parziale o <span
+class="math inline">X \rightarrow Y \in F^+</span> dipendenza
+transitiva</li>
+</ul></li>
+</ul>
+<h2 id="def-4">Def</h2>
+<ul>
+<li><strong>Forma Normale di Boyce-Codd</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">K \subseteq R(A_1, \ldots, A_n)</span>
+chiave di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">R</span> è in <strong>forma normale di
+Boyce-Codd</strong> <span class="math inline">\iff \forall X \subseteq
+R(A_1, \ldots, A_n), X</span> determinante <span
+class="math inline">\exists K \subseteq R(A_1, \ldots, A_n)</span>
+superchiave <span class="math inline">\mid X \subseteq K</span>
+<ul>
+<li>questa forma normale preserva le dipendenze funzionali soddisfatte
+da ogni istanza legale di ogni sottoschema di <span
+class="math inline">R</span>, senza perdita di informazioni</li>
+<li>inoltre, permette di ricostruire attraverso il join naturale ogni
+istanza legale di ogni sotto schema di <span
+class="math inline">R</span>, senza aggiunta di informazioni</li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="oss-5">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale <span class="math inline">\mid R</span> in forma normale di
+Boyce-Codd</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">R</span> in terza forma normale</li>
+</ul></li>
+</ul>
+<h2 id="def-5">Def</h2>
+<ul>
+<li><p><strong>Decomposizione</strong></p></li>
+<li><p>⚠️ <strong>DEFINISCI SOTTOSCHEMA</strong></p></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, N \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">R_1, \ldots, R_N</span> sottoschemi di
+<span class="math inline">R \mid C := \displaystyle \bigcup_{i =
+1}^N{R_i} = R</span> ricoprimento di <span
+class="math inline">R</span></li>
+<li><span class="math inline">\rho \subseteq C</span> è detto
+<strong>decomposizione di <span
+class="math inline">R</span></strong></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Proiezione di un insieme di dipendenze su un
+sottoschema</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">i \in [1, h]</span></li>
+<li><span class="math inline">R_i \in \rho</span> sottoschema di <span
+class="math inline">R</span> in <span
+class="math inline">\rho</span></li>
+<li><span class="math inline">\pi_{R_i}(F) = \{X \rightarrow Y \in F^+
+\mid XY \subseteq R_i\}</span> è detta <strong>proiezione di <span
+class="math inline">F</span> su <span
+class="math inline">R_i</span></strong>
+<ul>
+<li><span class="math inline">\pi_{R_i}(F)</span> è l’insieme delle
+dipendenze funzionali in <span class="math inline">F</span> che hanno
+determinante e determinato in <span class="math inline">R_i</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Preservazione di un insieme di dipendenze
+funzionali</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+<li><span class="math inline">\rho</span> <strong>preserva <span
+class="math inline">F</span></strong> <span class="math inline">\iff F
+\equiv G</span></li>
+</ul>
+</blockquote>
+<h2 id="oss-6">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">\rho</span> preserva <span
+class="math inline">F \iff G^+ \supseteq F</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>poiché <span class="math inline">G</span> è definito a partire da
+<span class="math inline">F</span>, pur non conoscendo in che relazione
+si trovano <span class="math inline">G</span> ed <span
+class="math inline">F</span>, sicuramente <span class="math inline">F
+\subseteq F^+</span> e <span class="math inline">G \subseteq
+F^+</span></li>
+<li>allora, per lemma precedente <span class="math inline">G \subseteq
+F^+ \implies G^+ \subseteq F^+ \implies \rho</span> preserva <span
+class="math inline">F \iff G^+ \supseteq F^+</span></li>
+<li>per lemma precedente <span class="math inline">G^+ \supseteq F^+
+\implies G^+ \supseteq F</span></li>
+</ul></li>
+</ul>
+</body>
+</html>

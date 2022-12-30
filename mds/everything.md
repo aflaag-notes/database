@@ -500,9 +500,10 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $F \xrightarrow{A} G \iff G \subseteq F^+$
 
-****
 
+****
 # Terza forma normale
+
 
 
 ## Definizione 12
@@ -580,7 +581,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 ## Definizione 14
 
 
-- **Terza Forma Normale**
+- **Terza forma normale**
 
 > - $n, k \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
