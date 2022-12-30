@@ -158,7 +158,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 6
+## Teorema 1
 
 
 - **Hp**
@@ -170,40 +170,18 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $R_2(A_1', \ldots, B, \ldots, A_n')$ schema relazionale
     - $r_1$ istanza di $R_1$
     - $r_2$ istanza di $R_2$
-- **Oss**
-    - in questa situazione, si verifica che $r_1 \times r_2$ conterrà delle tuple senza significato, poiché esiste un attributo con stesso nome in $R_1$ e in $R_2$, ovvero $B$
-    - per risolvere questo problema, spesso l'operatore $\times$ viene utilizzato congiuntamente a $\rho, \sigma$ e $\pi$
-      - infatti, per ottenere un prodotto cartesiano con significato è necessario prima rinominare l'attributo in comune in uno dei due schemi relazionali, per differenziarli, e dunque $R_2' = \rho_{B' \leftarrow B}(R_2)$, e sia $r_2'$ l'istanza di $R_2'$
-      - successivamente, facendo $r_1 \times r_2'$, si otterra un'istanza contenente delle tuple ancora senza significato, che sarà possibile rimuovere selezionando attraverso $\sigma_{B'=B}(r_1 \times r_2')$
-      - infine, a questo punto si avranno due colonne perfettamente identiche, e dunque è sufficiente proiettare prendendo solo una delle colonne tra $B$ e $B'$, e quindi $\pi_{A_1, \ldots, B, \ldots, A_n, A_1', \ldots, \hat B', \ldots, A_n'}(\sigma_{B=B'}(r_1 \times r_2'))$ è il prodotto cartesiano cercato
+- **Th**
+    - $r_1 \times r_2$ contiene tuple senza significato
+    - il prodotto cartesiano cercato è $\pi_{A_1, \ldots, B, \ldots, A_n, A_1', \ldots, \hat B', \ldots, A_n'}(\sigma_{B=B'}(r_1 \times r_2'))$
 
-# Def
-
-- **Join naturale**
-
-> - $n \in \mathbb{N}$
-> - $D_1, \ldots, D_n, D_1',  \ldots , D_n'$ domini $\mid \forall i \in [1, n] \quad D_i = D_i'$
-> - $R_1 \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R_2 \subseteq D_1' \times \ldots \times D_n'$ relazione
-> - $R_1(A_1, \ldots, A_n)$ schema relazionale
-> - $R_2(A_1', \ldots, A_n')$ schema relazionale
-> - $r_1$ istanza di $R_1$
-> - $r_2$ istanza di $R_2$
-> - $r_1 \bowtie r_2$ è detto **join naturale di $r_1$ e $r_2$** ⚠️ **SCRIVERE BENE LA DEFINIZIONE**
->   - dunque, il join naturale costituisce il prodotto cartesiano "con significato" discusso precedentemente
- **SCRIVERE BENE LA DEFINIZIONE**
->   - dunque, il join naturale costituisce il prodotto cartesiano "con significato" discusso precedentemente
-
-
-
-## Teorema 1
+## Teorema 2
 
 
 - ⚠️ **4.30**
 
 
 
-## Teorema 2
+## Teorema 3
 
 
 - **Hp**
@@ -225,7 +203,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 7
+## Definizione 6
 
 
 - **Dipendenza funzionale**
@@ -251,7 +229,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 8
+## Definizione 7
 
 
 - **Chiusura di un insieme di dipendenze funzionali**
@@ -269,7 +247,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 3
+## Teorema 4
 
 
 - **Hp**
@@ -284,7 +262,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 4
+## Teorema 5
 
 
 - **Hp**
@@ -303,7 +281,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 # Assiomi di Armstrong
 
 
-## Definizione 9
+## Definizione 8
 
 
 - **Assiomi di Armstrong**
@@ -322,7 +300,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 5
+## Teorema 6
 
 
 - **Hp**
@@ -337,7 +315,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 6
+## Teorema 7
 
 
 - **Hp**
@@ -351,7 +329,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$ è detta **regola dell'unione**
 
-## Teorema 7
+## Teorema 8
 
 
 - **Hp**
@@ -365,7 +343,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$ è detta **regola della decomposizione**
 
-## Teorema 8
+## Teorema 9
 
 
 - **Hp**
@@ -379,7 +357,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$ è detta **regola della pseudotransitività**
 
-## Teorema 9
+## Teorema 10
 
 
 - **Hp**
@@ -394,7 +372,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow A_i \ldots A_j \in F^A \iff \forall h \in [i, j]\quad X \rightarrow A_h \in F^A$
 
-## Definizione 10
+## Definizione 9
 
 
 - **Chiusura di un insieme di attributi**
@@ -411,7 +389,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 10
+## Teorema 11
 
 
 - **Hp**
@@ -425,7 +403,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y \in F^A \iff Y \subseteq X^+_F$
 
-## Teorema 11
+## Teorema 12
 
 
 - **Hp**
@@ -439,7 +417,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \subseteq X^+_F$
 
-## Teorema 12
+## Teorema 13
 
 
 - **Hp**
@@ -452,7 +430,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $F^+ = F^A$
 
-## Teorema 13
+## Teorema 14
 
 
 - **Input**
@@ -475,7 +453,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - l'algoritmo calcola $X^+_F$
     - di fatto, il loop $\texttt{while}$ applica gli assiomi di Armstrong
 
-## Definizione 11
+## Definizione 10
 
 
 - **Insiemi di dipendenze funzionali equivalenti**
@@ -491,7 +469,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 14
+## Teorema 15
 
 
 - **Hp**
@@ -511,7 +489,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 12
+## Definizione 11
 
 
 - **Chiave e superchiave di una relazione**
@@ -525,7 +503,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 15
+## Teorema 16
 
 
 - **Hp**
@@ -540,7 +518,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 16
+## Teorema 17
 
 
 - **Hp**
@@ -554,7 +532,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X^+_F = R \iff X$ superchiave di $R$
 
-## Teorema 17
+## Teorema 18
 
 
 - **Hp**
@@ -570,7 +548,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 13
+## Definizione 12
 
 
 - **Attributo primo**
@@ -583,7 +561,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 14
+## Definizione 13
 
 
 - **Terza forma normale**
@@ -601,7 +579,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 18
+## Teorema 19
 
 
 - **Hp**
@@ -617,7 +595,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 15
+## Definizione 14
 
 
 - **Dipendenza parziale**
@@ -649,7 +627,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 19
+## Teorema 20
 
 
 - **Hp**
@@ -665,7 +643,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 16
+## Definizione 15
 
 
 - **Forma Normale di Boyce-Codd**
@@ -683,7 +661,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 20
+## Teorema 21
 
 
 - **Hp**
@@ -698,7 +676,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 17
+## Definizione 16
 
 
 
@@ -750,7 +728,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 21
+## Teorema 22
 
 
 - **Hp**
@@ -765,7 +743,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\rho$ preserva $F \iff G^+ \supseteq F$
 
-## Teorema 22
+## Teorema 23
 
 
 - **Input**
@@ -788,7 +766,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 23
+## Teorema 24
 
 
 - **Input**

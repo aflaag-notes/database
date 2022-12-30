@@ -145,7 +145,10 @@
     - $R_2(A_1', \ldots, B, \ldots, A_n')$ schema relazionale
     - $r_1$ istanza di $R_1$
     - $r_2$ istanza di $R_2$
-- **Oss**
+- **Th**
+    - $r_1 \times r_2$ contiene tuple senza significato
+    - il prodotto cartesiano cercato è $\pi_{A_1, \ldots, B, \ldots, A_n, A_1', \ldots, \hat B', \ldots, A_n'}(\sigma_{B=B'}(r_1 \times r_2'))$
+- **Dim**
     - in questa situazione, si verifica che $r_1 \times r_2$ conterrà delle tuple senza significato, poiché esiste un attributo con stesso nome in $R_1$ e in $R_2$, ovvero $B$
     - per risolvere questo problema, spesso l'operatore $\times$ viene utilizzato congiuntamente a $\rho, \sigma$ e $\pi$
       - infatti, per ottenere un prodotto cartesiano con significato è necessario prima rinominare l'attributo in comune in uno dei due schemi relazionali, per differenziarli, e dunque $R_2' = \rho_{B' \leftarrow B}(R_2)$, e sia $r_2'$ l'istanza di $R_2'$

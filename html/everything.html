@@ -462,7 +462,7 @@ delle istanze <span class="math inline">r_2</span> e <span
 class="math inline">r_2</span></strong></li>
 </ul>
 </blockquote>
-<h2 id="definizione-6">Definizione 6</h2>
+<h2 id="teorema-1">Teorema 1</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -484,79 +484,20 @@ class="math inline">R_1</span></li>
 <li><span class="math inline">r_2</span> istanza di <span
 class="math inline">R_2</span></li>
 </ul></li>
-<li><strong>Oss</strong>
+<li><strong>Th</strong>
 <ul>
-<li>in questa situazione, si verifica che <span class="math inline">r_1
-\times r_2</span> conterrà delle tuple senza significato, poiché esiste
-un attributo con stesso nome in <span class="math inline">R_1</span> e
-in <span class="math inline">R_2</span>, ovvero <span
-class="math inline">B</span></li>
-<li>per risolvere questo problema, spesso l’operatore <span
-class="math inline">\times</span> viene utilizzato congiuntamente a
-<span class="math inline">\rho, \sigma</span> e <span
-class="math inline">\pi</span>
-<ul>
-<li>infatti, per ottenere un prodotto cartesiano con significato è
-necessario prima rinominare l’attributo in comune in uno dei due schemi
-relazionali, per differenziarli, e dunque <span
-class="math inline">R_2&#39; = \rho_{B&#39; \leftarrow B}(R_2)</span>, e
-sia <span class="math inline">r_2&#39;</span> l’istanza di <span
-class="math inline">R_2&#39;</span></li>
-<li>successivamente, facendo <span class="math inline">r_1 \times
-r_2&#39;</span>, si otterra un’istanza contenente delle tuple ancora
-senza significato, che sarà possibile rimuovere selezionando attraverso
-<span class="math inline">\sigma_{B&#39;=B}(r_1 \times
-r_2&#39;)</span></li>
-<li>infine, a questo punto si avranno due colonne perfettamente
-identiche, e dunque è sufficiente proiettare prendendo solo una delle
-colonne tra <span class="math inline">B</span> e <span
-class="math inline">B&#39;</span>, e quindi <span
-class="math inline">\pi_{A_1, \ldots, B, \ldots, A_n, A_1&#39;, \ldots,
-\hat B&#39;, \ldots, A_n&#39;}(\sigma_{B=B&#39;}(r_1 \times
-r_2&#39;))</span> è il prodotto cartesiano cercato</li>
-</ul></li>
+<li><span class="math inline">r_1 \times r_2</span> contiene tuple senza
+significato</li>
+<li>il prodotto cartesiano cercato è <span class="math inline">\pi_{A_1,
+\ldots, B, \ldots, A_n, A_1&#39;, \ldots, \hat B&#39;, \ldots,
+A_n&#39;}(\sigma_{B=B&#39;}(r_1 \times r_2&#39;))</span></li>
 </ul></li>
 </ul>
-<h1 id="def">Def</h1>
-<ul>
-<li><strong>Join naturale</strong></li>
-</ul>
-<blockquote>
-<ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n, D_1&#39;, \ldots ,
-D_n&#39;</span> domini <span class="math inline">\mid \forall i \in [1,
-n] \quad D_i = D_i&#39;</span></li>
-<li><span class="math inline">R_1 \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R_2 \subseteq D_1&#39; \times \ldots
-\times D_n&#39;</span> relazione</li>
-<li><span class="math inline">R_1(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">R_2(A_1&#39;, \ldots, A_n&#39;)</span>
-schema relazionale</li>
-<li><span class="math inline">r_1</span> istanza di <span
-class="math inline">R_1</span></li>
-<li><span class="math inline">r_2</span> istanza di <span
-class="math inline">R_2</span></li>
-<li><span class="math inline">r_1 \bowtie r_2</span> è detto
-<strong>join naturale di <span class="math inline">r_1</span> e <span
-class="math inline">r_2</span></strong> !!! <strong>SCRIVERE BENE LA
-DEFINIZIONE</strong>
-<ul>
-<li>dunque, il join naturale costituisce il prodotto cartesiano “con
-significato” discusso precedentemente <strong>SCRIVERE BENE LA
-DEFINIZIONE</strong></li>
-<li>dunque, il join naturale costituisce il prodotto cartesiano “con
-significato” discusso precedentemente</li>
-</ul></li>
-</ul>
-</blockquote>
-<h2 id="teorema-1">Teorema 1</h2>
+<h2 id="teorema-2">Teorema 2</h2>
 <ul>
 <li>!!! <strong>4.30</strong></li>
 </ul>
-<h2 id="teorema-2">Teorema 2</h2>
+<h2 id="teorema-3">Teorema 3</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -590,7 +531,7 @@ r_2</span></li>
 </ul>
 <hr />
 <h1 id="teoria-relazionale">Teoria relazionale</h1>
-<h2 id="definizione-7">Definizione 7</h2>
+<h2 id="definizione-6">Definizione 6</h2>
 <ul>
 <li><strong>Dipendenza funzionale</strong></li>
 </ul>
@@ -639,7 +580,7 @@ class="math inline">F</span></strong> <span class="math inline">\iff
 class="math inline">F_i</span></li>
 </ul>
 </blockquote>
-<h2 id="definizione-8">Definizione 8</h2>
+<h2 id="definizione-7">Definizione 7</h2>
 <ul>
 <li><strong>Chiusura di un insieme di dipendenze
 funzionali</strong></li>
@@ -669,7 +610,7 @@ class="math inline">F^+</span></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-3">Teorema 3</h2>
+<h2 id="teorema-4">Teorema 4</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -688,7 +629,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F \subseteq F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-4">Teorema 4</h2>
+<h2 id="teorema-5">Teorema 5</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -711,7 +652,7 @@ funzionali su <span class="math inline">R</span></li>
 </ul>
 <hr />
 <h1 id="assiomi-di-armstrong">Assiomi di Armstrong</h1>
-<h2 id="definizione-9">Definizione 9</h2>
+<h2 id="definizione-8">Definizione 8</h2>
 <ul>
 <li><strong>Assiomi di Armstrong</strong></li>
 </ul>
@@ -743,7 +684,7 @@ F^A</span> è detto <strong>assioma dell’aumento</strong></li>
 \in F^A</span> è detto <strong>assioma della transitività</strong></li>
 </ul>
 </blockquote>
-<h2 id="teorema-5">Teorema 5</h2>
+<h2 id="teorema-6">Teorema 6</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -762,7 +703,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F \subseteq F^A</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-6">Teorema 6</h2>
+<h2 id="teorema-7">Teorema 7</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -785,7 +726,7 @@ funzionali su <span class="math inline">R</span></li>
 dell’unione</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-7">Teorema 7</h2>
+<h2 id="teorema-8">Teorema 8</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -808,7 +749,7 @@ Y \implies X \rightarrow Z \in F^A</span> è detta <strong>regola della
 decomposizione</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-8">Teorema 8</h2>
+<h2 id="teorema-9">Teorema 9</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -831,7 +772,7 @@ funzionali su <span class="math inline">R</span></li>
 pseudotransitività</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-9">Teorema 9</h2>
+<h2 id="teorema-10">Teorema 10</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -854,7 +795,7 @@ funzionali su <span class="math inline">R</span></li>
 \forall h \in [i, j]\quad X \rightarrow A_h \in F^A</span></li>
 </ul></li>
 </ul>
-<h2 id="definizione-10">Definizione 10</h2>
+<h2 id="definizione-9">Definizione 9</h2>
 <ul>
 <li><strong>Chiusura di un insieme di attributi</strong></li>
 </ul>
@@ -882,7 +823,7 @@ assiomi di Armstrong</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-10">Teorema 10</h2>
+<h2 id="teorema-11">Teorema 11</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -904,7 +845,7 @@ funzionali su <span class="math inline">R</span></li>
 X^+_F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-11">Teorema 11</h2>
+<h2 id="teorema-12">Teorema 12</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -925,7 +866,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">X \subseteq X^+_F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-12">Teorema 12</h2>
+<h2 id="teorema-13">Teorema 13</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -944,7 +885,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F^+ = F^A</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-13">Teorema 13</h2>
+<h2 id="teorema-14">Teorema 14</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -986,7 +927,7 @@ class="math inline">S \nsubseteq Z</span>:
 applica gli assiomi di Armstrong</li>
 </ul></li>
 </ul>
-<h2 id="definizione-11">Definizione 11</h2>
+<h2 id="definizione-10">Definizione 10</h2>
 <ul>
 <li><strong>Insiemi di dipendenze funzionali equivalenti</strong></li>
 </ul>
@@ -1007,7 +948,7 @@ class="math inline">F</span> e <span class="math inline">G</span> sono
 detti <strong>equivalenti</strong></li>
 </ul>
 </blockquote>
-<h2 id="teorema-14">Teorema 14</h2>
+<h2 id="teorema-15">Teorema 15</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1030,7 +971,7 @@ F^+</span></li>
 </ul>
 <hr />
 <h1 id="terza-forma-normale">Terza forma normale</h1>
-<h2 id="definizione-12">Definizione 12</h2>
+<h2 id="definizione-11">Definizione 11</h2>
 <ul>
 <li><strong>Chiave e superchiave di una relazione</strong></li>
 </ul>
@@ -1053,7 +994,7 @@ X</span> è la chiave di <span class="math inline">R</span> con minor
 numero di attributi</li>
 </ul>
 </blockquote>
-<h2 id="teorema-15">Teorema 15</h2>
+<h2 id="teorema-16">Teorema 16</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1076,7 +1017,7 @@ class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
 \rightarrow R \in F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-16">Teorema 16</h2>
+<h2 id="teorema-17">Teorema 17</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1098,7 +1039,7 @@ funzionali su <span class="math inline">R</span></li>
 <span class="math inline">R</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-17">Teorema 17</h2>
+<h2 id="teorema-18">Teorema 18</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1120,7 +1061,7 @@ funzionali</li>
 <span class="math inline">R</span></li>
 </ul></li>
 </ul>
-<h2 id="definizione-13">Definizione 13</h2>
+<h2 id="definizione-12">Definizione 12</h2>
 <ul>
 <li><strong>Attributo primo</strong></li>
 </ul>
@@ -1138,7 +1079,7 @@ relazionale</li>
 class="math inline">R \mid X \in K</span></li>
 </ul>
 </blockquote>
-<h2 id="definizione-14">Definizione 14</h2>
+<h2 id="definizione-13">Definizione 13</h2>
 <ul>
 <li><strong>Terza forma normale</strong></li>
 </ul>
@@ -1169,7 +1110,7 @@ e di eliminazione</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-18">Teorema 18</h2>
+<h2 id="teorema-19">Teorema 19</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1196,7 +1137,7 @@ F^+</span> e controllare gli <span class="math inline">A_i \ldots
 A_j</span></li>
 </ul></li>
 </ul>
-<h2 id="definizione-15">Definizione 15</h2>
+<h2 id="definizione-14">Definizione 14</h2>
 <ul>
 <li><strong>Dipendenza parziale</strong></li>
 </ul>
@@ -1255,7 +1196,7 @@ K</span></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-19">Teorema 19</h2>
+<h2 id="teorema-20">Teorema 20</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1280,7 +1221,7 @@ class="math inline">X \rightarrow Y \in F^+</span> dipendenza
 transitiva</li>
 </ul></li>
 </ul>
-<h2 id="definizione-16">Definizione 16</h2>
+<h2 id="definizione-15">Definizione 15</h2>
 <ul>
 <li><strong>Forma Normale di Boyce-Codd</strong></li>
 </ul>
@@ -1312,7 +1253,7 @@ class="math inline">R</span>, senza aggiunta di informazioni</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-20">Teorema 20</h2>
+<h2 id="teorema-21">Teorema 21</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1332,7 +1273,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">R</span> in terza forma normale</li>
 </ul></li>
 </ul>
-<h2 id="definizione-17">Definizione 17</h2>
+<h2 id="definizione-16">Definizione 16</h2>
 <ul>
 <li><p><strong>Ricoprimento</strong></p></li>
 <li><p>!!! <strong>DEFINISCI SOTTOSCHEMA</strong></p></li>
@@ -1427,7 +1368,7 @@ class="math inline">F</span></strong> <span class="math inline">\iff F
 \equiv G</span></li>
 </ul>
 </blockquote>
-<h2 id="teorema-21">Teorema 21</h2>
+<h2 id="teorema-22">Teorema 22</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1451,7 +1392,7 @@ decomposizione di <span class="math inline">R</span></li>
 class="math inline">F \iff G^+ \supseteq F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-22">Teorema 22</h2>
+<h2 id="teorema-23">Teorema 23</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1489,7 +1430,7 @@ computazionale esponenziale</li>
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="teorema-23">Teorema 23</h2>
+<h2 id="teorema-24">Teorema 24</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
