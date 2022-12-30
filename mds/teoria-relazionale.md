@@ -316,6 +316,25 @@
 > - $G = \{G_1, \ldots, G_h\}$
 > - $F \equiv G \iff F^+ = F^+$, e $F$ e $G$ sono detti **equivalenti**
 
+## Oss
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k, G_1, \ldots, G_h$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $G = \{G_1, \ldots, G_h\}$
+- **Th**
+    - $F \xrightarrow{A} G \iff G \subseteq F^+$
+- **Dim**
+    - per definizione $F \xrightarrow{A} G$ implica che è possibile ottenere $G$ a partire da $F$ applicando assiomi di Armstrong
+    - per dimostrazione precedente $F^+ = F^A$
+    - allora, poiché $G$ deve essere raggiungubile tramite l'applicazione di un certo numero di assiomi di Armstrong (non necessariamente tutti i possibili), si ha che $G \subseteq F^A$
+        - applicandoli tutti, si otterrebbe $G = F^A$
+    - allora $G \subseteq F^A = F^+$
+
 # Lem
 
 - **Hp**
@@ -327,9 +346,14 @@
     - $F = \{F_1, \ldots, F_k\}$
     - $G = \{G_1, \ldots, G_h\}$
 - **Th**
-    - $F \subseteq G^+ \implies F^+ \subseteq G^+$
+    - $F \subseteq G^+ \iff F^+ \subseteq G^+$
 - **Dim**
-    - ⚠️ **TODO**
+    - _prima implicazione_
+        - per osservazione precedente $F \subseteq G^+ \iff G \xrightarrow{A} F$
+        - trivialmente si ha che $F \xrightarrow{A} F^A = F^+$
+        - allora $G \xrightarrow{A} F \xrightarrow{A} F^+ \implies G \xrightarrow{A} F^+ \iff F^+ \subseteq G^+$ per osservazione precedente
+    - _seconda implicazione_
+        - $F^+ \subseteq G^+ \iff F \subseteq F^+ \subseteq G^+ \implies F \subseteq G^+$
 
 ****
 
@@ -497,22 +521,55 @@
 
 - **Decomposizione**
 
-> - $n \in \mathbb{N}$
+- ⚠️ **DEFINISCI SOTTOSCHEMA**
+
+> - $n, N \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R(A_1, \ldots, A_n)$ schema relazionale $\mid R$ in forma normale di Boyce-Codd
-> - $N \in \mathbb{N} \mid C := \displaystyle \bigcup_{i = 1}^N{R_i} = R$ ricoprimento di $R$
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $R_1, \ldots, R_N$ sottoschemi di $R \mid C := \displaystyle \bigcup_{i = 1}^N{R_i} = R$ ricoprimento di $R$
 > - $\rho \subseteq C$ è detto **decomposizione di $R$**
+
+- **Proiezione di un insieme di dipendenze su un sottoschema**
+
+> - $n, k, h \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $i \in [1, h]$
+> - $R_i \in \rho$ sottoschema di $R$ in $\rho$
+> - $\pi_{R_i}(F) = \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$ è detta **proiezione di $F$ su $R_i$**
+>   - $\pi_{R_i}(F)$ è l'insieme delle dipendenze funzionali in $F$ che hanno determinante e determinato in $R_i$
 
 - **Preservazione di un insieme di dipendenze funzionali**
 
 > - $n, k, h \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R(A_1, \ldots, A_n)$ schema relazionale $\mid R$ in forma normale di Boyce-Codd
+> - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $\forall i \in [1, h] \quad \pi_{R_i}(F) = \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$
 > - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 > - $\rho$ **preserva $F$** $\iff F \equiv G$
+
+## Oss
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
+- **Th**
+    - $\rho$ preserva $F \iff G^+ \supseteq F$
+- **Dim**
+    - poiché $G$ è definito a partire da $F$, pur non conoscendo in che relazione si trovano $G$ ed $F$, sicuramente $F \subseteq F^+$ e $G \subseteq F^+$
+    - allora, per lemma precedente $G \subseteq F^+ \implies G^+ \subseteq F^+ \implies \rho$ preserva $F \iff G^+ \supseteq F^+$
+    - per lemma precedente $G^+ \supseteq F^+ \implies G^+ \supseteq F$

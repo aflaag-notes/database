@@ -916,6 +916,45 @@ class="math inline">F</span> e <span class="math inline">G</span> sono
 detti <strong>equivalenti</strong></li>
 </ul>
 </blockquote>
+<h2 id="oss-9">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k, G_1, \ldots, G_h</span>
+dipendenze funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">G = \{G_1, \ldots, G_h\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">F \xrightarrow{A} G \iff G \subseteq
+F^+</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>per definizione <span class="math inline">F \xrightarrow{A} G</span>
+implica che è possibile ottenere <span class="math inline">G</span> a
+partire da <span class="math inline">F</span> applicando assiomi di
+Armstrong</li>
+<li>per dimostrazione precedente <span class="math inline">F^+ =
+F^A</span></li>
+<li>allora, poiché <span class="math inline">G</span> deve essere
+raggiungubile tramite l’applicazione di un certo numero di assiomi di
+Armstrong (non necessariamente tutti i possibili), si ha che <span
+class="math inline">G \subseteq F^A</span>
+<ul>
+<li>applicandoli tutti, si otterrebbe <span class="math inline">G =
+F^A</span></li>
+</ul></li>
+<li>allora <span class="math inline">G \subseteq F^A = F^+</span></li>
+</ul></li>
+</ul>
 <h1 id="lem-1">Lem</h1>
 <ul>
 <li><strong>Hp</strong>
@@ -933,12 +972,26 @@ dipendenze funzionali su <span class="math inline">R</span></li>
 </ul></li>
 <li><strong>Th</strong>
 <ul>
-<li><span class="math inline">F \subseteq G^+ \implies F^+ \subseteq
+<li><span class="math inline">F \subseteq G^+ \iff F^+ \subseteq
 G^+</span></li>
 </ul></li>
 <li><strong>Dim</strong>
 <ul>
-<li>⚠️ <strong>TODO</strong></li>
+<li><em>prima implicazione</em>
+<ul>
+<li>per osservazione precedente <span class="math inline">F \subseteq
+G^+ \iff G \xrightarrow{A} F</span></li>
+<li>trivialmente si ha che <span class="math inline">F \xrightarrow{A}
+F^A = F^+</span></li>
+<li>allora <span class="math inline">G \xrightarrow{A} F \xrightarrow{A}
+F^+ \implies G \xrightarrow{A} F^+ \iff F^+ \subseteq G^+</span> per
+osservazione precedente</li>
+</ul></li>
+<li><em>seconda implicazione</em>
+<ul>
+<li><span class="math inline">F^+ \subseteq G^+ \iff F \subseteq F^+
+\subseteq G^+ \implies F \subseteq G^+</span></li>
+</ul></li>
 </ul></li>
 </ul>
 <hr />
@@ -966,7 +1019,7 @@ X</span> è la chiave di <span class="math inline">R</span> con minor
 numero di attributi</li>
 </ul>
 </blockquote>
-<h2 id="oss-9">Oss</h2>
+<h2 id="oss-10">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -989,7 +1042,7 @@ class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
 \rightarrow R \in F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="oss-10">Oss</h2>
+<h2 id="oss-11">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1021,7 +1074,7 @@ precedente <span class="math inline">X \rightarrow R \in F^+ \iff
 X</span> superchiave di <span class="math inline">R</span></li>
 </ul></li>
 </ul>
-<h2 id="oss-11">Oss</h2>
+<h2 id="oss-12">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1092,7 +1145,7 @@ e di eliminazione</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="oss-12">Oss</h2>
+<h2 id="oss-13">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1178,7 +1231,7 @@ K</span></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="oss-13">Oss</h2>
+<h2 id="oss-14">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1235,7 +1288,7 @@ class="math inline">R</span>, senza aggiunta di informazioni</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="oss-14">Oss</h2>
+<h2 id="oss-15">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1257,23 +1310,56 @@ funzionali su <span class="math inline">R</span></li>
 </ul>
 <h2 id="def-10">Def</h2>
 <ul>
-<li><strong>Decomposizione</strong></li>
+<li><p><strong>Decomposizione</strong></p></li>
+<li><p>⚠️ <strong>DEFINISCI SOTTOSCHEMA</strong></p></li>
 </ul>
 <blockquote>
 <ul>
-<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">n, N \in \mathbb{N}</span></li>
 <li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
 <li><span class="math inline">R \subseteq D_1 \times \ldots \times
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale <span class="math inline">\mid R</span> in forma normale di
-Boyce-Codd</li>
-<li><span class="math inline">N \in \mathbb{N} \mid C := \displaystyle
-\bigcup_{i = 1}^N{R_i} = R</span> ricoprimento di <span
+relazionale</li>
+<li><span class="math inline">R_1, \ldots, R_N</span> sottoschemi di
+<span class="math inline">R \mid C := \displaystyle \bigcup_{i =
+1}^N{R_i} = R</span> ricoprimento di <span
 class="math inline">R</span></li>
 <li><span class="math inline">\rho \subseteq C</span> è detto
 <strong>decomposizione di <span
 class="math inline">R</span></strong></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Proiezione di un insieme di dipendenze su un
+sottoschema</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">i \in [1, h]</span></li>
+<li><span class="math inline">R_i \in \rho</span> sottoschema di <span
+class="math inline">R</span> in <span
+class="math inline">\rho</span></li>
+<li><span class="math inline">\pi_{R_i}(F) = \{X \rightarrow Y \in F^+
+\mid XY \subseteq R_i\}</span> è detta <strong>proiezione di <span
+class="math inline">F</span> su <span
+class="math inline">R_i</span></strong>
+<ul>
+<li><span class="math inline">\pi_{R_i}(F)</span> è l’insieme delle
+dipendenze funzionali in <span class="math inline">F</span> che hanno
+determinante e determinato in <span class="math inline">R_i</span></li>
+</ul></li>
 </ul>
 </blockquote>
 <ul>
@@ -1287,15 +1373,12 @@ funzionali</strong></li>
 <li><span class="math inline">R \subseteq D_1 \times \ldots \times
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale <span class="math inline">\mid R</span> in forma normale di
-Boyce-Codd</li>
+relazionale</li>
 <li><span class="math inline">\rho = R_1, \ldots, R_h</span>
 decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">\forall i \in [1, h] \quad \pi_{R_i}(F) =
-\{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}</span></li>
 <li><span class="math inline">G = \displaystyle
 \bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
 <li><span class="math inline">\rho</span> <strong>preserva <span
@@ -1303,5 +1386,43 @@ class="math inline">F</span></strong> <span class="math inline">\iff F
 \equiv G</span></li>
 </ul>
 </blockquote>
+<h2 id="oss-16">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">\rho</span> preserva <span
+class="math inline">F \iff G^+ \supseteq F</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>poiché <span class="math inline">G</span> è definito a partire da
+<span class="math inline">F</span>, pur non conoscendo in che relazione
+si trovano <span class="math inline">G</span> ed <span
+class="math inline">F</span>, sicuramente <span class="math inline">F
+\subseteq F^+</span> e <span class="math inline">G \subseteq
+F^+</span></li>
+<li>allora, per lemma precedente <span class="math inline">G \subseteq
+F^+ \implies G^+ \subseteq F^+ \implies \rho</span> preserva <span
+class="math inline">F \iff G^+ \supseteq F^+</span></li>
+<li>per lemma precedente <span class="math inline">G^+ \supseteq F^+
+\implies G^+ \supseteq F</span></li>
+</ul></li>
+</ul>
 </body>
 </html>

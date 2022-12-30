@@ -470,7 +470,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
         - $Z = Z \cup S$
         - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
 
-## Teorema 14
+## Definizione 11
 
 
 - **Insiemi di dipendenze funzionali equivalenti**
@@ -484,7 +484,10 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $G = \{G_1, \ldots, G_h\}$
 > - $F \equiv G \iff F^+ = F^+$, e $F$ e $G$ sono detti **equivalenti**
 
-# Lem
+
+
+## Teorema 14
+
 
 - **Hp**
     - $n, k, h \in \mathbb{N}$
@@ -495,14 +498,14 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $F = \{F_1, \ldots, F_k\}$
     - $G = \{G_1, \ldots, G_h\}$
 - **Th**
-    - $F \subseteq G^+ \implies F^+ \subseteq G^+$
+    - $F \xrightarrow{A} G \iff G \subseteq F^+$
 
 ****
 
 # Terza forma normale
 
 
-## Definizione 11
+## Definizione 12
 
 
 - **Chiave e superchiave di una relazione**
@@ -561,7 +564,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 12
+## Definizione 13
 
 
 - **Attributo primo**
@@ -574,7 +577,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 13
+## Definizione 14
 
 
 - **Terza Forma Normale**
@@ -608,7 +611,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 14
+## Definizione 15
 
 
 - **Dipendenza parziale**
@@ -656,7 +659,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 15
+## Definizione 16
 
 
 - **Forma Normale di Boyce-Codd**
@@ -689,29 +692,60 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 16
+## Definizione 17
 
 
 - **Decomposizione**
 
-> - $n \in \mathbb{N}$
+- ⚠️ **DEFINISCI SOTTOSCHEMA**
+
+> - $n, N \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R(A_1, \ldots, A_n)$ schema relazionale $\mid R$ in forma normale di Boyce-Codd
-> - $N \in \mathbb{N} \mid C := \displaystyle \bigcup_{i = 1}^N{R_i} = R$ ricoprimento di $R$
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $R_1, \ldots, R_N$ sottoschemi di $R \mid C := \displaystyle \bigcup_{i = 1}^N{R_i} = R$ ricoprimento di $R$
 > - $\rho \subseteq C$ è detto **decomposizione di $R$**
+
+- **Proiezione di un insieme di dipendenze su un sottoschema**
+
+> - $n, k, h \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $i \in [1, h]$
+> - $R_i \in \rho$ sottoschema di $R$ in $\rho$
+> - $\pi_{R_i}(F) = \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$ è detta **proiezione di $F$ su $R_i$**
+>   - $\pi_{R_i}(F)$ è l'insieme delle dipendenze funzionali in $F$ che hanno determinante e determinato in $R_i$
 
 - **Preservazione di un insieme di dipendenze funzionali**
 
 > - $n, k, h \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R(A_1, \ldots, A_n)$ schema relazionale $\mid R$ in forma normale di Boyce-Codd
+> - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $\forall i \in [1, h] \quad \pi_{R_i}(F) = \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$
 > - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 > - $\rho$ **preserva $F$** $\iff F \equiv G$
 
+
+
+## Teorema 21
+
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
+- **Th**
+    - $\rho$ preserva $F \iff G^+ \supseteq F$
 
