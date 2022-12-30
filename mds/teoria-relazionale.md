@@ -174,7 +174,7 @@
 > - $X \subseteq R(A_1, \ldots, A_n)$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $X^+_F := \{A \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^A\}$ è detta **chiusura di $X$ rispetto ad $F$**
+> - $X^+_F := \{A \in R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^A\}$ è detta **chiusura di $X$ rispetto ad $F$**
 >   - ovvero, è l'insieme degli attributi funzionalmente dipendenti da $X$ attraverso l'applicazione degli assiomi di Armstrong
 
 ## Oss
@@ -225,18 +225,18 @@
         - _caso base_
             - per definizione $F \subseteq F^A$, allora avendo applicato $0$ assiomi di Armstrong $X \rightarrow Y \in F^A \implies X \rightarrow Y \in F$, e per definizione $F \subseteq F^+$, allora necessariamente $X \rightarrow Y \in F^+$
         - _ipotesi induttiva forte_
-            - avendo $X \rightarrow Y \in F^A$ all'$n$-esimo caso, applicando al più $n - 1$ assiomi di Armstrong, si ha che $X \rightarrow Y \in F^+$
+            - avendo applicato al più $n$ assiomi di Armstrong per ottenere $X \rightarrow Y \in F^A$, si ha che $X \rightarrow Y \in F^+$
         - _passo induttivo_
-            - è necessario dimostrare che avendo $X \rightarrow Y \in F^A$ all'$n$-esimo caso, applicando $n$ assiomi di Armstrong, si ha che $X \rightarrow Y \in F^+$
+            - è necessario dimostrare che avendo applicato l'$(n + 1)$-esimo assioma di Armstrong per ottenere $X \rightarrow Y \in F^A$, si ha che $X \rightarrow Y \in F^+$
             - è possibile trovarsi in questa situazione in $3$ possibili casi
-            - l'$n$-esimo assioma di Armstrong applicato è stato l'assioma della riflessività
-                - $X \rightarrow Y \in F^A$ per assioma della riflessività, allora necessariamente $Y \subseteq X$, ma allora $\forall r$ istanza di $R$ legale su $F \quad t_1[X] = t_2[x] \implies t_2[Y] = t_2[Y] \implies X \rightarrow Y \in F^+$
-            - l'$n$-esimo assioma di Armstrong applicato è stato l'assioma dell'aumento
+            - l'$(n + 1)$-esimo assioma di Armstrong applicato è stato l'assioma della riflessività
+                - $X \rightarrow Y \in F^A$ per assioma della riflessività, allora necessariamente $Y \subseteq X$, ma allora $\forall r$ istanza di $R$ legale su $F \quad t_1[X] = t_2[X] \implies t_2[Y] = t_2[Y] \implies X \rightarrow Y \in F^+$
+            - l'$(n + 1)$-esimo assioma di Armstrong applicato è stato l'assioma dell'aumento
                 - $X \rightarrow Y \in F^A$ per assioma dell'aumento, allora $\exists V, W \subseteq R(A_1, \ldots, A_n) \mid V \rightarrow W \in F^A$, ottenuta applicando al più $n - 1$ assiomi di Armstrong, e $\exists Z \subseteq R(A_1, \ldots , A_n) \mid X := VZ \land Y := WZ$
                 - per ipotesi induttiva si ha che $V \rightarrow W \in F^+$, allora $\forall r$ istanza di $R$ legale su $F \quad \exists Z \subseteq R(A_1, \ldots, A_n) \mid VZ \rightarrow WZ \in F^+$, in quanto l'aggiunta di $Z$ rende ancora soddisfatta la dipendenza funzionale
                 - $VZ \rightarrow WZ \in F^+ \implies \forall r$ istanza di $R$ legale su $F \quad \forall t_1, t_2 \in r \quad t_1[VZ] = t_2[VZ] \implies t_1[WZ] = t_2[WZ]$
                 - allora, poiché si erano posti $X := VZ \land Y := WZ$, si ha che $\forall r$ istanza di $R$ legale su $F \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y] \implies X \rightarrow Y \in F^+$ per definizione di $F^+$
-            - l'$n$-esimo assioma di Armstrong applicato è stato l'assioma della transitività
+            - l'$(n + 1)$-esimo assioma di Armstrong applicato è stato l'assioma della transitività
                 - $X \rightarrow Y \in F^A$ per assioma della transitività, allora $\exists Z \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow Z, Z \rightarrow Y \in F^A$, ottenute applicando al più $n - 1$ assiomi di Armstrong
                 - allora, per ipotesi induttiva si ha che $X \rightarrow Z, Z \rightarrow Y \in F^+$
                 - $X \rightarrow Z \in F^+ \implies \forall r$ istanza di $R$ legale su $F \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1[Z] = t_2[Z]$

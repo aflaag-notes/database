@@ -511,8 +511,8 @@ A_n)</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">X^+_F := \{A \subseteq R(A_1, \ldots, A_n)
-\mid X \rightarrow A \in F^A\}</span> è detta <strong>chiusura di <span
+<li><span class="math inline">X^+_F := \{A \in R(A_1, \ldots, A_n) \mid
+X \rightarrow A \in F^A\}</span> è detta <strong>chiusura di <span
 class="math inline">X</span> rispetto ad <span
 class="math inline">F</span></strong>
 <ul>
@@ -619,32 +619,31 @@ class="math inline">X \rightarrow Y \in F^+</span></li>
 </ul></li>
 <li><em>ipotesi induttiva forte</em>
 <ul>
-<li>avendo <span class="math inline">X \rightarrow Y \in F^A</span>
-all’<span class="math inline">n</span>-esimo caso, applicando al più
-<span class="math inline">n - 1</span> assiomi di Armstrong, si ha che
-<span class="math inline">X \rightarrow Y \in F^+</span></li>
+<li>avendo applicato al più <span class="math inline">n</span> assiomi
+di Armstrong per ottenere <span class="math inline">X \rightarrow Y \in
+F^A</span>, si ha che <span class="math inline">X \rightarrow Y \in
+F^+</span></li>
 </ul></li>
 <li><em>passo induttivo</em>
 <ul>
-<li>è necessario dimostrare che avendo <span class="math inline">X
-\rightarrow Y \in F^A</span> all’<span
-class="math inline">n</span>-esimo caso, applicando <span
-class="math inline">n</span> assiomi di Armstrong, si ha che <span
-class="math inline">X \rightarrow Y \in F^+</span></li>
+<li>è necessario dimostrare che avendo applicato l’<span
+class="math inline">(n + 1)</span>-esimo assioma di Armstrong per
+ottenere <span class="math inline">X \rightarrow Y \in F^A</span>, si ha
+che <span class="math inline">X \rightarrow Y \in F^+</span></li>
 <li>è possibile trovarsi in questa situazione in <span
 class="math inline">3</span> possibili casi</li>
-<li>l’<span class="math inline">n</span>-esimo assioma di Armstrong
-applicato è stato l’assioma della riflessività
+<li>l’<span class="math inline">(n + 1)</span>-esimo assioma di
+Armstrong applicato è stato l’assioma della riflessività
 <ul>
 <li><span class="math inline">X \rightarrow Y \in F^A</span> per assioma
 della riflessività, allora necessariamente <span class="math inline">Y
 \subseteq X</span>, ma allora <span class="math inline">\forall r</span>
 istanza di <span class="math inline">R</span> legale su <span
-class="math inline">F \quad t_1[X] = t_2[x] \implies t_2[Y] = t_2[Y]
+class="math inline">F \quad t_1[X] = t_2[X] \implies t_2[Y] = t_2[Y]
 \implies X \rightarrow Y \in F^+</span></li>
 </ul></li>
-<li>l’<span class="math inline">n</span>-esimo assioma di Armstrong
-applicato è stato l’assioma dell’aumento
+<li>l’<span class="math inline">(n + 1)</span>-esimo assioma di
+Armstrong applicato è stato l’assioma dell’aumento
 <ul>
 <li><span class="math inline">X \rightarrow Y \in F^A</span> per assioma
 dell’aumento, allora <span class="math inline">\exists V, W \subseteq
@@ -670,8 +669,8 @@ class="math inline">F \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X]
 \implies t_1[Y] = t_2[Y] \implies X \rightarrow Y \in F^+</span> per
 definizione di <span class="math inline">F^+</span></li>
 </ul></li>
-<li>l’<span class="math inline">n</span>-esimo assioma di Armstrong
-applicato è stato l’assioma della transitività
+<li>l’<span class="math inline">(n + 1)</span>-esimo assioma di
+Armstrong applicato è stato l’assioma della transitività
 <ul>
 <li><span class="math inline">X \rightarrow Y \in F^A</span> per assioma
 della transitività, allora <span class="math inline">\exists Z \subseteq
