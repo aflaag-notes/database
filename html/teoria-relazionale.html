@@ -649,7 +649,7 @@ Armstrong applicato è stato l’assioma dell’aumento
 <li><span class="math inline">X \rightarrow Y \in F^A</span> per assioma
 dell’aumento, allora <span class="math inline">\exists V, W \subseteq
 R(A_1, \ldots, A_n) \mid V \rightarrow W \in F^A</span>, ottenuta
-applicando al più <span class="math inline">n - 1</span> assiomi di
+applicando al più <span class="math inline">n</span> assiomi di
 Armstrong, e <span class="math inline">\exists Z \subseteq R(A_1, \ldots
 , A_n) \mid X := VZ \land Y := WZ</span></li>
 <li>per ipotesi induttiva si ha che <span class="math inline">V
@@ -676,8 +676,8 @@ Armstrong applicato è stato l’assioma della transitività
 <li><span class="math inline">X \rightarrow Y \in F^A</span> per assioma
 della transitività, allora <span class="math inline">\exists Z \subseteq
 R(A_1, \ldots, A_n) \mid X \rightarrow Z, Z \rightarrow Y \in
-F^A</span>, ottenute applicando al più <span class="math inline">n -
-1</span> assiomi di Armstrong</li>
+F^A</span>, ottenute applicando al più <span
+class="math inline">n</span> assiomi di Armstrong</li>
 <li>allora, per ipotesi induttiva si ha che <span class="math inline">X
 \rightarrow Z, Z \rightarrow Y \in F^+</span></li>
 <li><span class="math inline">X \rightarrow Z \in F^+ \implies \forall
@@ -796,11 +796,11 @@ applica gli assiomi di Armstrong</li>
 </ul></li>
 <li><strong>Dim</strong>
 <ul>
-<li>sia <span class="math inline">j \mid S^j \subseteq Z^j</span>,
+<li>sia <span class="math inline">f \mid S^f \subseteq Z^f</span>,
 dunque l’iterazione in cui l’algoritmo termina</li>
-<li><span class="math inline">Z^j = X^+_F</span>
+<li><span class="math inline">Z^f = X^+_F</span>
 <ul>
-<li><span class="math inline">Z^j \subseteq X^+_F</span>
+<li><span class="math inline">Z^f \subseteq X^+_F</span>
 <ul>
 <li><em>caso base</em>
 <ul>
@@ -810,14 +810,14 @@ precedente <span class="math inline">X \subseteq X^+_F \implies Z^0
 </ul></li>
 <li><em>ipotesi induttiva</em>
 <ul>
-<li><span class="math inline">\forall i \in [0, + \infty] \quad Z^i
-\subseteq X^+_F</span></li>
+<li><span class="math inline">Z^i \subseteq X^+_F</span></li>
 </ul></li>
 <li><em>passo induttivo</em>
 <ul>
-<li><span class="math inline">\forall i \in [0, + \infty]
-\quad</span>sia <span class="math inline">A \in Z^{i+1} = Z^i \cup S^i
-\implies A \in Z^i \lor A \in S^i</span></li>
+<li>è necessario dimostrare che <span class="math inline">Z^{i + 1}
+\subseteq X^+_F</span></li>
+<li>sia <span class="math inline">A \in Z^{i+1} = Z^i \cup S^i</span>,
+allora <span class="math inline">A \in Z^i \lor A \in S^i</span></li>
 <li><span class="math inline">A \in Z^i \implies A \in X^+_F</span> per
 ipotesi induttiva</li>
 <li><span class="math inline">A \in S^i \implies \exists Y, V \subseteq
@@ -838,42 +838,42 @@ X^+_F</span></li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li><span class="math inline">Z^j \supseteq X^+_F</span>
+<li><span class="math inline">Z^f \supseteq X^+_F</span>
 <ul>
 <li>sia <span class="math inline">r</span> istanza di <span
-class="math inline">R&#39;(Z^j, R - Z^j) \mid t_1[Z^j] = t_2[Z^j] = (1,
-\ldots, 1)</span>, mentre <span class="math inline">t_1[R - Z^j] = (1,
-\ldots, 1) \land t_2[R - Z^j] = (0, \ldots, 0)</span></li>
+class="math inline">R&#39;(Z^f, R - Z^f) \mid t_1[Z^f] = t_2[Z^f] = (1,
+\ldots, 1)</span>, mentre <span class="math inline">t_1[R - Z^f] = (1,
+\ldots, 1) \land t_2[R - Z^f] = (0, \ldots, 0)</span></li>
 <li><span class="math inline">r</span> legale su <span
-class="math inline">F \iff \forall V, W \subseteq R&#39;(Z^j, R - Z^j)
+class="math inline">F \iff \forall V, W \subseteq R&#39;(Z^f, R - Z^f)
 \mid V \rightarrow W \in F \quad r</span> soddisfa <span
 class="math inline">V \rightarrow W</span></li>
-<li><span class="math inline">\forall V, W \subseteq R&#39;(Z^j, R -
-Z^j) \mid V \rightarrow W \in F</span> possono verificarsi <span
+<li><span class="math inline">\forall V, W \subseteq R&#39;(Z^f, R -
+Z^f) \mid V \rightarrow W \in F</span> possono verificarsi <span
 class="math inline">3</span> possibili casi
 <ul>
-<li><span class="math inline">V \subseteq R - Z^j \implies (1, \ldots,
+<li><span class="math inline">V \subseteq R - Z^f \implies (1, \ldots,
 1) = t_1[V] \neq t_2[V] = (0, \ldots, 0)</span></li>
-<li><span class="math inline">V \cap (R - Z^j) \neq \varnothing \implies
-\exists A \subseteq V \mid A \subseteq R - Z^j \implies t_1[V] \neq
+<li><span class="math inline">V \cap (R - Z^f) \neq \varnothing \implies
+\exists A \subseteq V \mid A \subseteq R - Z^f \implies t_1[V] \neq
 t_1[V]</span> in quanto <span class="math inline">t_1[V]</span> e <span
 class="math inline">t_2[V]</span> sono stati scelti complementari, e
 dunque diversi in ogni colonna</li>
-<li><span class="math inline">V \subseteq Z^j \implies t_1[V] =
+<li><span class="math inline">V \subseteq Z^f \implies t_1[V] =
 t_2[V]</span>, dunque è necessario controllare che <span
 class="math inline">r</span> soddisfi <span class="math inline">V
 \rightarrow W \in F</span>
 <ul>
-<li>per definizione di <span class="math inline">S^j := \{B \in R(A_1,
-\ldots, A_n) \mid B \in W \land W \subseteq Z^j\}</span> ovvero, in
-<span class="math inline">S^j</span> sarà interamente contenuto <span
+<li>per definizione di <span class="math inline">S^f := \{B \in R(A_1,
+\ldots, A_n) \mid B \in W \land W \subseteq Z^f\}</span> ovvero, in
+<span class="math inline">S^f</span> sarà interamente contenuto <span
 class="math inline">W</span> alla <span
-class="math inline">j</span>-esima iterazione, e dunque <span
-class="math inline">W \subseteq S^j</span></li>
+class="math inline">f</span>-esima iterazione, e dunque <span
+class="math inline">W \subseteq S^f</span></li>
 <li>poiché il loop <strong>while</strong> continua fintanto che <span
 class="math inline">S^i \nsubseteq Z^i</span>, allora necessariamente
-<span class="math inline">S^j \subseteq Z^j \implies W \subseteq S^j
-\subseteq Z^j \implies W \subseteq Z^j \implies t_1[W] = t_2[W]</span>
+<span class="math inline">S^f \subseteq Z^f \implies W \subseteq S^f
+\subseteq Z^f \implies W \subseteq Z^f \implies t_1[W] = t_2[W]</span>
 per costruzione di <span class="math inline">r</span></li>
 </ul></li>
 </ul></li>
@@ -890,11 +890,11 @@ class="math inline">X \rightarrow A \in F^+</span> per definizione di
 class="math inline">\implies r</span> soddisfa <span
 class="math inline">X \rightarrow A \in F^+</span></li>
 <li>per costruzione dell’algoritmo <span class="math inline">X = Z^0
-\subseteq Z^j \implies t_1[X] = t_2[X]</span> per costruzione di <span
+\subseteq Z^f \implies t_1[X] = t_2[X]</span> per costruzione di <span
 class="math inline">r</span>, e poiché <span
 class="math inline">r</span> legale si ha che <span
 class="math inline">t_1[A] = t_2[A]</span>, allora <span
-class="math inline">A \in Z^j</span> per costruzione di <span
+class="math inline">A \in Z^f</span> per costruzione di <span
 class="math inline">r</span></li>
 </ul></li>
 </ul></li>

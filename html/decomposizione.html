@@ -381,6 +381,64 @@ computazionale esponenziale</li>
 <ul>
 <li>sia <span class="math inline">f \mid S^f \subseteq Z^f</span>,
 dunque l’iterazione in cui l’algoritmo termina</li>
+<li><span class="math inline">Z^f = X^+_G</span>
+<ul>
+<li><span class="math inline">Z^f \subseteq Z^+_G</span>
+<ul>
+<li><em>caso base</em>
+<ul>
+<li><span class="math inline">Z^0 = X</span>, per osservazione
+precedente <span class="math inline">X \subseteq X^+_G \implies Z^0
+\subseteq X^+_G</span></li>
+</ul></li>
+<li><em>ipotesi induttiva</em>
+<ul>
+<li><span class="math inline">Z^i \subseteq X^+_G</span></li>
+</ul></li>
+<li><em>passo induttivo</em>
+<ul>
+<li>è necessario dimostrare che <span class="math inline">Z^{i + 1}
+\subseteq X^+_G</span></li>
+<li>sia <span class="math inline">A \in Z^{i + 1} = Z^i \cup S^i</span>,
+allora <span class="math inline">A \in Z^i \lor A \in S^i</span></li>
+<li><span class="math inline">A \in Z^i \implies A \in X^+_G</span> per
+ipotesi induttiva</li>
+<li><span class="math inline">A \in S^i \implies \exists j \le h \mid A
+\in (Z^i \cap R_j)^+_F \cap R_j</span> per definizione di <span
+class="math inline">S^i</span>
+<ul>
+<li><span class="math inline">Z^i \cap R_j \subseteq R_j</span>, e
+inoltre <span class="math inline">A \in (Z^i \cap R_j)^+_F \cap R_j
+\implies A \in R_j</span></li>
+<li>allora, per definizione di <span class="math inline">\pi_{R_j}(F) :=
+\{X \rightarrow Y \in F^+ \mid XY \subseteq R_j\}</span> si ha che <span
+class="math inline">(Z^i \cap R_j) \rightarrow A \in
+\pi_{R_j}(F)</span></li>
+<li>per osservazione precedente <span class="math inline">G \subseteq
+G^+</span></li>
+<li>per definizione di <span class="math inline">G</span> si ha che
+<span class="math inline">\pi_{R_j}(F) \subseteq G</span>, allora in
+particolare <span class="math inline">(Z^i \cap R_j) \rightarrow A \in G
+\subseteq G^+ \implies (Z^i \cap R_j) \rightarrow A \in G^+</span></li>
+<li><span class="math inline">Z^i \cap R_j \subseteq Z^i</span>, e per
+ipotesi induttiva <span class="math inline">Z^i \subseteq X^+_G \implies
+Z^i \cap R_j \subseteq X^+_G</span>, allora per lemma precedente si ha
+che <span class="math inline">Z^i \cap R_j \subseteq X^+_G \implies X
+\rightarrow (Z^i \cap R_j) \in G^A</span></li>
+<li>allora <span class="math inline">X \rightarrow (Z^i \cap R_j), (Z^i
+\cap R_j) \rightarrow A \in G^A \implies X \rightarrow A \in G^A</span>
+per assioma della transitività</li>
+<li>allora, per definizione di <span class="math inline">X^+_G</span> si
+ha che <span class="math inline">X \rightarrow A \in G^A \implies A \in
+X^+_G</span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">Z^f \supseteq Z^+_G</span>
+<ul>
+<li>⚠️ <strong>falla se c’hai voglia</strong></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 <h2 id="alg-1">Alg</h2>

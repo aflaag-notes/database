@@ -92,6 +92,26 @@
         - il calcolo di $F^+$ ha costo computazionale esponenziale
 - **Dim**
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
+    - $Z^f = X^+_G$
+        - $Z^f \subseteq Z^+_G$
+            - _caso base_
+                - $Z^0 = X$, per osservazione precedente $X \subseteq X^+_G \implies Z^0 \subseteq X^+_G$
+            - _ipotesi induttiva_
+                - $Z^i \subseteq X^+_G$
+            - _passo induttivo_
+                - è necessario dimostrare che $Z^{i + 1} \subseteq X^+_G$
+                - sia $A \in Z^{i + 1} = Z^i \cup S^i$, allora $A \in Z^i \lor A \in S^i$
+                - $A \in Z^i \implies A \in X^+_G$ per ipotesi induttiva
+                - $A \in S^i \implies \exists j \le h \mid A \in (Z^i \cap R_j)^+_F \cap R_j$ per definizione di $S^i$
+                    - $Z^i \cap R_j \subseteq R_j$, e inoltre $A \in (Z^i \cap R_j)^+_F \cap R_j \implies A \in R_j$
+                    - allora, per definizione di $\pi_{R_j}(F) := \{X \rightarrow Y \in F^+ \mid XY \subseteq R_j\}$ si ha che $(Z^i \cap R_j) \rightarrow A \in \pi_{R_j}(F)$
+                    - per osservazione precedente $G \subseteq G^+$
+                    - per definizione di $G$ si ha che $\pi_{R_j}(F) \subseteq G$, allora in particolare $(Z^i \cap R_j) \rightarrow A \in G \subseteq G^+ \implies (Z^i \cap R_j) \rightarrow A \in G^+$
+                    - $Z^i \cap R_j \subseteq Z^i$, e per ipotesi induttiva $Z^i \subseteq X^+_G \implies Z^i \cap R_j \subseteq X^+_G$, allora per lemma precedente si ha che $Z^i \cap R_j \subseteq X^+_G \implies X \rightarrow (Z^i \cap R_j) \in G^A$
+                    - allora $X \rightarrow (Z^i \cap R_j), (Z^i \cap R_j) \rightarrow A \in G^A \implies X \rightarrow A \in G^A$ per assioma della transitività
+                    - allora, per definizione di $X^+_G$ si ha che $X \rightarrow A \in G^A \implies A \in X^+_G$
+        - $Z^f \supseteq Z^+_G$
+            - ⚠️ **falla se c'hai voglia**
 
 ## Alg
 
