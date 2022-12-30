@@ -26,6 +26,7 @@ order = {
     "algebra-relazionale.md": 0,
     "teoria-relazionale.md": 1,
     "terza-forma-normale.md": 2,
+    "decomposizione.md": 4,
 
     "index.md": -1,
     "everything.md": -1,

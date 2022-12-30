@@ -912,7 +912,8 @@ funzionali su <span class="math inline">R</span></li>
 \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
 \in V \land Y \subseteq Z\}</span></li>
 <li><span class="math inline">\texttt{while}</span> <span
-class="math inline">S \nsubseteq Z</span>:
+class="math inline">S \nsubseteq Z</span><span
+class="math inline">\texttt{:}</span>
 <ul>
 <li><span class="math inline">Z = Z \cup S</span></li>
 <li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
@@ -1273,7 +1274,8 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">R</span> in terza forma normale</li>
 </ul></li>
 </ul>
-<h2 id="definizione-16">Definizione 16</h2>
+<hr />
+<h1 id="decomposizione">Decomposizione</h1>
 <ul>
 <li><p><strong>Ricoprimento</strong></p></li>
 <li><p>!!! <strong>DEFINISCI SOTTOSCHEMA</strong></p></li>
@@ -1418,7 +1420,30 @@ decomposizione di <span class="math inline">R</span></li>
 </ul></li>
 <li><strong>Algoritmo</strong>
 <ul>
-<li>!!! <strong>TODO</strong></li>
+<li><span class="math inline">Z := X</span></li>
+<li><span class="math inline">S := \varnothing</span></li>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">i</span> <span
+class="math inline">\texttt{in}</span> <span
+class="math inline">\texttt{range(1, k):}</span>
+<ul>
+<li><span class="math inline">S = S \cup (Z \cap R_i)^+_F \cap
+R_i</span></li>
+</ul></li>
+<li><span class="math inline">\texttt{while}</span> <span
+class="math inline">S \nsubseteq Z</span><span
+class="math inline">\texttt{:}</span>
+<ul>
+<li><span class="math inline">Z = Z \cup S</span></li>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">i</span> <span
+class="math inline">\texttt{in}</span> <span
+class="math inline">\texttt{range(1, k):}</span>
+<ul>
+<li><span class="math inline">S = S \cup (Z \cap R_i)^+_F \cap
+R_i</span></li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><strong>Oss</strong>
 <ul>
@@ -1457,10 +1482,11 @@ decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">\texttt{for}</span> <span
 class="math inline">X \rightarrow Y</span> <span
 class="math inline">\texttt{in}</span> <span
-class="math inline">F</span>:
+class="math inline">F</span><span class="math inline">\texttt{:}</span>
 <ul>
 <li><span class="math inline">\texttt{if}</span> <span
-class="math inline">Y \nsubseteq X^+_G</span>:
+class="math inline">Y \nsubseteq X^+_G</span><span
+class="math inline">\texttt{:}</span>
 <ul>
 <li><span class="math inline">\texttt{return False}</span></li>
 </ul></li>
@@ -1471,17 +1497,9 @@ class="math inline">Y \nsubseteq X^+_G</span>:
 <ul>
 <li>l’algoritmo controlla se <span class="math inline">\rho</span>
 preserva <span class="math inline">F</span></li>
-<li>per lemma precedente <span class="math inline">Y \subseteq X^+_G
-\implies X \rightarrow Y \in G^A = G^+</span></li>
-<li>allora <span class="math inline">\exists X \rightarrow Y \in F \mid
-Y \nsubseteq X^+_G \implies X \rightarrow Y \notin G^+ \implies F
-\nsubseteq G^+ \implies \rho</span> non preserva <span
-class="math inline">F</span> per dimostrazione precedente
-<ul>
 <li>per calcolare <span class="math inline">X^+_G</span> viene
 utilizzato l’algoritmo precedentemente mostrato, che non richiede il
 calcolo di <span class="math inline">F^+</span></li>
-</ul></li>
 </ul></li>
 </ul>
 </body>

@@ -271,7 +271,7 @@
 - **Algoritmo**
     - $Z := X$
     - $S := \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
-    - $\texttt{while}$ $S \nsubseteq Z$:
+    - $\texttt{while}$ $S \nsubseteq Z$$\texttt{:}$
         - $Z = Z \cup S$
         - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
 - **Oss**

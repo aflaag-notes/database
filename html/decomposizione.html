@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Decomposizione</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #fdfdfd;
+      background-color: #1f1f1f;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #fdfdfd;
+    }
+    a:visited {
+      color: #fdfdfd;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #adbac7;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #fdfdfd;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #fdfdfd;
+      border-bottom: 1px solid #fdfdfd;
+    }
+    th {
+      border-top: 1px solid #fdfdfd;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<h1 id="decomposizione">Decomposizione</h1>
+<ul>
+<li><p><strong>Ricoprimento</strong></p></li>
+<li><p>⚠️ <strong>DEFINISCI SOTTOSCHEMA</strong></p></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, N \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">R_1, \ldots, R_N</span> sottoschemi di
+<span class="math inline">R</span></li>
+<li><span class="math inline">R_1, \ldots, R_N</span>
+<strong>ricoprimento di <span class="math inline">R</span></strong>
+<span class="math inline">\iff \displaystyle \bigcup_{i = 1}^N{R_i} =
+R</span></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Decomposizione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, N \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">C := \{R_1, \ldots, R_N\}</span>
+ricoprimento di <span class="math inline">R</span></li>
+<li><span class="math inline">\forall \rho \subseteq C \quad \rho</span>
+è detto <strong>decomposizione di <span
+class="math inline">R</span></strong></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Proiezione di un insieme di dipendenze su un
+sottoschema</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">i \in [1, h]</span></li>
+<li><span class="math inline">R_i \in \rho</span> sottoschema di <span
+class="math inline">R</span> in <span
+class="math inline">\rho</span></li>
+<li><span class="math inline">\pi_{R_i}(F) := \{X \rightarrow Y \in F^+
+\mid XY \subseteq R_i\}</span> è detta <strong>proiezione di <span
+class="math inline">F</span> su <span
+class="math inline">R_i</span></strong>
+<ul>
+<li><span class="math inline">\pi_{R_i}(F)</span> è l’insieme delle
+dipendenze funzionali in <span class="math inline">F</span> che hanno
+determinante e determinato in <span class="math inline">R_i</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Preservazione di un insieme di dipendenze
+funzionali</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+<li><span class="math inline">\rho</span> <strong>preserva <span
+class="math inline">F</span></strong> <span class="math inline">\iff F
+\equiv G</span></li>
+</ul>
+</blockquote>
+<h2 id="oss">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">\rho</span> preserva <span
+class="math inline">F \iff G^+ \supseteq F</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>poiché <span class="math inline">G</span> è definito a partire da
+<span class="math inline">F</span>, pur non conoscendo in che relazione
+si trovano <span class="math inline">G</span> ed <span
+class="math inline">F</span>, sicuramente <span class="math inline">F
+\subseteq F^+</span> e <span class="math inline">G \subseteq
+F^+</span></li>
+<li>allora, per lemma precedente <span class="math inline">G \subseteq
+F^+ \implies G^+ \subseteq F^+ \implies \rho</span> preserva <span
+class="math inline">F \iff G^+ \supseteq F^+</span></li>
+<li>per lemma precedente <span class="math inline">G^+ \supseteq F^+
+\implies G^+ \supseteq F</span></li>
+</ul></li>
+</ul>
+<h2 id="alg">Alg</h2>
+<ul>
+<li><strong>Input</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+</ul></li>
+<li><strong>Output</strong>
+<ul>
+<li><span class="math inline">Z = X^+_G</span></li>
+</ul></li>
+<li><strong>Algoritmo</strong>
+<ul>
+<li><span class="math inline">Z := X</span></li>
+<li><span class="math inline">S := \varnothing</span></li>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">i</span> <span
+class="math inline">\texttt{in}</span> <span
+class="math inline">\texttt{range(1, k):}</span>
+<ul>
+<li><span class="math inline">S = S \cup (Z \cap R_i)^+_F \cap
+R_i</span></li>
+</ul></li>
+<li><span class="math inline">\texttt{while}</span> <span
+class="math inline">S \nsubseteq Z</span><span
+class="math inline">\texttt{:}</span>
+<ul>
+<li><span class="math inline">Z = Z \cup S</span></li>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">i</span> <span
+class="math inline">\texttt{in}</span> <span
+class="math inline">\texttt{range(1, k):}</span>
+<ul>
+<li><span class="math inline">S = S \cup (Z \cap R_i)^+_F \cap
+R_i</span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>l’algoritmo calcola <span class="math inline">X^+_G</span> senza
+calcolare <span class="math inline">F^+</span>
+<ul>
+<li>il calcolo di <span class="math inline">F^+</span> ha costo
+computazionale esponenziale</li>
+</ul></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>sia <span class="math inline">f \mid S^f \subseteq Z^f</span>,
+dunque l’iterazione in cui l’algoritmo termina</li>
+</ul></li>
+</ul>
+<h2 id="alg-1">Alg</h2>
+<ul>
+<li><strong>Input</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+</ul></li>
+<li><strong>Output</strong>
+<ul>
+<li><span class="math inline">\texttt{True/False}</span></li>
+</ul></li>
+<li><strong>Algoritmo</strong>
+<ul>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">X \rightarrow Y</span> <span
+class="math inline">\texttt{in}</span> <span
+class="math inline">F</span><span class="math inline">\texttt{:}</span>
+<ul>
+<li><span class="math inline">\texttt{if}</span> <span
+class="math inline">Y \nsubseteq X^+_G</span><span
+class="math inline">\texttt{:}</span>
+<ul>
+<li><span class="math inline">\texttt{return False}</span></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">\texttt{return True}</span></li>
+</ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>l’algoritmo controlla se <span class="math inline">\rho</span>
+preserva <span class="math inline">F</span></li>
+<li>per calcolare <span class="math inline">X^+_G</span> viene
+utilizzato l’algoritmo precedentemente mostrato, che non richiede il
+calcolo di <span class="math inline">F^+</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>per lemma precedente <span class="math inline">Y \subseteq X^+_G
+\implies X \rightarrow Y \in G^A = G^+</span></li>
+<li>allora <span class="math inline">\exists X \rightarrow Y \in F \mid
+Y \nsubseteq X^+_G \implies X \rightarrow Y \notin G^+ \implies F
+\nsubseteq G^+ \implies \rho</span> non preserva <span
+class="math inline">F</span> per dimostrazione precedente</li>
+</ul></li>
+</ul>
+</body>
+</html>

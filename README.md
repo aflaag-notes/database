@@ -4,4 +4,5 @@ Questi sono i miei [appunti di basi di dati](https://ph04.github.io/database/htm
 
 ## TODO list
 
-- per fortuna niente lesgo
+- fixa gli $n - 1$ 
+- fixa la $j$ in $X^+_F$

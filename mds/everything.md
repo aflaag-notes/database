@@ -446,7 +446,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Algoritmo**
     - $Z := X$
     - $S := \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
-    - $\texttt{while}$ $S \nsubseteq Z$:
+    - $\texttt{while}$ $S \nsubseteq Z$$\texttt{:}$
         - $Z = Z \cup S$
         - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
 - **Oss**
@@ -676,9 +676,9 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Definizione 16
 
-
+****
+# Decomposizione
 
 - **Ricoprimento**
 
@@ -759,12 +759,17 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Output**
     - $Z = X^+_G$
 - **Algoritmo**
-    - ⚠️ **TODO**
+    - $Z := X$
+    - $S := \varnothing$
+    - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, k):}$
+        - $S = S \cup (Z \cap R_i)^+_F \cap R_i$
+    - $\texttt{while}$ $S \nsubseteq Z$$\texttt{:}$
+        - $Z = Z \cup S$
+        - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, k):}$
+            - $S = S \cup (Z \cap R_i)^+_F \cap R_i$
 - **Oss**
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
-
-
 
 ## Teorema 24
 
@@ -781,14 +786,11 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Output**
     - $\texttt{True/False}$
 - **Algoritmo**
-    - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F$:
-        - $\texttt{if}$ $Y \nsubseteq X^+_G$:
+    - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F$$\texttt{:}$
+        - $\texttt{if}$ $Y \nsubseteq X^+_G$$\texttt{:}$
             - $\texttt{return False}$
     - $\texttt{return True}$
 - **Oss**
     - l'algoritmo controlla se $\rho$ preserva $F$
-    - per lemma precedente $Y \subseteq X^+_G \implies X \rightarrow Y \in G^A = G^+$
-    - allora $\exists X \rightarrow Y \in F \mid Y \nsubseteq X^+_G \implies X \rightarrow Y \notin G^+ \implies F \nsubseteq G^+ \implies \rho$ non preserva $F$ per dimostrazione precedente
-        - per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
-
+    - per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
 

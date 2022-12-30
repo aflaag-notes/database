@@ -12,7 +12,7 @@
     - [Teoria relazionale](https://ph04.github.io/database/html/teoria-relazionale.html#teoria-relazionale)
     - [Assiomi di Armstrong](https://ph04.github.io/database/html/teoria-relazionale.html#assiomi-di-armstrong)
 - [Terza forma normale](https://ph04.github.io/database/html/terza-forma-normale.html)
-    - [Terza forma normale](https://ph04.github.io/database/html/terza-forma-normale.html#terza-forma-normale)
+- [Decomposizione](https://ph04.github.io/database/html/terza-forma-normale.html#decomposizione)
 
 ## Tutti i teoremi
 
