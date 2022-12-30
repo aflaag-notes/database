@@ -965,18 +965,24 @@ funzionali su <span class="math inline">R</span></li>
 </ul></li>
 <li><strong>Algoritmo</strong>
 <ul>
-<li><span class="math inline">Z = X</span></li>
-<li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
+<li><span class="math inline">Z := X</span></li>
+<li><span class="math inline">S := \{A \in R(A_1, \ldots, A_n) \mid
 \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
 \in V \land Y \subseteq Z\}</span></li>
-<li><strong>while</strong> <span class="math inline">S \nsubseteq
-Z</span>:
+<li><span class="math inline">\texttt{while}</span> <span
+class="math inline">S \nsubseteq Z</span>:
 <ul>
 <li><span class="math inline">Z = Z \cup S</span></li>
 <li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
 \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
 \in V \land Y \subseteq Z\}</span></li>
 </ul></li>
+</ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>l’algoritmo calcola <span class="math inline">X^+_F</span></li>
+<li>di fatto, il loop <span class="math inline">\texttt{while}</span>
+applica gli assiomi di Armstrong</li>
 </ul></li>
 </ul>
 <h2 id="definizione-11">Definizione 11</h2>
@@ -1327,7 +1333,7 @@ funzionali su <span class="math inline">R</span></li>
 </ul>
 <h2 id="definizione-17">Definizione 17</h2>
 <ul>
-<li><p><strong>Decomposizione</strong></p></li>
+<li><p><strong>Ricoprimento</strong></p></li>
 <li><p>!!! <strong>DEFINISCI SOTTOSCHEMA</strong></p></li>
 </ul>
 <blockquote>
@@ -1339,11 +1345,28 @@ D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
 <li><span class="math inline">R_1, \ldots, R_N</span> sottoschemi di
-<span class="math inline">R \mid C := \displaystyle \bigcup_{i =
-1}^N{R_i} = R</span> ricoprimento di <span
-class="math inline">R</span></li>
-<li><span class="math inline">\rho \subseteq C</span> è detto
-<strong>decomposizione di <span
+<span class="math inline">R</span></li>
+<li><span class="math inline">R_1, \ldots, R_N</span>
+<strong>ricoprimento di <span class="math inline">R</span></strong>
+<span class="math inline">\iff \displaystyle \bigcup_{i = 1}^N{R_i} =
+R</span></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Decomposizione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, N \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">C := \{R_1, \ldots, R_N\}</span>
+ricoprimento di <span class="math inline">R</span></li>
+<li><span class="math inline">\forall \rho \subseteq C \quad \rho</span>
+è detto <strong>decomposizione di <span
 class="math inline">R</span></strong></li>
 </ul>
 </blockquote>
@@ -1359,16 +1382,16 @@ sottoschema</strong></li>
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
-<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
-decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">i \in [1, h]</span></li>
 <li><span class="math inline">R_i \in \rho</span> sottoschema di <span
 class="math inline">R</span> in <span
 class="math inline">\rho</span></li>
-<li><span class="math inline">\pi_{R_i}(F) = \{X \rightarrow Y \in F^+
+<li><span class="math inline">\pi_{R_i}(F) := \{X \rightarrow Y \in F^+
 \mid XY \subseteq R_i\}</span> è detta <strong>proiezione di <span
 class="math inline">F</span> su <span
 class="math inline">R_i</span></strong>
@@ -1391,11 +1414,11 @@ funzionali</strong></li>
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
-<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
-decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">G = \displaystyle
 \bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
 <li><span class="math inline">\rho</span> <strong>preserva <span
@@ -1413,11 +1436,11 @@ class="math inline">F</span></strong> <span class="math inline">\iff F
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
-<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
-decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">G = \displaystyle
 \bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
 </ul></li>
@@ -1425,6 +1448,98 @@ funzionali su <span class="math inline">R</span></li>
 <ul>
 <li><span class="math inline">\rho</span> preserva <span
 class="math inline">F \iff G^+ \supseteq F</span></li>
+</ul></li>
+</ul>
+<h2 id="teorema-22">Teorema 22</h2>
+<ul>
+<li><strong>Input</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">X \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+</ul></li>
+<li><strong>Output</strong>
+<ul>
+<li><span class="math inline">Z = X^+_G</span></li>
+</ul></li>
+<li><strong>Algoritmo</strong>
+<ul>
+<li>!!! <strong>TODO</strong></li>
+</ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>l’algoritmo calcola <span class="math inline">X^+_G</span> senza
+calcolare <span class="math inline">F^+</span>
+<ul>
+<li>il calcolo di <span class="math inline">F^+</span> ha costo
+computazionale esponenziale</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="teorema-23">Teorema 23</h2>
+<ul>
+<li><strong>Input</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+</ul></li>
+<li><strong>Output</strong>
+<ul>
+<li><span class="math inline">\texttt{True/False}</span></li>
+</ul></li>
+<li><strong>Algoritmo</strong>
+<ul>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">X \rightarrow Y</span> <span
+class="math inline">\texttt{in}</span> <span
+class="math inline">F</span>:
+<ul>
+<li><span class="math inline">\texttt{if}</span> <span
+class="math inline">Y \nsubseteq X^+_G</span>:
+<ul>
+<li><span class="math inline">\texttt{return False}</span></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">\texttt{return True}</span></li>
+</ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>l’algoritmo controlla se <span class="math inline">\rho</span>
+preserva <span class="math inline">F</span></li>
+<li>per lemma precedente <span class="math inline">Y \subseteq X^+_G
+\implies X \rightarrow Y \in G^A = G^+</span></li>
+<li>allora <span class="math inline">\exists X \rightarrow Y \in F \mid
+Y \nsubseteq X^+_G \implies X \rightarrow Y \notin G^+ \implies F
+\nsubseteq G^+ \implies \rho</span> non preserva <span
+class="math inline">F</span> per dimostrazione precedente
+<ul>
+<li>per calcolare <span class="math inline">X^+_G</span> viene
+utilizzato l’algoritmo precedentemente mostrato, che non richiede il
+calcolo di <span class="math inline">F^+</span></li>
+</ul></li>
 </ul></li>
 </ul>
 </body>

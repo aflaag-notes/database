@@ -464,11 +464,14 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Output**
     - $Z = X^+_F$
 - **Algoritmo**
-    - $Z = X$
-    - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
-    - **while** $S \nsubseteq Z$:
+    - $Z := X$
+    - $S := \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
+    - $\texttt{while}$ $S \nsubseteq Z$:
         - $Z = Z \cup S$
         - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
+- **Oss**
+    - l'algoritmo calcola $X^+_F$
+    - di fatto, il loop $\texttt{while}$ applica gli assiomi di Armstrong
 
 ## Definizione 11
 
@@ -696,7 +699,8 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 ## Definizione 17
 
 
-- **Decomposizione**
+
+- **Ricoprimento**
 
 - ⚠️ **DEFINISCI SOTTOSCHEMA**
 
@@ -704,8 +708,17 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $R_1, \ldots, R_N$ sottoschemi di $R \mid C := \displaystyle \bigcup_{i = 1}^N{R_i} = R$ ricoprimento di $R$
-> - $\rho \subseteq C$ è detto **decomposizione di $R$**
+> - $R_1, \ldots, R_N$ sottoschemi di $R$
+> - $R_1, \ldots, R_N$ **ricoprimento di $R$** $\iff \displaystyle \bigcup_{i = 1}^N{R_i} = R$
+
+- **Decomposizione**
+
+> - $n, N \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $C := \{R_1, \ldots, R_N\}$ ricoprimento di $R$
+> - $\forall \rho \subseteq C \quad \rho$ è detto **decomposizione di $R$**
 
 - **Proiezione di un insieme di dipendenze su un sottoschema**
 
@@ -713,12 +726,12 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
+> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $i \in [1, h]$
 > - $R_i \in \rho$ sottoschema di $R$ in $\rho$
-> - $\pi_{R_i}(F) = \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$ è detta **proiezione di $F$ su $R_i$**
+> - $\pi_{R_i}(F) := \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$ è detta **proiezione di $F$ su $R_i$**
 >   - $\pi_{R_i}(F)$ è l'insieme delle dipendenze funzionali in $F$ che hanno determinante e determinato in $R_i$
 
 - **Preservazione di un insieme di dipendenze funzionali**
@@ -727,9 +740,9 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
+> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 > - $\rho$ **preserva $F$** $\iff F \equiv G$
 
@@ -743,10 +756,59 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
     - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 - **Th**
     - $\rho$ preserva $F \iff G^+ \supseteq F$
+
+## Teorema 22
+
+
+- **Input**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $X \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
+- **Output**
+    - $Z = X^+_G$
+- **Algoritmo**
+    - ⚠️ **TODO**
+- **Oss**
+    - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
+        - il calcolo di $F^+$ ha costo computazionale esponenziale
+
+
+
+## Teorema 23
+
+
+- **Input**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
+- **Output**
+    - $\texttt{True/False}$
+- **Algoritmo**
+    - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F$:
+        - $\texttt{if}$ $Y \nsubseteq X^+_G$:
+            - $\texttt{return False}$
+    - $\texttt{return True}$
+- **Oss**
+    - l'algoritmo controlla se $\rho$ preserva $F$
+    - per lemma precedente $Y \subseteq X^+_G \implies X \rightarrow Y \in G^A = G^+$
+    - allora $\exists X \rightarrow Y \in F \mid Y \nsubseteq X^+_G \implies X \rightarrow Y \notin G^+ \implies F \nsubseteq G^+ \implies \rho$ non preserva $F$ per dimostrazione precedente
+        - per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
+
 

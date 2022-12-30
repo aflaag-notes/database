@@ -268,13 +268,15 @@
 - **Output**
     - $Z = X^+_F$
 - **Algoritmo**
-    - $Z = X$
-    - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
-    - **while** $S \nsubseteq Z$:
+    - $Z := X$
+    - $S := \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
+    - $\texttt{while}$ $S \nsubseteq Z$:
         - $Z = Z \cup S$
         - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
+- **Oss**
+    - l'algoritmo calcola $X^+_F$
+    - di fatto, il loop $\texttt{while}$ applica gli assiomi di Armstrong
 - **Dim**
-    - di fatto, il loop **while** applica gli assiomi di Armstrong
     - sia $j \mid S^j \subseteq Z^j$, dunque l'iterazione in cui l'algoritmo termina
     - $Z^j = X^+_F$
         - $Z^j \subseteq X^+_F$

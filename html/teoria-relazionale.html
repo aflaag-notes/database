@@ -774,12 +774,12 @@ funzionali su <span class="math inline">R</span></li>
 </ul></li>
 <li><strong>Algoritmo</strong>
 <ul>
-<li><span class="math inline">Z = X</span></li>
-<li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
+<li><span class="math inline">Z := X</span></li>
+<li><span class="math inline">S := \{A \in R(A_1, \ldots, A_n) \mid
 \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A
 \in V \land Y \subseteq Z\}</span></li>
-<li><strong>while</strong> <span class="math inline">S \nsubseteq
-Z</span>:
+<li><span class="math inline">\texttt{while}</span> <span
+class="math inline">S \nsubseteq Z</span>:
 <ul>
 <li><span class="math inline">Z = Z \cup S</span></li>
 <li><span class="math inline">S = \{A \in R(A_1, \ldots, A_n) \mid
@@ -787,10 +787,14 @@ Z</span>:
 \in V \land Y \subseteq Z\}</span></li>
 </ul></li>
 </ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>l’algoritmo calcola <span class="math inline">X^+_F</span></li>
+<li>di fatto, il loop <span class="math inline">\texttt{while}</span>
+applica gli assiomi di Armstrong</li>
+</ul></li>
 <li><strong>Dim</strong>
 <ul>
-<li>di fatto, il loop <strong>while</strong> applica gli assiomi di
-Armstrong</li>
 <li>sia <span class="math inline">j \mid S^j \subseteq Z^j</span>,
 dunque l’iterazione in cui l’algoritmo termina</li>
 <li><span class="math inline">Z^j = X^+_F</span>
