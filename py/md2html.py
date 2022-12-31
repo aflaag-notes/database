@@ -40,9 +40,4 @@ for file in os.listdir("mds"):
 
     print(name_no_ext + ".html was successfully created")
 
-    if name_no_ext == "everything":
-        os.system("pandoc temp/" + name_no_ext + ".md -t pdf -V geometry:a4paper -o " + name_no_ext + ".pdf")
-
-        print(name_no_ext + ".pdf was successfully created")
-
 os.system("rm -rf ./temp")

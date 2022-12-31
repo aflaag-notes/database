@@ -96,28 +96,29 @@
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
     - ⚠️ **13.20-21-22**
-- **Dim**
+- **Th**
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
     - $Z^f = X^+_G$
-        - $Z^f \subseteq Z^+_G$
-            - _caso base_
-                - $Z^0 = X$, per osservazione precedente $X \subseteq X^+_G \implies Z^0 \subseteq X^+_G$
-            - _ipotesi induttiva_
-                - $Z^i \subseteq X^+_G$
-            - _passo induttivo_
-                - è necessario dimostrare che $Z^{i + 1} \subseteq X^+_G$
-                - sia $A \in Z^{i + 1} = Z^i \cup S^i$, allora $A \in Z^i \lor A \in S^i$
-                - $A \in Z^i \implies A \in X^+_G$ per ipotesi induttiva
-                - $A \in S^i \implies \exists j \le h \mid A \in (Z^i \cap R_j)^+_F \cap R_j$ per definizione di $S^i$
-                    - $Z^i \cap R_j \subseteq R_j$, e inoltre $A \in (Z^i \cap R_j)^+_F \cap R_j \implies A \in R_j$
-                    - allora, per definizione di $\pi_{R_j}(F) := \{X \rightarrow Y \in F^+ \mid XY \subseteq R_j\}$ si ha che $(Z^i \cap R_j) \rightarrow A \in \pi_{R_j}(F)$
-                    - per osservazione precedente $G \subseteq G^+$
-                    - per definizione di $G$ si ha che $\pi_{R_j}(F) \subseteq G$, allora in particolare $(Z^i \cap R_j) \rightarrow A \in G \subseteq G^+ \implies (Z^i \cap R_j) \rightarrow A \in G^+$
-                    - $Z^i \cap R_j \subseteq Z^i$, e per ipotesi induttiva $Z^i \subseteq X^+_G \implies Z^i \cap R_j \subseteq X^+_G$, allora per lemma precedente si ha che $Z^i \cap R_j \subseteq X^+_G \implies X \rightarrow (Z^i \cap R_j) \in G^A$
-                    - allora $X \rightarrow (Z^i \cap R_j), (Z^i \cap R_j) \rightarrow A \in G^A \implies X \rightarrow A \in G^A$ per assioma della transitività
-                    - allora, per definizione di $X^+_G$ si ha che $X \rightarrow A \in G^A \implies A \in X^+_G$
-        - $Z^f \supseteq Z^+_G$
-            - ⚠️ **falla se c'hai voglia**
+- **Dim**
+    - $Z^f \subseteq Z^+_G$
+        - _caso base_
+            - $Z^0 = X$, per osservazione precedente $X \subseteq X^+_G \implies Z^0 \subseteq X^+_G$
+        - _ipotesi induttiva_
+            - $Z^i \subseteq X^+_G$
+        - _passo induttivo_
+            - è necessario dimostrare che $Z^{i + 1} \subseteq X^+_G$
+            - sia $A \in Z^{i + 1} = Z^i \cup S^i$, allora $A \in Z^i \lor A \in S^i$
+            - $A \in Z^i \implies A \in X^+_G$ per ipotesi induttiva
+            - $A \in S^i \implies \exists j \le h \mid A \in (Z^i \cap R_j)^+_F \cap R_j$ per definizione di $S^i$
+                - $Z^i \cap R_j \subseteq R_j$, e inoltre $A \in (Z^i \cap R_j)^+_F \cap R_j \implies A \in R_j$
+                - allora, per definizione di $\pi_{R_j}(F) := \{X \rightarrow Y \in F^+ \mid XY \subseteq R_j\}$ si ha che $(Z^i \cap R_j) \rightarrow A \in \pi_{R_j}(F)$
+                - per osservazione precedente $G \subseteq G^+$
+                - per definizione di $G$ si ha che $\pi_{R_j}(F) \subseteq G$, allora in particolare $(Z^i \cap R_j) \rightarrow A \in G \subseteq G^+ \implies (Z^i \cap R_j) \rightarrow A \in G^+$
+                - $Z^i \cap R_j \subseteq Z^i$, e per ipotesi induttiva $Z^i \subseteq X^+_G \implies Z^i \cap R_j \subseteq X^+_G$, allora per lemma precedente si ha che $Z^i \cap R_j \subseteq X^+_G \implies X \rightarrow (Z^i \cap R_j) \in G^A$
+                - allora $X \rightarrow (Z^i \cap R_j), (Z^i \cap R_j) \rightarrow A \in G^A \implies X \rightarrow A \in G^A$ per assioma della transitività
+                - allora, per definizione di $X^+_G$ si ha che $X \rightarrow A \in G^A \implies A \in X^+_G$
+    - $Z^f \supseteq Z^+_G$
+        - ⚠️ **falla se c'hai voglia**
 
 ## Alg
 
@@ -133,16 +134,20 @@
 - **Output**
     - $\texttt{True/False}$
 - **Algoritmo**
-    - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F$$\texttt{:}$
+    - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F \texttt{:}$
         - $\texttt{if}$ $Y \nsubseteq X^+_G$$\texttt{:}$
             - $\texttt{return False}$
     - $\texttt{return True}$
 - **Oss**
     - l'algoritmo controlla se $\rho$ preserva $F$
     - l'algoritmo ha costo polinomiale, poiché per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
+- **Th**
+    - $\rho$ preserva $F \iff \forall X \rightarrow Y \in F \quad Y \subseteq X^+_G$
 - **Dim**
-    - per lemma precedente $Y \subseteq X^+_G \implies X \rightarrow Y \in G^A = G^+$
-    - allora $\exists X \rightarrow Y \in F \mid Y \nsubseteq X^+_G \implies X \rightarrow Y \notin G^+ \implies F \nsubseteq G^+ \implies \rho$ non preserva $F$ per dimostrazione precedente
+    - la tesi è equivalente a dimostrare che $\exists X \rightarrow Y \in F \mid Y \nsubseteq X^+_G \iff \rho$ non preserva $F$
+    - per lemma precedente $Y \subseteq X^+_G \iff X \rightarrow Y \in G^A = G^+$
+    - allora $\exists X \rightarrow Y \in F \mid Y \nsubseteq X^+_G \iff X \rightarrow Y \notin G^+$
+    - $\exists X \rightarrow Y \in F \mid X \rightarrow Y \notin G^+ \iff F \nsubseteq G^+ \iff \rho$ non preserva $F$ per dimostrazione precedente
 
 ## Def
 
@@ -225,9 +230,35 @@
 - **Output**
     - $\texttt{True/False}$
 - **Algoritmo**
-    - 
+    - viene costruita $r$ istanza di $R$ legale su $F$, avente $h$ righe $\mid \forall i \in [1, h], j \in [1, n] \quad r_{i, j} = \left\{\begin{array}{cc} a_j & A_j \in R_i\\b_{i, j} & A_j \notin R_i\end{array}\right.$
+    - $\texttt{unchanged = False}$
+    - $\texttt{while not unchanged:}$
+        - $\texttt{unchanged = True}$
+        - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F \texttt{:}$
+            - $\texttt{for}$ $t_1$ $\texttt{in}$ $r \texttt{:}$
+                - $\texttt{for}$ $t_2$ $\texttt{in}$ $r \texttt{:}$
+                    - $\texttt{if}$ $t_1[X] == t_2[X]$ $\texttt{and}$ $t_1[Y] \neq t_2[Y] \texttt{:}$
+                        - $\texttt{unchanged = False}$
+                        - $\texttt{for}$ $A_j$ $\texttt{in}$ $Y \texttt{:}$
+                            - $\texttt{if}$ $t_1[A_j] == a_j \texttt{:}$
+                                - $t_2[A_j] = t_1[A_j]$
+                            - $\texttt{else:}$
+                                - $t_1[A_j] = t_2[A_j]$
+    - $\texttt{if}$ $\exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j \texttt{:}$
+        - $\texttt{return True}$
+    - $\texttt{else:}$
+        - $\texttt{return False}$
 - **Oss**
     - l'algoritmo controlla se $\rho$ ha un join senza perdita
+    - di fatto, l'algoritmo modifica $r \mid \forall X \rightarrow Y \in F \quad r$ soddisfa $X \rightarrow Y \in F \implies r$ è divenuta un istanza di $R$ legale su $F$
+        - vengono modificate le tuple che sono uguali nei determinanti ma diverse nei determinati
     - l'algoritmo ha costo polinomiale
+- **Th**
+    - $\rho$ ha un join senza perdita $\iff \exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j$
 - **Dim**
-
+    - _prima implicazione_
+        - sia $r^0$ lo stato iniziale di $r$, e $r^f$ lo stato finale
+        - $\forall t_i^0 \in r^0 \quad t_i^0[R_i]$
+        - ⚠️ **continua da qua**
+    - _seconda implicazione_
+        - ⚠️ **falla se c'hai voglia**

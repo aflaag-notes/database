@@ -452,6 +452,9 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Oss**
     - l'algoritmo calcola $X^+_F$
     - di fatto, il loop $\texttt{while}$ applica gli assiomi di Armstrong
+- **Th**
+    - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
+    - $Z^f = X^+_F$
 
 ## Definizione 10
 
@@ -776,6 +779,9 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
     - ⚠️ **13.20-21-22**
+- **Th**
+    - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
+    - $Z^f = X^+_G$
 
 ## Teorema 24
 
@@ -792,13 +798,15 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Output**
     - $\texttt{True/False}$
 - **Algoritmo**
-    - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F$$\texttt{:}$
+    - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F \texttt{:}$
         - $\texttt{if}$ $Y \nsubseteq X^+_G$$\texttt{:}$
             - $\texttt{return False}$
     - $\texttt{return True}$
 - **Oss**
     - l'algoritmo controlla se $\rho$ preserva $F$
     - l'algoritmo ha costo polinomiale, poiché per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
+- **Th**
+    - $\rho$ preserva $F \iff \forall X \rightarrow Y \in F \quad Y \subseteq X^+_G$
 
 ## Definizione 16
 
@@ -876,8 +884,29 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Output**
     - $\texttt{True/False}$
 - **Algoritmo**
-    - 
+    - viene costruita $r$ istanza di $R$ legale su $F$, avente $h$ righe $\mid \forall i \in [1, h], j \in [1, n] \quad r_{i, j} = \left\{\begin{array}{cc} a_j & A_j \in R_i\\b_{i, j} & A_j \notin R_i\end{array}\right.$
+    - $\texttt{unchanged = False}$
+    - $\texttt{while not unchanged:}$
+        - $\texttt{unchanged = True}$
+        - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F \texttt{:}$
+            - $\texttt{for}$ $t_1$ $\texttt{in}$ $r \texttt{:}$
+                - $\texttt{for}$ $t_2$ $\texttt{in}$ $r \texttt{:}$
+                    - $\texttt{if}$ $t_1[X] == t_2[X]$ $\texttt{and}$ $t_1[Y] \neq t_2[Y] \texttt{:}$
+                        - $\texttt{unchanged = False}$
+                        - $\texttt{for}$ $A_j$ $\texttt{in}$ $Y \texttt{:}$
+                            - $\texttt{if}$ $t_1[A_j] == a_j \texttt{:}$
+                                - $t_2[A_j] = t_1[A_j]$
+                            - $\texttt{else:}$
+                                - $t_1[A_j] = t_2[A_j]$
+    - $\texttt{if}$ $\exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j \texttt{:}$
+        - $\texttt{return True}$
+    - $\texttt{else:}$
+        - $\texttt{return False}$
 - **Oss**
     - l'algoritmo controlla se $\rho$ ha un join senza perdita
+    - di fatto, l'algoritmo modifica $r \mid \forall X \rightarrow Y \in F \quad r$ soddisfa $X \rightarrow Y \in F \implies r$ è divenuta un istanza di $R$ legale su $F$
+        - vengono modificate le tuple che sono uguali nei determinanti ma diverse nei determinati
     - l'algoritmo ha costo polinomiale
+- **Th**
+    - $\rho$ ha un join senza perdita $\iff \exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j$
 

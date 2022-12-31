@@ -927,6 +927,12 @@ class="math inline">\texttt{:}</span>
 <li>di fatto, il loop <span class="math inline">\texttt{while}</span>
 applica gli assiomi di Armstrong</li>
 </ul></li>
+<li><strong>Th</strong>
+<ul>
+<li>sia <span class="math inline">f \mid S^f \subseteq Z^f</span>,
+dunque l’iterazione in cui l’algoritmo termina</li>
+<li><span class="math inline">Z^f = X^+_F</span></li>
+</ul></li>
 </ul>
 <h2 id="definizione-10">Definizione 10</h2>
 <ul>
@@ -1476,6 +1482,12 @@ computazionale esponenziale</li>
 </ul></li>
 <li>!!! <strong>13.20-21-22</strong></li>
 </ul></li>
+<li><strong>Th</strong>
+<ul>
+<li>sia <span class="math inline">f \mid S^f \subseteq Z^f</span>,
+dunque l’iterazione in cui l’algoritmo termina</li>
+<li><span class="math inline">Z^f = X^+_G</span></li>
+</ul></li>
 </ul>
 <h2 id="teorema-24">Teorema 24</h2>
 <ul>
@@ -1503,8 +1515,8 @@ decomposizione di <span class="math inline">R</span></li>
 <ul>
 <li><span class="math inline">\texttt{for}</span> <span
 class="math inline">X \rightarrow Y</span> <span
-class="math inline">\texttt{in}</span> <span
-class="math inline">F</span><span class="math inline">\texttt{:}</span>
+class="math inline">\texttt{in}</span> <span class="math inline">F
+\texttt{:}</span>
 <ul>
 <li><span class="math inline">\texttt{if}</span> <span
 class="math inline">Y \nsubseteq X^+_G</span><span
@@ -1523,6 +1535,12 @@ preserva <span class="math inline">F</span></li>
 class="math inline">X^+_G</span> viene utilizzato l’algoritmo
 precedentemente mostrato, che non richiede il calcolo di <span
 class="math inline">F^+</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">\rho</span> preserva <span
+class="math inline">F \iff \forall X \rightarrow Y \in F \quad Y
+\subseteq X^+_G</span></li>
 </ul></li>
 </ul>
 <h2 id="definizione-16">Definizione 16</h2>
@@ -1648,13 +1666,88 @@ decomposizione di <span class="math inline">R</span></li>
 </ul></li>
 <li><strong>Algoritmo</strong>
 <ul>
-<li></li>
+<li>viene costruita <span class="math inline">r</span> istanza di <span
+class="math inline">R</span> legale su <span
+class="math inline">F</span>, avente <span class="math inline">h</span>
+righe <span class="math inline">\mid \forall i \in [1, h], j \in [1, n]
+\quad r_{i, j} = \left\{\begin{array}{cc} a_j &amp; A_j \in R_i\\b_{i,
+j} &amp; A_j \notin R_i\end{array}\right.</span></li>
+<li><span class="math inline">\texttt{unchanged = False}</span></li>
+<li><span class="math inline">\texttt{while not unchanged:}</span>
+<ul>
+<li><span class="math inline">\texttt{unchanged = True}</span></li>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">X \rightarrow Y</span> <span
+class="math inline">\texttt{in}</span> <span class="math inline">F
+\texttt{:}</span>
+<ul>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">t_1</span> <span
+class="math inline">\texttt{in}</span> <span class="math inline">r
+\texttt{:}</span>
+<ul>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">t_2</span> <span
+class="math inline">\texttt{in}</span> <span class="math inline">r
+\texttt{:}</span>
+<ul>
+<li><span class="math inline">\texttt{if}</span> <span
+class="math inline">t_1[X] == t_2[X]</span> <span
+class="math inline">\texttt{and}</span> <span class="math inline">t_1[Y]
+\neq t_2[Y] \texttt{:}</span>
+<ul>
+<li><span class="math inline">\texttt{unchanged = False}</span></li>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">A_j</span> <span
+class="math inline">\texttt{in}</span> <span class="math inline">Y
+\texttt{:}</span>
+<ul>
+<li><span class="math inline">\texttt{if}</span> <span
+class="math inline">t_1[A_j] == a_j \texttt{:}</span>
+<ul>
+<li><span class="math inline">t_2[A_j] = t_1[A_j]</span></li>
+</ul></li>
+<li><span class="math inline">\texttt{else:}</span>
+<ul>
+<li><span class="math inline">t_1[A_j] = t_2[A_j]</span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">\texttt{if}</span> <span
+class="math inline">\exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j
+\texttt{:}</span>
+<ul>
+<li><span class="math inline">\texttt{return True}</span></li>
+</ul></li>
+<li><span class="math inline">\texttt{else:}</span>
+<ul>
+<li><span class="math inline">\texttt{return False}</span></li>
+</ul></li>
 </ul></li>
 <li><strong>Oss</strong>
 <ul>
 <li>l’algoritmo controlla se <span class="math inline">\rho</span> ha un
 join senza perdita</li>
+<li>di fatto, l’algoritmo modifica <span class="math inline">r \mid
+\forall X \rightarrow Y \in F \quad r</span> soddisfa <span
+class="math inline">X \rightarrow Y \in F \implies r</span> è divenuta
+un istanza di <span class="math inline">R</span> legale su <span
+class="math inline">F</span>
+<ul>
+<li>vengono modificate le tuple che sono uguali nei determinanti ma
+diverse nei determinati</li>
+</ul></li>
 <li>l’algoritmo ha costo polinomiale</li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">\rho</span> ha un join senza perdita <span
+class="math inline">\iff \exists t \in r \mid t[A_1] = \ldots = t[A_n]
+=a_j</span></li>
 </ul></li>
 </ul>
 </body>
