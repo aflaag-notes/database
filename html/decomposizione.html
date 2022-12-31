@@ -252,6 +252,12 @@ class="math inline">R_i</span></strong>
 <li><span class="math inline">\pi_{R_i}(F)</span> è l’insieme delle
 dipendenze funzionali in <span class="math inline">F</span> che hanno
 determinante e determinato in <span class="math inline">R_i</span></li>
+<li>di fatto, data <span class="math inline">r</span> istanza di <span
+class="math inline">R</span> legale su <span
+class="math inline">F</span>, <span
+class="math inline">\pi_{R_i}(F)</span> sono le dipendenze funzionali in
+<span class="math inline">F^+</span> di <span
+class="math inline">\pi_{R_i}(r)</span></li>
 </ul></li>
 </ul>
 </blockquote>
@@ -499,9 +505,10 @@ class="math inline">\texttt{:}</span>
 <ul>
 <li>l’algoritmo controlla se <span class="math inline">\rho</span>
 preserva <span class="math inline">F</span></li>
-<li>per calcolare <span class="math inline">X^+_G</span> viene
-utilizzato l’algoritmo precedentemente mostrato, che non richiede il
-calcolo di <span class="math inline">F^+</span></li>
+<li>l’algoritmo ha costo polinomiale, poiché per calcolare <span
+class="math inline">X^+_G</span> viene utilizzato l’algoritmo
+precedentemente mostrato, che non richiede il calcolo di <span
+class="math inline">F^+</span></li>
 </ul></li>
 <li><strong>Dim</strong>
 <ul>
@@ -516,6 +523,177 @@ class="math inline">F</span> per dimostrazione precedente</li>
 <h2 id="def">Def</h2>
 <ul>
 <li><strong>Join senza perdita</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">\rho</span> <strong>ha un join senza
+perdita</strong> <span class="math inline">\iff \forall r</span> istanza
+di <span class="math inline">R</span> legale su <span
+class="math inline">F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie
+\pi_{R_h}(r)</span>
+<ul>
+<li><span class="math inline">m_\rho(r) := \pi_{R_1}(r) \bowtie \ldots
+\bowtie \pi_{R_h}(r)</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="oss-1">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">r</span> istanza di <span
+class="math inline">R</span> legale su <span
+class="math inline">F</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">r \subseteq m_\rho(r)</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li><span class="math inline">\forall t \in r \quad t \in \{t[R_1]\}
+\bowtie \ldots \bowtie \{t[R_h]\} \subseteq \pi_{R_1}(r) \bowtie \ldots
+\bowtie \pi_{R_h}(r) =: m_\rho(r)</span>
+<ul>
+<li>sostanzialmente, ogni tupla di ogni istanza di <span
+class="math inline">R</span> legale su <span
+class="math inline">F</span> apparterrà al join delle parti di tutta la
+riga della tupla</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="oss-2">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">r</span> istanza di <span
+class="math inline">R</span> legale su <span
+class="math inline">F</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span
+class="math inline">\pi_{R_i}(m_\rho(r))=\pi_{R_i}(r)</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li><span class="math inline">\pi_{R_i}(m_\rho(r)) \subseteq
+\pi_{R_i}(r)</span>
+<ul>
+<li><span class="math inline">\forall t_{R_i} \in \pi_{R_i}(m_\rho(r))
+\quad \exists t&#39; \in m_\rho(r) \mid t_{R_i} = t&#39;[R_i]</span> per
+definizione di <span
+class="math inline">\pi_{R_i}(m_\rho(r))</span></li>
+<li>allora <span class="math inline">\forall t&#39; \in m_\rho(r) \quad
+\exists t_1, \ldots, t_h \in r \mid \forall j \in [1, h] \quad
+t&#39;[R_j] = t_j[R_j]</span></li>
+<li>in particolare, si ha che <span class="math inline">t_{R_i} =
+t&#39;[R_i] = t_i[R_i] \in \pi_{R_i}(r)</span></li>
+</ul></li>
+<li><span class="math inline">\pi_{R_i}(m_\rho(r)) \supseteq
+\pi_{R_i}(r)</span>
+<ul>
+<li>per osservazione precedente <span class="math inline">m_\rho(r)
+\supseteq r \iff \pi_{R_i}(m_\rho(r)) \supseteq \pi_{R_i}(r)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="oss-3">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">r</span> istanza di <span
+class="math inline">R</span> legale su <span
+class="math inline">F</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">m_\rho(m_\rho(r))=m_\rho(r)</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li>per definizione <span class="math inline">m_\rho(m_\rho(r)) =
+\pi_{R_1}(m_\rho(r)) \bowtie \ldots \bowtie \pi_{R_h}(m_\rho(r)) =
+\pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)</span> per osservazione
+precedente, che equivale proprio alla definizione di <span
+class="math inline">m_\rho(r)</span></li>
+</ul></li>
+</ul>
+<h2 id="alg-2">Alg</h2>
+<ul>
+<li><strong>Input</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+</ul></li>
+<li><strong>Output</strong>
+<ul>
+<li><span class="math inline">\texttt{True/False}</span></li>
+</ul></li>
+<li><strong>Algoritmo</strong>
+<ul>
+<li></li>
+</ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>l’algoritmo controlla se <span class="math inline">\rho</span> ha un
+join senza perdita</li>
+<li>l’algoritmo ha costo polinomiale</li>
+</ul></li>
+<li><strong>Dim</strong></li>
 </ul>
 </body>
 </html>

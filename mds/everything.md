@@ -713,6 +713,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $R_i \in \rho$ sottoschema di $R$ in $\rho$
 > - $\pi_{R_i}(F) := \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$ è detta **proiezione di $F$ su $R_i$**
 >   - $\pi_{R_i}(F)$ è l'insieme delle dipendenze funzionali in $F$ che hanno determinante e determinato in $R_i$
+>   - di fatto, data $r$ istanza di $R$ legale su $F$, $\pi_{R_i}(F)$ sono le dipendenze funzionali in $F^+$ di $\pi_{R_i}(r)$
 
 - **Preservazione di un insieme di dipendenze funzionali**
 
@@ -797,13 +798,86 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $\texttt{return True}$
 - **Oss**
     - l'algoritmo controlla se $\rho$ preserva $F$
-    - per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
+    - l'algoritmo ha costo polinomiale, poiché per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
 
-## Teorema 25
+## Definizione 16
 
 
 - **Join senza perdita**
 
+> - $n, k, h \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+> - $\rho$ **ha un join senza perdita** $\iff \forall r$ istanza di $R$ legale su $F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
+>   - $m_\rho(r) := \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
 
 
+
+## Teorema 25
+
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $r$ istanza di $R$ legale su $F$
+- **Th**
+    - $r \subseteq m_\rho(r)$
+
+## Teorema 26
+
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $r$ istanza di $R$ legale su $F$
+- **Th**
+    - $\pi_{R_i}(m_\rho(r))=\pi_{R_i}(r)$
+
+## Teorema 27
+
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $r$ istanza di $R$ legale su $F$
+- **Th**
+    - $m_\rho(m_\rho(r))=m_\rho(r)$
+
+## Teorema 28
+
+
+- **Input**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+- **Output**
+    - $\texttt{True/False}$
+- **Algoritmo**
+    - 
+- **Oss**
+    - l'algoritmo controlla se $\rho$ ha un join senza perdita
+    - l'algoritmo ha costo polinomiale
 

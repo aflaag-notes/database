@@ -33,6 +33,7 @@
 > - $R_i \in \rho$ sottoschema di $R$ in $\rho$
 > - $\pi_{R_i}(F) := \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$ è detta **proiezione di $F$ su $R_i$**
 >   - $\pi_{R_i}(F)$ è l'insieme delle dipendenze funzionali in $F$ che hanno determinante e determinato in $R_i$
+>   - di fatto, data $r$ istanza di $R$ legale su $F$, $\pi_{R_i}(F)$ sono le dipendenze funzionali in $F^+$ di $\pi_{R_i}(r)$
 
 - **Preservazione di un insieme di dipendenze funzionali**
 
@@ -138,7 +139,7 @@
     - $\texttt{return True}$
 - **Oss**
     - l'algoritmo controlla se $\rho$ preserva $F$
-    - per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
+    - l'algoritmo ha costo polinomiale, poiché per calcolare $X^+_G$ viene utilizzato l'algoritmo precedentemente mostrato, che non richiede il calcolo di $F^+$
 - **Dim**
     - per lemma precedente $Y \subseteq X^+_G \implies X \rightarrow Y \in G^A = G^+$
     - allora $\exists X \rightarrow Y \in F \mid Y \nsubseteq X^+_G \implies X \rightarrow Y \notin G^+ \implies F \nsubseteq G^+ \implies \rho$ non preserva $F$ per dimostrazione precedente
@@ -147,4 +148,86 @@
 
 - **Join senza perdita**
 
+> - $n, k, h \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+> - $\rho$ **ha un join senza perdita** $\iff \forall r$ istanza di $R$ legale su $F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
+>   - $m_\rho(r) := \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
+
+## Oss
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $r$ istanza di $R$ legale su $F$
+- **Th**
+    - $r \subseteq m_\rho(r)$
+- **Dim**
+    - $\forall t \in r \quad t \in \{t[R_1]\} \bowtie \ldots \bowtie \{t[R_h]\} \subseteq \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r) =: m_\rho(r)$
+        - sostanzialmente, ogni tupla di ogni istanza di $R$ legale su $F$ apparterrà al join delle parti di tutta la riga della tupla
+
+## Oss
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $r$ istanza di $R$ legale su $F$
+- **Th**
+    - $\pi_{R_i}(m_\rho(r))=\pi_{R_i}(r)$
+- **Dim**
+    - $\pi_{R_i}(m_\rho(r)) \subseteq \pi_{R_i}(r)$
+        - $\forall t_{R_i} \in \pi_{R_i}(m_\rho(r)) \quad \exists t' \in m_\rho(r) \mid t_{R_i} = t'[R_i]$ per definizione di $\pi_{R_i}(m_\rho(r))$
+        - allora $\forall t' \in m_\rho(r) \quad \exists t_1, \ldots, t_h \in r \mid \forall j \in [1, h] \quad t'[R_j] = t_j[R_j]$
+        - in particolare, si ha che $t_{R_i} = t'[R_i] = t_i[R_i] \in \pi_{R_i}(r)$
+    - $\pi_{R_i}(m_\rho(r)) \supseteq \pi_{R_i}(r)$
+        - per osservazione precedente $m_\rho(r) \supseteq r \iff \pi_{R_i}(m_\rho(r)) \supseteq \pi_{R_i}(r)$
+
+## Oss
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $r$ istanza di $R$ legale su $F$
+- **Th**
+    - $m_\rho(m_\rho(r))=m_\rho(r)$
+- **Dim**
+    - per definizione $m_\rho(m_\rho(r)) = \pi_{R_1}(m_\rho(r)) \bowtie \ldots \bowtie \pi_{R_h}(m_\rho(r)) = \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$ per osservazione precedente, che equivale proprio alla definizione di $m_\rho(r)$
+
+## Alg
+
+- **Input**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+- **Output**
+    - $\texttt{True/False}$
+- **Algoritmo**
+    - 
+- **Oss**
+    - l'algoritmo controlla se $\rho$ ha un join senza perdita
+    - l'algoritmo ha costo polinomiale
+- **Dim**
 
