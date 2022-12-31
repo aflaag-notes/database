@@ -1750,5 +1750,61 @@ class="math inline">\iff \exists t \in r \mid t[A_1] = \ldots = t[A_n]
 =a_j</span></li>
 </ul></li>
 </ul>
+<h2 id="definizione-17">Definizione 17</h2>
+<ul>
+<li><strong>Copertura minimale</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">G</span> insieme di dipendenze funzionali
+<span class="math inline">\mid F \equiv G</span></li>
+<li><span class="math inline">G</span> è detto <strong>copertura
+minimale di <span class="math inline">F</span></strong> <span
+class="math inline">\iff \forall X \rightarrow Y \in G \quad G</span> è
+un singleton, <span class="math inline">\forall X \rightarrow A \in G
+\quad \nexists X&#39; \subseteq X \mid G \equiv G - \{X \rightarrow A \}
+\cup \{X&#39; \rightarrow A\}</span> e infine <span
+class="math inline">\nexists X \rightarrow A \in G \mid G \equiv G - \{X
+\rightarrow A \}</span>
+<ul>
+<li>dunque, <span class="math inline">G</span> è copertura minimale di
+<span class="math inline">F</span> se <span class="math inline">F \equiv
+G</span>, e in ogni dipendenza funzionale di <span
+class="math inline">G</span> i determinati non sono ridondanti, i
+determinanti non sono ridondanti, e la dipendenza stessa non è
+ridondante</li>
+</ul></li>
+</ul>
+</blockquote>
+<h2 id="teorema-29">Teorema 29</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">G</span> copertura minimale di <span
+class="math inline">F</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">G \subseteq F^+</span></li>
+</ul></li>
+</ul>
 </body>
 </html>

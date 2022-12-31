@@ -258,7 +258,35 @@
 - **Dim**
     - _prima implicazione_
         - sia $r^0$ lo stato iniziale di $r$, e $r^f$ lo stato finale
-        - $\forall t_i^0 \in r^0 \quad t_i^0[R_i]$
-        - ⚠️ **continua da qua**
+        - $\forall t_i^0 \in r^0 \quad t_i^0[R_i] = (a_j, \ldots, a_j)$
+        - inoltre, poiché l'algoritmo non varia mai le $a_j$, ma solamente le $b_{i,j}$, allora $t_i^0[R_i] = t_i^f[R_i] = (a_j, \ldots, a_j)$
+        - ⚠️ **nessuno ha capito un cazzo perfetto**
     - _seconda implicazione_
         - ⚠️ **falla se c'hai voglia**
+
+## Def
+
+- **Copertura minimale**
+
+> - $n, k \in \mathbb{N}$
+> - $D_1, \ldots, D_n$ domini
+> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+> - $R(A_1, \ldots, A_n)$ schema relazionale
+> - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+> - $F = \{F_1, \ldots, F_k\}$
+> - $G$ insieme di dipendenze funzionali $\mid F \equiv G$
+> - $G$ è detto **copertura minimale di $F$** $\iff \forall X \rightarrow Y \in G \quad G$ è un singleton, $\forall X \rightarrow A \in G \quad \nexists X' \subseteq X \mid G \equiv G - \{X \rightarrow A \} \cup \{X' \rightarrow A\}$ e infine $\nexists X \rightarrow A \in G \mid G \equiv G - \{X \rightarrow A \}$
+>   - dunque, $G$ è copertura minimale di $F$ se $F \equiv G$, e in ogni dipendenza funzionale di $G$ i determinati non sono ridondanti, i determinanti non sono ridondanti, e la dipendenza stessa non è ridondante
+
+## Oss
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $G$ copertura minimale di $F$
+- **Th**
+    - $G \subseteq F^+$
