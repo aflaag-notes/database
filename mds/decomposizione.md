@@ -290,3 +290,24 @@
     - $G$ copertura minimale di $F$
 - **Th**
     - $G \subseteq F^+$
+
+## Alg
+
+- **Input**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Output**
+    - $F$ è minimale
+- **Algoritmo**
+    - $\forall X, Y:= A_i, \ldots, A_j \subseteq R(A_1 ,\dots, A_n) \mid X \rightarrow Y \in F \quad \forall h \in [i, j] \quad F := F \cup \{X \rightarrow A_h\}$
+        - ogni dipendenza funzionale in $F$ viene decomposta in singleton
+    - ⚠️ **da qua**
+    - $\forall X \rightarrow A \in F \mid F \equiv F - \{X \rightarrow A\} \quad F := F - \{X \rightarrow A\}$
+        - ogni dipendenza funzionale che lascia invariata $F^+$ viene rimossa da $F$, poiché ridondante
+- **Oss**
+- **Th**
+- **Dim**
