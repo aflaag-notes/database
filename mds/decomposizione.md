@@ -46,7 +46,7 @@
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 > - $\rho$ **preserva $F$** $\iff F \equiv G$
->   - $\rho$ è una _buona_ decomposizione se:
+>   - $\rho$ è una _buona_ decomposizione di $R$ se:
 >     - ogni sottoschema di $\rho$ è in terza forma normale
 >     - $\rho$ preserva $F$
 >     - $\rho$ permette di ricostruire ogni istanza legale di $R$, attraverso il join naturale delle istanze legali $r_1, \ldots, r_h$ dei sottoschemi di $\rho$, senza perdita di informazioni
@@ -305,9 +305,43 @@
 - **Algoritmo**
     - $\forall X, Y:= A_i, \ldots, A_j \subseteq R(A_1 ,\dots, A_n) \mid X \rightarrow Y \in F \quad \forall h \in [i, j] \quad F := F \cup \{X \rightarrow A_h\}$
         - ogni dipendenza funzionale in $F$ viene decomposta in singleton
-    - ⚠️ **da qua**
+    - $\forall A_i \ldots A_{h - 1}A_hA_{h + 1} \ldots A_j \rightarrow A \mid F \equiv F - \{A_i \ldots A_{h -1 }A_hA_{h + 1} \ldots A_j \rightarrow A\} \cup \{A_i \ldots A_{h -1 }A_{h + 1} \ldots A_j \rightarrow A \} \quad F :=  F - \{A_i \ldots A_{h -1 }A_hA_{h + 1} \ldots A_j \rightarrow A\} \cup \{A_i \ldots A_{h -1 }A_{h + 1} \ldots A_j \rightarrow A\}$
+        - $A_h$ viene rimosso dalla dipendenza funzionale, poiché ridondante
+        - il processo viene applicato ricorsivamente
     - $\forall X \rightarrow A \in F \mid F \equiv F - \{X \rightarrow A\} \quad F := F - \{X \rightarrow A\}$
         - ogni dipendenza funzionale che lascia invariata $F^+$ viene rimossa da $F$, poiché ridondante
 - **Oss**
+    - ⚠️ **super boring, e non ho manco capito niente onestamente**
 - **Th**
+    - ⚠️ **?**
 - **Dim**
+    - ⚠️ **?**
+
+## Alg
+
+- **Input**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$ insieme minimale di dipendenze funzionali
+- **Output**
+    - $\rho$ decomposizione di $R \mid \forall R \in \rho \quad R$ in terza forma normale, $\rho$ preserva $F$ e $\rho$ ha un join senza perdita
+    - dunque, $\rho$ è una _buona_ decomposizione di $R$
+- **Algoritmo**
+    - $S := \varnothing$
+    - $\rho := \varnothing$
+    - $\texttt{for}$ $A$ $\texttt{in}$ $R \texttt{:}$
+        - $\texttt{if}$ $\nexists X \rightarrow Y \in F \mid A \in X \lor A \in Y \texttt{:}$
+            - $S = S \cup A$
+    - $\texttt{if}$ $S \neq \varnothing \texttt{:}$
+        - $R = R - S$
+        - $\rho = \rho \cup S$
+    - $\texttt{if}$ $\exists X \rightarrow Y \in F \mid X = R \lor Y = R \texttt{:}$
+        - $\rho = \rho \cup R$
+    - $\texttt{else:}$
+        - $\texttt{for}$ $X \rightarrow A$ $\texttt{in}$ $F \texttt{:}$
+            - $\rho = \rho \cup \{XA\}$
+- **Oss**
+    - l'algoritmo ha costo polinomiale

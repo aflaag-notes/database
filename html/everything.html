@@ -1382,7 +1382,7 @@ class="math inline">F</span></strong> <span class="math inline">\iff F
 \equiv G</span>
 <ul>
 <li><span class="math inline">\rho</span> è una <em>buona</em>
-decomposizione se:
+decomposizione di <span class="math inline">R</span> se:
 <ul>
 <li>ogni sottoschema di <span class="math inline">\rho</span> è in terza
 forma normale</li>
@@ -1804,6 +1804,131 @@ class="math inline">F</span></li>
 <li><strong>Th</strong>
 <ul>
 <li><span class="math inline">G \subseteq F^+</span></li>
+</ul></li>
+</ul>
+<h2 id="teorema-30">Teorema 30</h2>
+<ul>
+<li><strong>Input</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Output</strong>
+<ul>
+<li><span class="math inline">F</span> è minimale</li>
+</ul></li>
+<li><strong>Algoritmo</strong>
+<ul>
+<li><span class="math inline">\forall X, Y:= A_i, \ldots, A_j \subseteq
+R(A_1 ,\dots, A_n) \mid X \rightarrow Y \in F \quad \forall h \in [i, j]
+\quad F := F \cup \{X \rightarrow A_h\}</span>
+<ul>
+<li>ogni dipendenza funzionale in <span class="math inline">F</span>
+viene decomposta in singleton</li>
+</ul></li>
+<li><span class="math inline">\forall A_i \ldots A_{h - 1}A_hA_{h + 1}
+\ldots A_j \rightarrow A \mid F \equiv F - \{A_i \ldots A_{h -1 }A_hA_{h
++ 1} \ldots A_j \rightarrow A\} \cup \{A_i \ldots A_{h -1 }A_{h + 1}
+\ldots A_j \rightarrow A \} \quad F := F - \{A_i \ldots A_{h -1 }A_hA_{h
++ 1} \ldots A_j \rightarrow A\} \cup \{A_i \ldots A_{h -1 }A_{h + 1}
+\ldots A_j \rightarrow A\}</span>
+<ul>
+<li><span class="math inline">A_h</span> viene rimosso dalla dipendenza
+funzionale, poiché ridondante</li>
+<li>il processo viene applicato ricorsivamente</li>
+</ul></li>
+<li><span class="math inline">\forall X \rightarrow A \in F \mid F
+\equiv F - \{X \rightarrow A\} \quad F := F - \{X \rightarrow A\}</span>
+<ul>
+<li>ogni dipendenza funzionale che lascia invariata <span
+class="math inline">F^+</span> viene rimossa da <span
+class="math inline">F</span>, poiché ridondante</li>
+</ul></li>
+</ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>!!! <strong>super boring, e non ho manco capito niente
+onestamente</strong></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li>!!! <strong>?</strong></li>
+</ul></li>
+</ul>
+<h2 id="teorema-31">Teorema 31</h2>
+<ul>
+<li><strong>Input</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span> insieme
+minimale di dipendenze funzionali</li>
+</ul></li>
+<li><strong>Output</strong>
+<ul>
+<li><span class="math inline">\rho</span> decomposizione di <span
+class="math inline">R \mid \forall R \in \rho \quad R</span> in terza
+forma normale, <span class="math inline">\rho</span> preserva <span
+class="math inline">F</span> e <span class="math inline">\rho</span> ha
+un join senza perdita</li>
+<li>dunque, <span class="math inline">\rho</span> è una <em>buona</em>
+decomposizione di <span class="math inline">R</span></li>
+</ul></li>
+<li><strong>Algoritmo</strong>
+<ul>
+<li><span class="math inline">S := \varnothing</span></li>
+<li><span class="math inline">\rho := \varnothing</span></li>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">A</span> <span
+class="math inline">\texttt{in}</span> <span class="math inline">R
+\texttt{:}</span>
+<ul>
+<li><span class="math inline">\texttt{if}</span> <span
+class="math inline">\nexists X \rightarrow Y \in F \mid A \in X \lor A
+\in Y \texttt{:}</span>
+<ul>
+<li><span class="math inline">S = S \cup A</span></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">\texttt{if}</span> <span
+class="math inline">S \neq \varnothing \texttt{:}</span>
+<ul>
+<li><span class="math inline">R = R - S</span></li>
+<li><span class="math inline">\rho = \rho \cup S</span></li>
+</ul></li>
+<li><span class="math inline">\texttt{if}</span> <span
+class="math inline">\exists X \rightarrow Y \in F \mid X = R \lor Y = R
+\texttt{:}</span>
+<ul>
+<li><span class="math inline">\rho = \rho \cup R</span></li>
+</ul></li>
+<li><span class="math inline">\texttt{else:}</span>
+<ul>
+<li><span class="math inline">\texttt{for}</span> <span
+class="math inline">X \rightarrow A</span> <span
+class="math inline">\texttt{in}</span> <span class="math inline">F
+\texttt{:}</span>
+<ul>
+<li><span class="math inline">\rho = \rho \cup \{XA\}</span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Oss</strong>
+<ul>
+<li>l’algoritmo ha costo polinomiale</li>
 </ul></li>
 </ul>
 </body>

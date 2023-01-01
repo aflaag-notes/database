@@ -6,6 +6,5 @@ Se invece siete qui per la lista di teoremi, ecco [il link](https://ph04.github.
 
 ## TODO list
 
-- rifai docs
 - costo calcolo F+
 - dettaglio di r su fa = f+ e x+
