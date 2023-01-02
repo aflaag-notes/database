@@ -908,7 +908,8 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
         - vengono modificate le tuple che sono uguali nei determinanti ma diverse nei determinati
     - l'algoritmo ha costo polinomiale
 - **Th**
-    - $\rho$ ha un join senza perdita $\iff \exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j$
+    - sia $r^0$ lo stato iniziale di $r$, e $r^f$ lo stato finale
+    - $\rho$ ha un join senza perdita $\iff \exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_j$
 
 ## Definizione 17
 

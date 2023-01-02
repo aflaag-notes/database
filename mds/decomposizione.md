@@ -254,15 +254,20 @@
         - vengono modificate le tuple che sono uguali nei determinanti ma diverse nei determinati
     - l'algoritmo ha costo polinomiale
 - **Th**
-    - $\rho$ ha un join senza perdita $\iff \exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j$
+    - sia $r^0$ lo stato iniziale di $r$, e $r^f$ lo stato finale
+    - $\rho$ ha un join senza perdita $\iff \exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_j$
 - **Dim**
     - _prima implicazione_
-        - sia $r^0$ lo stato iniziale di $r$, e $r^f$ lo stato finale
-        - $\forall t_i^0 \in r^0 \quad t_i^0[R_i] = (a_j, \ldots, a_j)$
-        - inoltre, poiché l'algoritmo non varia mai le $a_j$, ma solamente le $b_{i,j}$, allora $t_i^0[R_i] = t_i^f[R_i] = (a_j, \ldots, a_j)$
-        - ⚠️ **nessuno ha capito un cazzo perfetto**
+        - $\forall t_i^0 \in r^0 \quad t_i^0[R_i] = (a_j, \ldots, a_j)$ per costruzione di $r^0$
+        - inoltre, poiché l'algoritmo non varia mai le $a_j$, ma solamente le $b_{i,j}$, allora $t_i^0[R_i] = t_i^f[R_i] = (a_j, \ldots, a_j)$, allora $\exists t \in r^f \mid t$ contiene solamente $a_j$
+        - sia $t^a$ la tupla che contiene tutte $a_j$ in $r^f$
+        - per costruzione di $r$, si ha che $t^a$ deve essere necessariamente nel join naturale delle tuple che hanno tutte $a_j$ in $R_j$, allora si ha che $t^a \in \{t_1^f[R_1]\} \bowtie \ldots \bowtie \{t_h^f[R_h]\}$
+        - inoltre $\{t_1^f[R_1]\} \bowtie \ldots \bowtie \{t_h^f[R_h]\} \subseteq \pi_{R_1}(r^f) \bowtie \ldots \bowtie \pi_{R_h}(r^f) =: m_\rho(r^f)$
+        - per costruzione dell'algoritmo, si ha che $r^f$ è legale
+        - poiché $\rho$ ha un join senza perdita, e $r^f$ è legale, allora $m_\rho(r^f) = r^f$ per definizione di join senza perdita
+        - in particolare, $t^a \in r^f \implies \exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_j$
     - _seconda implicazione_
-        - ⚠️ **falla se c'hai voglia**
+        - _omessa dal professore_
 
 ## Def
 

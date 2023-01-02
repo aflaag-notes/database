@@ -777,29 +777,50 @@ diverse nei determinati</li>
 </ul></li>
 <li><strong>Th</strong>
 <ul>
+<li>sia <span class="math inline">r^0</span> lo stato iniziale di <span
+class="math inline">r</span>, e <span class="math inline">r^f</span> lo
+stato finale</li>
 <li><span class="math inline">\rho</span> ha un join senza perdita <span
-class="math inline">\iff \exists t \in r \mid t[A_1] = \ldots = t[A_n]
+class="math inline">\iff \exists t \in r^f \mid t[A_1] = \ldots = t[A_n]
 =a_j</span></li>
 </ul></li>
 <li><strong>Dim</strong>
 <ul>
 <li><em>prima implicazione</em>
 <ul>
-<li>sia <span class="math inline">r^0</span> lo stato iniziale di <span
-class="math inline">r</span>, e <span class="math inline">r^f</span> lo
-stato finale</li>
 <li><span class="math inline">\forall t_i^0 \in r^0 \quad t_i^0[R_i] =
-(a_j, \ldots, a_j)</span></li>
+(a_j, \ldots, a_j)</span> per costruzione di <span
+class="math inline">r^0</span></li>
 <li>inoltre, poiché l’algoritmo non varia mai le <span
 class="math inline">a_j</span>, ma solamente le <span
 class="math inline">b_{i,j}</span>, allora <span
-class="math inline">t_i^0[R_i] = t_i^f[R_i] = (a_j, \ldots,
-a_j)</span></li>
-<li>⚠️ <strong>nessuno ha capito un cazzo perfetto</strong></li>
+class="math inline">t_i^0[R_i] = t_i^f[R_i] = (a_j, \ldots, a_j)</span>,
+allora <span class="math inline">\exists t \in r^f \mid t</span>
+contiene solamente <span class="math inline">a_j</span></li>
+<li>sia <span class="math inline">t^a</span> la tupla che contiene tutte
+<span class="math inline">a_j</span> in <span
+class="math inline">r^f</span></li>
+<li>per costruzione di <span class="math inline">r</span>, si ha che
+<span class="math inline">t^a</span> deve essere necessariamente nel
+join naturale delle tuple che hanno tutte <span
+class="math inline">a_j</span> in <span class="math inline">R_j</span>,
+allora si ha che <span class="math inline">t^a \in \{t_1^f[R_1]\}
+\bowtie \ldots \bowtie \{t_h^f[R_h]\}</span></li>
+<li>inoltre <span class="math inline">\{t_1^f[R_1]\} \bowtie \ldots
+\bowtie \{t_h^f[R_h]\} \subseteq \pi_{R_1}(r^f) \bowtie \ldots \bowtie
+\pi_{R_h}(r^f) =: m_\rho(r^f)</span></li>
+<li>per costruzione dell’algoritmo, si ha che <span
+class="math inline">r^f</span> è legale</li>
+<li>poiché <span class="math inline">\rho</span> ha un join senza
+perdita, e <span class="math inline">r^f</span> è legale, allora <span
+class="math inline">m_\rho(r^f) = r^f</span> per definizione di join
+senza perdita</li>
+<li>in particolare, <span class="math inline">t^a \in r^f \implies
+\exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_j</span></li>
 </ul></li>
 <li><em>seconda implicazione</em>
 <ul>
-<li>⚠️ <strong>falla se c’hai voglia</strong></li>
+<li><em>omessa dal professore</em></li>
 </ul></li>
 </ul></li>
 </ul>
