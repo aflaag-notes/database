@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Organizzazione fisica</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #fdfdfd;
+      background-color: #1f1f1f;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #fdfdfd;
+    }
+    a:visited {
+      color: #fdfdfd;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #adbac7;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #fdfdfd;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #fdfdfd;
+      border-bottom: 1px solid #fdfdfd;
+    }
+    th {
+      border-top: 1px solid #fdfdfd;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script defer=""
+  src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"> </h1>
+</header>
+<h1 id="organizzazione-fisica">Organizzazione fisica</h1>
+<h2 id="gerarchia-fisica">Gerarchia fisica</h2>
+<ul>
+<li>Memoria primaria
+<ul>
+<li>caratteristiche
+<ul>
+<li>volatile</li>
+<li>costosa</li>
+<li>veloce</li>
+<li>dimensione minore</li>
+<li>contiene codice runtime delle applicazioni e il DBMS</li>
+</ul></li>
+<li>composta da
+<ul>
+<li>Registri della CPU
+<ul>
+<li>operazioni matematice e logiche</li>
+</ul></li>
+<li>Cache ad alta velocità
+<ul>
+<li>opera quasi alla stessa velocità della CPU</li>
+</ul></li>
+<li>Memoria principale
+<ul>
+<li>RAM</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Memoria secondaria
+<ul>
+<li>caratteristiche
+<ul>
+<li>non volatile</li>
+<li>relativamente economica</li>
+<li>lenta</li>
+<li>dimensione maggiore</li>
+<li>contiene file fisici del database</li>
+</ul></li>
+<li>composta da
+<ul>
+<li>HDD/SSD
+<ul>
+<li>basati sulla memoria flash</li>
+</ul></li>
+<li>Disco ottico</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="hdd">HDD</h2>
+<ul>
+<li>Caratteristiche
+<ul>
+<li>contiene un hard disk controller</li>
+<li>è di storage direttamente accessibili (DASDs)</li>
+</ul></li>
+<li>Organizzazione
+<ul>
+<li>è composto da piatti/dischi circolari, divisi in settori</li>
+<li>ogni settore è diviso in blocchi</li>
+<li>ogni piatto circolare è ricoperto da particelle magnetiche, ed è
+posto su un perno centrale che ruota a velocità costante</li>
+<li>l’attuatore, un perno verticale, esegue un movimento orizzontale che
+permette ai bracci meccanici, posti sull’attuatore perpendicolarmente,
+di far raggiungere le testine di lettura e scrittura sulle tracce dei
+piatti</li>
+<li><strong>seek time</strong>: tempo di posizionamento delle teste
+sulla traccia corretta</li>
+<li><strong>rotational delay</strong>: tempo di attesa per far ruotare
+il disco desiderato nel settore di memoria voluto</li>
+<li><strong>transfer time</strong>: tempo di trasferimento dei dati, che
+dipende dalla dimensione del blocco, dalla densità delle particelle
+magnetiche e dalla velocità di rotazione dei dischi</li>
+<li><strong>service time</strong>: seek time + rotation delay + transfer
+time</li>
+<li><strong>queueing time</strong>: ⚠️ NON L’HA DETTO/SCRITTO</li>
+<li><strong>response time</strong>: service time + queueing time</li>
+<li><strong>transfer rate</strong>: numero di blocchi trasferiti al
+secondo</li>
+<li><strong>rotation time</strong>: ⚠️ NON L’HA DETTO/SCRITTO, forse è
+uguale</li>
+<li><strong>block size</strong>: dimensione di un blocco</li>
+<li><span class="math inline">t_{rba}</span>: seek time + rotation time
+/ 2 + block size / transfer rate
+<ul>
+<li>RBA: random block access</li>
+<li>tempo per ottenere/scrivere un blocco del disco, indipendentemente
+dalla scrittura/lettura precedente</li>
+</ul></li>
+<li><span class="math inline">t_{sba}</span>: rotation time / 2 + block
+size / transfer rate
+<ul>
+<li>SBA: sequential block access</li>
+<li>tempo per ottenere sequenzialmente un blocco dal disco con la
+testina di lettura/scrittura già correttamente posizionata</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="database-fisico">Database fisico</h2>
+<p>⚠️ SLIDE 14 (mesa che è tipo tutto ovvio)</p>
+<ul>
+<li>Caratteristiche
+<ul>
+<li>un database è un insieme di file</li>
+<li>ogni file può essere visto come collezione di
+<strong>pagine</strong></li>
+<li>ogni pagina contiene dei <strong>record</strong></li>
+<li>ogni record consiste in un <strong>insieme di campi</strong></li>
+</ul></li>
+</ul>
+<h2 id="metodi-di-organizzazione-del-file-principale">Metodi di
+organizzazione del file principale</h2>
+<ul>
+<li><strong>File heap</strong>
+<ul>
+<li>nuovi record aggiunti alla fine del file</li>
+<li>non c’è relazione tra gli attributi dei record e la loro posizione
+fisica</li>
+<li>l’unico metodo di ricerca disponibile è la ricerca lineare</li>
+<li>in media, è necessario controllare <span
+class="math inline">\dfrac{\#Blocks}{2}</span> blocchi per trovare un
+determinato record tramite una chiave di ricerca univoca</li>
+<li>è necessario controllare <span class="math inline">\#Blocks</span>
+blocchi per una chiave di ricerca non univoca</li>
+</ul></li>
+<li><strong>File sequenziale</strong>
+<ul>
+<li>i record sono salvati in ordine crescente/decrescente di chiave di
+ricerca</li>
+<li>è possibile usare la ricerca binaria per trovare il record
+desiderato utilizzando una chiave di ricerca univoca</li>
+<li>ricerca lineare: <span
+class="math inline">\dfrac{\#Blocks}{2}</span> sba</li>
+<li>ricerca binaria: <span class="math inline">\log_2(\#Blocks)</span>
+rba</li>
+<li>l’aggiornamento del file va eseguito più cautamente</li>
+</ul></li>
+<li><strong>Hashing</strong>
+<ul>
+<li>viene stabilita una relazione tra il valore della chiave di ricerca
+e la locazione fisica del record</li>
+<li>un record può essere trovato con pochi accessi ai blocchi</li>
+<li>viene stabilita una trasformazione da chiave a indirizzo, ma non è
+possibile garantire l’assenza di collisioni con la tabella di hashing,
+quindi vengono usati dei bucket con gli indirizzi
+<ul>
+<li>se ci sono più collisioni dello spazio disponibile per un singolo
+bucket, il bucket va in overflow</li>
+</ul></li>
+<li>generalmente, come criterio di hashing si utilizza il modulo <span
+class="math inline">\textrm{address}(k) = k \ (\bmod \ M)</span>
+<ul>
+<li>spesso <span class="math inline">M</span> è un numero primo,
+leggermente più grande del numero di indirizzi disponibile</li>
+<li>veranno generati <span class="math inline">M</span> indirizzi, che
+vanno da <span class="math inline">0</span> a <span
+class="math inline">M - 1</span></li>
+</ul></li>
+<li>per ritornare un record che non si trova in una posizione di
+overflow è necessario <span class="math inline">1</span> rba per
+ottenere il bucket, più almeno <span class="math inline">1</span>
+sba</li>
+<li>per i record in overflow sono necessari ulteriori accessi ai
+blocchi, che dipende dalla percentuale di record in overflow
+<ul>
+<li>la percentuale di record in overflow dipende dall’algoritmo di
+hashing scelto, e dall’insieme di chiavi</li>
+<li><span class="math inline">\#Buckets = \left\lceil
+\dfrac{\#Records}{\dim(Bucket) \cdot LF} \right\rceil</span>
+<ul>
+<li><span class="math inline">LF</span> è il loading factor <span
+class="math inline">\dfrac{\dfrac{\#Records}{\#Buckets}}{\dim(Bucket)}</span>,
+<span class="math inline">\rm GAC</span>, ed indica quanto è pieno un
+bucket mediamente</li>
+<li>per esso viene generalmente scelto un valore <span
+class="math inline">[0.7; 0.9]</span></li>
+</ul></li>
+<li>vi sono varie tecniche per gestire l’overflow tra i bucket, ad
+esempio l’<strong>open addressing</strong> che semplicemente pone il
+record nel prossimo bucket disponibile</li>
+</ul></li>
+</ul></li>
+<li><strong>File indicizzato sequenziale</strong>
+<ul>
+<li>combina l’organizzazione sequenziale, aggiungendo degli indici</li>
+<li>il file viene diviso in partizioni/intervalli/blocchi, in cui ogni
+partizione rappresenta l’<em>index entry</em>
+<ul>
+<li>chiave di ricerca del primo record nella partizione</li>
+<li>puntatore alla posizione fisica del primo record della partizione
+<ul>
+<li>il puntatore può essere sia il <em>block pointer</em>, sia il
+<em>record pointer</em></li>
+</ul></li>
+</ul></li>
+<li>viene creato un file che contiene gli indici che puntano alle
+partizioni del file principale, contenente i record</li>
+<li>ogni partizione del file principale viene ordinata secondo una
+chiave univoca</li>
+<li><em>indicizzazione densa</em>
+<ul>
+<li>viene creata un index entry per ogni valore possibile della chiave
+di ricerca</li>
+<li>generalmente è più veloce, ma richiede più spazio di memoria</li>
+<li>sono più complesse da mantenere</li>
+</ul></li>
+<li><em>indicizzazione sparsa</em>
+<ul>
+<li>viene creata un index entry solamente per una parte dei valori
+possibili della chiave di ricerca</li>
+<li>ogni entry indicizza un gruppo di record, l’indirizzo punta al primo
+record di un intervallo</li>
+<li>ricerca: <span
+class="math inline">\log_2\left(\dfrac{\#Blocks}{\#Indexes}\right)</span>
+rba</li>
+</ul></li>
+</ul></li>
+<li><strong>Lista di dati</strong>
+<ul>
+<li>non le abbiamo fatte, kek direi</li>
+</ul></li>
+</ul>
+</body>
+</html>

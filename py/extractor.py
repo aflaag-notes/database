@@ -26,14 +26,15 @@ order = {
     "algebra-relazionale.md": 0,
     "teoria-relazionale.md": 1,
     "terza-forma-normale.md": 2,
-    "decomposizione.md": 4,
+    "decomposizione.md": 3,
 
     "index.md": -1,
     "everything.md": -1,
+    "organizzazione-fisica.md": -1,
 }
 
 for file in sorted(os.listdir("mds/"), key=lambda name: order[name]):
-    if file != "everything.md" and file != "index.md" and file != "teoremi-fondamentali.md":
+    if file != "everything.md" and file != "index.md" and file != "organizzazione-fisica.md":
         with open("mds/" + file) as md:
             parts = re.split("## Oss|## Def|## Lem|## Cor|## Alg", md.read())
             
