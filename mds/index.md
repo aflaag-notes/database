@@ -18,11 +18,13 @@
 
 - [Organizzazione fisica](https://ph04.github.io/database/html/organizzazione-fisica.html)
     - [Organizzazione fisica](https://ph04.github.io/database/html/organizzazione-fisica.html#organizzazione-fisica)
-    - [Gerarchia fisica](https://ph04.github.io/database/html/organizzazione-fisica.html##gerarchia-fisica)
-    - [HDD](https://ph04.github.io/database/html/organizzazione-fisica.html##HDD)
-    - [Database fisico](https://ph04.github.io/database/html/organizzazione-fisica.html##HDD)
-    - [Metodi di organizzazione del file principale](https://ph04.github.io/database/html/organizzazione-fisica.html##metodi-di-organizzazione-del-file-principale)
-    - [B-tree](https://ph04.github.io/database/html/organizzazione-fisica.html##b-tree)
+    - [Gerarchia fisica](https://ph04.github.io/database/html/organizzazione-fisica.html#gerarchia-fisica)
+    - [HDD](https://ph04.github.io/database/html/organizzazione-fisica.html#HDD)
+    - [Database fisico](https://ph04.github.io/database/html/organizzazione-fisica.html#database-fisico)
+    - [Metodi di organizzazione del file principale](https://ph04.github.io/database/html/organizzazione-fisica.html#metodi-di-organizzazione-del-file-principale)
+    - [B-tree](https://ph04.github.io/database/html/organizzazione-fisica.html#b-tree)
+    - [B<sup>+</sup>-tree](https://ph04.github.io/database/html/organizzazione-fisica.html#b-tree-1)
+
 
 ## Tutti i teoremi
 
