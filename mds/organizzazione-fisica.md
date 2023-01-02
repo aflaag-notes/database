@@ -58,11 +58,11 @@
 
 ⚠️ SLIDE 14 (mesa che è tipo tutto ovvio)
 
-- Caratteristiche
+- **Caratteristiche**
     - un database è un insieme di file
-    - ogni file può essere visto come collezione di **pagine**
-    - ogni pagina contiene dei **record**
-    - ogni record consiste in un **insieme di campi**
+    - ogni file può essere visto come collezione di _pagine_
+    - ogni pagina contiene dei _record_
+    - ogni record consiste in un _insieme di campi_
 
 ## Metodi di organizzazione del file principale
 
@@ -112,4 +112,50 @@
 - **Lista di dati**
     - non le abbiamo fatte, kek direi
 
+## B-tree
 
+- **Struttura**
+    - un B-tree è una generalizzazione di un albero binario, in cui ogni nodo è una collezione, ordinata in ordine crescente o decrescente, di sequenze $p, k$, dove $p$ è un puntatore ad un figlio e $k$ è una chiave
+    - in particolare, si ha $(p, k, \ldots, p, k, p)$, dunque un B-tree con $M$ vie avrà $M$ puntatori ed $M - 1$ chiavi
+        - avendo $\ldots, k_{i - 1}, p_i, k_i, \ldots$, allora $p_i$ punterà al figlio che avrà i valori compresi tra $k_{i -1}$ e $k_i$
+- **Caratteristiche**
+    - l'albero è sempre bilanciato, dunque le foglie sono tutte sempre allo stesso livello, e ogni nodo è pieno almeno per $\dfrac{M}{2}$ slot (ad eccezione della radice)
+        - questo implica che una ricerca, nel caso peggiore, implicherà la visita completa dell'albero in altezza, e dunque il costo dell'algoritmo di ricerca è maggiorabile con $cost \le h$, dove $h$ è l'altezza dell'albero
+        - tecnicamente, si avrebbe $h - 1$ a sinistra della disequazione, per via del fatto che la radice è salvata nella RAM, che permette un accesso particolarmente veloce, ma tale fattore è controbilanciato da $h - 1 + 1$ fornito dal tempo di accesso al file dei dati, nel caso in cui si utilizza una struttura di file sequenziale indicizzato
+    - $N$: numero di nodi nell'albero
+    - $m$: numero massimo di figli che un nodo può avere
+        - $m$ dovrebbe essere scelto in modo da far combaciare la massima lunghezza del nodo con la dimensione di un blocco del disco
+    - $d := \dfrac{m}{2}$, minimo numero di figli che un nodo può avere
+        - **caro lettore, ti faccio notare che questa definizione di $m$ e di $d$ è inconsistente con quello che c'è scritto dopo, io ho solamente ricopiato quel che c'era scritto nelle slide ma nessuno è stato in grado di capire cosa il professore intendesse davvero**
+    - $N = m ^{h +1} - 1$, quando l'albero ha ogni nodo riempito
+    - $h_{min}=\left\lceil \log_m(N + 1) - 1 \right\rceil$
+    - $h_{max}=\left\lfloor \log_d\left(\dfrac{N + 1}{2}\right) \right\rfloor$
+    - il numero di entry di un nodo può variare in $[d; 2d]$
+        - $2d$ prende il nome di _ordine dell'albero_
+    - il numero di nodi figli che ogni nodo ha è pari a $m + 1$, e in particolare varia in $[d + 1; 2d + 1]$
+    - $b_{max}$: raggiunto quando ogni nodo dell'albero ha $2d + 1$ nodi figli
+    - $b_{min}$: raggiunto quando ogni nodo dell'albero ha $2d$ nodi figli
+        - **nelle slide non è stato specificato cosa $b_{min}$ e $b_{max}$ siano**
+    - $b_{max} = \displaystyle \sum_{i = 0}^{h - 1}{(2d + 1)^i} = \dfrac{(2d + 1)^h - 1}{2d}$
+    - $b_{min} = \displaystyle 1 + 2 \sum_{i = 0}^{h - 2}{(d + 1)^i} = 1 + 2 \dfrac{(d + 1)^{h - 1} - 1}{d}$
+    - $N_{max}$: massimo numero di nodi
+    - $N_{max}$: minimo numero di nodi
+    - $N_{max} = 2d \cdot b_{max} = (2d + 1)^h - 1$
+    - $N_{min} = 1 + d(b_{min} -1) = 2(d + 1)^{h - 1} -1$
+    - allora $N_{min} \le N \le N_{max} \iff (2d + 1)^h - 1 \le N \le 2(d + 1)^{h - 1} -1 \iff \left\lceil \log_{2d + 1}(N + 1) \right\rceil \le h \le \left\lfloor \log_{d + 1}\left(\dfrac{N +1}{2}\right) \right\rfloor +1$
+    - $\textrm{get}(k): O(h)$ (al massimo $h$ accessi al disco)
+    - $\textrm{put}(k): O(h)$ (al masimo $3h + 1$ accessi al disco)
+    - $\textrm{remove}(k): O(h)$ (al masimo $3h$ accessi al disco)
+- **Misc**
+    - i B-tree possono essere utilizzati come metodo di organizzazione del file principale
+        - al posto di puntatori, i nodi contengono **QUALCOSA CHE NON ABBIAMO CAPITO**
+
+## B<sup>+</sup>-tree
+
+- **Caratteristiche**
+    - solo le foglie contengono i puntatori ai dati
+        - tutte le chiavi presenti in nodi non foglie sono ripetuti nelle foglie, di modo che ogni chiave sia in almeno un nodo foglia, col corrispettivo puntatore ai dati
+        - generalmente l'altezza è minore di un B-tree
+    - ogni nodo ha un puntatore che punta a suo fratello
+- **Caratteristiche**
+    - generalmente sono più performanti dei B-tree, per via delle loro caratteristiche

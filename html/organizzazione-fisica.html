@@ -285,13 +285,12 @@ testina di lettura/scrittura già correttamente posizionata</li>
 <h2 id="database-fisico">Database fisico</h2>
 <p>⚠️ SLIDE 14 (mesa che è tipo tutto ovvio)</p>
 <ul>
-<li>Caratteristiche
+<li><strong>Caratteristiche</strong>
 <ul>
 <li>un database è un insieme di file</li>
-<li>ogni file può essere visto come collezione di
-<strong>pagine</strong></li>
-<li>ogni pagina contiene dei <strong>record</strong></li>
-<li>ogni record consiste in un <strong>insieme di campi</strong></li>
+<li>ogni file può essere visto come collezione di <em>pagine</em></li>
+<li>ogni pagina contiene dei <em>record</em></li>
+<li>ogni record consiste in un <em>insieme di campi</em></li>
 </ul></li>
 </ul>
 <h2 id="metodi-di-organizzazione-del-file-principale">Metodi di
@@ -404,6 +403,137 @@ rba</li>
 <li><strong>Lista di dati</strong>
 <ul>
 <li>non le abbiamo fatte, kek direi</li>
+</ul></li>
+</ul>
+<h2 id="b-tree">B-tree</h2>
+<ul>
+<li><strong>Struttura</strong>
+<ul>
+<li>un B-tree è una generalizzazione di un albero binario, in cui ogni
+nodo è una collezione, ordinata in ordine crescente o decrescente, di
+sequenze <span class="math inline">p, k</span>, dove <span
+class="math inline">p</span> è un puntatore ad un figlio e <span
+class="math inline">k</span> è una chiave</li>
+<li>in particolare, si ha <span class="math inline">(p, k, \ldots, p, k,
+p)</span>, dunque un B-tree con <span class="math inline">M</span> vie
+avrà <span class="math inline">M</span> puntatori ed <span
+class="math inline">M - 1</span> chiavi
+<ul>
+<li>avendo <span class="math inline">\ldots, k_{i - 1}, p_i, k_i,
+\ldots</span>, allora <span class="math inline">p_i</span> punterà al
+figlio che avrà i valori compresi tra <span class="math inline">k_{i
+-1}</span> e <span class="math inline">k_i</span></li>
+</ul></li>
+</ul></li>
+<li><strong>Caratteristiche</strong>
+<ul>
+<li>l’albero è sempre bilanciato, dunque le foglie sono tutte sempre
+allo stesso livello, e ogni nodo è pieno almeno per <span
+class="math inline">\dfrac{M}{2}</span> slot (ad eccezione della radice)
+<ul>
+<li>questo implica che una ricerca, nel caso peggiore, implicherà la
+visita completa dell’albero in altezza, e dunque il costo dell’algoritmo
+di ricerca è maggiorabile con <span class="math inline">cost \le
+h</span>, dove <span class="math inline">h</span> è l’altezza
+dell’albero</li>
+<li>tecnicamente, si avrebbe <span class="math inline">h - 1</span> a
+sinistra della disequazione, per via del fatto che la radice è salvata
+nella RAM, che permette un accesso particolarmente veloce, ma tale
+fattore è controbilanciato da <span class="math inline">h - 1 + 1</span>
+fornito dal tempo di accesso al file dei dati, nel caso in cui si
+utilizza una struttura di file sequenziale indicizzato</li>
+</ul></li>
+<li><span class="math inline">N</span>: numero di nodi nell’albero</li>
+<li><span class="math inline">m</span>: numero massimo di figli che un
+nodo può avere
+<ul>
+<li><span class="math inline">m</span> dovrebbe essere scelto in modo da
+far combaciare la massima lunghezza del nodo con la dimensione di un
+blocco del disco</li>
+</ul></li>
+<li><span class="math inline">d := \dfrac{m}{2}</span>, minimo numero di
+figli che un nodo può avere
+<ul>
+<li><strong>caro lettore, ti faccio notare che questa definizione di
+<span class="math inline">m</span> e di <span
+class="math inline">d</span> è inconsistente con quello che c’è scritto
+dopo, io ho solamente ricopiato quel che c’era scritto nelle slide ma
+nessuno è stato in grado di capire cosa il professore intendesse
+davvero</strong></li>
+</ul></li>
+<li><span class="math inline">N = m ^{h +1} - 1</span>, quando l’albero
+ha ogni nodo riempito</li>
+<li><span class="math inline">h_{min}=\left\lceil \log_m(N + 1) - 1
+\right\rceil</span></li>
+<li><span class="math inline">h_{max}=\left\lfloor \log_d\left(\dfrac{N
++ 1}{2}\right) \right\rfloor</span></li>
+<li>il numero di entry di un nodo può variare in <span
+class="math inline">[d; 2d]</span>
+<ul>
+<li><span class="math inline">2d</span> prende il nome di <em>ordine
+dell’albero</em></li>
+</ul></li>
+<li>il numero di nodi figli che ogni nodo ha è pari a <span
+class="math inline">m + 1</span>, e in particolare varia in <span
+class="math inline">[d + 1; 2d + 1]</span></li>
+<li><span class="math inline">b_{max}</span>: raggiunto quando ogni nodo
+dell’albero ha <span class="math inline">2d + 1</span> nodi figli</li>
+<li><span class="math inline">b_{min}</span>: raggiunto quando ogni nodo
+dell’albero ha <span class="math inline">2d</span> nodi figli
+<ul>
+<li><strong>nelle slide non è stato specificato cosa <span
+class="math inline">b_{min}</span> e <span
+class="math inline">b_{max}</span> siano</strong></li>
+</ul></li>
+<li><span class="math inline">b_{max} = \displaystyle \sum_{i = 0}^{h -
+1}{(2d + 1)^i} = \dfrac{(2d + 1)^h - 1}{2d}</span></li>
+<li><span class="math inline">b_{min} = \displaystyle 1 + 2 \sum_{i =
+0}^{h - 2}{(d + 1)^i} = 1 + 2 \dfrac{(d + 1)^{h - 1} - 1}{d}</span></li>
+<li><span class="math inline">N_{max}</span>: massimo numero di
+nodi</li>
+<li><span class="math inline">N_{max}</span>: minimo numero di nodi</li>
+<li><span class="math inline">N_{max} = 2d \cdot b_{max} = (2d + 1)^h -
+1</span></li>
+<li><span class="math inline">N_{min} = 1 + d(b_{min} -1) = 2(d + 1)^{h
+- 1} -1</span></li>
+<li>allora <span class="math inline">N_{min} \le N \le N_{max} \iff (2d
++ 1)^h - 1 \le N \le 2(d + 1)^{h - 1} -1 \iff \left\lceil \log_{2d +
+1}(N + 1) \right\rceil \le h \le \left\lfloor \log_{d + 1}\left(\dfrac{N
++1}{2}\right) \right\rfloor +1</span></li>
+<li><span class="math inline">\textrm{get}(k): O(h)</span> (al massimo
+<span class="math inline">h</span> accessi al disco)</li>
+<li><span class="math inline">\textrm{put}(k): O(h)</span> (al masimo
+<span class="math inline">3h + 1</span> accessi al disco)</li>
+<li><span class="math inline">\textrm{remove}(k): O(h)</span> (al masimo
+<span class="math inline">3h</span> accessi al disco)</li>
+</ul></li>
+<li><strong>Misc</strong>
+<ul>
+<li>i B-tree possono essere utilizzati come metodo di organizzazione del
+file principale
+<ul>
+<li>al posto di puntatori, i nodi contengono <strong>QUALCOSA CHE NON
+ABBIAMO CAPITO</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id="b-tree-1">B<sup>+</sup>-tree</h2>
+<ul>
+<li><strong>Caratteristiche</strong>
+<ul>
+<li>solo le foglie contengono i puntatori ai dati
+<ul>
+<li>tutte le chiavi presenti in nodi non foglie sono ripetuti nelle
+foglie, di modo che ogni chiave sia in almeno un nodo foglia, col
+corrispettivo puntatore ai dati</li>
+<li>generalmente l’altezza è minore di un B-tree</li>
+</ul></li>
+<li>ogni nodo ha un puntatore che punta a suo fratello</li>
+</ul></li>
+<li><strong>Caratteristiche</strong>
+<ul>
+<li>generalmente sono più performanti dei B-tree, per via delle loro
+caratteristiche</li>
 </ul></li>
 </ul>
 </body>
