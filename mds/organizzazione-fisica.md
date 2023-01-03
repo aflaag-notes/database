@@ -125,8 +125,8 @@
     - $N$: numero di nodi nell'albero
     - $m$: numero massimo di figli che un nodo può avere
         - $m$ dovrebbe essere scelto in modo da far combaciare la massima lunghezza del nodo con la dimensione di un blocco del disco
-    - $d := \dfrac{m}{2}$, minimo numero di figli che un nodo può avere
-        - **caro lettore, ti faccio notare che questa definizione di $m$ e di $d$ è inconsistente con quello che c'è scritto dopo, io ho solamente ricopiato quel che c'era scritto nelle slide ma nessuno è stato in grado di capire cosa il professore intendesse davvero**
+        - **caro lettore, ti faccio notare che questa definizione di $m$ è inconsistente con quello che c'è scritto dopo, io ho solamente ricopiato quel che c'era scritto nelle slide ma nessuno è stato in grado di capire cosa il professore intendesse davvero**
+    - $d := \left \lceil \dfrac{m}{2} \right \rceil$, minimo numero di figli che un nodo può avere
     - $N = m ^{h +1} - 1$, quando l'albero ha ogni nodo riempito
     - $h_{min}=\left\lceil \log_m(N + 1) - 1 \right\rceil$
     - $h_{max}=\left\lfloor \log_d\left(\dfrac{N + 1}{2}\right) \right\rfloor$
