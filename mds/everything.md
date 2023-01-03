@@ -93,7 +93,8 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $C$ espressione booleana
-> - $\sigma_C(R) \subseteq D_1 \times \ldots \times D_n$ è detta **selezione di $R$**
+> - $r$ istanza di $R$
+> - $\sigma_C(r) \subseteq D_1 \times \ldots \times D_n$ è detta **selezione di $r$**
 >   - corrisponde all'insieme delle righe della tabella che rendono la condizione $C$ vera
 
 - **Rinominazione**
@@ -456,6 +457,20 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
     - $Z^f = X^+_F$
 
+## Teorema 15
+
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $Z \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $\forall X \rightarrow Y \in F \mid X \subseteq Z \quad Y \subseteq Z^+_F$
+
 ## Definizione 10
 
 
@@ -472,7 +487,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 15
+## Teorema 16
 
 
 - **Hp**
@@ -506,7 +521,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 16
+## Teorema 17
 
 
 - **Hp**
@@ -521,7 +536,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 17
+## Teorema 18
 
 
 - **Hp**
@@ -535,7 +550,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X^+_F = R \iff X$ superchiave di $R$
 
-## Teorema 18
+## Teorema 19
 
 
 - **Hp**
@@ -582,7 +597,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 19
+## Teorema 20
 
 
 - **Hp**
@@ -630,7 +645,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 20
+## Teorema 21
 
 
 - **Hp**
@@ -664,7 +679,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 21
+## Teorema 22
 
 
 - **Hp**
@@ -736,7 +751,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 22
+## Teorema 23
 
 
 - **Hp**
@@ -751,7 +766,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\rho$ preserva $F \iff G^+ \supseteq F$
 
-## Teorema 23
+## Teorema 24
 
 
 - **Input**
@@ -769,21 +784,22 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Algoritmo**
     - $Z := X$
     - $S := \varnothing$
-    - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, k):}$
-        - $S = S \cup (Z \cap R_i)^+_F \cap R_i$
+    - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, h):}$
+        - $S = S \cup \left((Z \cap R_i)^+_F \cap R_i\right)$
     - $\texttt{while}$ $S \nsubseteq Z$$\texttt{:}$
         - $Z = Z \cup S$
-        - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, k):}$
-            - $S = S \cup (Z \cap R_i)^+_F \cap R_i$
+        - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, h):}$
+            - $S = S \cup \left((Z \cap R_i)^+_F \cap R_i\right)$
 - **Oss**
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
+        - ⚠️ **SCRIVI IL PERCHÉ**
     - ⚠️ **13.20-21-22**
 - **Th**
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
     - $Z^f = X^+_G$
 
-## Teorema 24
+## Teorema 25
 
 
 - **Input**
@@ -808,6 +824,21 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\rho$ preserva $F \iff \forall X \rightarrow Y \in F \quad Y \subseteq X^+_G$
 
+## Teorema 26
+
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
+- **Th**
+    - $\forall X \rightarrow Y \in F \mid \exists R_i \in \rho : XY \subseteq R_i \implies X \rightarrow Y \in G^+$
+
 ## Definizione 16
 
 
@@ -825,7 +856,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 25
+## Teorema 27
 
 
 - **Hp**
@@ -840,7 +871,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $r \subseteq m_\rho(r)$
 
-## Teorema 26
+## Teorema 28
 
 
 - **Hp**
@@ -855,7 +886,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\pi_{R_i}(m_\rho(r))=\pi_{R_i}(r)$
 
-## Teorema 27
+## Teorema 29
 
 
 - **Hp**
@@ -870,7 +901,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $m_\rho(m_\rho(r))=m_\rho(r)$
 
-## Teorema 28
+## Teorema 30
 
 
 - **Input**
@@ -898,7 +929,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
                                 - $t_2[A_j] = t_1[A_j]$
                             - $\texttt{else:}$
                                 - $t_1[A_j] = t_2[A_j]$
-    - $\texttt{if}$ $\exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j \texttt{:}$
+    - $\texttt{if}$ $\exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_{\_} \texttt{:}$
         - $\texttt{return True}$
     - $\texttt{else:}$
         - $\texttt{return False}$
@@ -909,7 +940,8 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - l'algoritmo ha costo polinomiale
 - **Th**
     - sia $r^0$ lo stato iniziale di $r$, e $r^f$ lo stato finale
-    - $\rho$ ha un join senza perdita $\iff \exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_j$
+    - sia $a_{\_}$ una qualsiasi $a_j$
+    - $\rho$ ha un join senza perdita $\iff \exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_{\_}$
 
 ## Definizione 17
 
@@ -928,7 +960,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 29
+## Teorema 31
 
 
 - **Hp**
@@ -944,7 +976,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 30
+## Teorema 32
 
 
 - **Input**
@@ -969,7 +1001,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - ⚠️ **?**
 
-## Teorema 31
+## Teorema 33
 
 
 - **Input**
@@ -997,6 +1029,6 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
         - $\texttt{for}$ $X \rightarrow A$ $\texttt{in}$ $F \texttt{:}$
             - $\rho = \rho \cup \{XA\}$
 - **Oss**
-    - l'algoritmo ha costo polinomiale
+    - l'algoritmo ha costo polinomialwhilee
 
 

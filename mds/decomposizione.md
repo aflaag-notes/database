@@ -86,15 +86,16 @@
 - **Algoritmo**
     - $Z := X$
     - $S := \varnothing$
-    - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, k):}$
-        - $S = S \cup (Z \cap R_i)^+_F \cap R_i$
+    - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, h):}$
+        - $S = S \cup \left((Z \cap R_i)^+_F \cap R_i\right)$
     - $\texttt{while}$ $S \nsubseteq Z$$\texttt{:}$
         - $Z = Z \cup S$
-        - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, k):}$
-            - $S = S \cup (Z \cap R_i)^+_F \cap R_i$
+        - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, h):}$
+            - $S = S \cup \left((Z \cap R_i)^+_F \cap R_i\right)$
 - **Oss**
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
+        - ⚠️ **SCRIVI IL PERCHÉ**
     - ⚠️ **13.20-21-22**
 - **Th**
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
@@ -118,7 +119,7 @@
                 - allora $X \rightarrow (Z^i \cap R_j), (Z^i \cap R_j) \rightarrow A \in G^A \implies X \rightarrow A \in G^A$ per assioma della transitività
                 - allora, per definizione di $X^+_G$ si ha che $X \rightarrow A \in G^A \implies A \in X^+_G$
     - $Z^f \supseteq Z^+_G$
-        - ⚠️ **falla se c'hai voglia**
+        - _omessa dal professore_
 
 ## Alg
 
@@ -148,6 +149,24 @@
     - per lemma precedente $Y \subseteq X^+_G \iff X \rightarrow Y \in G^A = G^+$
     - allora $\exists X \rightarrow Y \in F \mid Y \nsubseteq X^+_G \iff X \rightarrow Y \notin G^+$
     - $\exists X \rightarrow Y \in F \mid X \rightarrow Y \notin G^+ \iff F \nsubseteq G^+ \iff \rho$ non preserva $F$ per dimostrazione precedente
+
+## Oss
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
+    - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
+- **Th**
+    - $\forall X \rightarrow Y \in F \mid \exists R_i \in \rho : XY \subseteq R_i \implies X \rightarrow Y \in G^+$
+- **Dim**
+    - $\forall X \rightarrow Y \in F \mid \exists R_i \in \rho : XY \subseteq R_i \implies X \rightarrow Y \in \pi_{R_i}(F) \subseteq G$
+    - per osservazione precedente $G \subseteq G^+$, allora $X \rightarrow Y \in G^+$
+    - quest'osservazione implica che nel controllare che $\rho$ preservi $F$ non è necessario controllare tutte le dipendenze di $F$ all'interno del ciclo $\texttt{for}$, ma solamente quelle che non rispettano questa condizione
 
 ## Def
 
@@ -244,7 +263,7 @@
                                 - $t_2[A_j] = t_1[A_j]$
                             - $\texttt{else:}$
                                 - $t_1[A_j] = t_2[A_j]$
-    - $\texttt{if}$ $\exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j \texttt{:}$
+    - $\texttt{if}$ $\exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_{\_} \texttt{:}$
         - $\texttt{return True}$
     - $\texttt{else:}$
         - $\texttt{return False}$
@@ -255,17 +274,18 @@
     - l'algoritmo ha costo polinomiale
 - **Th**
     - sia $r^0$ lo stato iniziale di $r$, e $r^f$ lo stato finale
-    - $\rho$ ha un join senza perdita $\iff \exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_j$
+    - sia $a_{\_}$ una qualsiasi $a_j$
+    - $\rho$ ha un join senza perdita $\iff \exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_{\_}$
 - **Dim**
     - _prima implicazione_
-        - $\forall t_i^0 \in r^0 \quad t_i^0[R_i] = (a_j, \ldots, a_j)$ per costruzione di $r^0$
-        - inoltre, poiché l'algoritmo non varia mai le $a_j$, ma solamente le $b_{i,j}$, allora $t_i^0[R_i] = t_i^f[R_i] = (a_j, \ldots, a_j)$, allora $\exists t \in r^f \mid t$ contiene solamente $a_j$
-        - sia $t^a$ la tupla che contiene tutte $a_j$ in $r^f$
-        - per costruzione di $r$, si ha che $t^a$ deve essere necessariamente nel join naturale delle tuple che hanno tutte $a_j$ in $R_j$, allora si ha che $t^a \in \{t_1^f[R_1]\} \bowtie \ldots \bowtie \{t_h^f[R_h]\}$
+        - $\forall t_i^0 \in r^0 \quad t_i^0[R_i] = (a_{\_}, \ldots, a_{\_})$ per costruzione di $r^0$
+        - inoltre, poiché l'algoritmo non varia mai le $a_{\_}$, ma solamente le $b_{i,j}$, allora $t_i^0[R_i] = t_i^f[R_i] = (a_{\_}, \ldots, a_{\_})$, allora $\exists t \in r^f \mid t$ contiene solamente $a_{\_}$
+        - sia $t^a$ la tupla che contiene tutte $a_{\_}$ in $r^f$
+        - per costruzione di $r$, si ha che $t^a$ deve essere necessariamente nel join naturale delle tuple che hanno tutte $a_{\_}$ in $R_j$, allora si ha che $t^a \in \{t_1^f[R_1]\} \bowtie \ldots \bowtie \{t_h^f[R_h]\}$
         - inoltre $\{t_1^f[R_1]\} \bowtie \ldots \bowtie \{t_h^f[R_h]\} \subseteq \pi_{R_1}(r^f) \bowtie \ldots \bowtie \pi_{R_h}(r^f) =: m_\rho(r^f)$
         - per costruzione dell'algoritmo, si ha che $r^f$ è legale
         - poiché $\rho$ ha un join senza perdita, e $r^f$ è legale, allora $m_\rho(r^f) = r^f$ per definizione di join senza perdita
-        - in particolare, $t^a \in r^f \implies \exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_j$
+        - in particolare, $t^a \in r^f \implies \exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_{\_}$
     - _seconda implicazione_
         - _omessa dal professore_
 
@@ -349,4 +369,4 @@
         - $\texttt{for}$ $X \rightarrow A$ $\texttt{in}$ $F \texttt{:}$
             - $\rho = \rho \cup \{XA\}$
 - **Oss**
-    - l'algoritmo ha costo polinomiale
+    - l'algoritmo ha costo polinomialwhilee

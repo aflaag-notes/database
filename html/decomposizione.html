@@ -369,10 +369,10 @@ decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">\texttt{for}</span> <span
 class="math inline">i</span> <span
 class="math inline">\texttt{in}</span> <span
-class="math inline">\texttt{range(1, k):}</span>
+class="math inline">\texttt{range(1, h):}</span>
 <ul>
-<li><span class="math inline">S = S \cup (Z \cap R_i)^+_F \cap
-R_i</span></li>
+<li><span class="math inline">S = S \cup \left((Z \cap R_i)^+_F \cap
+R_i\right)</span></li>
 </ul></li>
 <li><span class="math inline">\texttt{while}</span> <span
 class="math inline">S \nsubseteq Z</span><span
@@ -382,10 +382,10 @@ class="math inline">\texttt{:}</span>
 <li><span class="math inline">\texttt{for}</span> <span
 class="math inline">i</span> <span
 class="math inline">\texttt{in}</span> <span
-class="math inline">\texttt{range(1, k):}</span>
+class="math inline">\texttt{range(1, h):}</span>
 <ul>
-<li><span class="math inline">S = S \cup (Z \cap R_i)^+_F \cap
-R_i</span></li>
+<li><span class="math inline">S = S \cup \left((Z \cap R_i)^+_F \cap
+R_i\right)</span></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -396,6 +396,7 @@ calcolare <span class="math inline">F^+</span>
 <ul>
 <li>il calcolo di <span class="math inline">F^+</span> ha costo
 computazionale esponenziale</li>
+<li>⚠️ <strong>SCRIVI IL PERCHÉ</strong></li>
 </ul></li>
 <li>⚠️ <strong>13.20-21-22</strong></li>
 </ul></li>
@@ -460,7 +461,7 @@ X^+_G</span></li>
 </ul></li>
 <li><span class="math inline">Z^f \supseteq Z^+_G</span>
 <ul>
-<li>⚠️ <strong>falla se c’hai voglia</strong></li>
+<li><em>omessa dal professore</em></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -533,6 +534,46 @@ preserva <span class="math inline">F</span> per dimostrazione
 precedente</li>
 </ul></li>
 </ul>
+<h2 id="oss-1">Oss</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">\forall X \rightarrow Y \in F \mid \exists
+R_i \in \rho : XY \subseteq R_i \implies X \rightarrow Y \in
+G^+</span></li>
+</ul></li>
+<li><strong>Dim</strong>
+<ul>
+<li><span class="math inline">\forall X \rightarrow Y \in F \mid \exists
+R_i \in \rho : XY \subseteq R_i \implies X \rightarrow Y \in
+\pi_{R_i}(F) \subseteq G</span></li>
+<li>per osservazione precedente <span class="math inline">G \subseteq
+G^+</span>, allora <span class="math inline">X \rightarrow Y \in
+G^+</span></li>
+<li>quest’osservazione implica che nel controllare che <span
+class="math inline">\rho</span> preservi <span
+class="math inline">F</span> non è necessario controllare tutte le
+dipendenze di <span class="math inline">F</span> all’interno del ciclo
+<span class="math inline">\texttt{for}</span>, ma solamente quelle che
+non rispettano questa condizione</li>
+</ul></li>
+</ul>
 <h2 id="def">Def</h2>
 <ul>
 <li><strong>Join senza perdita</strong></li>
@@ -561,7 +602,7 @@ class="math inline">F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="oss-1">Oss</h2>
+<h2 id="oss-2">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -597,7 +638,7 @@ riga della tupla</li>
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="oss-2">Oss</h2>
+<h2 id="oss-3">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -644,7 +685,7 @@ t&#39;[R_i] = t_i[R_i] \in \pi_{R_i}(r)</span></li>
 </ul></li>
 </ul></li>
 </ul>
-<h2 id="oss-3">Oss</h2>
+<h2 id="oss-4">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -750,8 +791,8 @@ class="math inline">t_1[A_j] == a_j \texttt{:}</span>
 </ul></li>
 </ul></li>
 <li><span class="math inline">\texttt{if}</span> <span
-class="math inline">\exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j
-\texttt{:}</span>
+class="math inline">\exists t \in r \mid t[A_1] = \ldots = t[A_n]
+=a_{\_} \texttt{:}</span>
 <ul>
 <li><span class="math inline">\texttt{return True}</span></li>
 </ul></li>
@@ -780,32 +821,35 @@ diverse nei determinati</li>
 <li>sia <span class="math inline">r^0</span> lo stato iniziale di <span
 class="math inline">r</span>, e <span class="math inline">r^f</span> lo
 stato finale</li>
+<li>sia <span class="math inline">a_{\_}</span> una qualsiasi <span
+class="math inline">a_j</span></li>
 <li><span class="math inline">\rho</span> ha un join senza perdita <span
 class="math inline">\iff \exists t \in r^f \mid t[A_1] = \ldots = t[A_n]
-=a_j</span></li>
+=a_{\_}</span></li>
 </ul></li>
 <li><strong>Dim</strong>
 <ul>
 <li><em>prima implicazione</em>
 <ul>
 <li><span class="math inline">\forall t_i^0 \in r^0 \quad t_i^0[R_i] =
-(a_j, \ldots, a_j)</span> per costruzione di <span
+(a_{\_}, \ldots, a_{\_})</span> per costruzione di <span
 class="math inline">r^0</span></li>
 <li>inoltre, poiché l’algoritmo non varia mai le <span
-class="math inline">a_j</span>, ma solamente le <span
+class="math inline">a_{\_}</span>, ma solamente le <span
 class="math inline">b_{i,j}</span>, allora <span
-class="math inline">t_i^0[R_i] = t_i^f[R_i] = (a_j, \ldots, a_j)</span>,
-allora <span class="math inline">\exists t \in r^f \mid t</span>
-contiene solamente <span class="math inline">a_j</span></li>
+class="math inline">t_i^0[R_i] = t_i^f[R_i] = (a_{\_}, \ldots,
+a_{\_})</span>, allora <span class="math inline">\exists t \in r^f \mid
+t</span> contiene solamente <span class="math inline">a_{\_}</span></li>
 <li>sia <span class="math inline">t^a</span> la tupla che contiene tutte
-<span class="math inline">a_j</span> in <span
+<span class="math inline">a_{\_}</span> in <span
 class="math inline">r^f</span></li>
 <li>per costruzione di <span class="math inline">r</span>, si ha che
 <span class="math inline">t^a</span> deve essere necessariamente nel
 join naturale delle tuple che hanno tutte <span
-class="math inline">a_j</span> in <span class="math inline">R_j</span>,
-allora si ha che <span class="math inline">t^a \in \{t_1^f[R_1]\}
-\bowtie \ldots \bowtie \{t_h^f[R_h]\}</span></li>
+class="math inline">a_{\_}</span> in <span
+class="math inline">R_j</span>, allora si ha che <span
+class="math inline">t^a \in \{t_1^f[R_1]\} \bowtie \ldots \bowtie
+\{t_h^f[R_h]\}</span></li>
 <li>inoltre <span class="math inline">\{t_1^f[R_1]\} \bowtie \ldots
 \bowtie \{t_h^f[R_h]\} \subseteq \pi_{R_1}(r^f) \bowtie \ldots \bowtie
 \pi_{R_h}(r^f) =: m_\rho(r^f)</span></li>
@@ -816,7 +860,7 @@ perdita, e <span class="math inline">r^f</span> è legale, allora <span
 class="math inline">m_\rho(r^f) = r^f</span> per definizione di join
 senza perdita</li>
 <li>in particolare, <span class="math inline">t^a \in r^f \implies
-\exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_j</span></li>
+\exists t \in r^f \mid t[A_1] = \ldots = t[A_n] =a_{\_}</span></li>
 </ul></li>
 <li><em>seconda implicazione</em>
 <ul>
@@ -859,7 +903,7 @@ ridondante</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="oss-4">Oss</h2>
+<h2 id="oss-5">Oss</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1006,7 +1050,7 @@ class="math inline">\texttt{in}</span> <span class="math inline">F
 </ul></li>
 <li><strong>Oss</strong>
 <ul>
-<li>l’algoritmo ha costo polinomiale</li>
+<li>l’algoritmo ha costo polinomialwhilee</li>
 </ul></li>
 </ul>
 </body>

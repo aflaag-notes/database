@@ -108,7 +108,9 @@
     - _indicizzazione sparsa_
         - viene creata un index entry solamente per una parte dei valori possibili della chiave di ricerca
         - ogni entry indicizza un gruppo di record, l'indirizzo punta al primo record di un intervallo
-        - ricerca: $\log_2\left(\dfrac{\#Blocks}{\#Indexes}\right)$ rba
+        - ricerca binaria: $\left \lceil \log_2\left(\#BlocksInIndex\right) \right \rceil + 1$ rba
+            - $\#BlocksInIndex \lt \lt \#Blocks$
+            - il $+1$ è dato dal tempo di accesso al file principale
 - **Lista di dati**
     - non le abbiamo fatte, kek direi
 
@@ -159,3 +161,31 @@
     - ogni nodo ha un puntatore che punta a suo fratello
 - **Caratteristiche**
     - generalmente sono più performanti dei B-tree, per via delle loro caratteristiche
+
+## Formulario
+
+- **ISAM** (indexed sequential access memory)
+    - **Definizioni**
+        - $\#Records$: numero di records del file principale
+        - $\#Blocks$: numero di blocchi del file principale
+        - $\#RecordsPerBlock$: numero di record in ogni blocco del file principale
+        - $\#KPs = \#Blocks$: numero di coppie chiave-puntatore nel file index, sempre pari a $\#Blocks$
+        - $\#BlocksInIndex$: numero di blocchi del file index
+        - $\#KPsPerBlockInIndex$: numero di coppie chiave-puntatore in ogni blocco del file index
+        - $\dim(Block) = \dim(BlockInIndex)$: dimensione di un blocco, sia nel file index che nel file principale
+        - $\dim(Record)$: dimensione di un record nel file principale
+        - $\dim(K)$: dimensione di una chiave del file index
+        - $\dim(P)$: dimensione di un puntatore del file index
+        - $\dim(KP) = \dim(K) + \dim(P)$: dimensione di una coppia chiave-valore del file index
+        - $p\%$: percentuale di capienza massima/minima per blocco del file principale
+    - **Formule**
+        - $p\%$ è la capienza _massima_ (_al massimo_) oppure $p\% = 100\%$
+            - $\#RecordsPerBlock = \left \lfloor \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rfloor$
+            - $\#KPsPerBlockInIndex = \left \lfloor \dfrac{\dim(BlockInIndex) \cdot p\%}{\dim(KP)} \right \rfloor$
+        - $p\%$ è la capienza _minima_ (_almeno_)
+            - $\#RecordsPerBlock = \left \lceil \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rceil$
+            - $\#KPsPerBlockInIndex = \left \lceil \dfrac{\dim(BlockInIndex) \cdot p\%}{\dim(KP)} \right \rceil$
+        - $\#Blocks = \left \lceil \dfrac{\#Records}{\#RecordsPerBlock} \right \rceil$
+        - $\#BlocksInIndex = \left \lceil \dfrac{\#KPs}{\#KPsPerBlockInIndex} \right \rceil$
+        - ricerca binaria: $\left \lceil \log_2\left(\#BlocksInIndex\right)\right \rceil + 1$
+

@@ -395,9 +395,14 @@ di ricerca</li>
 possibili della chiave di ricerca</li>
 <li>ogni entry indicizza un gruppo di record, l’indirizzo punta al primo
 record di un intervallo</li>
-<li>ricerca: <span
-class="math inline">\log_2\left(\dfrac{\#Blocks}{\#Indexes}\right)</span>
-rba</li>
+<li>ricerca binaria: <span class="math inline">\left \lceil
+\log_2\left(\#BlocksInIndex\right) \right \rceil + 1</span> rba
+<ul>
+<li><span class="math inline">\#BlocksInIndex \lt \lt
+\#Blocks</span></li>
+<li>il <span class="math inline">+1</span> è dato dal tempo di accesso
+al file principale</li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li><strong>Lista di dati</strong>
@@ -531,6 +536,67 @@ corrispettivo puntatore ai dati</li>
 <ul>
 <li>generalmente sono più performanti dei B-tree, per via delle loro
 caratteristiche</li>
+</ul></li>
+</ul>
+<h2 id="formulario">Formulario</h2>
+<ul>
+<li><strong>ISAM</strong> (indexed sequential access memory)
+<ul>
+<li><strong>Definizioni</strong>
+<ul>
+<li><span class="math inline">\#Records</span>: numero di records del
+file principale</li>
+<li><span class="math inline">\#Blocks</span>: numero di blocchi del
+file principale</li>
+<li><span class="math inline">\#RecordsPerBlock</span>: numero di record
+in ogni blocco del file principale</li>
+<li><span class="math inline">\#KPs = \#Blocks</span>: numero di coppie
+chiave-puntatore nel file index, sempre pari a <span
+class="math inline">\#Blocks</span></li>
+<li><span class="math inline">\#BlocksInIndex</span>: numero di blocchi
+del file index</li>
+<li><span class="math inline">\#KPsPerBlockInIndex</span>: numero di
+coppie chiave-puntatore in ogni blocco del file index</li>
+<li><span class="math inline">\dim(Block) = \dim(BlockInIndex)</span>:
+dimensione di un blocco, sia nel file index che nel file principale</li>
+<li><span class="math inline">\dim(Record)</span>: dimensione di un
+record nel file principale</li>
+<li><span class="math inline">\dim(K)</span>: dimensione di una chiave
+del file index</li>
+<li><span class="math inline">\dim(P)</span>: dimensione di un puntatore
+del file index</li>
+<li><span class="math inline">\dim(KP) = \dim(K) + \dim(P)</span>:
+dimensione di una coppia chiave-valore del file index</li>
+<li><span class="math inline">p\%</span>: percentuale di capienza
+massima/minima per blocco del file principale</li>
+</ul></li>
+<li><strong>Formule</strong>
+<ul>
+<li><span class="math inline">p\%</span> è la capienza <em>massima</em>
+(<em>al massimo</em>) oppure <span class="math inline">p\% =
+100\%</span>
+<ul>
+<li><span class="math inline">\#RecordsPerBlock = \left \lfloor
+\dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rfloor</span></li>
+<li><span class="math inline">\#KPsPerBlockInIndex = \left \lfloor
+\dfrac{\dim(BlockInIndex) \cdot p\%}{\dim(KP)} \right
+\rfloor</span></li>
+</ul></li>
+<li><span class="math inline">p\%</span> è la capienza <em>minima</em>
+(<em>almeno</em>)
+<ul>
+<li><span class="math inline">\#RecordsPerBlock = \left \lceil
+\dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rceil</span></li>
+<li><span class="math inline">\#KPsPerBlockInIndex = \left \lceil
+\dfrac{\dim(BlockInIndex) \cdot p\%}{\dim(KP)} \right \rceil</span></li>
+</ul></li>
+<li><span class="math inline">\#Blocks = \left \lceil
+\dfrac{\#Records}{\#RecordsPerBlock} \right \rceil</span></li>
+<li><span class="math inline">\#BlocksInIndex = \left \lceil
+\dfrac{\#KPs}{\#KPsPerBlockInIndex} \right \rceil</span></li>
+<li>ricerca binaria: <span class="math inline">\left \lceil
+\log_2\left(\#BlocksInIndex\right)\right \rceil + 1</span></li>
+</ul></li>
 </ul></li>
 </ul>
 </body>

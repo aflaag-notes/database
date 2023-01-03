@@ -71,7 +71,8 @@
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $C$ espressione booleana
-> - $\sigma_C(R) \subseteq D_1 \times \ldots \times D_n$ è detta **selezione di $R$**
+> - $r$ istanza di $R$
+> - $\sigma_C(r) \subseteq D_1 \times \ldots \times D_n$ è detta **selezione di $r$**
 >   - corrisponde all'insieme delle righe della tabella che rendono la condizione $C$ vera
 
 - **Rinominazione**

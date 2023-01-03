@@ -311,9 +311,11 @@ D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
 <li><span class="math inline">C</span> espressione booleana</li>
-<li><span class="math inline">\sigma_C(R) \subseteq D_1 \times \ldots
+<li><span class="math inline">r</span> istanza di <span
+class="math inline">R</span></li>
+<li><span class="math inline">\sigma_C(r) \subseteq D_1 \times \ldots
 \times D_n</span> è detta <strong>selezione di <span
-class="math inline">R</span></strong>
+class="math inline">r</span></strong>
 <ul>
 <li>corrisponde all’insieme delle righe della tabella che rendono la
 condizione <span class="math inline">C</span> vera</li>
@@ -934,6 +936,28 @@ dunque l’iterazione in cui l’algoritmo termina</li>
 <li><span class="math inline">Z^f = X^+_F</span></li>
 </ul></li>
 </ul>
+<h2 id="teorema-15">Teorema 15</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">Z \subseteq R(A_1, \ldots,
+A_n)</span></li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">\forall X \rightarrow Y \in F \mid X
+\subseteq Z \quad Y \subseteq Z^+_F</span></li>
+</ul></li>
+</ul>
 <h2 id="definizione-10">Definizione 10</h2>
 <ul>
 <li><strong>Insiemi di dipendenze funzionali equivalenti</strong></li>
@@ -955,7 +979,7 @@ class="math inline">F</span> e <span class="math inline">G</span> sono
 detti <strong>equivalenti</strong></li>
 </ul>
 </blockquote>
-<h2 id="teorema-15">Teorema 15</h2>
+<h2 id="teorema-16">Teorema 16</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1001,7 +1025,7 @@ X</span> è la chiave di <span class="math inline">R</span> con minor
 numero di attributi</li>
 </ul>
 </blockquote>
-<h2 id="teorema-16">Teorema 16</h2>
+<h2 id="teorema-17">Teorema 17</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1024,7 +1048,7 @@ class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
 \rightarrow R \in F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-17">Teorema 17</h2>
+<h2 id="teorema-18">Teorema 18</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1046,7 +1070,7 @@ funzionali su <span class="math inline">R</span></li>
 <span class="math inline">R</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-18">Teorema 18</h2>
+<h2 id="teorema-19">Teorema 19</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1117,7 +1141,7 @@ e di eliminazione</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-19">Teorema 19</h2>
+<h2 id="teorema-20">Teorema 20</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1203,7 +1227,7 @@ K</span></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-20">Teorema 20</h2>
+<h2 id="teorema-21">Teorema 21</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1260,7 +1284,7 @@ class="math inline">R</span>, senza aggiunta di informazioni</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-21">Teorema 21</h2>
+<h2 id="teorema-22">Teorema 22</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1397,7 +1421,7 @@ senza perdita di informazioni</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-22">Teorema 22</h2>
+<h2 id="teorema-23">Teorema 23</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1421,7 +1445,7 @@ decomposizione di <span class="math inline">R</span></li>
 class="math inline">F \iff G^+ \supseteq F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-23">Teorema 23</h2>
+<h2 id="teorema-24">Teorema 24</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1452,10 +1476,10 @@ decomposizione di <span class="math inline">R</span></li>
 <li><span class="math inline">\texttt{for}</span> <span
 class="math inline">i</span> <span
 class="math inline">\texttt{in}</span> <span
-class="math inline">\texttt{range(1, k):}</span>
+class="math inline">\texttt{range(1, h):}</span>
 <ul>
-<li><span class="math inline">S = S \cup (Z \cap R_i)^+_F \cap
-R_i</span></li>
+<li><span class="math inline">S = S \cup \left((Z \cap R_i)^+_F \cap
+R_i\right)</span></li>
 </ul></li>
 <li><span class="math inline">\texttt{while}</span> <span
 class="math inline">S \nsubseteq Z</span><span
@@ -1465,10 +1489,10 @@ class="math inline">\texttt{:}</span>
 <li><span class="math inline">\texttt{for}</span> <span
 class="math inline">i</span> <span
 class="math inline">\texttt{in}</span> <span
-class="math inline">\texttt{range(1, k):}</span>
+class="math inline">\texttt{range(1, h):}</span>
 <ul>
-<li><span class="math inline">S = S \cup (Z \cap R_i)^+_F \cap
-R_i</span></li>
+<li><span class="math inline">S = S \cup \left((Z \cap R_i)^+_F \cap
+R_i\right)</span></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -1479,6 +1503,7 @@ calcolare <span class="math inline">F^+</span>
 <ul>
 <li>il calcolo di <span class="math inline">F^+</span> ha costo
 computazionale esponenziale</li>
+<li>!!! <strong>SCRIVI IL PERCHÉ</strong></li>
 </ul></li>
 <li>!!! <strong>13.20-21-22</strong></li>
 </ul></li>
@@ -1489,7 +1514,7 @@ dunque l’iterazione in cui l’algoritmo termina</li>
 <li><span class="math inline">Z^f = X^+_G</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-24">Teorema 24</h2>
+<h2 id="teorema-25">Teorema 25</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1543,6 +1568,31 @@ class="math inline">F \iff \forall X \rightarrow Y \in F \quad Y
 \subseteq X^+_G</span></li>
 </ul></li>
 </ul>
+<h2 id="teorema-26">Teorema 26</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
+funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">\rho = R_1, \ldots, R_h</span>
+decomposizione di <span class="math inline">R</span></li>
+<li><span class="math inline">G = \displaystyle
+\bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">\forall X \rightarrow Y \in F \mid \exists
+R_i \in \rho : XY \subseteq R_i \implies X \rightarrow Y \in
+G^+</span></li>
+</ul></li>
+</ul>
 <h2 id="definizione-16">Definizione 16</h2>
 <ul>
 <li><strong>Join senza perdita</strong></li>
@@ -1571,7 +1621,7 @@ class="math inline">F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-25">Teorema 25</h2>
+<h2 id="teorema-27">Teorema 27</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1595,7 +1645,7 @@ class="math inline">F</span></li>
 <li><span class="math inline">r \subseteq m_\rho(r)</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-26">Teorema 26</h2>
+<h2 id="teorema-28">Teorema 28</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1620,7 +1670,7 @@ class="math inline">F</span></li>
 class="math inline">\pi_{R_i}(m_\rho(r))=\pi_{R_i}(r)</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-27">Teorema 27</h2>
+<h2 id="teorema-29">Teorema 29</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1644,7 +1694,7 @@ class="math inline">F</span></li>
 <li><span class="math inline">m_\rho(m_\rho(r))=m_\rho(r)</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-28">Teorema 28</h2>
+<h2 id="teorema-30">Teorema 30</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1718,8 +1768,8 @@ class="math inline">t_1[A_j] == a_j \texttt{:}</span>
 </ul></li>
 </ul></li>
 <li><span class="math inline">\texttt{if}</span> <span
-class="math inline">\exists t \in r \mid t[A_1] = \ldots = t[A_n] =a_j
-\texttt{:}</span>
+class="math inline">\exists t \in r \mid t[A_1] = \ldots = t[A_n]
+=a_{\_} \texttt{:}</span>
 <ul>
 <li><span class="math inline">\texttt{return True}</span></li>
 </ul></li>
@@ -1748,9 +1798,11 @@ diverse nei determinati</li>
 <li>sia <span class="math inline">r^0</span> lo stato iniziale di <span
 class="math inline">r</span>, e <span class="math inline">r^f</span> lo
 stato finale</li>
+<li>sia <span class="math inline">a_{\_}</span> una qualsiasi <span
+class="math inline">a_j</span></li>
 <li><span class="math inline">\rho</span> ha un join senza perdita <span
 class="math inline">\iff \exists t \in r^f \mid t[A_1] = \ldots = t[A_n]
-=a_j</span></li>
+=a_{\_}</span></li>
 </ul></li>
 </ul>
 <h2 id="definizione-17">Definizione 17</h2>
@@ -1788,7 +1840,7 @@ ridondante</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-29">Teorema 29</h2>
+<h2 id="teorema-31">Teorema 31</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1809,7 +1861,7 @@ class="math inline">F</span></li>
 <li><span class="math inline">G \subseteq F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-30">Teorema 30</h2>
+<h2 id="teorema-32">Teorema 32</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1865,7 +1917,7 @@ onestamente</strong></li>
 <li>!!! <strong>?</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-31">Teorema 31</h2>
+<h2 id="teorema-33">Teorema 33</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1931,7 +1983,7 @@ class="math inline">\texttt{in}</span> <span class="math inline">F
 </ul></li>
 <li><strong>Oss</strong>
 <ul>
-<li>l’algoritmo ha costo polinomiale</li>
+<li>l’algoritmo ha costo polinomialwhilee</li>
 </ul></li>
 </ul>
 </body>

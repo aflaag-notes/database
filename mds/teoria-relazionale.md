@@ -308,6 +308,21 @@
         - $r$ legale $\implies r$ soddisfa $X \rightarrow A \in F^+$
         - per costruzione dell'algoritmo $X = Z^0 \subseteq Z^f \implies t_1[X] = t_2[X]$ per costruzione di $r$, e poiché $r$ legale si ha che $t_1[A] = t_2[A]$, allora $A \in Z^f$ per costruzione di $r$
 
+## Oss
+
+- **Hp**
+    - $n, k \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $Z \subseteq R(A_1, \ldots, A_n)$
+    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+- **Th**
+    - $\forall X \rightarrow Y \in F \mid X \subseteq Z \quad Y \subseteq Z^+_F$
+- **Dim**
+    - di fatto, è ciò che l'algoritmo compie ad ogni iterazione del $\texttt{while}$
+
 ## Def
 
 - **Insiemi di dipendenze funzionali equivalenti**

@@ -24,6 +24,7 @@
     - [Metodi di organizzazione del file principale](https://ph04.github.io/database/html/organizzazione-fisica.html#metodi-di-organizzazione-del-file-principale)
     - [B-tree](https://ph04.github.io/database/html/organizzazione-fisica.html#b-tree)
     - [B<sup>+</sup>-tree](https://ph04.github.io/database/html/organizzazione-fisica.html#b-tree-1)
+    - [Formule](https://ph04.github.io/database/html/organizzazione-fisica.html#formule)
 
 
 ## Tutti i teoremi
