@@ -26,7 +26,6 @@
     - [B<sup>+</sup>-tree](https://ph04.github.io/database/html/organizzazione-fisica.html#b-tree-1)
     - [Formulario](https://ph04.github.io/database/html/organizzazione-fisica.html#formulario)
 
-
 ## Tutti i teoremi
 
 - [Tutti i teoremi](https://ph04.github.io/database/html/everything.html)
