@@ -347,7 +347,7 @@
     - $F = \{F_1, \ldots, F_k\}$
     - $G = \{G_1, \ldots, G_h\}$
 - **Th**
-    - $F \xrightarrow{A} G \iff G \subseteq F^+$
+    - $F \xrightarrow{A} G \implies G \subseteq F^+$
 - **Dim**
     - per definizione $F \xrightarrow{A} G$ implica che è possibile ottenere $G$ a partire da $F$ applicando assiomi di Armstrong
     - per dimostrazione precedente $F^+ = F^A$
