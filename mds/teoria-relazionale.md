@@ -334,7 +334,7 @@
 > - $F_1, \ldots, F_k, G_1, \ldots, G_h$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
 > - $G = \{G_1, \ldots, G_h\}$
-> - $F \equiv G \iff F^+ = F^+$, e $F$ e $G$ sono detti **equivalenti**
+> - $F \equiv G \iff F^+ = G^+$, e $F$ e $G$ sono detti **equivalenti**
 
 ## Oss
 
