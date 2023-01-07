@@ -483,7 +483,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $F_1, \ldots, F_k, G_1, \ldots, G_h$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
 > - $G = \{G_1, \ldots, G_h\}$
-> - $F \equiv G \iff F^+ = F^+$, e $F$ e $G$ sono detti **equivalenti**
+> - $F \equiv G \iff F^+ = G^+$, e $F$ e $G$ sono detti **equivalenti**
 
 
 
@@ -698,7 +698,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 ****
 # Decomposizione
 
-- **Ricoprimento**
+- **Decomposizione**
 
 - ⚠️ **DEFINISCI SOTTOSCHEMA**
 
@@ -707,16 +707,8 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $R_1, \ldots, R_N$ sottoschemi di $R$
-> - $R_1, \ldots, R_N$ **ricoprimento di $R$** $\iff \displaystyle \bigcup_{i = 1}^N{R_i} = R$
-
-- **Decomposizione**
-
-> - $n, N \in \mathbb{N}$
-> - $D_1, \ldots, D_n$ domini
-> - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-> - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $C := \{R_1, \ldots, R_N\}$ ricoprimento di $R$
-> - $\forall \rho \subseteq C \quad \rho$ è detto **decomposizione di $R$**
+> - $R_1, \ldots, R_N$ è detta **decomposizione di $R$** $\iff R_1, \ldots, R_N$ ricoprimento di $R$
+>   - $R_1, \ldots, R_N$ ricoprimento di $R \iff \displaystyle \bigcup_{i = 1}^N R_i = R$
 
 - **Proiezione di un insieme di dipendenze su un sottoschema**
 
