@@ -361,4 +361,4 @@
         - $\texttt{for}$ $X \rightarrow A$ $\texttt{in}$ $F \texttt{:}$
             - $\rho = \rho \cup \{XA\}$
 - **Oss**
-    - l'algoritmo ha costo polinomialwhilee
+    - l'algoritmo ha costo polinomiale
