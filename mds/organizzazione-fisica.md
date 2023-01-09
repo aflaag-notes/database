@@ -123,7 +123,7 @@
 - **Caratteristiche**
     - l'albero è sempre bilanciato, dunque le foglie sono tutte sempre allo stesso livello, e ogni nodo è pieno almeno per $\dfrac{M}{2}$ slot (ad eccezione della radice)
         - questo implica che una ricerca, nel caso peggiore, implicherà la visita completa dell'albero in altezza, e dunque il costo dell'algoritmo di ricerca è maggiorabile con $cost \le h$, dove $h$ è l'altezza dell'albero
-        - tecnicamente, si avrebbe $h - 1$ a sinistra della disequazione, per via del fatto che la radice è salvata nella RAM, che permette un accesso particolarmente veloce, ma tale fattore è controbilanciato da $h - 1 + 1$ fornito dal tempo di accesso al file dei dati, nel caso in cui si utilizza una struttura di file sequenziale indicizzato
+        - tecnicamente, si avrebbe $h - 1$ a sinistra della disequazione, per via del fatto che la radice è salvata nella RAM, che permette un accesso particolarmente veloce, ma tale fattore è controbilanciato con $h - 1 + 1$ fornito dal tempo di accesso al file dei dati, nel caso in cui si utilizza una struttura di file sequenziale indicizzato
     - $N$: numero di nodi nell'albero
     - $m$: numero massimo di figli che un nodo può avere
         - $m$ dovrebbe essere scelto in modo da far combaciare la massima lunghezza del nodo con la dimensione di un blocco del disco
@@ -180,10 +180,10 @@
         - $\dim(KP) = \dim(K) + \dim(P)$: dimensione di una coppia chiave-valore del file index
         - $p\%$: percentuale di capienza massima/minima per blocco del file principale e del file index
     - **Formule**
-        - $p\%$ è la capienza _massima_ (_al massimo_) oppure $p\% = 100\%$
+        - $p\%$ è la capienza _massima_, oppure $p\% = 100\%$
             - $\#RecordsPerBlock = \left \lfloor \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rfloor$
             - $\#KPsPerBlockInIndex = \left \lfloor \dfrac{\dim(BlockInIndex) \cdot p\%}{\dim(KP)} \right \rfloor$
-        - $p\%$ è la capienza _minima_ (_almeno_)
+        - $p\%$ è la capienza _minima_
             - $\#RecordsPerBlock = \left \lceil \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rceil$
             - $\#KPsPerBlockInIndex = \left \lceil \dfrac{\dim(BlockInIndex) \cdot p\%}{\dim(KP)} \right \rceil$
         - $\#Blocks = \left \lceil \dfrac{\#Records}{\#RecordsPerBlock} \right \rceil$
@@ -209,10 +209,10 @@
         - $\dim(KP) = \dim(K) + \dim(P)$: dimensione di una coppia chiave-valore del file index
         - $p\%$: percentuale di capienza massima/minima per blocco del file principale
     - **Formule**
-        - $p\%$ è la capienza _massima_ (_al massimo_) oppure $p\% = 100\%$
+        - $p\%$ è la capienza _massima_, oppure $p\% = 100\%$
             - $\#RecordsPerBlock = \left \lfloor \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rfloor$
             - $\#ChildrenPerBlockInIndex = \left \lfloor \dfrac{\dim(Block) \cdot p\% - \dim(P)}{\dim(KP)} \right \rfloor + 1$
-        - $p\%$ è la capienza _minima_ (_almeno_)
+        - $p\%$ è la capienza _minima_
             - $\#RecordsPerBlock = \left \lceil \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rceil$
             - $\#ChildrenPerBlockInIndex = \left \lceil \dfrac{\dim(Block) \cdot p\% - \dim(P)}{\dim(KP)} \right \rceil + 1$
         - $\#Blocks = \left \lceil \dfrac{\#Records}{\#RecordsPerBlock} \right \rceil$

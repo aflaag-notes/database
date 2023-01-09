@@ -444,9 +444,9 @@ dell’albero</li>
 <li>tecnicamente, si avrebbe <span class="math inline">h - 1</span> a
 sinistra della disequazione, per via del fatto che la radice è salvata
 nella RAM, che permette un accesso particolarmente veloce, ma tale
-fattore è controbilanciato da <span class="math inline">h - 1 + 1</span>
-fornito dal tempo di accesso al file dei dati, nel caso in cui si
-utilizza una struttura di file sequenziale indicizzato</li>
+fattore è controbilanciato con <span class="math inline">h - 1 +
+1</span> fornito dal tempo di accesso al file dei dati, nel caso in cui
+si utilizza una struttura di file sequenziale indicizzato</li>
 </ul></li>
 <li><span class="math inline">N</span>: numero di nodi nell’albero</li>
 <li><span class="math inline">m</span>: numero massimo di figli che un
@@ -574,9 +574,8 @@ massima/minima per blocco del file principale e del file index</li>
 </ul></li>
 <li><strong>Formule</strong>
 <ul>
-<li><span class="math inline">p\%</span> è la capienza <em>massima</em>
-(<em>al massimo</em>) oppure <span class="math inline">p\% =
-100\%</span>
+<li><span class="math inline">p\%</span> è la capienza <em>massima</em>,
+oppure <span class="math inline">p\% = 100\%</span>
 <ul>
 <li><span class="math inline">\#RecordsPerBlock = \left \lfloor
 \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rfloor</span></li>
@@ -585,7 +584,6 @@ massima/minima per blocco del file principale e del file index</li>
 \rfloor</span></li>
 </ul></li>
 <li><span class="math inline">p\%</span> è la capienza <em>minima</em>
-(<em>almeno</em>)
 <ul>
 <li><span class="math inline">\#RecordsPerBlock = \left \lceil
 \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rceil</span></li>
@@ -645,9 +643,8 @@ massima/minima per blocco del file principale</li>
 </ul></li>
 <li><strong>Formule</strong>
 <ul>
-<li><span class="math inline">p\%</span> è la capienza <em>massima</em>
-(<em>al massimo</em>) oppure <span class="math inline">p\% =
-100\%</span>
+<li><span class="math inline">p\%</span> è la capienza <em>massima</em>,
+oppure <span class="math inline">p\% = 100\%</span>
 <ul>
 <li><span class="math inline">\#RecordsPerBlock = \left \lfloor
 \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rfloor</span></li>
@@ -656,7 +653,6 @@ massima/minima per blocco del file principale</li>
 1</span></li>
 </ul></li>
 <li><span class="math inline">p\%</span> è la capienza <em>minima</em>
-(<em>almeno</em>)
 <ul>
 <li><span class="math inline">\#RecordsPerBlock = \left \lceil
 \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rceil</span></li>
