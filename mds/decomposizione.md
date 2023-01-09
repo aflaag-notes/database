@@ -292,7 +292,7 @@
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
 > - $G$ insieme di dipendenze funzionali $\mid F \equiv G$
-> - $G$ è detto **copertura minimale di $F$** $\iff \forall X \rightarrow Y \in G \quad G$ è un singleton, $\forall X \rightarrow A \in G \quad \nexists X' \subseteq X \mid G \equiv G - \{X \rightarrow A \} \cup \{X' \rightarrow A\}$ e infine $\nexists X \rightarrow A \in G \mid G \equiv G - \{X \rightarrow A \}$
+> - $G$ è detto **copertura minimale di $F$** $\iff \forall X \rightarrow Y \in G \quad Y$ è un singleton, $\forall X \rightarrow A \in G \quad \nexists X' \subseteq X \mid G \equiv G - \{X \rightarrow A \} \cup \{X' \rightarrow A\}$ e infine $\nexists X \rightarrow A \in G \mid G \equiv G - \{X \rightarrow A \}$
 >   - dunque, $G$ è copertura minimale di $F$ se $F \equiv G$, e in ogni dipendenza funzionale di $G$ i determinati non sono ridondanti, i determinanti non sono ridondanti, e la dipendenza stessa non è ridondante
 
 ## Oss
