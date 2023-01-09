@@ -350,12 +350,12 @@
     - $S := \varnothing$
     - $\rho := \varnothing$
     - $\texttt{for}$ $A$ $\texttt{in}$ $R \texttt{:}$
-        - $\texttt{if}$ $\nexists X \rightarrow Y \in F \mid A \in X \lor A \in Y \texttt{:}$
+        - $\texttt{if}$ $\nexists X \rightarrow B \in F \mid A \in X \lor A = B \texttt{:}$
             - $S = S \cup A$
     - $\texttt{if}$ $S \neq \varnothing \texttt{:}$
         - $R = R - S$
         - $\rho = \rho \cup S$
-    - $\texttt{if}$ $\exists X \rightarrow Y \in F \mid X = R \lor Y = R \texttt{:}$
+    - $\texttt{if}$ $\exists X \rightarrow A \in F \mid X \cup A = R \texttt{:}$
         - $\rho = \rho \cup R$
     - $\texttt{else:}$
         - $\texttt{for}$ $X \rightarrow A$ $\texttt{in}$ $F \texttt{:}$
