@@ -557,6 +557,8 @@ class="math inline">\#Blocks</span></li>
 del file index</li>
 <li><span class="math inline">\#KPsPerBlockInIndex</span>: numero di
 coppie chiave-puntatore in ogni blocco del file index</li>
+<li><span class="math inline">\#AccessessForRecord</span>: numero di
+accessi necessari per cercare un record nel file principale</li>
 <li><span class="math inline">\dim(Block) = \dim(BlockInIndex)</span>:
 dimensione di un blocco, sia nel file index che nel file principale</li>
 <li><span class="math inline">\dim(Record)</span>: dimensione di un
@@ -568,7 +570,7 @@ del file index</li>
 <li><span class="math inline">\dim(KP) = \dim(K) + \dim(P)</span>:
 dimensione di una coppia chiave-valore del file index</li>
 <li><span class="math inline">p\%</span>: percentuale di capienza
-massima/minima per blocco del file principale</li>
+massima/minima per blocco del file principale e del file index</li>
 </ul></li>
 <li><strong>Formule</strong>
 <ul>
@@ -594,8 +596,85 @@ massima/minima per blocco del file principale</li>
 \dfrac{\#Records}{\#RecordsPerBlock} \right \rceil</span></li>
 <li><span class="math inline">\#BlocksInIndex = \left \lceil
 \dfrac{\#KPs}{\#KPsPerBlockInIndex} \right \rceil</span></li>
-<li>ricerca binaria: <span class="math inline">\left \lceil
+<li>ricerca sequenziale
+<ul>
+<li><span class="math inline">\#AccessessForRecord = \left \lceil
+\dfrac{\#Blocks}{2} \right \rceil</span></li>
+</ul></li>
+<li>ricerca binaria
+<ul>
+<li><span class="math inline">\#AccessessForRecord = \left \lceil
 \log_2\left(\#BlocksInIndex\right)\right \rceil + 1</span></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>B<sup>+</sup>-tree</strong>
+<ul>
+<li><strong>Definizioni</strong>
+<ul>
+<li><span class="math inline">\#Records</span>: numero di records del
+file principale</li>
+<li><span class="math inline">\#Blocks</span>: numero di blocchi del
+file principale</li>
+<li><span class="math inline">\#RecordsPerBlock</span>: numero di record
+in ogni blocco del file principale</li>
+<li><span class="math inline">\#BlocksInIndex</span>: numero di blocchi
+del file index</li>
+<li><span class="math inline">\#ChildrenPerBlockInIndex</span>: numero
+di figli per ogni blocco del file index</li>
+<li><span class="math inline">\#BlocksPer(i)thLevel</span>: numero di
+blocchi del file index dell-<span class="math inline">i</span> livello
+dell’albero, dove lo <span class="math inline">0</span>-esimo livello
+sono le foglie</li>
+<li><span class="math inline">h</span>: altezza dell’albero del file
+index</li>
+<li><span class="math inline">\#AccessessForRecord</span>: numero di
+accessi necessari per cercare un record nel file principale</li>
+<li><span class="math inline">\dim(Block) = \dim(BlockInIndex)</span>:
+dimensione di un blocco, sia nel file index che nel file principale</li>
+<li><span class="math inline">\dim(Record)</span>: dimensione di un
+record nel file principale</li>
+<li><span class="math inline">\dim(K)</span>: dimensione di una chiave
+del file index</li>
+<li><span class="math inline">\dim(P)</span>: dimensione di un puntatore
+del file index</li>
+<li><span class="math inline">\dim(KP) = \dim(K) + \dim(P)</span>:
+dimensione di una coppia chiave-valore del file index</li>
+<li><span class="math inline">p\%</span>: percentuale di capienza
+massima/minima per blocco del file principale</li>
+</ul></li>
+<li><strong>Formule</strong>
+<ul>
+<li><span class="math inline">p\%</span> è la capienza <em>massima</em>
+(<em>al massimo</em>) oppure <span class="math inline">p\% =
+100\%</span>
+<ul>
+<li><span class="math inline">\#RecordsPerBlock = \left \lfloor
+\dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rfloor</span></li>
+<li><span class="math inline">\#ChildrenPerBlockInIndex = \left \lfloor
+\dfrac{\dim(Block) \cdot p\% - \dim(P)}{\dim(KP)} \right \rfloor +
+1</span></li>
+</ul></li>
+<li><span class="math inline">p\%</span> è la capienza <em>minima</em>
+(<em>almeno</em>)
+<ul>
+<li><span class="math inline">\#RecordsPerBlock = \left \lceil
+\dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rceil</span></li>
+<li><span class="math inline">\#ChildrenPerBlockInIndex = \left \lceil
+\dfrac{\dim(Block) \cdot p\% - \dim(P)}{\dim(KP)} \right \rceil +
+1</span></li>
+</ul></li>
+<li><span class="math inline">\#Blocks = \left \lceil
+\dfrac{\#Records}{\#RecordsPerBlock} \right \rceil</span></li>
+<li><span class="math inline">\#BlocksPer(0)thLevel =
+\#Blocks</span></li>
+<li><span class="math inline">\#BlocksPer(i)thLevel = \left \lceil
+\dfrac{\#BlocksPer(i-1)thLevel}{\#ChildrenPerBlockInIndex} \right
+\rceil</span></li>
+<li><span class="math inline">\#BlocksPer(h - 1)thLevel = 1</span></li>
+<li><span class="math inline">\#BlocksInIndex = \displaystyle \sum_{i =
+0}^{h - 1} {\#BlocksPer(i)thLevel}</span></li>
+<li><span class="math inline">\#AccessessForRecord = h</span></li>
 </ul></li>
 </ul></li>
 </ul>

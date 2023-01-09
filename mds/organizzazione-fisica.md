@@ -172,12 +172,13 @@
         - $\#KPs = \#Blocks$: numero di coppie chiave-puntatore nel file index, sempre pari a $\#Blocks$
         - $\#BlocksInIndex$: numero di blocchi del file index
         - $\#KPsPerBlockInIndex$: numero di coppie chiave-puntatore in ogni blocco del file index
+        - $\#AccessessForRecord$: numero di accessi necessari per cercare un record nel file principale
         - $\dim(Block) = \dim(BlockInIndex)$: dimensione di un blocco, sia nel file index che nel file principale
         - $\dim(Record)$: dimensione di un record nel file principale
         - $\dim(K)$: dimensione di una chiave del file index
         - $\dim(P)$: dimensione di un puntatore del file index
         - $\dim(KP) = \dim(K) + \dim(P)$: dimensione di una coppia chiave-valore del file index
-        - $p\%$: percentuale di capienza massima/minima per blocco del file principale
+        - $p\%$: percentuale di capienza massima/minima per blocco del file principale e del file index
     - **Formule**
         - $p\%$ è la capienza _massima_ (_al massimo_) oppure $p\% = 100\%$
             - $\#RecordsPerBlock = \left \lfloor \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rfloor$
@@ -187,5 +188,36 @@
             - $\#KPsPerBlockInIndex = \left \lceil \dfrac{\dim(BlockInIndex) \cdot p\%}{\dim(KP)} \right \rceil$
         - $\#Blocks = \left \lceil \dfrac{\#Records}{\#RecordsPerBlock} \right \rceil$
         - $\#BlocksInIndex = \left \lceil \dfrac{\#KPs}{\#KPsPerBlockInIndex} \right \rceil$
-        - ricerca binaria: $\left \lceil \log_2\left(\#BlocksInIndex\right)\right \rceil + 1$
-
+        - ricerca sequenziale
+            - $\#AccessessForRecord = \left \lceil \dfrac{\#Blocks}{2} \right \rceil$
+        - ricerca binaria
+            - $\#AccessessForRecord = \left \lceil \log_2\left(\#BlocksInIndex\right)\right \rceil + 1$
+- **B<sup>+</sup>-tree**
+    - **Definizioni**
+        - $\#Records$: numero di records del file principale
+        - $\#Blocks$: numero di blocchi del file principale
+        - $\#RecordsPerBlock$: numero di record in ogni blocco del file principale
+        - $\#BlocksInIndex$: numero di blocchi del file index
+        - $\#ChildrenPerBlockInIndex$: numero di figli per ogni blocco del file index
+        - $\#BlocksPer(i)thLevel$: numero di blocchi del file index dell-$i$ livello dell'albero, dove lo $0$-esimo livello sono le foglie
+        - $h$: altezza dell'albero del file index
+        - $\#AccessessForRecord$: numero di accessi necessari per cercare un record nel file principale
+        - $\dim(Block) = \dim(BlockInIndex)$: dimensione di un blocco, sia nel file index che nel file principale
+        - $\dim(Record)$: dimensione di un record nel file principale
+        - $\dim(K)$: dimensione di una chiave del file index
+        - $\dim(P)$: dimensione di un puntatore del file index
+        - $\dim(KP) = \dim(K) + \dim(P)$: dimensione di una coppia chiave-valore del file index
+        - $p\%$: percentuale di capienza massima/minima per blocco del file principale
+    - **Formule**
+        - $p\%$ è la capienza _massima_ (_al massimo_) oppure $p\% = 100\%$
+            - $\#RecordsPerBlock = \left \lfloor \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rfloor$
+            - $\#ChildrenPerBlockInIndex = \left \lfloor \dfrac{\dim(Block) \cdot p\% - \dim(P)}{\dim(KP)} \right \rfloor + 1$
+        - $p\%$ è la capienza _minima_ (_almeno_)
+            - $\#RecordsPerBlock = \left \lceil \dfrac{\dim(Block) \cdot p\%}{\dim(Record)} \right \rceil$
+            - $\#ChildrenPerBlockInIndex = \left \lceil \dfrac{\dim(Block) \cdot p\% - \dim(P)}{\dim(KP)} \right \rceil + 1$
+        - $\#Blocks = \left \lceil \dfrac{\#Records}{\#RecordsPerBlock} \right \rceil$
+        - $\#BlocksPer(0)thLevel = \#Blocks$
+        - $\#BlocksPer(i)thLevel = \left \lceil \dfrac{\#BlocksPer(i-1)thLevel}{\#ChildrenPerBlockInIndex} \right \rceil$
+        - $\#BlocksPer(h - 1)thLevel = 1$
+        - $\#BlocksInIndex = \displaystyle \sum_{i = 0}^{h - 1} {\#BlocksPer(i)thLevel}$
+        - $\#AccessessForRecord = h$
