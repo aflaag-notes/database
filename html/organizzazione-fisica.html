@@ -540,6 +540,60 @@ caratteristiche</li>
 </ul>
 <h2 id="formulario">Formulario</h2>
 <ul>
+<li><strong>Hash</strong>
+<ul>
+<li><strong>Definizioni</strong>
+<ul>
+<li><span class="math inline">\#Records</span>: numero di records del
+file principale</li>
+<li><span class="math inline">\#Blocks</span>: numero di blocchi del
+file principale</li>
+<li><span class="math inline">\#RecordsPerBlock</span>: numero di record
+in ogni blocco del file principale</li>
+<li><span class="math inline">\#BlocksInIndex</span>: numero di blocchi
+del file index</li>
+<li><span class="math inline">\#Buckets</span>: numero di bucket, sia
+del file index che del file principale (corrisponde al numero di righe
+del file index)</li>
+<li><span class="math inline">\#PointersPerBlock</span>: numero di
+puntatori in ogni blocco del file index</li>
+<li><span class="math inline">\#RecordsPerBucket</span>: numero di
+record in ogni bucket del file principale</li>
+<li><span class="math inline">\#BlocksPerBucket</span>: numero di
+blocchi in ogni bucket del file principale</li>
+<li><span class="math inline">\#BlocksInTotal</span>: totale del numero
+di blocchi</li>
+<li><span class="math inline">\#AccessessForRecord</span>: numero di
+accessi necessari per cercare un record nel file principale</li>
+<li><span class="math inline">\dim(Block) = \dim(BlockInIndex)</span>:
+dimensione di un blocco, sia nel file index che nel file principale</li>
+<li><span class="math inline">\dim(Record)</span>: dimensione di un
+record nel file principale</li>
+<li><span class="math inline">\dim(P)</span>: dimensione di un
+puntatore, sia del file index che del file principale</li>
+<li><span class="math inline">p\%</span>: percentuale di capienza
+massima/minima per blocco del file principale e del file index</li>
+</ul></li>
+<li><strong>Formule</strong>
+<ul>
+<li><span class="math inline">\#PointersPerBlock = \left \lfloor
+\dfrac{\dim(BlockInIndex)}{\dim(P)} \right \rfloor</span></li>
+<li><span class="math inline">\#BlocksInIndex = \left \lceil
+\dfrac{\#Buckets}{\#PointersPerBlock} \right \rceil</span></li>
+<li><span class="math inline">\#RecordsPerBlock = \left \lfloor
+\dfrac{\dim(Block) - \dim(P)}{\dim(Record)} \right \rfloor</span></li>
+<li><span class="math inline">\#RecordsPerBucket = \left \lceil
+\dfrac{\#Records}{\#Buckets} \right \rceil</span></li>
+<li><span class="math inline">\#BlocksPerBucket = \left \lceil
+\dfrac{\#RecordsPerBucket}{\#RecordsPerBlock} \right \rceil</span></li>
+<li><span class="math inline">\#Blocks = \#BlocksPerBucket \cdot
+\#Buckets</span></li>
+<li><span class="math inline">\#BlocksInTotal = \#Blocks +
+\#BlocksInTotal</span></li>
+<li><span class="math inline">\#AccessessForRecord = \left \lceil
+\dfrac{\#BlocksPerBucket}{2} \right \rceil</span></li>
+</ul></li>
+</ul></li>
 <li><strong>ISAM</strong> (indexed sequential access memory)
 <ul>
 <li><strong>Definizioni</strong>

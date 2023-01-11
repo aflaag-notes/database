@@ -164,6 +164,32 @@
 
 ## Formulario
 
+- **Hash**
+    - **Definizioni**
+        - $\#Records$: numero di records del file principale
+        - $\#Blocks$: numero di blocchi del file principale
+        - $\#RecordsPerBlock$: numero di record in ogni blocco del file principale
+        - $\#BlocksInIndex$: numero di blocchi del file index
+        - $\#Buckets$: numero di bucket, sia del file index che del file principale (corrisponde al numero di righe del file index)
+        - $\#PointersPerBlock$: numero di puntatori in ogni blocco del file index
+        - $\#RecordsPerBucket$: numero di record in ogni bucket del file principale
+        - $\#BlocksPerBucket$: numero di blocchi in ogni bucket del file principale
+        - $\#BlocksInTotal$: totale del numero di blocchi
+        - $\#AccessessForRecord$: numero di accessi necessari per cercare un record nel file principale
+        - $\dim(Block) = \dim(BlockInIndex)$: dimensione di un blocco, sia nel file index che nel file principale
+        - $\dim(Record)$: dimensione di un record nel file principale
+        - $\dim(P)$: dimensione di un puntatore, sia del file index che del file principale
+        - $p\%$: percentuale di capienza massima/minima per blocco del file principale e del file index
+    - **Formule**
+        - $\#PointersPerBlock = \left \lfloor \dfrac{\dim(BlockInIndex)}{\dim(P)} \right \rfloor$
+        - $\#BlocksInIndex = \left \lceil \dfrac{\#Buckets}{\#PointersPerBlock} \right \rceil$
+        - $\#RecordsPerBlock = \left \lfloor \dfrac{\dim(Block) - \dim(P)}{\dim(Record)} \right \rfloor$
+        - $\#RecordsPerBucket = \left \lceil \dfrac{\#Records}{\#Buckets} \right \rceil$
+        - $\#BlocksPerBucket = \left \lceil \dfrac{\#RecordsPerBucket}{\#RecordsPerBlock} \right \rceil$
+        - $\#Blocks = \#BlocksPerBucket \cdot \#Buckets$
+        - $\#BlocksInTotal = \#Blocks + \#BlocksInTotal$
+        - $\#AccessessForRecord = \left \lceil \dfrac{\#BlocksPerBucket}{2} \right \rceil$
+
 - **ISAM** (indexed sequential access memory)
     - **Definizioni**
         - $\#Records$: numero di records del file principale
