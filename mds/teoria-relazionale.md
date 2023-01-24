@@ -83,7 +83,7 @@
 > - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F \implies X \rightarrow Y \in F^A$
 > - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad Y \subseteq X \implies X \rightarrow Y \in F^A$ è detto **assioma della riflessività**
 > - $\forall X, Y, Z \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F^A \implies XZ \rightarrow YZ \in F^A$ è detto **assioma dell'aumento**
-> - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z \in F^A$ è detto **assioma della transitività**
+> - $\forall X, Y, Z \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z \in F^A$ è detto **assioma della transitività**
 
 ## Oss
 
@@ -137,7 +137,7 @@
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $X, Y, Z \subseteq R(A_1, \ldots, A_n)$
+    - $X, Y, Z, W \subseteq R(A_1, \ldots, A_n)$
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
@@ -224,7 +224,7 @@
     - $F^+ \supseteq F^A$
         - siano $X, Y \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow Y \in F^A$
         - _caso base_
-            - per definizione $F \subseteq F^A$, allora avendo applicato $0$ assiomi di Armstrong $X \rightarrow Y \in F^A \implies X \rightarrow Y \in F$, e per definizione $F \subseteq F^+$, allora necessariamente $X \rightarrow Y \in F^+$
+            - per definizione $F^A$ è costruita a partire da $F$, allora avendo applicato $0$ assiomi di Armstrong $X \rightarrow Y \in F^A \implies X \rightarrow Y \in F$, e per osservazione precedente $F \subseteq F^+$, allora necessariamente $X \rightarrow Y \in F^+$
         - _ipotesi induttiva forte_
             - avendo applicato al più $n$ assiomi di Armstrong per ottenere $X \rightarrow Y \in F^A$, si ha che $X \rightarrow Y \in F^+$
         - _passo induttivo_
@@ -233,9 +233,10 @@
             - l'$(n + 1)$-esimo assioma di Armstrong applicato è stato l'assioma della riflessività
                 - $X \rightarrow Y \in F^A$ per assioma della riflessività, allora necessariamente $Y \subseteq X$, ma allora $\forall r$ istanza di $R$ legale su $F \quad t_1[X] = t_2[X] \implies t_2[Y] = t_2[Y] \implies X \rightarrow Y \in F^+$
             - l'$(n + 1)$-esimo assioma di Armstrong applicato è stato l'assioma dell'aumento
-                - $X \rightarrow Y \in F^A$ per assioma dell'aumento, allora $\exists V, W \subseteq R(A_1, \ldots, A_n) \mid V \rightarrow W \in F^A$, ottenuta applicando al più $n$ assiomi di Armstrong, e $\exists Z \subseteq R(A_1, \ldots , A_n) \mid X := VZ \land Y := WZ$
-                - per ipotesi induttiva si ha che $V \rightarrow W \in F^+$, allora $\forall r$ istanza di $R$ legale su $F \quad \exists Z \subseteq R(A_1, \ldots, A_n) \mid VZ \rightarrow WZ \in F^+$, in quanto l'aggiunta di $Z$ rende ancora soddisfatta la dipendenza funzionale
-                - $VZ \rightarrow WZ \in F^+ \implies \forall r$ istanza di $R$ legale su $F \quad \forall t_1, t_2 \in r \quad t_1[VZ] = t_2[VZ] \implies t_1[WZ] = t_2[WZ]$
+                - $X \rightarrow Y \in F^A$ per assioma dell'aumento, allora $\exists V, W \subseteq R(A_1, \ldots, A_n) \mid V \rightarrow W \in F^A$, ottenuta applicando al più $n$ assiomi di Armstrong, e inoltre $\exists Z \subseteq R(A_1, \ldots , A_n) \mid X := VZ \land Y := WZ$
+                - allora, per ipotesi induttiva si ha che $V \rightarrow W \in F^+$
+                - $V \rightarrow W \in F^+ \implies \forall r$ istanza di $R$ legale su $F \quad \forall t_1, t_2 \in r \quad t_1[V] = t_2[V] \implies t_1[W] = t_2[W]$
+                - allora si ha che $\forall r$ istanza di $R$ legale su $F \quad \forall t_1, t_2 \in r \quad t_1[VZ] = t_2[VZ] \implies t_1[WZ] = t_2[WZ]$, e la dipendenza è soddisfatta poiché se le tuple non sono uguali in $Z$, allora $t_1[XZ] \neq t_2[XZ]$, e la dipendeza è soddisfatta a vuoto
                 - allora, poiché si erano posti $X := VZ \land Y := WZ$, si ha che $\forall r$ istanza di $R$ legale su $F \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y] \implies X \rightarrow Y \in F^+$ per definizione di $F^+$
             - l'$(n + 1)$-esimo assioma di Armstrong applicato è stato l'assioma della transitività
                 - $X \rightarrow Y \in F^A$ per assioma della transitività, allora $\exists Z \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow Z, Z \rightarrow Y \in F^A$, ottenute applicando al più $n$ assiomi di Armstrong
@@ -244,14 +245,15 @@
                 - $Z \rightarrow Y \in F^+ \implies \forall r$ istanza di $R$ legale su $F \quad \forall t_1, t_2 \in r \quad t_1[Z] = t_2[Z] \implies t_1[Y] = t_2[Y]$
                 - allora, necessariamente $\forall r$ istanza legale di $R$ su $F \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y] \implies X \rightarrow Y \in F^+$ per definizione di $F^+$
     - $F^+ \subseteq F^A$
-        - sia $X \subseteq R(A_1, \ldots, A_n)$ e $r$ istanza di $R(X^+_F, R - X^+_F) \mid t_1[X^+_F] = t_2[X^+_F] = (1, \ldots, 1)$, mentre $t_1[R - X^+_F] = (1, \ldots, 1) \land t_2[R - X^+_F] = (0, \ldots, 0)$
+        - $F^+ \subseteq F^A \iff \forall X \rightarrow Y \in F^+ \quad X \rightarrow Y \in F^A$
+        - sia $X \rightarrow Y \in F^+$, e sia $X \subseteq R(A_1, \ldots, A_n)$ e $r$ istanza di $R(X^+_F, R - X^+_F) \mid t_1[X^+_F] = t_2[X^+_F] = (1, \ldots, 1)$, mentre $t_1[R - X^+_F] = (1, \ldots, 1) \land t_2[R - X^+_F] = (0, \ldots, 0)$
             - in particolare $t_1[R - X^+_F]$ è complementare a $t_2[R - X^+_F]$, dunque diverso in ogni colonna
         - $r$ legale su $F \iff \forall V, W \subseteq R(X^+_F, R - X^+_F) \mid V \rightarrow W \in F \quad r$ soddisfa $V \rightarrow W$
         - $\forall V, W \subseteq R(X^+_F, R - X^+_F) \mid V \rightarrow W \in F$ possono verificarsi $3$ possibili casi
             - $V \subseteq R - X^+_F \implies (1, \ldots, 1) = t_1[V] \neq t_2[V] = (0, \ldots, 0)$
-            - $V \cap (R - X^+_F) \neq \varnothing \implies \exists A \subseteq V \mid A \subseteq R - X^+_F \implies t_1[V] \neq t_1[V]$ in quanto $t_1[V]$ e $t_2[V]$ sono stati scelti complementari, e dunque diversi in ogni colonna
+            - $V \cap (R - X^+_F) \neq \varnothing \implies \exists A \subseteq V \mid A \subseteq R - X^+_F \implies t_1[V] \neq t_2[V]$ in quanto $t_1[V]$ e $t_2[V]$ sono stati scelti complementari, e dunque diversi in ogni colonna
             - $V \subseteq X^+_F \implies t_1[V] = t_2[V]$ per costruzione di $r$, dunque è necessario controllare che $r$ soddisfi $V \rightarrow W \in F$, e dunque $V \subseteq X^+_F \implies X \rightarrow V \in F^A$ per lemma precedentemente dimostrato, inoltre $F \subseteq F^A \implies V \rightarrow W \in F \implies V \rightarrow W \in F^A$, allora per l'assioma della transitività $X \rightarrow V, V \rightarrow W \in F^A \implies X \rightarrow W \in F^A$, allora per il lemma precedente $W \subseteq X^+_F \implies t_1[W] = t_2[W]$ per costruzione di $r$
-        - allora $r$ legale su $R \implies \forall Y \subseteq R(X^+_F, R - X^+_F) \mid X \rightarrow Y \in F^+ \quad r$ soddisfa $X \rightarrow Y \in F^+$
+        - allora $r$ legale su $R \implies r$ soddisfa ogni dipendenza funzionale in $F^+$, in particolare anche $X \rightarrow Y \in F^+$ scelta all'inizio
         - per osservazione precedente $X \subseteq X^+_F$, allora $t_1[X] = t_2[X]$ per costruzione di $r$
         - $r$ soddisfa $X \rightarrow Y \in F^+ \implies Y \subseteq X^+_F$ per costruzione di $r$
         - allora per il lemma precedente $Y \subseteq X^+_F \implies X \rightarrow Y \in F^A$
@@ -355,7 +357,7 @@
         - applicandoli tutti, si otterrebbe $G = F^A$
     - allora $G \subseteq F^A = F^+$
 
-# Lem
+## Lem
 
 - **Hp**
     - $n, k, h \in \mathbb{N}$

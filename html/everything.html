@@ -681,9 +681,10 @@ Armstrong</strong></li>
 <li><span class="math inline">\forall X, Y, Z \subseteq R(A_1, \ldots,
 A_n) \quad X \rightarrow Y \in F^A \implies XZ \rightarrow YZ \in
 F^A</span> è detto <strong>assioma dell’aumento</strong></li>
-<li><span class="math inline">\forall X, Y \subseteq R(A_1, \ldots, A_n)
-\quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z
-\in F^A</span> è detto <strong>assioma della transitività</strong></li>
+<li><span class="math inline">\forall X, Y, Z \subseteq R(A_1, \ldots,
+A_n) \quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X
+\rightarrow Z \in F^A</span> è detto <strong>assioma della
+transitività</strong></li>
 </ul>
 </blockquote>
 <h2 id="teorema-6">Teorema 6</h2>
@@ -761,7 +762,7 @@ decomposizione</strong></li>
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
-<li><span class="math inline">X, Y, Z \subseteq R(A_1, \ldots,
+<li><span class="math inline">X, Y, Z, W \subseteq R(A_1, \ldots,
 A_n)</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
@@ -1000,6 +1001,27 @@ dipendenze funzionali su <span class="math inline">R</span></li>
 F^+</span></li>
 </ul></li>
 </ul>
+<h2 id="teorema-17">Teorema 17</h2>
+<ul>
+<li><strong>Hp</strong>
+<ul>
+<li><span class="math inline">n, k, h \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">F_1, \ldots, F_k, G_1, \ldots, G_h</span>
+dipendenze funzionali su <span class="math inline">R</span></li>
+<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
+<li><span class="math inline">G = \{G_1, \ldots, G_h\}</span></li>
+</ul></li>
+<li><strong>Th</strong>
+<ul>
+<li><span class="math inline">F \subseteq G^+ \iff F^+ \subseteq
+G^+</span></li>
+</ul></li>
+</ul>
 <hr />
 <h1 id="terza-forma-normale">Terza forma normale</h1>
 <h2 id="definizione-11">Definizione 11</h2>
@@ -1025,7 +1047,7 @@ X</span> è la chiave di <span class="math inline">R</span> con minor
 numero di attributi</li>
 </ul>
 </blockquote>
-<h2 id="teorema-17">Teorema 17</h2>
+<h2 id="teorema-18">Teorema 18</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1048,7 +1070,7 @@ class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
 \rightarrow R \in F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-18">Teorema 18</h2>
+<h2 id="teorema-19">Teorema 19</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1070,7 +1092,7 @@ funzionali su <span class="math inline">R</span></li>
 <span class="math inline">R</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-19">Teorema 19</h2>
+<h2 id="teorema-20">Teorema 20</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1141,7 +1163,7 @@ e di eliminazione</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-20">Teorema 20</h2>
+<h2 id="teorema-21">Teorema 21</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1227,7 +1249,7 @@ K</span></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-21">Teorema 21</h2>
+<h2 id="teorema-22">Teorema 22</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1284,7 +1306,7 @@ class="math inline">R</span>, senza aggiunta di informazioni</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-22">Teorema 22</h2>
+<h2 id="teorema-23">Teorema 23</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1408,7 +1430,7 @@ senza perdita di informazioni</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-23">Teorema 23</h2>
+<h2 id="teorema-24">Teorema 24</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1432,7 +1454,7 @@ decomposizione di <span class="math inline">R</span></li>
 class="math inline">F \iff G^+ \supseteq F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-24">Teorema 24</h2>
+<h2 id="teorema-25">Teorema 25</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1501,7 +1523,7 @@ dunque l’iterazione in cui l’algoritmo termina</li>
 <li><span class="math inline">Z^f = X^+_G</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-25">Teorema 25</h2>
+<h2 id="teorema-26">Teorema 26</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1555,7 +1577,7 @@ class="math inline">F \iff \forall X \rightarrow Y \in F \quad Y
 \subseteq X^+_G</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-26">Teorema 26</h2>
+<h2 id="teorema-27">Teorema 27</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1608,7 +1630,7 @@ class="math inline">F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-27">Teorema 27</h2>
+<h2 id="teorema-28">Teorema 28</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1632,7 +1654,7 @@ class="math inline">F</span></li>
 <li><span class="math inline">r \subseteq m_\rho(r)</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-28">Teorema 28</h2>
+<h2 id="teorema-29">Teorema 29</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1657,7 +1679,7 @@ class="math inline">F</span></li>
 class="math inline">\pi_{R_i}(m_\rho(r))=\pi_{R_i}(r)</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-29">Teorema 29</h2>
+<h2 id="teorema-30">Teorema 30</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1681,7 +1703,7 @@ class="math inline">F</span></li>
 <li><span class="math inline">m_\rho(m_\rho(r))=m_\rho(r)</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-30">Teorema 30</h2>
+<h2 id="teorema-31">Teorema 31</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1827,7 +1849,7 @@ ridondante</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-31">Teorema 31</h2>
+<h2 id="teorema-32">Teorema 32</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1848,7 +1870,7 @@ class="math inline">F</span></li>
 <li><span class="math inline">G \subseteq F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-32">Teorema 32</h2>
+<h2 id="teorema-33">Teorema 33</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1904,7 +1926,7 @@ onestamente</strong></li>
 <li>!!! <strong>?</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-33">Teorema 33</h2>
+<h2 id="teorema-34">Teorema 34</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>

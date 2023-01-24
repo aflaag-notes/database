@@ -297,7 +297,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F \implies X \rightarrow Y \in F^A$
 > - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad Y \subseteq X \implies X \rightarrow Y \in F^A$ è detto **assioma della riflessività**
 > - $\forall X, Y, Z \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y \in F^A \implies XZ \rightarrow YZ \in F^A$ è detto **assioma dell'aumento**
-> - $\forall X, Y \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z \in F^A$ è detto **assioma della transitività**
+> - $\forall X, Y, Z \subseteq R(A_1, \ldots, A_n) \quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z \in F^A$ è detto **assioma della transitività**
 
 
 
@@ -352,7 +352,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $X, Y, Z \subseteq R(A_1, \ldots, A_n)$
+    - $X, Y, Z, W \subseteq R(A_1, \ldots, A_n)$
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
@@ -501,6 +501,20 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $F \xrightarrow{A} G \iff G \subseteq F^+$
 
+## Teorema 17
+
+
+- **Hp**
+    - $n, k, h \in \mathbb{N}$
+    - $D_1, \ldots, D_n$ domini
+    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
+    - $R(A_1, \ldots, A_n)$ schema relazionale
+    - $F_1, \ldots, F_k, G_1, \ldots, G_h$ dipendenze funzionali su $R$
+    - $F = \{F_1, \ldots, F_k\}$
+    - $G = \{G_1, \ldots, G_h\}$
+- **Th**
+    - $F \subseteq G^+ \iff F^+ \subseteq G^+$
+
 
 ****
 # Terza forma normale
@@ -521,7 +535,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 17
+## Teorema 18
 
 
 - **Hp**
@@ -536,7 +550,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 18
+## Teorema 19
 
 
 - **Hp**
@@ -550,7 +564,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X^+_F = R \iff X$ superchiave di $R$
 
-## Teorema 19
+## Teorema 20
 
 
 - **Hp**
@@ -597,7 +611,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 20
+## Teorema 21
 
 
 - **Hp**
@@ -645,7 +659,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 21
+## Teorema 22
 
 
 - **Hp**
@@ -679,7 +693,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 22
+## Teorema 23
 
 
 - **Hp**
@@ -743,7 +757,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 23
+## Teorema 24
 
 
 - **Hp**
@@ -758,7 +772,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\rho$ preserva $F \iff G^+ \supseteq F$
 
-## Teorema 24
+## Teorema 25
 
 
 - **Input**
@@ -791,7 +805,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
     - $Z^f = X^+_G$
 
-## Teorema 25
+## Teorema 26
 
 
 - **Input**
@@ -816,7 +830,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\rho$ preserva $F \iff \forall X \rightarrow Y \in F \quad Y \subseteq X^+_G$
 
-## Teorema 26
+## Teorema 27
 
 
 - **Hp**
@@ -848,7 +862,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 27
+## Teorema 28
 
 
 - **Hp**
@@ -863,7 +877,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $r \subseteq m_\rho(r)$
 
-## Teorema 28
+## Teorema 29
 
 
 - **Hp**
@@ -878,7 +892,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\pi_{R_i}(m_\rho(r))=\pi_{R_i}(r)$
 
-## Teorema 29
+## Teorema 30
 
 
 - **Hp**
@@ -893,7 +907,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $m_\rho(m_\rho(r))=m_\rho(r)$
 
-## Teorema 30
+## Teorema 31
 
 
 - **Input**
@@ -952,7 +966,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 31
+## Teorema 32
 
 
 - **Hp**
@@ -968,7 +982,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 32
+## Teorema 33
 
 
 - **Input**
@@ -993,7 +1007,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - ⚠️ **?**
 
-## Teorema 33
+## Teorema 34
 
 
 - **Input**

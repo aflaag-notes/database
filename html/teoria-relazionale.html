@@ -345,9 +345,10 @@ Armstrong</strong></li>
 <li><span class="math inline">\forall X, Y, Z \subseteq R(A_1, \ldots,
 A_n) \quad X \rightarrow Y \in F^A \implies XZ \rightarrow YZ \in
 F^A</span> è detto <strong>assioma dell’aumento</strong></li>
-<li><span class="math inline">\forall X, Y \subseteq R(A_1, \ldots, A_n)
-\quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z
-\in F^A</span> è detto <strong>assioma della transitività</strong></li>
+<li><span class="math inline">\forall X, Y, Z \subseteq R(A_1, \ldots,
+A_n) \quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X
+\rightarrow Z \in F^A</span> è detto <strong>assioma della
+transitività</strong></li>
 </ul>
 </blockquote>
 <h2 id="oss-2">Oss</h2>
@@ -442,7 +443,7 @@ decomposizione</strong></li>
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
-<li><span class="math inline">X, Y, Z \subseteq R(A_1, \ldots,
+<li><span class="math inline">X, Y, Z, W \subseteq R(A_1, \ldots,
 A_n)</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
@@ -611,12 +612,13 @@ funzionali su <span class="math inline">R</span></li>
 \mid X \rightarrow Y \in F^A</span></li>
 <li><em>caso base</em>
 <ul>
-<li>per definizione <span class="math inline">F \subseteq F^A</span>,
-allora avendo applicato <span class="math inline">0</span> assiomi di
-Armstrong <span class="math inline">X \rightarrow Y \in F^A \implies X
-\rightarrow Y \in F</span>, e per definizione <span
-class="math inline">F \subseteq F^+</span>, allora necessariamente <span
-class="math inline">X \rightarrow Y \in F^+</span></li>
+<li>per definizione <span class="math inline">F^A</span> è costruita a
+partire da <span class="math inline">F</span>, allora avendo applicato
+<span class="math inline">0</span> assiomi di Armstrong <span
+class="math inline">X \rightarrow Y \in F^A \implies X \rightarrow Y \in
+F</span>, e per osservazione precedente <span class="math inline">F
+\subseteq F^+</span>, allora necessariamente <span class="math inline">X
+\rightarrow Y \in F^+</span></li>
 </ul></li>
 <li><em>ipotesi induttiva forte</em>
 <ul>
@@ -650,19 +652,21 @@ Armstrong applicato è stato l’assioma dell’aumento
 dell’aumento, allora <span class="math inline">\exists V, W \subseteq
 R(A_1, \ldots, A_n) \mid V \rightarrow W \in F^A</span>, ottenuta
 applicando al più <span class="math inline">n</span> assiomi di
-Armstrong, e <span class="math inline">\exists Z \subseteq R(A_1, \ldots
-, A_n) \mid X := VZ \land Y := WZ</span></li>
-<li>per ipotesi induttiva si ha che <span class="math inline">V
-\rightarrow W \in F^+</span>, allora <span class="math inline">\forall
+Armstrong, e inoltre <span class="math inline">\exists Z \subseteq
+R(A_1, \ldots , A_n) \mid X := VZ \land Y := WZ</span></li>
+<li>allora, per ipotesi induttiva si ha che <span class="math inline">V
+\rightarrow W \in F^+</span></li>
+<li><span class="math inline">V \rightarrow W \in F^+ \implies \forall
 r</span> istanza di <span class="math inline">R</span> legale su <span
-class="math inline">F \quad \exists Z \subseteq R(A_1, \ldots, A_n) \mid
-VZ \rightarrow WZ \in F^+</span>, in quanto l’aggiunta di <span
-class="math inline">Z</span> rende ancora soddisfatta la dipendenza
-funzionale</li>
-<li><span class="math inline">VZ \rightarrow WZ \in F^+ \implies \forall
-r</span> istanza di <span class="math inline">R</span> legale su <span
+class="math inline">F \quad \forall t_1, t_2 \in r \quad t_1[V] = t_2[V]
+\implies t_1[W] = t_2[W]</span></li>
+<li>allora si ha che <span class="math inline">\forall r</span> istanza
+di <span class="math inline">R</span> legale su <span
 class="math inline">F \quad \forall t_1, t_2 \in r \quad t_1[VZ] =
-t_2[VZ] \implies t_1[WZ] = t_2[WZ]</span></li>
+t_2[VZ] \implies t_1[WZ] = t_2[WZ]</span>, e la dipendenza è soddisfatta
+poiché se le tuple non sono uguali in <span
+class="math inline">Z</span>, allora <span class="math inline">t_1[XZ]
+\neq t_2[XZ]</span>, e la dipendeza è soddisfatta a vuoto</li>
 <li>allora, poiché si erano posti <span class="math inline">X := VZ
 \land Y := WZ</span>, si ha che <span class="math inline">\forall
 r</span> istanza di <span class="math inline">R</span> legale su <span
@@ -698,8 +702,11 @@ definizione di <span class="math inline">F^+</span></li>
 </ul></li>
 <li><span class="math inline">F^+ \subseteq F^A</span>
 <ul>
-<li>sia <span class="math inline">X \subseteq R(A_1, \ldots, A_n)</span>
-e <span class="math inline">r</span> istanza di <span
+<li><span class="math inline">F^+ \subseteq F^A \iff \forall X
+\rightarrow Y \in F^+ \quad X \rightarrow Y \in F^A</span></li>
+<li>sia <span class="math inline">X \rightarrow Y \in F^+</span>, e sia
+<span class="math inline">X \subseteq R(A_1, \ldots, A_n)</span> e <span
+class="math inline">r</span> istanza di <span
 class="math inline">R(X^+_F, R - X^+_F) \mid t_1[X^+_F] = t_2[X^+_F] =
 (1, \ldots, 1)</span>, mentre <span class="math inline">t_1[R - X^+_F] =
 (1, \ldots, 1) \land t_2[R - X^+_F] = (0, \ldots, 0)</span>
@@ -720,7 +727,7 @@ class="math inline">3</span> possibili casi
 1) = t_1[V] \neq t_2[V] = (0, \ldots, 0)</span></li>
 <li><span class="math inline">V \cap (R - X^+_F) \neq \varnothing
 \implies \exists A \subseteq V \mid A \subseteq R - X^+_F \implies
-t_1[V] \neq t_1[V]</span> in quanto <span
+t_1[V] \neq t_2[V]</span> in quanto <span
 class="math inline">t_1[V]</span> e <span
 class="math inline">t_2[V]</span> sono stati scelti complementari, e
 dunque diversi in ogni colonna</li>
@@ -739,9 +746,10 @@ per il lemma precedente <span class="math inline">W \subseteq X^+_F
 class="math inline">r</span></li>
 </ul></li>
 <li>allora <span class="math inline">r</span> legale su <span
-class="math inline">R \implies \forall Y \subseteq R(X^+_F, R - X^+_F)
-\mid X \rightarrow Y \in F^+ \quad r</span> soddisfa <span
-class="math inline">X \rightarrow Y \in F^+</span></li>
+class="math inline">R \implies r</span> soddisfa ogni dipendenza
+funzionale in <span class="math inline">F^+</span>, in particolare anche
+<span class="math inline">X \rightarrow Y \in F^+</span> scelta
+all’inizio</li>
 <li>per osservazione precedente <span class="math inline">X \subseteq
 X^+_F</span>, allora <span class="math inline">t_1[X] = t_2[X]</span>
 per costruzione di <span class="math inline">r</span></li>
@@ -989,7 +997,7 @@ F^A</span></li>
 <li>allora <span class="math inline">G \subseteq F^A = F^+</span></li>
 </ul></li>
 </ul>
-<h1 id="lem-1">Lem</h1>
+<h2 id="lem-1">Lem</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
