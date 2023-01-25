@@ -294,7 +294,7 @@
             - $A \in Z^i \implies A \in X^+_F$ per ipotesi induttiva
             - $A \in S^i \implies \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z^i$ per definizione di $S^i$
                 - per ipotesi induttiva $Y \subseteq Z^i \subseteq X^+_F$, e per lemma precedente $Y \subseteq X^+_F \implies X \rightarrow Y \in F^A$
-                - $Y \rightarrow V \in F \implies Y \rightarrow F^A$, allora $X \rightarrow Y , Y \rightarrow V \in F^A \implies X \rightarrow V \in F^A$, allora per il lemma $X \rightarrow V \in F^A \implies V \subseteq X^+_F$
+                - $Y \rightarrow V \in F \implies Y \rightarrow V \in F^A$, allora $X \rightarrow Y , Y \rightarrow V \in F^A \implies X \rightarrow V \in F^A$, allora per il lemma $X \rightarrow V \in F^A \implies V \subseteq X^+_F$
                 - $A \in V \subseteq X^+_F \implies A \in X^+_F$
     - $Z^f \supseteq X^+_F$
         - sia $r$ istanza di $R(Z^f, R - Z^f) \mid t_1[Z^f] = t_2[Z^f] = (1, \ldots, 1)$, mentre $t_1[R - Z^f] = (1, \ldots, 1) \land t_2[R - Z^f] = (0, \ldots, 0)$
@@ -303,7 +303,7 @@
             - $V \subseteq R - Z^f \implies (1, \ldots, 1) = t_1[V] \neq t_2[V] = (0, \ldots, 0)$
             - $V \cap (R - Z^f) \neq \varnothing \implies \exists A \subseteq V \mid A \subseteq R - Z^f \implies t_1[V] \neq t_1[V]$ in quanto $t_1[V]$ e $t_2[V]$ sono stati scelti complementari, e dunque diversi in ogni colonna
             - $V \subseteq Z^f \implies t_1[V] = t_2[V]$, dunque è necessario controllare che $r$ soddisfi $V \rightarrow W \in F$
-                - per definizione di $S^f := \{B \in R(A_1, \ldots, A_n) \mid B \in W \land W \subseteq Z^f\}$ ovvero, in $S^f$ sarà interamente contenuto $W$ alla $f$-esima iterazione, e dunque $W \subseteq S^f$
+                - per definizione di $S^f := \{B \in R(A_1, \ldots, A_n) \mid B \in W \land V \subseteq Z^f\}$ ovvero, in $S^f$ sarà interamente contenuto $W$ alla $f$-esima iterazione, e dunque $W \subseteq S^f$
                 - poiché il loop **while** continua fintanto che $S^i \nsubseteq Z^i$, allora necessariamente $S^f \subseteq Z^f \implies W \subseteq S^f \subseteq Z^f \implies W \subseteq Z^f \implies t_1[W] = t_2[W]$ per costruzione di $r$
         - allora $r$ legale su $R$
         - per lemma precedente $\forall A \in X^+_F \quad X \rightarrow A \in F^A$, e per dimostrazione precedente $F^A = F^+ \implies X \rightarrow A \in F^+ \implies \forall r'$ istanza legale di $R \quad r'$ soddisfa $X \rightarrow A \in F^+$ per definizione di $F^+$
