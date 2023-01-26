@@ -736,7 +736,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $i \in [1, h]$
 > - $R_i \in \rho$ sottoschema di $R$ in $\rho$
 > - $\pi_{R_i}(F) := \{X \rightarrow Y \in F^+ \mid XY \subseteq R_i\}$ è detta **proiezione di $F$ su $R_i$**
->   - $\pi_{R_i}(F)$ è l'insieme delle dipendenze funzionali in $F$ che hanno determinante e determinato in $R_i$
+>   - $\pi_{R_i}(F)$ è l'insieme delle dipendenze funzionali in $F^+$ che hanno determinante e determinato in $R_i$
 >   - di fatto, data $r$ istanza di $R$ legale su $F$, $\pi_{R_i}(F)$ sono le dipendenze funzionali in $F^+$ di $\pi_{R_i}(r)$
 
 - **Preservazione di un insieme di dipendenze funzionali**
