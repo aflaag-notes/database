@@ -1126,10 +1126,10 @@ funzionali</li>
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
-<li><span class="math inline">X \in R(A_1, \ldots, A_n)</span> è
+<li><span class="math inline">X \subseteq R(A_1, \ldots, A_n)</span> è
 <strong>primo</strong> <span class="math inline">\iff \exists K
 \subseteq R(A_1, \ldots, A_n)</span> chiave di <span
-class="math inline">R \mid X \in K</span></li>
+class="math inline">R \mid X \subseteq K</span></li>
 </ul>
 </blockquote>
 <h2 id="definizione-13">Definizione 13</h2>
@@ -1237,11 +1237,11 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">X \subseteq R(A_1, \ldots, A_n) \mid X
 \rightarrow A \in F^+, A \notin X</span></li>
 <li><span class="math inline">X \rightarrow A \in F^+</span> è detta
-<strong>dipendenza parziale su <span
+<strong>dipendenza transitiva su <span
 class="math inline">R</span></strong> <span class="math inline">\iff
 A</span> non primo e <span class="math inline">\forall K \subseteq
 R(A_1, \ldots, A_n)</span> chiave di <span class="math inline">R \quad K
-\cap X = \varnothing \lor X \subset K</span>
+- X \neq \varnothing \land X \not \subset K</span>
 <ul>
 <li>in particolare <span class="math inline">\forall K \subseteq R(A_1,
 \ldots, A_n)</span> chiave di <span class="math inline">R \quad X \neq
@@ -1294,14 +1294,14 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">R</span> è in <strong>forma normale di
 Boyce-Codd</strong> <span class="math inline">\iff \forall X \subseteq
 R(A_1, \ldots, A_n), X</span> determinante <span
-class="math inline">\exists K \subseteq R(A_1, \ldots, A_n)</span>
-superchiave <span class="math inline">\mid X \subseteq K</span>
+class="math inline">\quad \exists K \subseteq R(A_1, \ldots, A_n)</span>
+superchiave di <span class="math inline">R \mid X \subseteq K</span>
 <ul>
 <li>questa forma normale preserva le dipendenze funzionali soddisfatte
 da ogni istanza legale di ogni sottoschema di <span
 class="math inline">R</span>, senza perdita di informazioni</li>
 <li>inoltre, permette di ricostruire attraverso il join naturale ogni
-istanza legale di ogni sotto schema di <span
+istanza legale di ogni sottoschema di <span
 class="math inline">R</span>, senza aggiunta di informazioni</li>
 </ul></li>
 </ul>

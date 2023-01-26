@@ -59,7 +59,7 @@
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $X \in R(A_1, \ldots, A_n)$ è **primo** $\iff \exists K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \mid X \in K$
+> - $X \subseteq R(A_1, \ldots, A_n)$ è **primo** $\iff \exists K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \mid X \subseteq K$
 
 ## Def
 
@@ -115,7 +115,7 @@
 > - $F = \{F_1, \ldots, F_k\}$
 > - $A \in R(A_1, \ldots, A_n)$
 > - $X \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^+, A \notin X$
-> - $X \rightarrow A \in F^+$ è detta **dipendenza parziale su $R$** $\iff A$ non primo e $\forall K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \quad K \cap X = \varnothing \lor X \subset K$
+> - $X \rightarrow A \in F^+$ è detta **dipendenza transitiva su $R$** $\iff A$ non primo e $\forall K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \quad K - X \neq \varnothing \land X \not \subset K$
 >   - in particolare $\forall K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \quad X \neq K$
 
 ## Oss
@@ -142,9 +142,9 @@
 > - $K \subseteq R(A_1, \ldots, A_n)$ chiave di $R$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $R$ è in **forma normale di Boyce-Codd** $\iff \forall X \subseteq R(A_1, \ldots, A_n), X$ determinante $\exists K \subseteq R(A_1, \ldots, A_n)$ superchiave $\mid X \subseteq K$
+> - $R$ è in **forma normale di Boyce-Codd** $\iff \forall X \subseteq R(A_1, \ldots, A_n), X$ determinante $\quad \exists K \subseteq R(A_1, \ldots, A_n)$ superchiave di $R \mid X \subseteq K$
 >   - questa forma normale preserva le dipendenze funzionali soddisfatte da ogni istanza legale di ogni sottoschema di $R$, senza perdita di informazioni
->   - inoltre, permette di ricostruire attraverso il join naturale ogni istanza legale di ogni sotto schema di $R$, senza aggiunta di informazioni
+>   - inoltre, permette di ricostruire attraverso il join naturale ogni istanza legale di ogni sottoschema di $R$, senza aggiunta di informazioni
 
 ## Oss
 
