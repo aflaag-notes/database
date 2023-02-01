@@ -59,7 +59,7 @@
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $X \subseteq R(A_1, \ldots, A_n)$ è **primo** $\iff \exists K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \mid X \subseteq K$
+> - $A \in R(A_1, \ldots, A_n)$ è **primo** $\iff \exists K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \mid A \in K$
 
 ## Def
 
@@ -142,7 +142,7 @@
 > - $K \subseteq R(A_1, \ldots, A_n)$ chiave di $R$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $R$ è in **forma normale di Boyce-Codd** $\iff \forall X \subseteq R(A_1, \ldots, A_n), X$ determinante $\quad \exists K \subseteq R(A_1, \ldots, A_n)$ superchiave di $R \mid X \subseteq K$
+> - $R$ è in **forma normale di Boyce-Codd** $\iff \forall X \subseteq R(A_1, \ldots, A_n), X$ determinante per qualche $F_i \in F \quad \exists K \subseteq R(A_1, \ldots, A_n)$ superchiave di $R \mid X \subseteq K$
 >   - questa forma normale preserva le dipendenze funzionali soddisfatte da ogni istanza legale di ogni sottoschema di $R$, senza perdita di informazioni
 >   - inoltre, permette di ricostruire attraverso il join naturale ogni istanza legale di ogni sottoschema di $R$, senza aggiunta di informazioni
 

@@ -143,7 +143,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $r_1$ istanza di $R_1$
 > - $r_2$ istanza di $R_2$
 > - $r_1 \cap r_2 := r_2 - (r_2 - r_1)$ è detta **intersezione delle istanze $r_1$ e $r_2$**
->   - dunque, la differenza di istanze è definita solamente per istanze con stesso numero di attributi, e attributi con stesso dominio
+>   - dunque, l'intersezione di istanze è definita solamente per istanze con stesso numero di attributi, e attributi con stesso dominio
 
 - **Prodotto cartesiano**
 
@@ -589,7 +589,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $X \subseteq R(A_1, \ldots, A_n)$ è **primo** $\iff \exists K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \mid X \subseteq K$
+> - $A \in R(A_1, \ldots, A_n)$ è **primo** $\iff \exists K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \mid A \in K$
 
 
 
@@ -687,7 +687,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $K \subseteq R(A_1, \ldots, A_n)$ chiave di $R$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $R$ è in **forma normale di Boyce-Codd** $\iff \forall X \subseteq R(A_1, \ldots, A_n), X$ determinante $\quad \exists K \subseteq R(A_1, \ldots, A_n)$ superchiave di $R \mid X \subseteq K$
+> - $R$ è in **forma normale di Boyce-Codd** $\iff \forall X \subseteq R(A_1, \ldots, A_n), X$ determinante per qualche $F_i \in F \quad \exists K \subseteq R(A_1, \ldots, A_n)$ superchiave di $R \mid X \subseteq K$
 >   - questa forma normale preserva le dipendenze funzionali soddisfatte da ogni istanza legale di ogni sottoschema di $R$, senza perdita di informazioni
 >   - inoltre, permette di ricostruire attraverso il join naturale ogni istanza legale di ogni sottoschema di $R$, senza aggiunta di informazioni
 

@@ -121,7 +121,7 @@
 > - $r_1$ istanza di $R_1$
 > - $r_2$ istanza di $R_2$
 > - $r_1 \cap r_2 := r_2 - (r_2 - r_1)$ è detta **intersezione delle istanze $r_1$ e $r_2$**
->   - dunque, la differenza di istanze è definita solamente per istanze con stesso numero di attributi, e attributi con stesso dominio
+>   - dunque, l'intersezione di istanze è definita solamente per istanze con stesso numero di attributi, e attributi con stesso dominio
 
 - **Prodotto cartesiano**
 
