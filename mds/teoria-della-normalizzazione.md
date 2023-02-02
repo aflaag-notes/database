@@ -1,4 +1,4 @@
-# Teoria della Normalizzazione
+# Teoria della normalizzazione
 
 ## Def
 
