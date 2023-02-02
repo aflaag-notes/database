@@ -186,8 +186,7 @@
 </header>
 <h1 id="decomposizione">Decomposizione</h1>
 <ul>
-<li><p><strong>Decomposizione</strong></p></li>
-<li><p>⚠️ <strong>DEFINISCI SOTTOSCHEMA</strong></p></li>
+<li><strong>Decomposizione</strong></li>
 </ul>
 <blockquote>
 <ul>
@@ -269,22 +268,7 @@ decomposizione di <span class="math inline">R</span></li>
 \bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
 <li><span class="math inline">\rho</span> <strong>preserva <span
 class="math inline">F</span></strong> <span class="math inline">\iff F
-\equiv G</span>
-<ul>
-<li><span class="math inline">\rho</span> è una <em>buona</em>
-decomposizione di <span class="math inline">R</span> se:
-<ul>
-<li>ogni sottoschema di <span class="math inline">\rho</span> è in terza
-forma normale</li>
-<li><span class="math inline">\rho</span> preserva <span
-class="math inline">F</span></li>
-<li><span class="math inline">\rho</span> permette di ricostruire ogni
-istanza legale di <span class="math inline">R</span>, attraverso il join
-naturale delle istanze legali <span class="math inline">r_1, \ldots,
-r_h</span> dei sottoschemi di <span class="math inline">\rho</span>,
-senza perdita di informazioni</li>
-</ul></li>
-</ul></li>
+\equiv G</span></li>
 </ul>
 </blockquote>
 <h2 id="oss">Oss</h2>
@@ -383,9 +367,7 @@ calcolare <span class="math inline">F^+</span>
 <ul>
 <li>il calcolo di <span class="math inline">F^+</span> ha costo
 computazionale esponenziale</li>
-<li>⚠️ <strong>SCRIVI IL PERCHÉ</strong></li>
 </ul></li>
-<li>⚠️ <strong>13.20-21-22</strong></li>
 </ul></li>
 <li><strong>Th</strong>
 <ul>
@@ -419,10 +401,12 @@ ipotesi induttiva</li>
 \in (Z^i \cap R_j)^+_F \cap R_j</span> per definizione di <span
 class="math inline">S^i</span>
 <ul>
-<li><span class="math inline">Z^i \cap R_j \subseteq R_j</span>, e
-inoltre <span class="math inline">A \in (Z^i \cap R_j)^+_F \cap R_j
-\implies A \in R_j</span></li>
-<li>allora, per definizione di <span class="math inline">\pi_{R_j}(F) :=
+<li><span class="math inline">A \in (Z^i \cap R_j)^+_F \cap R_j \implies
+A \in R_j \land A \in (Z^i \cap R_j)^+_F</span></li>
+<li>per definizione <span class="math inline">A \in (Z^i \cap R_j)^+_F
+\iff (Z^i \cap R_j) \rightarrow A \in F^A = F^+</span></li>
+<li>allora, poiché <span class="math inline">Z^i \cap R_j, A \subseteq
+R_j</span>, per definizione di <span class="math inline">\pi_{R_j}(F) :=
 \{X \rightarrow Y \in F^+ \mid XY \subseteq R_j\}</span> si ha che <span
 class="math inline">(Z^i \cap R_j) \rightarrow A \in
 \pi_{R_j}(F)</span></li>
@@ -586,6 +570,14 @@ class="math inline">F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie
 <ul>
 <li><span class="math inline">m_\rho(r) := \pi_{R_1}(r) \bowtie \ldots
 \bowtie \pi_{R_h}(r)</span></li>
+<li><span class="math inline">\rho</span> è una buona decomposizione se:
+<ul>
+<li><span class="math inline">\forall R_i \in \rho \quad R_i</span> è in
+terza forma normale</li>
+<li><span class="math inline">\rho</span> preserva <span
+class="math inline">F</span></li>
+<li><span class="math inline">\rho</span> ha un join senza perdita</li>
+</ul></li>
 </ul></li>
 </ul>
 </blockquote>
@@ -616,13 +608,7 @@ class="math inline">F</span></li>
 <ul>
 <li><span class="math inline">\forall t \in r \quad t \in \{t[R_1]\}
 \bowtie \ldots \bowtie \{t[R_h]\} \subseteq \pi_{R_1}(r) \bowtie \ldots
-\bowtie \pi_{R_h}(r) =: m_\rho(r)</span>
-<ul>
-<li>sostanzialmente, ogni tupla di ogni istanza di <span
-class="math inline">R</span> legale su <span
-class="math inline">F</span> apparterrà al join delle parti di tutta la
-riga della tupla</li>
-</ul></li>
+\bowtie \pi_{R_h}(r) =: m_\rho(r)</span></li>
 </ul></li>
 </ul>
 <h2 id="oss-3">Oss</h2>
@@ -870,47 +856,26 @@ relazionale</li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">G</span> insieme di dipendenze funzionali
-<span class="math inline">\mid F \equiv G</span></li>
 <li><span class="math inline">G</span> è detto <strong>copertura
 minimale di <span class="math inline">F</span></strong> <span
-class="math inline">\iff \forall X \rightarrow Y \in G \quad Y</span> è
-un singleton, <span class="math inline">\forall X \rightarrow A \in G
-\quad \nexists X&#39; \subsetneq X \mid G \equiv G - \{X \rightarrow A
-\} \cup \{X&#39; \rightarrow A\}</span> e infine <span
-class="math inline">\nexists X \rightarrow A \in G \mid G \equiv G - \{X
-\rightarrow A \}</span>
+class="math inline">\iff</span>
 <ul>
+<li><span class="math inline">G \equiv F</span></li>
+<li><span class="math inline">\forall X \rightarrow Y \in G \quad
+Y</span> è un singleton</li>
+<li><span class="math inline">\forall X \rightarrow A \in G \quad
+\nexists X&#39; \subsetneq X \mid (G \equiv G - \{X \rightarrow A \})
+\cup \{X&#39; \rightarrow A\}</span></li>
+<li><span class="math inline">\nexists X \rightarrow A \in G \mid G
+\equiv G - \{X \rightarrow A \}</span></li>
 <li>dunque, <span class="math inline">G</span> è copertura minimale di
 <span class="math inline">F</span> se <span class="math inline">F \equiv
 G</span>, e in ogni dipendenza funzionale di <span
-class="math inline">G</span> i determinati non sono ridondanti, i
-determinanti non sono ridondanti, e la dipendenza stessa non è
-ridondante</li>
+class="math inline">G</span> i determinanti non sono ridondanti, e ogni
+dipendenza non è ridondante</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="oss-5">Oss</h2>
-<ul>
-<li><strong>Hp</strong>
-<ul>
-<li><span class="math inline">n, k \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
-funzionali su <span class="math inline">R</span></li>
-<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">G</span> copertura minimale di <span
-class="math inline">F</span></li>
-</ul></li>
-<li><strong>Th</strong>
-<ul>
-<li><span class="math inline">G \subseteq F^+</span></li>
-</ul></li>
-</ul>
 <h2 id="alg-3">Alg</h2>
 <ul>
 <li><strong>Input</strong>
@@ -959,16 +924,7 @@ class="math inline">F</span>, poiché ridondante</li>
 </ul></li>
 <li><strong>Oss</strong>
 <ul>
-<li>⚠️ <strong>super boring, e non ho manco capito niente
-onestamente</strong></li>
-</ul></li>
-<li><strong>Th</strong>
-<ul>
-<li>⚠️ <strong>?</strong></li>
-</ul></li>
-<li><strong>Dim</strong>
-<ul>
-<li>⚠️ <strong>?</strong></li>
+<li>⚠️ <strong>da fare</strong></li>
 </ul></li>
 </ul>
 <h2 id="alg-4">Alg</h2>
@@ -989,12 +945,9 @@ minimale di dipendenze funzionali</li>
 <li><strong>Output</strong>
 <ul>
 <li><span class="math inline">\rho</span> decomposizione di <span
-class="math inline">R \mid \forall R \in \rho \quad R</span> in terza
-forma normale, <span class="math inline">\rho</span> preserva <span
-class="math inline">F</span> e <span class="math inline">\rho</span> ha
-un join senza perdita</li>
-<li>dunque, <span class="math inline">\rho</span> è una <em>buona</em>
-decomposizione di <span class="math inline">R</span></li>
+class="math inline">R \mid \forall R_i \in \rho \quad R_i</span> in
+terza forma normale e <span class="math inline">\rho</span> preserva
+<span class="math inline">F</span></li>
 </ul></li>
 <li><strong>Algoritmo</strong>
 <ul>
@@ -1016,7 +969,7 @@ B \texttt{:}</span>
 class="math inline">S \neq \varnothing \texttt{:}</span>
 <ul>
 <li><span class="math inline">R = R - S</span></li>
-<li><span class="math inline">\rho = \rho \cup S</span></li>
+<li><span class="math inline">\rho = \rho \cup \{S\}</span></li>
 </ul></li>
 <li><span class="math inline">\texttt{if}</span> <span
 class="math inline">\exists X \rightarrow A \in F \mid X \cup A = R
@@ -1038,6 +991,17 @@ class="math inline">\texttt{in}</span> <span class="math inline">F
 <li><strong>Oss</strong>
 <ul>
 <li>l’algoritmo ha costo polinomiale</li>
+<li>per far si che <span class="math inline">\rho</span> sia una
+<em>buona</em> decomposizione di <span class="math inline">R</span>, e
+dunque abbia anche un join senza perdita, bisogna accertarsi che <span
+class="math inline">\exists R_i \in \rho \mid \exists K \subseteq R(A_1,
+\ldots, A_n), K</span> chiave di <span class="math inline">R : K
+\subseteq R_i</span>
+<ul>
+<li>in caso non esista a fine algoritmo un tale sottoschema, sarà
+sufficiente inserirlo manualmente in <span
+class="math inline">\rho</span></li>
+</ul></li>
 </ul></li>
 </ul>
 </body>

@@ -1,4 +1,4 @@
-# Teoria relazionale
+# Teoria della Normalizzazione
 
 ## Def
 

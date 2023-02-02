@@ -2,8 +2,6 @@
 
 - **Decomposizione**
 
-- ⚠️ **DEFINISCI SOTTOSCHEMA**
-
 > - $n, N \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
@@ -38,10 +36,6 @@
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 > - $\rho$ **preserva $F$** $\iff F \equiv G$
->   - $\rho$ è una _buona_ decomposizione di $R$ se:
->     - ogni sottoschema di $\rho$ è in terza forma normale
->     - $\rho$ preserva $F$
->     - $\rho$ permette di ricostruire ogni istanza legale di $R$, attraverso il join naturale delle istanze legali $r_1, \ldots, r_h$ dei sottoschemi di $\rho$, senza perdita di informazioni
 
 ## Oss
 
@@ -87,8 +81,6 @@
 - **Oss**
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
-        - ⚠️ **SCRIVI IL PERCHÉ**
-    - ⚠️ **13.20-21-22**
 - **Th**
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
     - $Z^f = X^+_G$
@@ -103,8 +95,9 @@
             - sia $A \in Z^{i + 1} = Z^i \cup S^i$, allora $A \in Z^i \lor A \in S^i$
             - $A \in Z^i \implies A \in X^+_G$ per ipotesi induttiva
             - $A \in S^i \implies \exists j \le h \mid A \in (Z^i \cap R_j)^+_F \cap R_j$ per definizione di $S^i$
-                - $Z^i \cap R_j \subseteq R_j$, e inoltre $A \in (Z^i \cap R_j)^+_F \cap R_j \implies A \in R_j$
-                - allora, per definizione di $\pi_{R_j}(F) := \{X \rightarrow Y \in F^+ \mid XY \subseteq R_j\}$ si ha che $(Z^i \cap R_j) \rightarrow A \in \pi_{R_j}(F)$
+                - $A \in (Z^i \cap R_j)^+_F \cap R_j \implies A \in R_j \land A \in (Z^i \cap R_j)^+_F$
+                - per definizione $A \in (Z^i \cap R_j)^+_F \iff (Z^i \cap R_j) \rightarrow A \in F^A = F^+$
+                - allora, poiché $Z^i \cap R_j, A \subseteq R_j$, per definizione di $\pi_{R_j}(F) := \{X \rightarrow Y \in F^+ \mid XY \subseteq R_j\}$ si ha che $(Z^i \cap R_j) \rightarrow A \in \pi_{R_j}(F)$
                 - per osservazione precedente $G \subseteq G^+$
                 - per definizione di $G$ si ha che $\pi_{R_j}(F) \subseteq G$, allora in particolare $(Z^i \cap R_j) \rightarrow A \in G \subseteq G^+ \implies (Z^i \cap R_j) \rightarrow A \in G^+$
                 - $Z^i \cap R_j \subseteq Z^i$, e per ipotesi induttiva $Z^i \subseteq X^+_G \implies Z^i \cap R_j \subseteq X^+_G$, allora per lemma precedente si ha che $Z^i \cap R_j \subseteq X^+_G \implies X \rightarrow (Z^i \cap R_j) \in G^A$
@@ -173,6 +166,10 @@
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $\rho$ **ha un join senza perdita** $\iff \forall r$ istanza di $R$ legale su $F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
 >   - $m_\rho(r) := \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
+>   - $\rho$ è una buona decomposizione se:
+>     - $\forall R_i \in \rho \quad R_i$ è in terza forma normale
+>     - $\rho$ preserva $F$
+>     - $\rho$ ha un join senza perdita
 
 ## Oss
 
@@ -189,7 +186,6 @@
     - $r \subseteq m_\rho(r)$
 - **Dim**
     - $\forall t \in r \quad t \in \{t[R_1]\} \bowtie \ldots \bowtie \{t[R_h]\} \subseteq \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r) =: m_\rho(r)$
-        - sostanzialmente, ogni tupla di ogni istanza di $R$ legale su $F$ apparterrà al join delle parti di tutta la riga della tupla
 
 ## Oss
 
@@ -291,22 +287,12 @@
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $G$ insieme di dipendenze funzionali $\mid F \equiv G$
-> - $G$ è detto **copertura minimale di $F$** $\iff \forall X \rightarrow Y \in G \quad Y$ è un singleton, $\forall X \rightarrow A \in G \quad \nexists X' \subsetneq X \mid G \equiv G - \{X \rightarrow A \} \cup \{X' \rightarrow A\}$ e infine $\nexists X \rightarrow A \in G \mid G \equiv G - \{X \rightarrow A \}$
->   - dunque, $G$ è copertura minimale di $F$ se $F \equiv G$, e in ogni dipendenza funzionale di $G$ i determinati non sono ridondanti, i determinanti non sono ridondanti, e la dipendenza stessa non è ridondante
-
-## Oss
-
-- **Hp**
-    - $n, k \in \mathbb{N}$
-    - $D_1, \ldots, D_n$ domini
-    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-    - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
-    - $F = \{F_1, \ldots, F_k\}$
-    - $G$ copertura minimale di $F$
-- **Th**
-    - $G \subseteq F^+$
+> - $G$ è detto **copertura minimale di $F$** $\iff$
+>   - $G \equiv F$
+>   - $\forall X \rightarrow Y \in G \quad Y$ è un singleton
+>   - $\forall X \rightarrow A \in G \quad \nexists X' \subsetneq X \mid (G \equiv G - \{X \rightarrow A \}) \cup \{X' \rightarrow A\}$
+>   - $\nexists X \rightarrow A \in G \mid G \equiv G - \{X \rightarrow A \}$
+>   - dunque, $G$ è copertura minimale di $F$ se $F \equiv G$, e in ogni dipendenza funzionale di $G$ i determinanti non sono ridondanti, e ogni dipendenza non è ridondante
 
 ## Alg
 
@@ -328,11 +314,7 @@
     - $\forall X \rightarrow A \in F \mid F \equiv F - \{X \rightarrow A\} \quad F := F - \{X \rightarrow A\}$
         - ogni dipendenza funzionale che lascia invariata $F^+$ viene rimossa da $F$, poiché ridondante
 - **Oss**
-    - ⚠️ **super boring, e non ho manco capito niente onestamente**
-- **Th**
-    - ⚠️ **?**
-- **Dim**
-    - ⚠️ **?**
+    - ⚠️ **da fare**
 
 ## Alg
 
@@ -344,8 +326,7 @@
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$ insieme minimale di dipendenze funzionali
 - **Output**
-    - $\rho$ decomposizione di $R \mid \forall R \in \rho \quad R$ in terza forma normale, $\rho$ preserva $F$ e $\rho$ ha un join senza perdita
-    - dunque, $\rho$ è una _buona_ decomposizione di $R$
+    - $\rho$ decomposizione di $R \mid \forall R_i \in \rho \quad R_i$ in terza forma normale e $\rho$ preserva $F$
 - **Algoritmo**
     - $S := \varnothing$
     - $\rho := \varnothing$
@@ -354,7 +335,7 @@
             - $S = S \cup A$
     - $\texttt{if}$ $S \neq \varnothing \texttt{:}$
         - $R = R - S$
-        - $\rho = \rho \cup S$
+        - $\rho = \rho \cup \{S\}$
     - $\texttt{if}$ $\exists X \rightarrow A \in F \mid X \cup A = R \texttt{:}$
         - $\rho = \rho \cup R$
     - $\texttt{else:}$
@@ -362,3 +343,5 @@
             - $\rho = \rho \cup \{XA\}$
 - **Oss**
     - l'algoritmo ha costo polinomiale
+    - per far si che $\rho$ sia una _buona_ decomposizione di $R$, e dunque abbia anche un join senza perdita, bisogna accertarsi che $\exists R_i \in \rho \mid \exists K \subseteq R(A_1, \ldots, A_n), K$ chiave di $R : K \subseteq R_i$
+        - in caso non esista a fine algoritmo un tale sottoschema, sarà sufficiente inserirlo manualmente in $\rho$

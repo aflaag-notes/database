@@ -26,7 +26,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 > - $n \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
-> - $D_1 \times \ldots \times D_n := \{v_1, \ldots, v_n) \mid v_1 \in D_1, \ldots , v_n \in D_n\}$ è detto **prodotto cartesiano dei domini $D_1, \ldots D_n$**
+> - $D_1 \times \ldots \times D_n := \{(v_1, \ldots, v_n) \mid v_1 \in D_1, \ldots , v_n \in D_n\}$ è detto **prodotto cartesiano dei domini $D_1, \ldots D_n$**
 
 
 
@@ -78,13 +78,12 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 - **Proiezione**
 
-- ⚠️ **RISCRIVI**
 > - $n \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $a, b \in [1, n] \mid a \lt b$
-> - $\pi_{A_a, \ldots, A_b}(R) := D_a \times \ldots \times D_b$ è detta **proiezione di $R$**, associata ad uno schema relazionale $R(A_a, \ldots, A_b)$
+> - $\pi_{A_a, \ldots, A_b}(R) := R(A_a, \ldots, A_b)$ è detta **proiezione di $R$**, associata ad uno schema relazionale $R(A_a, \ldots, A_b)$
 
 - **Selezione**
 
@@ -178,13 +177,6 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 ## Teorema 2
 
 
-- ⚠️ **4.30**
-
-
-
-## Teorema 3
-
-
 - **Hp**
     - $n \in \mathbb{N}$
     - $D_1, \ldots, D_n, D_1' , \ldots , D_n'$ domini $\mid \forall i \in [1, n] \quad D_i = D_i'$
@@ -200,7 +192,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 ****
-# Teoria relazionale
+# Teoria della Normalizzazione
 
 
 
@@ -248,7 +240,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 4
+## Teorema 3
 
 
 - **Hp**
@@ -263,7 +255,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 5
+## Teorema 4
 
 
 - **Hp**
@@ -301,7 +293,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 6
+## Teorema 5
 
 
 - **Hp**
@@ -316,7 +308,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 7
+## Teorema 6
 
 
 - **Hp**
@@ -330,7 +322,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$ è detta **regola dell'unione**
 
-## Teorema 8
+## Teorema 7
 
 
 - **Hp**
@@ -344,7 +336,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$ è detta **regola della decomposizione**
 
-## Teorema 9
+## Teorema 8
 
 
 - **Hp**
@@ -358,7 +350,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$ è detta **regola della pseudotransitività**
 
-## Teorema 10
+## Teorema 9
 
 
 - **Hp**
@@ -390,7 +382,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 11
+## Teorema 10
 
 
 - **Hp**
@@ -404,7 +396,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \rightarrow Y \in F^A \iff Y \subseteq X^+_F$
 
-## Teorema 12
+## Teorema 11
 
 
 - **Hp**
@@ -418,7 +410,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X \subseteq X^+_F$
 
-## Teorema 13
+## Teorema 12
 
 
 - **Hp**
@@ -431,7 +423,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $F^+ = F^A$
 
-## Teorema 14
+## Teorema 13
 
 
 - **Input**
@@ -457,7 +449,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
     - $Z^f = X^+_F$
 
-## Teorema 15
+## Teorema 14
 
 
 - **Hp**
@@ -487,7 +479,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 16
+## Teorema 15
 
 
 - **Hp**
@@ -501,7 +493,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $F \xrightarrow{A} G \iff G \subseteq F^+$
 
-## Teorema 17
+## Teorema 16
 
 
 - **Hp**
@@ -535,7 +527,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 18
+## Teorema 17
 
 
 - **Hp**
@@ -550,7 +542,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 19
+## Teorema 18
 
 
 - **Hp**
@@ -564,7 +556,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $X^+_F = R \iff X$ superchiave di $R$
 
-## Teorema 20
+## Teorema 19
 
 
 - **Hp**
@@ -607,11 +599,11 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $F = \{F_1, \ldots, F_k\}$
 > - $R$ è in **terza forma normale** $\iff \forall A \in R(A_1, \ldots, A_n), X \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^+, A \notin X \quad A \in K \lor K \subseteq X$
 >   - ovvero, per ogni dipendenza funzionale non banale in $F^+$, o il determinante è superchiave, o il determinato è primo
->   - la terza forma normale garantisce che non ci siano problemi di ridondanza, dunque non vi sono problemi di inserimento, di aggiornamento e di eliminazione
+>   - la terza forma normale garantisce una riduzione dei problemi di ridondanza, di inserimento, di aggiornamento e di eliminazione
 
 
 
-## Teorema 21
+## Teorema 20
 
 
 - **Hp**
@@ -659,7 +651,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 
 
 
-## Teorema 22
+## Teorema 21
 
 
 - **Hp**
@@ -688,12 +680,10 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
 > - $R$ è in **forma normale di Boyce-Codd** $\iff \forall X \subseteq R(A_1, \ldots, A_n), X$ determinante per qualche $F_i \in F \quad \exists K \subseteq R(A_1, \ldots, A_n)$ superchiave di $R \mid X \subseteq K$
->   - questa forma normale preserva le dipendenze funzionali soddisfatte da ogni istanza legale di ogni sottoschema di $R$, senza perdita di informazioni
->   - inoltre, permette di ricostruire attraverso il join naturale ogni istanza legale di ogni sottoschema di $R$, senza aggiunta di informazioni
 
 
 
-## Teorema 23
+## Teorema 22
 
 
 - **Hp**
@@ -713,8 +703,6 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 # Decomposizione
 
 - **Decomposizione**
-
-- ⚠️ **DEFINISCI SOTTOSCHEMA**
 
 > - $n, N \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
@@ -750,14 +738,10 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 > - $\rho$ **preserva $F$** $\iff F \equiv G$
->   - $\rho$ è una _buona_ decomposizione di $R$ se:
->     - ogni sottoschema di $\rho$ è in terza forma normale
->     - $\rho$ preserva $F$
->     - $\rho$ permette di ricostruire ogni istanza legale di $R$, attraverso il join naturale delle istanze legali $r_1, \ldots, r_h$ dei sottoschemi di $\rho$, senza perdita di informazioni
 
 
 
-## Teorema 24
+## Teorema 23
 
 
 - **Hp**
@@ -772,7 +756,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\rho$ preserva $F \iff G^+ \supseteq F$
 
-## Teorema 25
+## Teorema 24
 
 
 - **Input**
@@ -799,13 +783,11 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Oss**
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
-        - ⚠️ **SCRIVI IL PERCHÉ**
-    - ⚠️ **13.20-21-22**
 - **Th**
     - sia $f \mid S^f \subseteq Z^f$, dunque l'iterazione in cui l'algoritmo termina
     - $Z^f = X^+_G$
 
-## Teorema 26
+## Teorema 25
 
 
 - **Input**
@@ -830,7 +812,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\rho$ preserva $F \iff \forall X \rightarrow Y \in F \quad Y \subseteq X^+_G$
 
-## Teorema 27
+## Teorema 26
 
 
 - **Hp**
@@ -859,10 +841,14 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $\rho$ **ha un join senza perdita** $\iff \forall r$ istanza di $R$ legale su $F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
 >   - $m_\rho(r) := \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
+>   - $\rho$ è una buona decomposizione se:
+>     - $\forall R_i \in \rho \quad R_i$ è in terza forma normale
+>     - $\rho$ preserva $F$
+>     - $\rho$ ha un join senza perdita
 
 
 
-## Teorema 28
+## Teorema 27
 
 
 - **Hp**
@@ -877,7 +863,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $r \subseteq m_\rho(r)$
 
-## Teorema 29
+## Teorema 28
 
 
 - **Hp**
@@ -892,7 +878,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $\pi_{R_i}(m_\rho(r))=\pi_{R_i}(r)$
 
-## Teorema 30
+## Teorema 29
 
 
 - **Hp**
@@ -907,7 +893,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 - **Th**
     - $m_\rho(m_\rho(r))=m_\rho(r)$
 
-## Teorema 31
+## Teorema 30
 
 
 - **Input**
@@ -960,29 +946,16 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $G$ insieme di dipendenze funzionali $\mid F \equiv G$
-> - $G$ è detto **copertura minimale di $F$** $\iff \forall X \rightarrow Y \in G \quad Y$ è un singleton, $\forall X \rightarrow A \in G \quad \nexists X' \subsetneq X \mid G \equiv G - \{X \rightarrow A \} \cup \{X' \rightarrow A\}$ e infine $\nexists X \rightarrow A \in G \mid G \equiv G - \{X \rightarrow A \}$
->   - dunque, $G$ è copertura minimale di $F$ se $F \equiv G$, e in ogni dipendenza funzionale di $G$ i determinati non sono ridondanti, i determinanti non sono ridondanti, e la dipendenza stessa non è ridondante
+> - $G$ è detto **copertura minimale di $F$** $\iff$
+>   - $G \equiv F$
+>   - $\forall X \rightarrow Y \in G \quad Y$ è un singleton
+>   - $\forall X \rightarrow A \in G \quad \nexists X' \subsetneq X \mid (G \equiv G - \{X \rightarrow A \}) \cup \{X' \rightarrow A\}$
+>   - $\nexists X \rightarrow A \in G \mid G \equiv G - \{X \rightarrow A \}$
+>   - dunque, $G$ è copertura minimale di $F$ se $F \equiv G$, e in ogni dipendenza funzionale di $G$ i determinanti non sono ridondanti, e ogni dipendenza non è ridondante
 
 
 
-## Teorema 32
-
-
-- **Hp**
-    - $n, k \in \mathbb{N}$
-    - $D_1, \ldots, D_n$ domini
-    - $R \subseteq D_1 \times \ldots \times D_n$ relazione
-    - $R(A_1, \ldots, A_n)$ schema relazionale
-    - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
-    - $F = \{F_1, \ldots, F_k\}$
-    - $G$ copertura minimale di $F$
-- **Th**
-    - $G \subseteq F^+$
-
-
-
-## Teorema 33
+## Teorema 31
 
 
 - **Input**
@@ -1003,11 +976,11 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $\forall X \rightarrow A \in F \mid F \equiv F - \{X \rightarrow A\} \quad F := F - \{X \rightarrow A\}$
         - ogni dipendenza funzionale che lascia invariata $F^+$ viene rimossa da $F$, poiché ridondante
 - **Oss**
-    - ⚠️ **super boring, e non ho manco capito niente onestamente**
-- **Th**
-    - ⚠️ **?**
+    - ⚠️ **da fare**
 
-## Teorema 34
+
+
+## Teorema 32
 
 
 - **Input**
@@ -1018,8 +991,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$ insieme minimale di dipendenze funzionali
 - **Output**
-    - $\rho$ decomposizione di $R \mid \forall R \in \rho \quad R$ in terza forma normale, $\rho$ preserva $F$ e $\rho$ ha un join senza perdita
-    - dunque, $\rho$ è una _buona_ decomposizione di $R$
+    - $\rho$ decomposizione di $R \mid \forall R_i \in \rho \quad R_i$ in terza forma normale e $\rho$ preserva $F$
 - **Algoritmo**
     - $S := \varnothing$
     - $\rho := \varnothing$
@@ -1028,7 +1000,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
             - $S = S \cup A$
     - $\texttt{if}$ $S \neq \varnothing \texttt{:}$
         - $R = R - S$
-        - $\rho = \rho \cup S$
+        - $\rho = \rho \cup \{S\}$
     - $\texttt{if}$ $\exists X \rightarrow A \in F \mid X \cup A = R \texttt{:}$
         - $\rho = \rho \cup R$
     - $\texttt{else:}$
@@ -1036,5 +1008,7 @@ Questo è un file che contiene una lista di tutti i teoremi, osservazioni, defin
             - $\rho = \rho \cup \{XA\}$
 - **Oss**
     - l'algoritmo ha costo polinomiale
+    - per far si che $\rho$ sia una _buona_ decomposizione di $R$, e dunque abbia anche un join senza perdita, bisogna accertarsi che $\exists R_i \in \rho \mid \exists K \subseteq R(A_1, \ldots, A_n), K$ chiave di $R : K \subseteq R_i$
+        - in caso non esista a fine algoritmo un tale sottoschema, sarà sufficiente inserirlo manualmente in $\rho$
 
 

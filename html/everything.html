@@ -212,7 +212,7 @@ si conosce la materia. Detto questo, buona lettura.</p>
 <ul>
 <li><span class="math inline">n \in \mathbb{N}</span></li>
 <li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">D_1 \times \ldots \times D_n := \{v_1,
+<li><span class="math inline">D_1 \times \ldots \times D_n := \{(v_1,
 \ldots, v_n) \mid v_1 \in D_1, \ldots , v_n \in D_n\}</span> è detto
 <strong>prodotto cartesiano dei domini <span class="math inline">D_1,
 \ldots D_n</span></strong></li>
@@ -288,19 +288,25 @@ della relazione <span class="math inline">R</span></strong></li>
 <h1 id="operazioni">Operazioni</h1>
 <h2 id="definizione-5">Definizione 5</h2>
 <ul>
-<li><p><strong>Proiezione</strong></p></li>
-<li><p>!!! <strong>RISCRIVI</strong> &gt; - <span class="math inline">n
-\in \mathbb{N}</span> &gt; - <span class="math inline">D_1, \ldots,
-D_n</span> domini &gt; - <span class="math inline">R \subseteq D_1
-\times \ldots \times D_n</span> relazione &gt; - <span
-class="math inline">R(A_1, \ldots, A_n)</span> schema relazionale &gt; -
-<span class="math inline">a, b \in [1, n] \mid a &lt; b</span> &gt; -
-<span class="math inline">\pi_{A_a, \ldots, A_b}(R) := D_a \times \ldots
-\times D_b</span> è detta <strong>proiezione di <span
+<li><strong>Proiezione</strong></li>
+</ul>
+<blockquote>
+<ul>
+<li><span class="math inline">n \in \mathbb{N}</span></li>
+<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
+<li><span class="math inline">R \subseteq D_1 \times \ldots \times
+D_n</span> relazione</li>
+<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
+relazionale</li>
+<li><span class="math inline">a, b \in [1, n] \mid a &lt; b</span></li>
+<li><span class="math inline">\pi_{A_a, \ldots, A_b}(R) := R(A_a,
+\ldots, A_b)</span> è detta <strong>proiezione di <span
 class="math inline">R</span></strong>, associata ad uno schema
-relazionale <span class="math inline">R(A_a, \ldots,
-A_b)</span></p></li>
-<li><p><strong>Selezione</strong></p></li>
+relazionale <span class="math inline">R(A_a, \ldots, A_b)</span></li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>Selezione</strong></li>
 </ul>
 <blockquote>
 <ul>
@@ -497,10 +503,6 @@ A_n&#39;}(\sigma_{B=B&#39;}(r_1 \times r_2&#39;))</span></li>
 </ul>
 <h2 id="teorema-2">Teorema 2</h2>
 <ul>
-<li>!!! <strong>4.30</strong></li>
-</ul>
-<h2 id="teorema-3">Teorema 3</h2>
-<ul>
 <li><strong>Hp</strong>
 <ul>
 <li><span class="math inline">n \in \mathbb{N}</span></li>
@@ -532,7 +534,7 @@ r_2</span></li>
 </ul></li>
 </ul>
 <hr />
-<h1 id="teoria-relazionale">Teoria relazionale</h1>
+<h1 id="teoria-della-normalizzazione">Teoria della Normalizzazione</h1>
 <h2 id="definizione-6">Definizione 6</h2>
 <ul>
 <li><strong>Dipendenza funzionale</strong></li>
@@ -612,7 +614,7 @@ class="math inline">F^+</span></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-4">Teorema 4</h2>
+<h2 id="teorema-3">Teorema 3</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -631,7 +633,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F \subseteq F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-5">Teorema 5</h2>
+<h2 id="teorema-4">Teorema 4</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -687,7 +689,7 @@ A_n) \quad X \rightarrow Y, Y \rightarrow Z \in F^A \implies X
 transitività</strong></li>
 </ul>
 </blockquote>
-<h2 id="teorema-6">Teorema 6</h2>
+<h2 id="teorema-5">Teorema 5</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -706,7 +708,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F \subseteq F^A</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-7">Teorema 7</h2>
+<h2 id="teorema-6">Teorema 6</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -729,7 +731,7 @@ funzionali su <span class="math inline">R</span></li>
 dell’unione</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-8">Teorema 8</h2>
+<h2 id="teorema-7">Teorema 7</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -752,7 +754,7 @@ Y \implies X \rightarrow Z \in F^A</span> è detta <strong>regola della
 decomposizione</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-9">Teorema 9</h2>
+<h2 id="teorema-8">Teorema 8</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -775,7 +777,7 @@ funzionali su <span class="math inline">R</span></li>
 pseudotransitività</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-10">Teorema 10</h2>
+<h2 id="teorema-9">Teorema 9</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -826,7 +828,7 @@ assiomi di Armstrong</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-11">Teorema 11</h2>
+<h2 id="teorema-10">Teorema 10</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -848,7 +850,7 @@ funzionali su <span class="math inline">R</span></li>
 X^+_F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-12">Teorema 12</h2>
+<h2 id="teorema-11">Teorema 11</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -869,7 +871,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">X \subseteq X^+_F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-13">Teorema 13</h2>
+<h2 id="teorema-12">Teorema 12</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -888,7 +890,7 @@ funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F^+ = F^A</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-14">Teorema 14</h2>
+<h2 id="teorema-13">Teorema 13</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -937,7 +939,7 @@ dunque l’iterazione in cui l’algoritmo termina</li>
 <li><span class="math inline">Z^f = X^+_F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-15">Teorema 15</h2>
+<h2 id="teorema-14">Teorema 14</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -980,7 +982,7 @@ class="math inline">F</span> e <span class="math inline">G</span> sono
 detti <strong>equivalenti</strong></li>
 </ul>
 </blockquote>
-<h2 id="teorema-16">Teorema 16</h2>
+<h2 id="teorema-15">Teorema 15</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1001,7 +1003,7 @@ dipendenze funzionali su <span class="math inline">R</span></li>
 F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-17">Teorema 17</h2>
+<h2 id="teorema-16">Teorema 16</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1047,7 +1049,7 @@ X</span> è la chiave di <span class="math inline">R</span> con minor
 numero di attributi</li>
 </ul>
 </blockquote>
-<h2 id="teorema-18">Teorema 18</h2>
+<h2 id="teorema-17">Teorema 17</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1070,7 +1072,7 @@ class="math inline">R \land \nexists K&#39; \subseteq K \mid K&#39;
 \rightarrow R \in F^+</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-19">Teorema 19</h2>
+<h2 id="teorema-18">Teorema 18</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1092,7 +1094,7 @@ funzionali su <span class="math inline">R</span></li>
 <span class="math inline">R</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-20">Teorema 20</h2>
+<h2 id="teorema-19">Teorema 19</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1157,13 +1159,12 @@ F^+, A \notin X \quad A \in K \lor K \subseteq X</span>
 <li>ovvero, per ogni dipendenza funzionale non banale in <span
 class="math inline">F^+</span>, o il determinante è superchiave, o il
 determinato è primo</li>
-<li>la terza forma normale garantisce che non ci siano problemi di
-ridondanza, dunque non vi sono problemi di inserimento, di aggiornamento
-e di eliminazione</li>
+<li>la terza forma normale garantisce una riduzione dei problemi di
+ridondanza, di inserimento, di aggiornamento e di eliminazione</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-21">Teorema 21</h2>
+<h2 id="teorema-20">Teorema 20</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1249,7 +1250,7 @@ K</span></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-22">Teorema 22</h2>
+<h2 id="teorema-21">Teorema 21</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1296,18 +1297,10 @@ Boyce-Codd</strong> <span class="math inline">\iff \forall X \subseteq
 R(A_1, \ldots, A_n), X</span> determinante per qualche <span
 class="math inline">F_i \in F \quad \exists K \subseteq R(A_1, \ldots,
 A_n)</span> superchiave di <span class="math inline">R \mid X \subseteq
-K</span>
-<ul>
-<li>questa forma normale preserva le dipendenze funzionali soddisfatte
-da ogni istanza legale di ogni sottoschema di <span
-class="math inline">R</span>, senza perdita di informazioni</li>
-<li>inoltre, permette di ricostruire attraverso il join naturale ogni
-istanza legale di ogni sottoschema di <span
-class="math inline">R</span>, senza aggiunta di informazioni</li>
-</ul></li>
+K</span></li>
 </ul>
 </blockquote>
-<h2 id="teorema-23">Teorema 23</h2>
+<h2 id="teorema-22">Teorema 22</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1330,8 +1323,7 @@ funzionali su <span class="math inline">R</span></li>
 <hr />
 <h1 id="decomposizione">Decomposizione</h1>
 <ul>
-<li><p><strong>Decomposizione</strong></p></li>
-<li><p>!!! <strong>DEFINISCI SOTTOSCHEMA</strong></p></li>
+<li><strong>Decomposizione</strong></li>
 </ul>
 <blockquote>
 <ul>
@@ -1413,25 +1405,10 @@ decomposizione di <span class="math inline">R</span></li>
 \bigcup_{i=1}^h{\pi_{R_i}(F)}</span></li>
 <li><span class="math inline">\rho</span> <strong>preserva <span
 class="math inline">F</span></strong> <span class="math inline">\iff F
-\equiv G</span>
-<ul>
-<li><span class="math inline">\rho</span> è una <em>buona</em>
-decomposizione di <span class="math inline">R</span> se:
-<ul>
-<li>ogni sottoschema di <span class="math inline">\rho</span> è in terza
-forma normale</li>
-<li><span class="math inline">\rho</span> preserva <span
-class="math inline">F</span></li>
-<li><span class="math inline">\rho</span> permette di ricostruire ogni
-istanza legale di <span class="math inline">R</span>, attraverso il join
-naturale delle istanze legali <span class="math inline">r_1, \ldots,
-r_h</span> dei sottoschemi di <span class="math inline">\rho</span>,
-senza perdita di informazioni</li>
-</ul></li>
-</ul></li>
+\equiv G</span></li>
 </ul>
 </blockquote>
-<h2 id="teorema-24">Teorema 24</h2>
+<h2 id="teorema-23">Teorema 23</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1455,7 +1432,7 @@ decomposizione di <span class="math inline">R</span></li>
 class="math inline">F \iff G^+ \supseteq F</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-25">Teorema 25</h2>
+<h2 id="teorema-24">Teorema 24</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1513,9 +1490,7 @@ calcolare <span class="math inline">F^+</span>
 <ul>
 <li>il calcolo di <span class="math inline">F^+</span> ha costo
 computazionale esponenziale</li>
-<li>!!! <strong>SCRIVI IL PERCHÉ</strong></li>
 </ul></li>
-<li>!!! <strong>13.20-21-22</strong></li>
 </ul></li>
 <li><strong>Th</strong>
 <ul>
@@ -1524,7 +1499,7 @@ dunque l’iterazione in cui l’algoritmo termina</li>
 <li><span class="math inline">Z^f = X^+_G</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-26">Teorema 26</h2>
+<h2 id="teorema-25">Teorema 25</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1578,7 +1553,7 @@ class="math inline">F \iff \forall X \rightarrow Y \in F \quad Y
 \subseteq X^+_G</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-27">Teorema 27</h2>
+<h2 id="teorema-26">Teorema 26</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1628,10 +1603,18 @@ class="math inline">F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie
 <ul>
 <li><span class="math inline">m_\rho(r) := \pi_{R_1}(r) \bowtie \ldots
 \bowtie \pi_{R_h}(r)</span></li>
+<li><span class="math inline">\rho</span> è una buona decomposizione se:
+<ul>
+<li><span class="math inline">\forall R_i \in \rho \quad R_i</span> è in
+terza forma normale</li>
+<li><span class="math inline">\rho</span> preserva <span
+class="math inline">F</span></li>
+<li><span class="math inline">\rho</span> ha un join senza perdita</li>
+</ul></li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-28">Teorema 28</h2>
+<h2 id="teorema-27">Teorema 27</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1655,7 +1638,7 @@ class="math inline">F</span></li>
 <li><span class="math inline">r \subseteq m_\rho(r)</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-29">Teorema 29</h2>
+<h2 id="teorema-28">Teorema 28</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1680,7 +1663,7 @@ class="math inline">F</span></li>
 class="math inline">\pi_{R_i}(m_\rho(r))=\pi_{R_i}(r)</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-30">Teorema 30</h2>
+<h2 id="teorema-29">Teorema 29</h2>
 <ul>
 <li><strong>Hp</strong>
 <ul>
@@ -1704,7 +1687,7 @@ class="math inline">F</span></li>
 <li><span class="math inline">m_\rho(m_\rho(r))=m_\rho(r)</span></li>
 </ul></li>
 </ul>
-<h2 id="teorema-31">Teorema 31</h2>
+<h2 id="teorema-30">Teorema 30</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1830,48 +1813,27 @@ relazionale</li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">G</span> insieme di dipendenze funzionali
-<span class="math inline">\mid F \equiv G</span></li>
 <li><span class="math inline">G</span> è detto <strong>copertura
 minimale di <span class="math inline">F</span></strong> <span
-class="math inline">\iff \forall X \rightarrow Y \in G \quad Y</span> è
-un singleton, <span class="math inline">\forall X \rightarrow A \in G
-\quad \nexists X&#39; \subsetneq X \mid G \equiv G - \{X \rightarrow A
-\} \cup \{X&#39; \rightarrow A\}</span> e infine <span
-class="math inline">\nexists X \rightarrow A \in G \mid G \equiv G - \{X
-\rightarrow A \}</span>
+class="math inline">\iff</span>
 <ul>
+<li><span class="math inline">G \equiv F</span></li>
+<li><span class="math inline">\forall X \rightarrow Y \in G \quad
+Y</span> è un singleton</li>
+<li><span class="math inline">\forall X \rightarrow A \in G \quad
+\nexists X&#39; \subsetneq X \mid (G \equiv G - \{X \rightarrow A \})
+\cup \{X&#39; \rightarrow A\}</span></li>
+<li><span class="math inline">\nexists X \rightarrow A \in G \mid G
+\equiv G - \{X \rightarrow A \}</span></li>
 <li>dunque, <span class="math inline">G</span> è copertura minimale di
 <span class="math inline">F</span> se <span class="math inline">F \equiv
 G</span>, e in ogni dipendenza funzionale di <span
-class="math inline">G</span> i determinati non sono ridondanti, i
-determinanti non sono ridondanti, e la dipendenza stessa non è
-ridondante</li>
+class="math inline">G</span> i determinanti non sono ridondanti, e ogni
+dipendenza non è ridondante</li>
 </ul></li>
 </ul>
 </blockquote>
-<h2 id="teorema-32">Teorema 32</h2>
-<ul>
-<li><strong>Hp</strong>
-<ul>
-<li><span class="math inline">n, k \in \mathbb{N}</span></li>
-<li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
-<li><span class="math inline">R \subseteq D_1 \times \ldots \times
-D_n</span> relazione</li>
-<li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
-relazionale</li>
-<li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
-funzionali su <span class="math inline">R</span></li>
-<li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">G</span> copertura minimale di <span
-class="math inline">F</span></li>
-</ul></li>
-<li><strong>Th</strong>
-<ul>
-<li><span class="math inline">G \subseteq F^+</span></li>
-</ul></li>
-</ul>
-<h2 id="teorema-33">Teorema 33</h2>
+<h2 id="teorema-31">Teorema 31</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1919,15 +1881,10 @@ class="math inline">F</span>, poiché ridondante</li>
 </ul></li>
 <li><strong>Oss</strong>
 <ul>
-<li>!!! <strong>super boring, e non ho manco capito niente
-onestamente</strong></li>
-</ul></li>
-<li><strong>Th</strong>
-<ul>
-<li>!!! <strong>?</strong></li>
+<li>!!! <strong>da fare</strong></li>
 </ul></li>
 </ul>
-<h2 id="teorema-34">Teorema 34</h2>
+<h2 id="teorema-32">Teorema 32</h2>
 <ul>
 <li><strong>Input</strong>
 <ul>
@@ -1945,12 +1902,9 @@ minimale di dipendenze funzionali</li>
 <li><strong>Output</strong>
 <ul>
 <li><span class="math inline">\rho</span> decomposizione di <span
-class="math inline">R \mid \forall R \in \rho \quad R</span> in terza
-forma normale, <span class="math inline">\rho</span> preserva <span
-class="math inline">F</span> e <span class="math inline">\rho</span> ha
-un join senza perdita</li>
-<li>dunque, <span class="math inline">\rho</span> è una <em>buona</em>
-decomposizione di <span class="math inline">R</span></li>
+class="math inline">R \mid \forall R_i \in \rho \quad R_i</span> in
+terza forma normale e <span class="math inline">\rho</span> preserva
+<span class="math inline">F</span></li>
 </ul></li>
 <li><strong>Algoritmo</strong>
 <ul>
@@ -1972,7 +1926,7 @@ B \texttt{:}</span>
 class="math inline">S \neq \varnothing \texttt{:}</span>
 <ul>
 <li><span class="math inline">R = R - S</span></li>
-<li><span class="math inline">\rho = \rho \cup S</span></li>
+<li><span class="math inline">\rho = \rho \cup \{S\}</span></li>
 </ul></li>
 <li><span class="math inline">\texttt{if}</span> <span
 class="math inline">\exists X \rightarrow A \in F \mid X \cup A = R
@@ -1994,6 +1948,17 @@ class="math inline">\texttt{in}</span> <span class="math inline">F
 <li><strong>Oss</strong>
 <ul>
 <li>l’algoritmo ha costo polinomiale</li>
+<li>per far si che <span class="math inline">\rho</span> sia una
+<em>buona</em> decomposizione di <span class="math inline">R</span>, e
+dunque abbia anche un join senza perdita, bisogna accertarsi che <span
+class="math inline">\exists R_i \in \rho \mid \exists K \subseteq R(A_1,
+\ldots, A_n), K</span> chiave di <span class="math inline">R : K
+\subseteq R_i</span>
+<ul>
+<li>in caso non esista a fine algoritmo un tale sottoschema, sarà
+sufficiente inserirlo manualmente in <span
+class="math inline">\rho</span></li>
+</ul></li>
 </ul></li>
 </ul>
 </body>

@@ -24,7 +24,7 @@ d = 1
 
 order = {
     "algebra-relazionale.md": 0,
-    "teoria-relazionale.md": 1,
+    "teoria-della-normalizzazione.md": 1,
     "terza-forma-normale.md": 2,
     "decomposizione.md": 3,
 

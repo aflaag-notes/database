@@ -8,23 +8,15 @@
 
 ## Teoria relazionale
 
-- [Teoria relazionale](https://ph04.github.io/database/html/teoria-relazionale.html)
-    - [Teoria relazionale](https://ph04.github.io/database/html/teoria-relazionale.html#teoria-relazionale)
-    - [Assiomi di Armstrong](https://ph04.github.io/database/html/teoria-relazionale.html#assiomi-di-armstrong)
+- [Teoria della normalizzazione](https://ph04.github.io/database/html/teoria-della-normalizzazione.html)
+    - [Teoria relazionale](https://ph04.github.io/database/html/teoria-della-normalizzazione.html#teoria-della-normalizzazione)
+    - [Assiomi di Armstrong](https://ph04.github.io/database/html/teoria-della-normalizzazione.html#assiomi-di-armstrong)
 - [Terza forma normale](https://ph04.github.io/database/html/terza-forma-normale.html)
 - [Decomposizione](https://ph04.github.io/database/html/decomposizione.html)
 
 ## Organizzazione fisica
 
 - [Organizzazione fisica](https://ph04.github.io/database/html/organizzazione-fisica.html)
-    - [Organizzazione fisica](https://ph04.github.io/database/html/organizzazione-fisica.html#organizzazione-fisica)
-    - [Gerarchia fisica](https://ph04.github.io/database/html/organizzazione-fisica.html#gerarchia-fisica)
-    - [HDD](https://ph04.github.io/database/html/organizzazione-fisica.html#hdd)
-    - [Database fisico](https://ph04.github.io/database/html/organizzazione-fisica.html#database-fisico)
-    - [Metodi di organizzazione del file principale](https://ph04.github.io/database/html/organizzazione-fisica.html#metodi-di-organizzazione-del-file-principale)
-    - [B-tree](https://ph04.github.io/database/html/organizzazione-fisica.html#b-tree)
-    - [B<sup>+</sup>-tree](https://ph04.github.io/database/html/organizzazione-fisica.html#b-tree-1)
-    - [Formulario](https://ph04.github.io/database/html/organizzazione-fisica.html#formulario)
 
 ## Tutti i teoremi
 

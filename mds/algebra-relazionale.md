@@ -13,7 +13,7 @@
 
 > - $n \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
-> - $D_1 \times \ldots \times D_n := \{v_1, \ldots, v_n) \mid v_1 \in D_1, \ldots , v_n \in D_n\}$ è detto **prodotto cartesiano dei domini $D_1, \ldots D_n$**
+> - $D_1 \times \ldots \times D_n := \{(v_1, \ldots, v_n) \mid v_1 \in D_1, \ldots , v_n \in D_n\}$ è detto **prodotto cartesiano dei domini $D_1, \ldots D_n$**
 
 ## Def
 
@@ -56,13 +56,12 @@
 
 - **Proiezione**
 
-- ⚠️ **RISCRIVI**
 > - $n \in \mathbb{N}$
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $a, b \in [1, n] \mid a \lt b$
-> - $\pi_{A_a, \ldots, A_b}(R) := D_a \times \ldots \times D_b$ è detta **proiezione di $R$**, associata ad uno schema relazionale $R(A_a, \ldots, A_b)$
+> - $\pi_{A_a, \ldots, A_b}(R) := R(A_a, \ldots, A_b)$ è detta **proiezione di $R$**, associata ad uno schema relazionale $R(A_a, \ldots, A_b)$
 
 - **Selezione**
 
@@ -168,14 +167,7 @@
 > - $R_2(A_1', \ldots, A_n')$ schema relazionale
 > - $r_1$ istanza di $R_1$
 > - $r_2$ istanza di $R_2$
-> - $r_1 \bowtie r_2$ è detto **join naturale di $r_1$ e $r_2$** ⚠️ **SCRIVERE BENE LA DEFINIZIONE**
->   - dunque, il join naturale costituisce il prodotto cartesiano "con significato" discusso precedentemente
- **SCRIVERE BENE LA DEFINIZIONE**
->   - dunque, il join naturale costituisce il prodotto cartesiano "con significato" discusso precedentemente
-
-## Oss
-
-- ⚠️ **4.30**
+> - $r_1 \bowtie r_2$ è detto **join naturale di $r_1$ e $r_2$** ⚠️ **manca definizione**
 
 ## Oss
 
