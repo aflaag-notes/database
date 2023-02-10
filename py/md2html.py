@@ -15,11 +15,11 @@ for file in os.listdir("mds"):
     with open("mds/" + file) as F:
         content = F.read()
 
-        if name_no_ext == "everything":
-            content = re.sub("⚠️", "!!!", content)
-            content = re.sub("✅", "", content)
-            content = re.sub("\\\\lt", "<", content)
-            content = re.sub("\\\\gt", ">", content)
+        # if name_no_ext == "everything":
+        #     content = re.sub("⚠️", "!!!", content)
+        #     content = re.sub("✅", "", content)
+        #     content = re.sub("\\\\lt", "<", content)
+        #     content = re.sub("\\\\gt", ">", content)
 
         title = title = content.split("\n")[0] if name_no_ext != "teoremi-fondamentali" else "  Teoremi fondamentali"
 
@@ -35,24 +35,25 @@ for file in os.listdir("mds"):
         content = re.sub("#606060", "#adbac7", content)
         content = re.sub("<title>.*</title>", "<title>" + title[2:] + "</title>", content)
         
+        c = content.split("\n")
+
         if name_no_ext != "index":
-            c = content.split("\n")
             c[17] = "      max-width: 60em;"
 
-            for i in range(len(c) - 1):
-                if c[i].startswith("<h2 id=") or c[i].startswith("<h1 id="):
+        for i in range(len(c) - 1):
+            if c[i].startswith("<h2 id=") or c[i].startswith("<h1 id="):
 
-                    k = c[i]
-                    
-                    if c[i + 1][0] != "<":
-                        k += " " + c[i + 1]
-                        c[i + 1] = ""
+                k = c[i]
+                
+                if c[i + 1][0] != "<":
+                    k += " " + c[i + 1]
+                    c[i + 1] = ""
 
-                    parts = c[i].split("\"")
+                parts = c[i].split("\"")
 
-                    c[i] = "<a href=\"#" + parts[1] + "\">" + k + "</a>"
+                c[i] = "<a href=\"#" + parts[1] + "\">" + k + "</a>"
 
-            content = "\n".join(c)
+        content = "\n".join(c)
 
         with open("html/" + name_no_ext + ".html", "w") as NB:
             NB.write(content)
