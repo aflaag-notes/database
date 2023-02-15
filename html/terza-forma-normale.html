@@ -204,8 +204,8 @@ class="math inline">R \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X]
 \implies t_1 = t_2</span></li>
 <li><span class="math inline">X</span> è detta <strong>chiave di <span
 class="math inline">R</span></strong> <span class="math inline">\iff
-X</span> è la chiave di <span class="math inline">R</span> con minor
-numero di attributi</li>
+\nexists X&#39; \subset X \mid X&#39;</span> chiave di <span
+class="math inline">R</span></li>
 </ul>
 </blockquote>
 <a href="#oss"><h2 id="oss">Oss</h2></a>
@@ -297,10 +297,11 @@ funzionali</li>
 D_n</span> relazione</li>
 <li><span class="math inline">R(A_1, \ldots, A_n)</span> schema
 relazionale</li>
-<li><span class="math inline">A \in R(A_1, \ldots, A_n)</span> è
-<strong>primo</strong> <span class="math inline">\iff \exists K
-\subseteq R(A_1, \ldots, A_n)</span> chiave di <span
-class="math inline">R \mid A \in K</span></li>
+<li><span class="math inline">A \in R(A_1, \ldots, A_n)</span></li>
+<li><span class="math inline">A</span> è detto <strong>primo</strong>
+<span class="math inline">\iff \exists K \subseteq R(A_1, \ldots,
+A_n)</span> chiave di <span class="math inline">R \mid A \in
+K</span></li>
 </ul>
 </blockquote>
 <a href="#def-2"><h2 id="def-2">Def</h2></a>
@@ -320,12 +321,12 @@ chiave di <span class="math inline">R</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">R</span> è in <strong>terza forma
-normale</strong> <span class="math inline">\iff \forall A \in R(A_1,
-\ldots, A_n), X \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in
-F^+, A \notin X \quad A \in K \lor K \subseteq X</span>
+<li><span class="math inline">R</span> si dice essere in <strong>terza
+forma normale</strong> <span class="math inline">\iff \forall A \in
+R(A_1, \ldots, A_n), X \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow
+A \in F^+, A \notin X \quad A \in K \lor K \subseteq X</span>
 <ul>
-<li>ovvero, per ogni dipendenza funzionale non banale in <span
+<li>in particolare, per ogni dipendenza funzionale non banale in <span
 class="math inline">F^+</span>, o il determinante è superchiave, o il
 determinato è primo</li>
 <li>la terza forma normale garantisce una riduzione dei problemi di
@@ -461,12 +462,12 @@ chiave di <span class="math inline">R</span></li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">R</span> è in <strong>forma normale di
-Boyce-Codd</strong> <span class="math inline">\iff \forall X \subseteq
-R(A_1, \ldots, A_n), X</span> determinante per qualche <span
-class="math inline">F_i \in F \quad \exists K \subseteq R(A_1, \ldots,
-A_n)</span> superchiave di <span class="math inline">R \mid X \subseteq
-K</span></li>
+<li><span class="math inline">R</span> si dice essere in <strong>forma
+normale di Boyce-Codd</strong> <span class="math inline">\iff \forall X
+\subseteq R(A_1, \ldots, A_n) \mid X</span> determinante per qualche
+<span class="math inline">F_i \in F \quad \exists K \subseteq R(A_1,
+\ldots, A_n)</span> superchiave di <span class="math inline">R \mid X
+\subseteq K</span></li>
 </ul>
 </blockquote>
 <a href="#oss-5"><h2 id="oss-5">Oss</h2></a>

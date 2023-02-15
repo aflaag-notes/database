@@ -10,8 +10,8 @@
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $X, Y \subseteq R(A_1, \ldots, A_n) \mid X, Y \neq \varnothing$
 > - $X \rightarrow Y$ è detta **dipendenza funzionale su $R$**
->   - $X$ è detto **determinante**, $Y$ è detto **determinato**
-> - $r$ istanza di $R$ **soddisfa** $X \rightarrow Y \iff \forall t_1, t_2 \in R \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y]$
+>   - in particolare, $X$ è detto **determinante**, $Y$ è detto **determinato**
+> - $r$ istanza di $R$ si dice **soddisfare** $X \rightarrow Y \iff \forall t_1, t_2 \in R \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y]$
 
 - **Istanza legale**
 
@@ -21,7 +21,7 @@
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $r$ **istanza di $R$ legale su $F$** $\iff \forall i \in [1, k] \quad r$ soddisfa $F_i$
+> - $r$ è detta **istanza di $R$ legale su $F$** $\iff \forall i \in [1, k] \quad r$ soddisfa $F_i$
 
 ## Def
 
@@ -34,9 +34,9 @@
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
 > - $L = \{r$ istanza di $R \mid r$ legale su $F\}$
-> - $F^+ := \displaystyle \bigcap_{r \in L}\{$dipendenze funzionali in $r\}$
->   - ovvero, è l'insieme delle dipendenze funzionali derivabili da ogni istanza legale su $F$
->   - di fatto, ogni istanza legale in $L$ soddisferà ogni dipendenza funzionale in $F^+$
+> - $F^+ := \displaystyle \bigcap_{r \in L}\{$dipendenze funzionali in $r\}$ è detta **chiusura di $F$**
+>   - è l'insieme delle dipendenze funzionali derivabili da ogni istanza legale su $F$
+>   - in particolare, ogni istanza legale in $L$ soddisferà ogni dipendenza funzionale in $F^+$
 
 ## Oss
 
@@ -108,7 +108,7 @@
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
-    - $X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$ è detta **regola dell'unione**
+    - $X \rightarrow Y, X \rightarrow Z \in F^A \implies X \rightarrow YZ \in F^A$, ed è detta _regola dell'unione_
 - **Dim**
     - per aumento $X \rightarrow Z \in F^A \implies XX \rightarrow XZ \in F^A \implies X \rightarrow XZ \in F^A$
     - per aumento $X \rightarrow Y \in F^A \implies XZ \rightarrow YZ \in F^A$
@@ -125,7 +125,7 @@
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
-    - $X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$ è detta **regola della decomposizione**
+    - $X \rightarrow Y \in F^A \land Z \subseteq Y \implies X \rightarrow Z \in F^A$, ed è detta _regola della decomposizione_
 - **Dim**
     - per riflessività $Z \subseteq Y \implies Y \rightarrow Z \in F^A$
     - per transitività $X \rightarrow Y, Y \rightarrow Z \in F^A \implies X \rightarrow Z \in F^A$
@@ -141,7 +141,7 @@
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Th**
-    - $X \rightarrow Y, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$ è detta **regola della pseudotransitività**
+    - $X \rightarrow Y, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$, ed è detta _regola della pseudotransitività_
 - **Dim**
     - per aumento $X \rightarrow Y \in F^A \implies XW \rightarrow YW \in F^A$
     - per transitività $XW \rightarrow YW, WY \rightarrow Z \in F^A \implies XW \rightarrow Z \in F^A$
@@ -260,7 +260,7 @@
 
 ## Alg
 
-- **Input**
+- **In**
     - $n, k \in \mathbb{N}$
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
@@ -268,9 +268,9 @@
     - $X \subseteq R(A_1, \ldots, A_n)$
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
-- **Output**
+- **Out**
     - $Z = X^+_F$
-- **Algoritmo**
+- **Alg**
     - $Z := X$
     - $S := \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
     - $\texttt{while}$ $S \nsubseteq Z$$\texttt{:}$

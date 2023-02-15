@@ -35,7 +35,7 @@
 > - $F = \{F_1, \ldots, F_k\}$
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
 > - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
-> - $\rho$ **preserva $F$** $\iff F \equiv G$
+> - $\rho$ si dice **preservare $F$** $\iff F \equiv G$
 
 ## Oss
 
@@ -57,7 +57,7 @@
 
 ## Alg
 
-- **Input**
+- **In**
     - $n, k, h \in \mathbb{N}$
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
@@ -67,9 +67,9 @@
     - $F = \{F_1, \ldots, F_k\}$
     - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
     - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
-- **Output**
+- **Out**
     - $Z = X^+_G$
-- **Algoritmo**
+- **Alg**
     - $Z := X$
     - $S := \varnothing$
     - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, h):}$
@@ -108,7 +108,7 @@
 
 ## Alg
 
-- **Input**
+- **In**
     - $n, k, h \in \mathbb{N}$
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
@@ -117,9 +117,9 @@
     - $F = \{F_1, \ldots, F_k\}$
     - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
     - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
-- **Output**
+- **Out**
     - $\texttt{True/False}$
-- **Algoritmo**
+- **Alg**
     - $\texttt{for}$ $X \rightarrow Y$ $\texttt{in}$ $F \texttt{:}$
         - $\texttt{if}$ $Y \nsubseteq X^+_G$$\texttt{:}$
             - $\texttt{return False}$
@@ -164,7 +164,7 @@
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
 > - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
-> - $\rho$ **ha un join senza perdita** $\iff \forall r$ istanza di $R$ legale su $F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
+> - $\rho$ si dice **avere un join senza perdita** $\iff \forall r$ istanza di $R$ legale su $F \quad r = \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
 >   - $m_\rho(r) := \pi_{R_1}(r) \bowtie \ldots \bowtie \pi_{R_h}(r)$
 >   - $\rho$ è una buona decomposizione se:
 >     - $\forall R_i \in \rho \quad R_i$ è in terza forma normale
@@ -226,7 +226,7 @@
 
 ## Alg
 
-- **Input**
+- **In**
     - $n, k, h \in \mathbb{N}$
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
@@ -234,9 +234,9 @@
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
     - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
-- **Output**
+- **Out**
     - $\texttt{True/False}$
-- **Algoritmo**
+- **Alg**
     - viene costruita $r$ istanza di $R$ legale su $F$, avente $h$ righe $\mid \forall i \in [1, h], j \in [1, n] \quad r_{i, j} = \left\{\begin{array}{cc} a_j & A_j \in R_i\\b_{i, j} & A_j \notin R_i\end{array}\right.$
     - $\texttt{unchanged = False}$
     - $\texttt{while not unchanged:}$
@@ -287,7 +287,7 @@
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $G$ è detto **copertura minimale di $F$** $\iff$
+> - $G$ è detta **copertura minimale di $F$** $\iff$
 >   - $G \equiv F$
 >   - $\forall X \rightarrow Y \in G \quad Y$ è un singleton
 >   - $\forall X \rightarrow A \in G \quad \nexists X' \subsetneq X \mid (G \equiv G - \{X \rightarrow A \}) \cup \{X' \rightarrow A\}$
@@ -296,16 +296,16 @@
 
 ## Alg
 
-- **Input**
+- **In**
     - $n, k \in \mathbb{N}$
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
-- **Output**
+- **Out**
     - $F$ è minimale
-- **Algoritmo**
+- **Alg**
     - $\forall X, Y:= A_i, \ldots, A_j \subseteq R(A_1 ,\dots, A_n) \mid X \rightarrow Y \in F \quad \forall h \in [i, j] \quad F := F \cup \{X \rightarrow A_h\}$
         - ogni dipendenza funzionale in $F$ viene decomposta in singleton
     - $\forall A_i \ldots A_{h - 1}A_hA_{h + 1} \ldots A_j \rightarrow A \mid F \equiv F - \{A_i \ldots A_{h -1 }A_hA_{h + 1} \ldots A_j \rightarrow A\} \cup \{A_i \ldots A_{h -1 }A_{h + 1} \ldots A_j \rightarrow A \} \quad F :=  F - \{A_i \ldots A_{h -1 }A_hA_{h + 1} \ldots A_j \rightarrow A\} \cup \{A_i \ldots A_{h -1 }A_{h + 1} \ldots A_j \rightarrow A\}$
@@ -318,16 +318,16 @@
 
 ## Alg
 
-- **Input**
+- **In**
     - $n, k \in \mathbb{N}$
     - $D_1, \ldots, D_n$ domini
     - $R \subseteq D_1 \times \ldots \times D_n$ relazione
     - $R(A_1, \ldots, A_n)$ schema relazionale
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$ insieme minimale di dipendenze funzionali
-- **Output**
+- **Out**
     - $\rho$ decomposizione di $R \mid \forall R_i \in \rho \quad R_i$ in terza forma normale e $\rho$ preserva $F$
-- **Algoritmo**
+- **Alg**
     - $S := \varnothing$
     - $\rho := \varnothing$
     - $\texttt{for}$ $A$ $\texttt{in}$ $R \texttt{:}$

@@ -9,7 +9,7 @@
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
 > - $X \subseteq R(A_1, \ldots, A_n)$ è detta **superchiave di $R$** $\iff \forall r$ istanza di $R \quad \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1 = t_2$
-> - $X$ è detta **chiave di $R$** $\iff X$ è la chiave di $R$ con minor numero di attributi
+> - $X$ è detta **chiave di $R$** $\iff \nexists X' \subset X \mid X'$ chiave di $R$
 
 ## Oss
 
@@ -59,7 +59,8 @@
 > - $D_1, \ldots, D_n$ domini
 > - $R \subseteq D_1 \times \ldots \times D_n$ relazione
 > - $R(A_1, \ldots, A_n)$ schema relazionale
-> - $A \in R(A_1, \ldots, A_n)$ è **primo** $\iff \exists K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \mid A \in K$
+> - $A \in R(A_1, \ldots, A_n)$
+> - $A$ è detto **primo** $\iff \exists K \subseteq R(A_1, \ldots, A_n)$ chiave di $R \mid A \in K$
 
 ## Def
 
@@ -72,8 +73,8 @@
 > - $K \subseteq R(A_1, \ldots, A_n)$ chiave di $R$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $R$ è in **terza forma normale** $\iff \forall A \in R(A_1, \ldots, A_n), X \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^+, A \notin X \quad A \in K \lor K \subseteq X$
->   - ovvero, per ogni dipendenza funzionale non banale in $F^+$, o il determinante è superchiave, o il determinato è primo
+> - $R$ si dice essere in **terza forma normale** $\iff \forall A \in R(A_1, \ldots, A_n), X \subseteq R(A_1, \ldots, A_n) \mid X \rightarrow A \in F^+, A \notin X \quad A \in K \lor K \subseteq X$
+>   - in particolare, per ogni dipendenza funzionale non banale in $F^+$, o il determinante è superchiave, o il determinato è primo
 >   - la terza forma normale garantisce una riduzione dei problemi di ridondanza, di inserimento, di aggiornamento e di eliminazione
 
 ## Oss
@@ -142,7 +143,7 @@
 > - $K \subseteq R(A_1, \ldots, A_n)$ chiave di $R$
 > - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
 > - $F = \{F_1, \ldots, F_k\}$
-> - $R$ è in **forma normale di Boyce-Codd** $\iff \forall X \subseteq R(A_1, \ldots, A_n), X$ determinante per qualche $F_i \in F \quad \exists K \subseteq R(A_1, \ldots, A_n)$ superchiave di $R \mid X \subseteq K$
+> - $R$ si dice essere in **forma normale di Boyce-Codd** $\iff \forall X \subseteq R(A_1, \ldots, A_n) \mid X$ determinante per qualche $F_i \in F \quad \exists K \subseteq R(A_1, \ldots, A_n)$ superchiave di $R \mid X \subseteq K$
 
 ## Oss
 

@@ -203,12 +203,12 @@ Y \neq \varnothing</span></li>
 <strong>dipendenza funzionale su <span
 class="math inline">R</span></strong>
 <ul>
-<li><span class="math inline">X</span> è detto
+<li>in particolare, <span class="math inline">X</span> è detto
 <strong>determinante</strong>, <span class="math inline">Y</span> è
 detto <strong>determinato</strong></li>
 </ul></li>
 <li><span class="math inline">r</span> istanza di <span
-class="math inline">R</span> <strong>soddisfa</strong> <span
+class="math inline">R</span> si dice <strong>soddisfare</strong> <span
 class="math inline">X \rightarrow Y \iff \forall t_1, t_2 \in R \quad
 t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y]</span></li>
 </ul>
@@ -227,7 +227,7 @@ relazionale</li>
 <li><span class="math inline">F_1, \ldots, F_k</span> dipendenze
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
-<li><span class="math inline">r</span> <strong>istanza di <span
+<li><span class="math inline">r</span> è detta <strong>istanza di <span
 class="math inline">R</span> legale su <span
 class="math inline">F</span></strong> <span class="math inline">\iff
 \forall i \in [1, k] \quad r</span> soddisfa <span
@@ -255,12 +255,13 @@ class="math inline">R \mid r</span> legale su <span
 class="math inline">F\}</span></li>
 <li><span class="math inline">F^+ := \displaystyle \bigcap_{r \in
 L}\{</span>dipendenze funzionali in <span class="math inline">r\}</span>
+è detta <strong>chiusura di <span class="math inline">F</span></strong>
 <ul>
-<li>ovvero, è l’insieme delle dipendenze funzionali derivabili da ogni
-istanza legale su <span class="math inline">F</span></li>
-<li>di fatto, ogni istanza legale in <span class="math inline">L</span>
-soddisferà ogni dipendenza funzionale in <span
-class="math inline">F^+</span></li>
+<li>è l’insieme delle dipendenze funzionali derivabili da ogni istanza
+legale su <span class="math inline">F</span></li>
+<li>in particolare, ogni istanza legale in <span
+class="math inline">L</span> soddisferà ogni dipendenza funzionale in
+<span class="math inline">F^+</span></li>
 </ul></li>
 </ul>
 </blockquote>
@@ -389,8 +390,8 @@ funzionali su <span class="math inline">R</span></li>
 <li><strong>Th</strong>
 <ul>
 <li><span class="math inline">X \rightarrow Y, X \rightarrow Z \in F^A
-\implies X \rightarrow YZ \in F^A</span> è detta <strong>regola
-dell’unione</strong></li>
+\implies X \rightarrow YZ \in F^A</span>, ed è detta <em>regola
+dell’unione</em></li>
 </ul></li>
 <li><strong>Dim</strong>
 <ul>
@@ -422,8 +423,8 @@ funzionali su <span class="math inline">R</span></li>
 <li><strong>Th</strong>
 <ul>
 <li><span class="math inline">X \rightarrow Y \in F^A \land Z \subseteq
-Y \implies X \rightarrow Z \in F^A</span> è detta <strong>regola della
-decomposizione</strong></li>
+Y \implies X \rightarrow Z \in F^A</span>, ed è detta <em>regola della
+decomposizione</em></li>
 </ul></li>
 <li><strong>Dim</strong>
 <ul>
@@ -452,8 +453,8 @@ funzionali su <span class="math inline">R</span></li>
 <li><strong>Th</strong>
 <ul>
 <li><span class="math inline">X \rightarrow Y, WY \rightarrow Z \in F^A
-\implies XW \rightarrow Z \in F^A</span> è detta <strong>regola della
-pseudotransitività</strong></li>
+\implies XW \rightarrow Z \in F^A</span>, ed è detta <em>regola della
+pseudotransitività</em></li>
 </ul></li>
 <li><strong>Dim</strong>
 <ul>
@@ -763,7 +764,7 @@ X^+_F \implies X \rightarrow Y \in F^A</span></li>
 </ul>
 <a href="#alg"><h2 id="alg">Alg</h2></a>
 <ul>
-<li><strong>Input</strong>
+<li><strong>In</strong>
 <ul>
 <li><span class="math inline">n, k \in \mathbb{N}</span></li>
 <li><span class="math inline">D_1, \ldots, D_n</span> domini</li>
@@ -777,11 +778,11 @@ A_n)</span></li>
 funzionali su <span class="math inline">R</span></li>
 <li><span class="math inline">F = \{F_1, \ldots, F_k\}</span></li>
 </ul></li>
-<li><strong>Output</strong>
+<li><strong>Out</strong>
 <ul>
 <li><span class="math inline">Z = X^+_F</span></li>
 </ul></li>
-<li><strong>Algoritmo</strong>
+<li><strong>Alg</strong>
 <ul>
 <li><span class="math inline">Z := X</span></li>
 <li><span class="math inline">S := \{A \in R(A_1, \ldots, A_n) \mid
