@@ -68,7 +68,7 @@
     - $\rho = R_1, \ldots, R_h$ decomposizione di $R$
     - $G = \displaystyle \bigcup_{i=1}^h{\pi_{R_i}(F)}$
 - **Out**
-    - $Z = X^+_G$
+    - $X^+_G$
 - **Alg**
     - $Z := X$
     - $S := \varnothing$
@@ -78,6 +78,7 @@
         - $Z = Z \cup S$
         - $\texttt{for}$ $i$ $\texttt{in}$ $\texttt{range(1, h):}$
             - $S = S \cup \left((Z \cap R_i)^+_F \cap R_i\right)$
+    - $\texttt{return} \ Z$
 - **Oss**
     - l'algoritmo calcola $X^+_G$ senza calcolare $F^+$
         - il calcolo di $F^+$ ha costo computazionale esponenziale
@@ -341,6 +342,7 @@
     - $\texttt{else:}$
         - $\texttt{for}$ $X \rightarrow A$ $\texttt{in}$ $F \texttt{:}$
             - $\rho = \rho \cup \{XA\}$
+    - $\texttt{return} \ \rho$
 - **Oss**
     - l'algoritmo ha costo polinomiale
     - per far si che $\rho$ sia una _buona_ decomposizione di $R$, e dunque abbia anche un join senza perdita, bisogna accertarsi che $\exists R_i \in \rho \mid \exists K \subseteq R(A_1, \ldots, A_n), K$ chiave di $R : K \subseteq R_i$

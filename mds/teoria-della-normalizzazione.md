@@ -269,13 +269,14 @@
     - $F_1, \ldots, F_k$ dipendenze funzionali su $R$
     - $F = \{F_1, \ldots, F_k\}$
 - **Out**
-    - $Z = X^+_F$
+    - $X^+_F$
 - **Alg**
     - $Z := X$
     - $S := \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
     - $\texttt{while}$ $S \nsubseteq Z$$\texttt{:}$
         - $Z = Z \cup S$
         - $S = \{A \in R(A_1, \ldots, A_n) \mid \exists Y, V \subseteq R(A_1, \ldots, A_n), Y \rightarrow V \in F : A \in V \land Y \subseteq Z\}$
+    - $\texttt{return} \ Z$
 - **Oss**
     - l'algoritmo calcola $X^+_F$
     - di fatto, il loop $\texttt{while}$ applica gli assiomi di Armstrong
