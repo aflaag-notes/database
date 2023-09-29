@@ -11,7 +11,7 @@
 > - $X, Y \subseteq R(A_1, \ldots, A_n) \mid X, Y \neq \varnothing$
 > - $X \rightarrow Y$ è detta **dipendenza funzionale su $R$**
 >   - in particolare, $X$ è detto **determinante**, $Y$ è detto **determinato**
-> - $r$ istanza di $R$ si dice **soddisfare** $X \rightarrow Y \iff \forall t_1, t_2 \in R \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y]$
+> - $r$ istanza di $R$ si dice **soddisfare** $X \rightarrow Y \iff \forall t_1, t_2 \in r \quad t_1[X] = t_2[X] \implies t_1[Y] = t_2[Y]$
 
 - **Istanza legale**
 
