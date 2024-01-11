@@ -23,7 +23,7 @@
         - $\#RecordsPerBucket = \left \lceil \dfrac{\#Records}{\#Buckets} \right \rceil$
         - $\#BlocksPerBucket = \left \lceil \dfrac{\#RecordsPerBucket}{\#RecordsPerBlock} \right \rceil$
         - $\#Blocks = \#BlocksPerBucket \cdot \#Buckets$
-        - $\#BlocksInTotal = \#Blocks + \#BlocksInTotal$
+        - $\#BlocksInTotal = \#Blocks + \#BlocksInIndex$
         - $\#AccessessForRecord = \left \lceil \dfrac{\#BlocksPerBucket}{2} \right \rceil$
 
 - **ISAM** (indexed sequential access memory)
