@@ -1,6 +1,6 @@
 # database
 
-Questi sono i miei [appunti](https://ph-notes.github.io/database/html/index.html) del corso di **Basi di Dati 1**.
+Questi sono i miei [appunti](https://aflaag-notes.github.io/database/html/index.html) del corso di **Basi di Dati 1**.
 
 ## TODO list
 
